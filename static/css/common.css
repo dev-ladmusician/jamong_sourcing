@@ -63,6 +63,14 @@
     width: 220px;
 }
 
+.navbar .user{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.navbar .inline-block{
+    display: inline-block;
+}
 /*side bar*/
 .main-sidebar .sidebar-channel {
     margin: 20px 0;

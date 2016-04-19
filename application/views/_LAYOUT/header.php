@@ -79,14 +79,17 @@
                 </a>
 
                 <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <li>
+                    <div class="nav navbar-nav">
+                        <div class="inline-block">
                             <form class="nav-search" action="<?=site_url('search/result')?>" method="get">
                                 <input id="jm-search" name="search_query" type="text" placeholder="검색어를 입력해주세요.">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </form>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="inline-block">
+                            <img class="user" src="https://yt3.ggpht.com/-AqUnCKz6LSA/AAAAAAAAAAI/AAAAAAAAAAA/KkG5qB5y0ac/s88-c-k-no-rj-c0xffffff/photo.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
