@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <title>JAMONG</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>static/css/common.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>static/css/common.css" rel="stylesheet">
     <link href="/static/lib/animation/animate.css" rel="stylesheet">
 
     <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
@@ -27,12 +27,12 @@
     $filename = "";
 
     if ($ctrl_name == 'index.php') {
-        $filename = 'static/css/'.strtolower($view_name).'/index.css';
+        $filename = 'static/css/' . strtolower($view_name) . '/index.css';
     } else {
-        $filename = 'static/css/'.strtolower($ctrl_name).'/'.strtolower($view_name).'.css';
+        $filename = 'static/css/' . strtolower($ctrl_name) . '/' . strtolower($view_name) . '.css';
     }
 
-    if(file_exists($filename)) {
+    if (file_exists($filename)) {
         ?>
         <link href="/JAMONG/<?php echo $filename; ?>" rel="stylesheet">
         <?php
@@ -41,8 +41,7 @@
         ?>
         <link href="/JAMONG/static/css/home/index.css" rel="stylesheet">
         <?php
-    }
-    ?>
+    }?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,14 +54,14 @@
 
 <div class="body-container">
     <?php
-        $flashdata = $this->session->flashdata('message');
-        if ($flashdata != null) {
-    ?>
+    $flashdata = $this->session->flashdata('message');
+    if ($flashdata != null) {
+        ?>
 
         <script type="text/javascript">
             alert('<?=$this->session->flashdata('message')?>');
         </script>
-    <?php
+        <?php
     }
     ?>
     <header class="main-header">

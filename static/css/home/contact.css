@@ -8,9 +8,10 @@
     color: #3a3a3a;
     font-weight: bold;
 }
-.jm-contact #contact-map{
-    margin: 10px 13px;
+.jm-contact #jm-map{
+    padding: 10px 13px;
     min-height: 350px;
+    width: 100%;
 }
 .jm-contact .content{
     padding: 10px 13px;

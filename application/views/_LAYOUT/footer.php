@@ -85,7 +85,7 @@
         <script src="<?=site_url()?><?php echo $filename;?>"></script>
     <?php
     }
-    if (strpos($filename, 'index.php')) {
+    if (strpos($filename, 'index.php') ) {
     ?>
         <script src="<?=site_url()?>/static/js/home/index.js"></script>
     <?php
