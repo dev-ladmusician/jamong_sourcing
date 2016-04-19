@@ -1,0 +1,27 @@
+.jm-contact .solid-border-box{
+    background-color: transparent;
+    padding: 0;
+}
+.jm-contact .header{
+    background-color: white;
+    padding: 10px 13px;
+    color: #3a3a3a;
+    font-weight: bold;
+}
+.jm-contact #contact-map{
+    margin: 10px 13px;
+    min-height: 350px;
+}
+.jm-contact .content{
+    padding: 10px 13px;
+    /*background-color: transparent;*/
+}
+.jm-contact .content p{
+    margin: 3px 0;
+}
+.jm-contact .content p span{
+    font-weight: bold;
+    width: 80px;
+    display: inline-block;
+    color: #3a3a3a;
+}

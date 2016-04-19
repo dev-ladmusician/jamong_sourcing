@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="650c4abd-2416-4fd1-9557-1fef8614d17b" name="JAMONG" url="http://goqual.com">
+        <fileTransfer host="goqual.com" port="22" rootFolder="/home/hosting_users/goqualweb/www/JAMONG" accessType="SFTP" password="dfcddfc5dfdbdfdfdfcbdfc6df9bdf98df8bdfea" username="goqualweb">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
