@@ -1,0 +1,9 @@
+.jm-search .header{
+    background-color: white;
+    padding: 10px 13px;
+}
+
+.jm-search select option,
+.jm-search select optgroup{
+    color: #3a3a3a;
+}

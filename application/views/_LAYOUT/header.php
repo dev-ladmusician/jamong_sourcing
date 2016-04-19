@@ -81,10 +81,10 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li>
-                            <div class="nav-search">
-                                <input type="text" placeholder="검색어를 입력해주세요.">
+                            <form class="nav-search" action="<?=site_url('search/result')?>" method="get">
+                                <input id="jm-search" name="search_query" type="text" placeholder="검색어를 입력해주세요.">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                            </div>
+                            </form>
                         </li>
                     </ul>
                 </div>

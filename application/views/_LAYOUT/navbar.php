@@ -3,7 +3,7 @@
     <div class="row">
 
 
-    <div class="main-sidebar col-lg-3 col-md-3">
+    <div class="main-sidebar col-lg-3 col-md-3 col-sm-12">
         <section class="sidebar-category solid-border-box">
             <div class="solid-border-bottom menu-header">카테고리</div>
             <ul class="sidebar-menu">

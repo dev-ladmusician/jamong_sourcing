@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer-text col-lg-12">
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
                         <a class="footer-logo">
                             <img src="/JAMONG/static/img/header_logo.png" alt="">
                         </a>
@@ -17,11 +17,11 @@
                             <option value="eng">English</option>
                         </select>
                     </div>
-                    <div class="col-lg-3 col-md-4">
+                    <div class="col-lg-3 col-md-4 col-sm-12">
                         <a href="" class="btn-ft-white">최근 동영상</a>
                         <a href="" class="btn-ft-white">도움말</a>
                     </div>
-                    <div class="col-lg-5 col-md-4">
+                    <div class="col-lg-5 col-md-4 col-sm-12">
                         <div class="float-right">
                             <a href="#" class="btn-ft-blue">좋아요</a>
                             <a href="#" class="btn-ft-blue">공유하기</a>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="footer-text col-lg-12">
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-sm-12">
                         <p>정보<span>|</span>보도자료<span>|</span>저작권<span>|</span>제작자<span>|</span>광고<span>|</span>개발자</p>
                         <a href="#">이용약관</a>
                         <a href="#">개인정보 보호</a>
@@ -39,10 +39,10 @@
                         <a href="#">의견 보내기(건의)</a>
                         <a href="#">새로운 기능</a>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-sm-12">
                         COPYRIGHT JAMONG INC. ALL RIGHTS RESERVED.
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-sm-12">
                         <div class="float-right">
                             <span>Google play</span>
                             <img src="" alt="FACEBOOK_LOGO">

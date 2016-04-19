@@ -1,4 +1,4 @@
-<div class="content-wrapper col-lg-9">
+<div class="content-wrapper col-lg-9 col-md-9 col-sm-12">
     <section class="sc-main">
 
         <div class="main-video row">
@@ -13,7 +13,7 @@
                 <a href="#"><span>more</span></a>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_1.png" alt="">
 
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_2.png" alt="">
 
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_3.png" alt="">
 
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_4.png" alt="">
 
@@ -66,7 +66,7 @@
                     </div>
 
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_5.png" alt="">
 
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_6.png" alt="">
 
@@ -101,7 +101,7 @@
                 <a href="#"><span>more</span></a>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_1.png" alt="">
 
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_2.png" alt="">
 
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_3.png" alt="">
 
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_4.png" alt="">
 
@@ -154,7 +154,7 @@
                     </div>
 
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_5.png" alt="">
 
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4">
+                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
                     <div class="solid-border-box">
                         <img src="/JAMONG/static/img/ex_6.png" alt="">
 
