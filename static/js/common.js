@@ -9,5 +9,15 @@ $(document).ready(function () {
             console.log($(this).val());
             $('.nav-search').submit();
         }
-    })
+    });
+
+    //user menu
+
+    $('#jm-user').click(function(){
+       console.log('user menu');
+        var obj = $(this).position();
+       console.log(obj.left);
+        $('#jm-user-setting').css('left',obj.left + "px");
+    });
+
 });

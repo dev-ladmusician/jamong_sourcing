@@ -68,7 +68,7 @@
         <div class="container">
             <nav class="navbar navbar-static-top" role="navigation">
                 <a href="<?= site_url('/home/index') ?>" class="logo">
-                    <img src="/JAMONG/static/img/header_logo.png" alt="">
+                    <img src="<?=base_url('/static/img/dongsin_logo.png')?>" alt="">
                 </a>
 
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -86,12 +86,34 @@
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </form>
                         </div>
-                        <div class="inline-block">
-                            <img class="user" src="https://yt3.ggpht.com/-AqUnCKz6LSA/AAAAAAAAAAI/AAAAAAAAAAA/KkG5qB5y0ac/s88-c-k-no-rj-c0xffffff/photo.jpg" alt="">
-                        </div>
+                            <a href="#popup1"><img id="jm-user" class="user" src="https://yt3.ggpht.com/-AqUnCKz6LSA/AAAAAAAAAAI/AAAAAAAAAAA/KkG5qB5y0ac/s88-c-k-no-rj-c0xffffff/photo.jpg" alt=""></a>
                     </div>
                 </div>
             </nav>
-        </div>
+<!--            <div id="jm-user-setting" class="solid-border-box">-->
+<!--                <ul>-->
+<!--                    <li>로그인</li>-->
+<!--                    <li>회원가입</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+            <section class="sc-test">
 
+                <div id="popup1" class="overlay">
+                    <div class="popup">
+                        <a class="close" href="#">&times;</a>
+                        <ul>
+                            <li>로그인</li>
+                            <li>회원가입</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+        </div>
     </header>
+
+
+
+
+
+

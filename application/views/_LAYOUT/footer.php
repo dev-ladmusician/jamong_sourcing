@@ -10,7 +10,7 @@
                 <div class="footer-text col-lg-12">
                     <div class="col-lg-4 col-md-4 col-sm-12">
                         <a class="footer-logo">
-                            <img src="/JAMONG/static/img/header_logo.png" alt="">
+                            <img src="<?= base_url('/static/img/dongsin_logo.png') ?>" alt="">
                         </a>
                         <select name="language" id="language">
                             <option value="kor">한국어</option>
@@ -23,8 +23,10 @@
                     </div>
                     <div class="col-lg-5 col-md-4 col-sm-12">
                         <div class="float-right">
-                            <a href="#" class="btn-ft-blue">좋아요</a>
+                            <a href="#" class="btn-ft-blue">
+                                <img src="<?= base_url('/static/img/fb_logo_2.png') ?>" alt="FACEBOOK_LOGO">좋아요</a>
                             <a href="#" class="btn-ft-blue">공유하기</a>
+
                             <div class="text-ft-sns">12명이 좋아합니다. 친구들이 무엇을 좋아하는지<br>알아보려면 가입하기</div>
                         </div>
                     </div>
@@ -45,7 +47,7 @@
                     <div class="col-lg-3 col-sm-12">
                         <div class="float-right">
                             <span>Google play</span>
-                            <img src="" alt="FACEBOOK_LOGO">
+                            <img src="<?= base_url('/static/img/fb_logo.png') ?>" alt="FACEBOOK_LOGO">
                         </div>
                     </div>
                 </div>
@@ -59,40 +61,41 @@
 <script src="/static/js/ajaxBody.js"></script>
 <script src="/static/js/smoothscroll.js"></script>
 
-<script src="<?php echo base_url()?>static/js/common.js"></script>
+<script src="<?php echo base_url() ?>static/js/common.js"></script>
 
 
-    <?php
-    $total_url = $_SERVER['PHP_SELF'];
-    $arr_splitted_url = explode('/', $total_url);
+<?php
+$total_url = $_SERVER['PHP_SELF'];
+$arr_splitted_url = explode('/', $total_url);
 
-    if ($arr_splitted_url[count($arr_splitted_url) - 1] === "") {
-        unset($arr_splitted_url[count($arr_splitted_url) - 1]);
-    }
+if ($arr_splitted_url[count($arr_splitted_url) - 1] === "") {
+    unset($arr_splitted_url[count($arr_splitted_url) - 1]);
+}
 
-    $ctrl_name = $arr_splitted_url[count($arr_splitted_url) - 2];
-    $view_name = $arr_splitted_url[count($arr_splitted_url) - 1];
-    $filename = "";
+$ctrl_name = $arr_splitted_url[count($arr_splitted_url) - 2];
+$view_name = $arr_splitted_url[count($arr_splitted_url) - 1];
+$filename = "";
 
-    if ($ctrl_name == 'index.php') {
-        $filename = 'static/js/'.strtolower($view_name).'/index.js';
-    } else {
-        $filename = 'static/js/'.strtolower($ctrl_name).'/'.strtolower($view_name).'.js';
-    }
+if ($ctrl_name == 'index.php') {
+    $filename = 'static/js/' . strtolower($view_name) . '/index.js';
+} else {
+    $filename = 'static/js/' . strtolower($ctrl_name) . '/' . strtolower($view_name) . '.js';
+}
 
-    if(file_exists($filename)) {
+if (file_exists($filename)) {
     ?>
-        <script src="<?=site_url()?><?php echo $filename;?>"></script>
+    <script src="<?= site_url() ?><?php echo $filename; ?>"></script>
     <?php
-    }
-    if (strpos($filename, 'index.php') ) {
+}
+if (strpos($filename, 'index.php')) {
     ?>
-        <script src="<?=site_url()?>/static/js/home/index.js"></script>
+    <script src="<?= site_url() ?>/static/js/home/index.js"></script>
     <?php
-    }
-    ?>
+}
+?>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
-</body>
-</html>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
+    </
+    body >
+    < / html >

@@ -1,3 +1,27 @@
+.sc-test .overlay {
+    position: fixed;
+    top: 68px;
+    bottom: 0;
+    left: 1100px;
+    right: 0;
+    /*background: rgba(0, 0, 0, 0.7);*/
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.sc-test .overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sc-test .popup {
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
 /*common things*/
 .body-container {
     position: relative;
@@ -160,7 +184,6 @@
 }
 
 .footer-container .footer-logo img {
-    width: 200px;
     vertical-align: bottom;
 }
 
@@ -203,6 +226,11 @@
     color: white;
     /*font-weight: bold;*/
     padding: 3px;
+}
+
+.footer-container .row .footer-text .btn-ft-blue img{
+    margin-right: 5px;
+    height: 18px;
 }
 
 .footer-container .row .footer-text .text-ft-sns {
@@ -254,6 +282,12 @@
     width: 140px;
 }
 
+#jm-user-setting{
+    width: 200px;
+    position: absolute;
+    top: 71px;
+    z-index: 100;
+}
 /* mobile */
 @media only screen and (max-width: 480px) {
 
