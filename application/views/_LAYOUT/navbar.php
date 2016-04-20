@@ -59,7 +59,7 @@
                             <li>GOQUAL</li>
                         </a>
                     </ul>
-                    <div><a href="#">더보기 ></a></div>
+                    <div><a href="<?= site_url('/channels')?>">더보기 ></a></div>
                 </section>
 
                 <section class="sidebar-service solid-border-box">

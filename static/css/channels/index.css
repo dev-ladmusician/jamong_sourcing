@@ -1,0 +1,73 @@
+.jm-channels .header{
+    background-color: white;
+    font-weight: bold;
+    color: #3a3a3a;
+}
+
+.jm-channels .header span{
+    font-size: 13px;
+    color: #d3d9de;
+}
+
+.jm-channels .channels-list>div{
+    border: solid 1px #d3d9de;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.video-small {
+    display: inline-block;
+    height: 200px;
+    padding: 5px 3px 0 3px;
+}
+
+.video-small img {
+    height: 150px;
+    width: 100%;
+}
+
+.video-des {
+    padding: 5px 10px;
+    background-color: white;
+    display: inline-block;
+}
+
+.jm-channels .des-content,
+.jm-channels .des-title{
+    padding: 5px 0;
+}
+
+.jm-channels .des-title{
+    color: #3493D5;
+    font-weight: bold;
+    font-size: 16px;
+}
+.jm-channels .des-content{
+    color: #3a3a3a;
+    font-size: 13px;
+    height: 70px;
+}
+.jm-channels .des-info>div{
+    font-size: 13px;
+    text-decoration: none;
+    color: #d3d9de;
+    display: inline-table;
+    padding-right: 10px;
+}
+.jm-channels .btn-ch-subs{
+    color: #3493D5;
+    border-radius: 2px;
+    border: solid 1px #d3d9de;
+    vertical-align: -webkit-baseline-middle;
+    text-decoration: none;
+    padding: 8px;
+}
+.jm-channels .load-more{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-weight: bold;
+    line-height: 1;
+}
+.jm-channels .load-more i{
+    padding-left: 5px;
+}
