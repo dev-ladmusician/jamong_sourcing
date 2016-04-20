@@ -51,6 +51,9 @@
     border-bottom: solid 1px #d3d9de;
 }
 
+.padding-normal{
+    padding: 10px 13px;
+}
 /*header*/
 .main-header {
     background-color: #3493D5;

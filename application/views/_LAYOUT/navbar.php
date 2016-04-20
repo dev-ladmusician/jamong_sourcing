@@ -7,31 +7,31 @@
                 <section class="sidebar-category solid-border-box">
                     <div class="solid-border-bottom menu-header">카테고리</div>
                     <ul class="sidebar-menu">
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=new')?>">
                             <li>신규 <span>New</span></li>
                         </a>
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=hot')?>">
                             <li>인기 <span>Hot</span></li>
                         </a>
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=show')?>">
                             <li>공연 <span>Show</span></li>
                         </a>
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=sports')?>">
                             <li>스포츠 <span>Sports</span></li>
                         </a>
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=travel')?>">
                             <li>여행 <span>Travel</span></li>
                         </a>
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=business')?>">
                             <li>기업 <span>Business</span></li>
                         </a>
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=entertainment')?>">
                             <li>엔터테인먼트 <span>Entertainment</span></li>
                         </a>
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=drama')?>">
                             <li>드라마 <span>Drama</span></li>
                         </a>
-                        <a href="#">
+                        <a href="<?= site_url('/category?query=etc')?>">
                             <li>기타 <span>Etc</span></li>
                         </a>
                     </ul>
