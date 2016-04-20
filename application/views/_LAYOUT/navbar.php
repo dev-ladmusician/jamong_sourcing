@@ -40,7 +40,7 @@
                 <section class="sidebar-channel solid-border-box ">
                     <div class="solid-border-bottom menu-header">채널 <span>Top 30</span></div>
                     <ul class="sidebar-menu solid-border-bottom">
-                        <a href="#">
+                        <a href="<?= site_url('/channel/home?channel=jamong')?>">
                             <li>jamong</li>
                         </a>
                         <a href="#">
