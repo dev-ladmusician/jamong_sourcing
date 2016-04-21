@@ -87,7 +87,7 @@
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </form>
                         </div>
-                            <a href="#jm-user-setting"><img id="jm-user" class="user" src="https://yt3.ggpht.com/-AqUnCKz6LSA/AAAAAAAAAAI/AAAAAAAAAAA/KkG5qB5y0ac/s88-c-k-no-rj-c0xffffff/photo.jpg" alt=""></a>
+                            <a href="#jm-user-setting"><img id="jm-user" class="user" src="<?= site_url('/static/img/user.png')?>" alt=""></a>
                     </div>
                 </div>
             </nav>

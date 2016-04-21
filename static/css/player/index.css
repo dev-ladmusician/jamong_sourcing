@@ -1,23 +1,65 @@
-.video-large img{
+.jm-player .video-large img{
     width: 100%;
 }
-#jm-form-comment{
-    display: inline-flex;
+.jm-player-video .video-des-title{
+    font-weight: bold;
+    font-size: 15px;
+    color: #3a3a3a;
+}
+.jm-player-video .video-info{
+    color: #d3d9de;
+    font-weight: bold;
+}
+.jm-player-video .video-action a{
+    text-decoration: none;
+    margin-right: 10px;
+    color: #d3d9de;
+}
+.jm-player-video .video-action a:first-child i{
+    color: red;
+    font-size: 20px;
 }
 
-#jm-form-comment img{
-    width: 68px;
-}
-.btn-cm-submit{
-    background-color: #3493D5;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    vertical-align: top;
-}
+
+/*
+commnet
+*/
 .jm-player-comment{
     margin-top: 20px;
 }
+.jm-player-comment .header{
+    color: #3a3a3a;
+}
+#jm-form-comment{
+
+}
+.btn-cm-submit{
+    background-color: #3493D5;
+    padding: 23px 9px;
+    border-radius: 5px;
+    display: block;
+}
+
+.btn-cm-submit a{
+    color: white;
+    text-decoration: none;
+}
+.jm-player-comment .comment-list{
+    list-style: none;
+}
+
+.jm-player .load-more{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-weight: bold;
+    line-height: 1;
+}
+.jm-player .load-more i{
+    padding-left: 5px;
+}
+/*
+channel
+*/
 
 .jm-player-channel img{
     width: 85px;
