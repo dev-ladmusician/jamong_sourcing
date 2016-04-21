@@ -1,0 +1,35 @@
+.video-large img{
+    width: 100%;
+}
+#jm-form-comment{
+    display: inline-flex;
+}
+
+#jm-form-comment img{
+    width: 68px;
+}
+.btn-cm-submit{
+    background-color: #3493D5;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    vertical-align: top;
+}
+.jm-player-comment{
+    margin-top: 20px;
+}
+
+.jm-player-channel img{
+    width: 85px;
+    height: 85px;
+}
+.jm-player-channel{
+    margin-bottom: 20px;
+}
+.jm-player-channel .des-group{
+    display: inline-block;
+}
+
+.jm-player-recommend .header{
+
+}

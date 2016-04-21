@@ -20,7 +20,7 @@ class Search extends CORE_Controller
         //get data from db
 
         //get counts of results
-        $count = 10;
+        $count = 6;
         $this->__get_views('_SEARCH/result', array('search_query' => $str,
             'count' => $count));
 

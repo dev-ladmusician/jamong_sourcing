@@ -10,17 +10,7 @@ class CORE_Controller extends CI_Controller {
     }
 
     function __get_views($viewStr, $data = null) {
-//        if (strpos($viewStr, 'detail')) {
-//            $this->load->view('_LAYOUT/header.php', $data);
-//        } else {
-//            $this->load->view('_LAYOUT/header.php');
-//        }
-
         $this->load->view('_LAYOUT/header.php');
-
-//        if ($viewStr === "_Home/index") {
-//            $this->load->view('_Home/full_screen.php');
-//        }
 
         $this->load->view('_LAYOUT/navbar.php');
 

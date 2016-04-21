@@ -7,3 +7,57 @@
 .jm-search select optgroup{
     color: #3a3a3a;
 }
+
+.jm-search .category-list>div{
+    border: solid 1px #d3d9de;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.video-large img {
+    width: 100%;
+    height: 400px;
+}
+
+.video-small {
+    display: inline-block;
+    min-height: 150px;
+    padding: 5px 3px 0 3px;
+
+}
+
+.video-small img {
+    width: 100%;
+    height: 110px;
+}
+
+.video-des {
+    height: 68px;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+.video-des p {
+    margin: 0;
+    color: #3a3a3a;
+}
+
+.video-des .video-des-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.video-des .video-des-publisher,
+.video-des .video-des-hits {
+    font-size: 13px;
+}
+
+.jm-search .load-more{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-weight: bold;
+    line-height: 1;
+}
+.jm-search .load-more i{
+    padding-left: 5px;
+}

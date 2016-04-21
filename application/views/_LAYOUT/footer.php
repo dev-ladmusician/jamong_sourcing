@@ -3,12 +3,12 @@
 </section> <!--sc-jamong : min-height-->
 <section class="sc-test">
 
-    <div id="popup1" class="overlay">
+    <div id="jm-user-setting" class="overlay">
         <div class="popup">
             <a class="close" href="#">&times;</a>
-            <ul>
-                <li>로그인</li>
-                <li>회원가입</li>
+            <ul class="list-user-setting">
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
             </ul>
         </div>
     </div>
@@ -110,5 +110,6 @@ if (strpos($filename, 'index.php')) {
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
-    </body>
-    </html>
+    </
+    body >
+    < / html >
