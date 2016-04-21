@@ -3,7 +3,7 @@
 
         <div class="main-video row">
             <div class="video-large col-lg-12">
-                <img src="/JAMONG/static/img/ex_1.png" alt="">
+                <a href="<?=site_url('/player')?>"><img src="/JAMONG/static/img/ex_1.png" alt=""></a>
             </div>
         </div>
 

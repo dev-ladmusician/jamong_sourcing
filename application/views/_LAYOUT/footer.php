@@ -1,6 +1,19 @@
 </div><!--row-->
 </div> <!--container-->
 </section> <!--sc-jamong : min-height-->
+<section class="sc-test">
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <a class="close" href="#">&times;</a>
+            <ul>
+                <li>로그인</li>
+                <li>회원가입</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
 </div><!-- body container-->
 
 <div class="footer-container">
@@ -60,6 +73,8 @@
 <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="/static/js/ajaxBody.js"></script>
 <script src="/static/js/smoothscroll.js"></script>
+<script src="<?php echo base_url() ?>static/js/krpano.js"></script>
+
 
 <script src="<?php echo base_url() ?>static/js/common.js"></script>
 
@@ -91,11 +106,9 @@ if (strpos($filename, 'index.php')) {
     ?>
     <script src="<?= site_url() ?>/static/js/home/index.js"></script>
     <?php
-}
-?>
+} ?>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
-    </
-    body >
-    < / html >
+    </body>
+    </html>

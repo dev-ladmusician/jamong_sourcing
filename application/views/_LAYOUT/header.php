@@ -41,7 +41,8 @@
         ?>
         <link href="/JAMONG/static/css/home/index.css" rel="stylesheet">
         <?php
-    }?>
+    }
+    ?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -96,19 +97,7 @@
 <!--                    <li>회원가입</li>-->
 <!--                </ul>-->
 <!--            </div>-->
-            <section class="sc-test">
 
-                <div id="popup1" class="overlay">
-                    <div class="popup">
-                        <a class="close" href="#">&times;</a>
-                        <ul>
-                            <li>로그인</li>
-                            <li>회원가입</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </section>
         </div>
     </header>
 
