@@ -1,11 +1,8 @@
-</div><!--row-->
-</div> <!--container-->
-</section> <!--sc-jamong : min-height-->
 
 </div><!-- body container-->
 
 <div class="footer-container">
-    <section class="sc-footer">
+    <section class="auth-footer">
         <div class="container">
             <div class="row">
                 <div class="footer-text col-lg-12">
@@ -13,27 +10,12 @@
                         <a class="footer-logo">
                             <img src="<?= base_url('/static/img/dongsin_logo.png') ?>" alt="">
                         </a>
-                        <select name="language" id="language">
-                            <option value="kor">한국어</option>
-                            <option value="eng">English</option>
-                        </select>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-12">
-                        <a href="" class="btn-ft-white">최근 동영상</a>
-                        <a href="" class="btn-ft-white">도움말</a>
-                    </div>
-                    <div class="col-lg-5 col-md-4 col-sm-12">
-                        <div class="float-right">
-                            <a href="#" class="btn-ft-blue">
-                                <img src="<?= base_url('/static/img/fb_logo_2.png') ?>" alt="FACEBOOK_LOGO">좋아요</a>
-                            <a href="#" class="btn-ft-blue">공유하기</a>
 
-                            <div class="text-ft-sns">12명이 좋아합니다. 친구들이 무엇을 좋아하는지<br>알아보려면 가입하기</div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="footer-text col-lg-12">
+
                     <div class="col-lg-5 col-sm-12">
                         <p>정보<span>|</span>보도자료<span>|</span>저작권<span>|</span>제작자<span>|</span>광고<span>|</span>개발자</p>
                         <a href="#">이용약관</a>
@@ -56,50 +38,6 @@
         </div>
     </section>
 </div>
-
-<section class="sc-test">
-
-    <div id="jm-user-setting" class="overlay">
-        <div class="popup">
-            <a class="close" href="#">&times;</a>
-            <ul class="list-user-setting">
-                <li><a href="#login">로그인</a></li>
-                <li><a href="#join">회원가입</a></li>
-            </ul>
-        </div>
-    </div>
-
-</section>
-
-<div id="login" class="popup-container ">
-
-    <div class="popup-login-container solid-border-box">
-        <a class="close" href="#">&times;</a>
-        <div class="login-header solid-border-bottom text-center">
-            <div><a href="#">로그인</a></div>
-            <div><a href="#">회원가입</a></div>
-        </div>
-        <form id="jm-auth-login" action="post">
-            <div class="form-group">
-                <input type="text" placeholder="ID">
-            </div>
-            <div class="form-group">
-                <input type="password" placeholder="Password">
-            </div>
-            <div class="form-group btn-login-submit">
-                <a href="#" >로그인</a>
-            </div>
-            <div class="form-group btn-fb-login">
-                <a href="#" >페이스북으로 로그인</a>
-            </div>
-        </form>
-        <div class="login-footer text-center">
-            <a href="#" class="btn-login-wh solid-border-box">ID 찾기</a>
-            <a href="#" class="btn-login-wh solid-border-box" >PW 찾기</a>
-        </div>
-    </div>
-</div>
-<!--<div id="fade" class="popup-bg"></div>-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
