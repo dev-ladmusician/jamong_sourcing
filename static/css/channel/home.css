@@ -1,8 +1,86 @@
-.jm-channel-home .tab a:hover{
+.jm-channel-home .tab-links a:hover{
     border-bottom: 3px solid #3493D5;
 }
-.jm-channel-home .tab a{
+.jm-channel-home .tab-links a{
     text-decoration: none;
     color: #3a3a3a;
     font-weight: bold;
+}
+
+.tab.active {
+    border-bottom: 3px solid #3493D5;
+}
+
+.tab-content{
+    border: solid 1px #d3d9de;
+    padding: 10px;
+}
+.tab-content>div {
+    display: none;
+    padding: 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/*channel - home*/
+.list-hot, .list-new {
+    margin-top: 30px;
+}
+
+.list-hot .list-header,
+.list-new .list-header {
+    color: #3493D5;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.list-hot .list-header span,
+.list-new .list-header span {
+    padding: 0 15px;
+}
+
+.list-hot .list-header a,
+.list-new .list-header a {
+    color: #d3d9de;
+    float: right;
+}
+
+.video-large img {
+    width: 100%;
+    height: 400px;
+}
+
+.video-small {
+    display: inline-block;
+    min-height: 150px;
+    padding: 5px 3px 0 3px;
+
+}
+
+.video-small img {
+    width: 100%;
+    height: 110px;
+}
+
+.video-des {
+    height: 68px;
+    padding: 5px 10px;
+    background-color: white;
+}
+
+.video-des p {
+    margin: 0;
+    color: #3a3a3a;
+}
+
+.video-des .video-des-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.video-des .video-des-publisher,
+.video-des .video-des-hits {
+    font-size: 13px;
 }
