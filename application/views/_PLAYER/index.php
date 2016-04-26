@@ -2,9 +2,10 @@
     <section class="jm-player">
         <div class=" col-lg-9 col-md-8 padding-none">
             <div class="jm-player-video solid-border-box ">
-                <div class="video-large ">
-                    <img src="<?= site_url('/static/img/video_1.jpg') ?>" alt="">
-                </div>
+<!--                <div class="video-large ">-->
+<!--                    <img src="--><?//= site_url('/static/img/video_1.jpg') ?><!--" alt="">-->
+<!--                </div>-->
+                <div id="pano"></div>
                 <div class="video-des padding-normal solid-border-bottom">
                     <p class="video-des-title">Fit girls - 커플요가</p>
 
@@ -16,7 +17,7 @@
                 </div>
                 <div class="video-action padding-normal">
                     <a href=#"><i class="glyphicon glyphicon-heart-empty"></i>11111</a>
-                    <a href="#"><i class="glyphicon glyphicon-share"></i>공유</a>
+                    <a href="#"><i class="glyphicon glyphicon-share-alt"></i>공유</a>
                 </div>
             </div>
             <div class="jm-player-comment solid-border-box">
@@ -67,25 +68,27 @@
         </div>
 
         <div class="col-lg-3 col-md-4">
-            <div class="jm-player-channel solid-border-box ">
-                <img src="<?= site_url('static/img/ex_1.png') ?>" alt="">
+            <div class="jm-player-channel solid-border-box col-lg-12 padding-none">
+                <div class="image-container ">
+                    <img src="<?= site_url('static/img/ex_1.png') ?>" alt="">
+                </div>
 
 
                 <div class="des-group">
-                    <p class="des-title">
+                    <div class="des-title">
                         Jamong
-                    </p>
+                    </div>
 
-                    <p class="des-info">
+                    <div class="des-info">
                         구독자 <span>2154명</span>
-                    </p>
-                    <a href="" class="btn-ft-white"><i class="glyphicon glyphicon-plus"></i>구독하기</a>
+                    </div>
+                    <a href="" class="btn-ch-subs"><i class="glyphicon glyphicon-plus"></i>구독하기</a>
 
                 </div>
             </div>
 
 
-            <div class="jm-player-recommend solid-border-box ">
+            <div class="jm-player-recommend solid-border-box col-lg-12 ">
                 <div class="header solid-border-bottom padding-normal">
                     추천 VR컨텐츠
                 </div>

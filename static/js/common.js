@@ -20,12 +20,12 @@ $(document).ready(function () {
         $('#jm-user-setting').css('left',obj.left + "px");
     });
 
-    $('#jm-user-setting .list-user-setting li:first-child').click(function(){
+    $('#jm-user-setting .list-user-setting li>a').click(function(){
         $('#fade').css("display","initial");
     });
-    $('#jm-user-setting .list-user-setting li:last-child').click(function(){
-        $('#fade').css("display","initial");
-    });
+    //$('#jm-user-setting .list-user-setting li:last-child').click(function(){
+    //    $('#fade').css("display","initial");
+    //});
     $('#join .close').click(function(){
         $('#fade').css("display","none");
     });
