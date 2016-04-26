@@ -1,0 +1,8 @@
+.jm-channel-home .tab a:hover{
+    border-bottom: 3px solid #3493D5;
+}
+.jm-channel-home .tab a{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-weight: bold;
+}

@@ -76,10 +76,13 @@
     <div class="popup-login-container solid-border-box">
         <a class="close" href="#">&times;</a>
         <div class="login-header solid-border-bottom text-center">
-            <div><a href="#">로그인</a></div>
-            <div><a href="#">회원가입</a></div>
+            <a href="#login">로그인</a>
+            <a href="#join">회원가입</a>
         </div>
         <form id="jm-auth-login" action="post">
+            <div class="form-group">
+                LOGIN
+            </div>
             <div class="form-group">
                 <input type="text" placeholder="ID">
             </div>
@@ -87,19 +90,56 @@
                 <input type="password" placeholder="Password">
             </div>
             <div class="form-group btn-login-submit">
-                <a href="#" >로그인</a>
+                <a href="" >로그인</a>
             </div>
             <div class="form-group btn-fb-login">
-                <a href="#" >페이스북으로 로그인</a>
+                <a href="" >페이스북으로 로그인</a>
             </div>
         </form>
         <div class="login-footer text-center">
-            <a href="#" class="btn-login-wh solid-border-box">ID 찾기</a>
-            <a href="#" class="btn-login-wh solid-border-box" >PW 찾기</a>
+            <a href="" class="btn-login-wh solid-border-box">ID 찾기</a>
+            <a href="" class="btn-login-wh solid-border-box" >PW 찾기</a>
         </div>
     </div>
 </div>
-<!--<div id="fade" class="popup-bg"></div>-->
+
+<div id="join" class="popup-container ">
+
+    <div class="popup-login-container solid-border-box">
+        <a class="close" href="#">&times;</a>
+        <div class="login-header solid-border-bottom text-center">
+            <a href="#login">로그인</a>
+            <a href="#join">회원가입</a>
+        </div>
+        <form id="jm-auth-join" action="post">
+            <div class="form-group">
+                JOIN
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="닉네임">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="이메일">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="비밀번호">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="비밀번호 확인">
+            </div>
+            <div class="form-group btn-login-submit">
+                <a href="" >회원가입</a>
+            </div>
+            <div class="form-group btn-fb-login">
+                <a href="" >페이스북으로 로그인</a>
+            </div>
+            <div class="form-group">
+                <input class="check-box" type="checkbox"><span>이용약관과 개인정보취급방침을 모두 읽고, 동의합니다.</span>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="fade" class="popup-bg"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
