@@ -320,26 +320,39 @@ a, a:hover{
 }
 
 /* pop-up */
-
-#login,#join {
+#jm-user-setting,#login,#join {
     width: 100%;
 }
- .popup-container {
+.popup-container{
     position: fixed;
     top: 25%;
     z-index:1002;
     overflow: auto;
     visibility: hidden;
 }
-.popup-container:target{
+#jm-user-setting{
+    top:65px;
+    right: 0;
+}
+.popup-container:target
+{
     visibility: visible;
 }
-.popup-container .popup-login-container {
+#login .popup-login-container,
+#join .popup-login-container{
     position: relative;
     overflow: hidden;
     width: 400px;
     margin-left: auto;
     margin-right: auto;
+}
+#jm-user-setting .popup-login-container{
+    position: relative;
+    overflow: hidden;
+    width: 170px;
+    height: 110px;
+    margin-left: auto;
+    margin-right: 0;
 }
 .popup-container .popup-login-container .close-popup {
     position: absolute;
@@ -419,34 +432,21 @@ a, a:hover{
     opacity: 0.5;
 }
 
-
-.sc-test .overlay {
-    position: fixed;
-    top: 68px;
-    bottom: 0;
-    left: 1100px;
-    right: 0;
-    /*background: rgba(0, 0, 0, 0.7);*/
-    transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-}
-.sc-test .overlay:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.sc-test .popup {
-    /*margin: auto;*/
-    /*width: 250px;*/
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    position: relative;
-    transition: all 5s ease-in-out;
-}
-
-.sc-test .list-user-setting{
+#jm-user-setting .list-user-setting{
     list-style: none;
     padding: 0;
+}
+/*.main-sidebar .sidebar-service .sidebar-menu li i {*/
+    /*color: #3a3a3a;*/
+    /*font-size: 16px;*/
+/*}*/
+
+#jm-user-setting .list-user-setting li span {
+    font-size: 16px;
+    color: #3a3a3a;
+    padding-left: 13px;
+    font-weight: bold;
+}
+#jm-user-setting .list-user-setting li img{
+    vertical-align: bottom;
 }

@@ -57,19 +57,27 @@
     </section>
 </div>
 
-<section class="sc-test">
+<div id="jm-user-setting" class="popup-container ">
 
-    <div id="jm-user-setting" class="overlay">
-        <div class="popup">
-            <a class="close" href="#">&times;</a>
-            <ul class="list-user-setting">
-                <li><a href="#login">로그인</a></li>
-                <li><a href="#join">회원가입</a></li>
-            </ul>
-        </div>
+    <div class="popup-login-container solid-border-box">
+        <a class="close" href="#">&times;</a>
+
+        <ul class="list-user-setting">
+            <a href="#login">
+                <li class="solid-border-bottom padding-normal">
+                    <img src="<?=base_url('/static/img/ic_log_in.png')?>" alt="IC_PNG">
+                    <span>로그인</span>
+                </li>
+            </a>
+            <a href="#join">
+                <li class="padding-normal">
+                    <img src="<?=base_url('/static/img/ic_join.png')?>" alt="IC_PNG">
+                    <span>회원가입</span>
+                </li>
+            </a>
+        </ul>
     </div>
-
-</section>
+</div>
 
 <div id="login" class="popup-container ">
 
