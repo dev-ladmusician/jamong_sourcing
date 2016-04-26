@@ -92,10 +92,10 @@
                 LOGIN
             </div>
             <div class="form-group">
-                <input type="text" placeholder="ID">
+                <input type="text" placeholder="ID" class="solid-border-box">
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" class="solid-border-box">
             </div>
             <div class="form-group btn-login-submit">
                 <a href="" >로그인</a>
@@ -124,16 +124,16 @@
                 JOIN
             </div>
             <div class="form-group">
-                <input type="text" placeholder="닉네임">
+                <input type="text" placeholder="닉네임" class="solid-border-box">
             </div>
             <div class="form-group">
-                <input type="email" placeholder="이메일">
+                <input type="email" placeholder="이메일" class="solid-border-box">
             </div>
             <div class="form-group">
-                <input type="password" placeholder="비밀번호">
+                <input type="password" placeholder="비밀번호" class="solid-border-box">
             </div>
             <div class="form-group">
-                <input type="password" placeholder="비밀번호 확인">
+                <input type="password" placeholder="비밀번호 확인" class="solid-border-box">
             </div>
             <div class="form-group btn-login-submit">
                 <a href="" >회원가입</a>

@@ -26,7 +26,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#jm-user-setting .list-user-setting li>a').click(function(){
+    $('#jm-user-setting .list-user-setting a').click(function(){
         $('#fade').css("display","initial");
     });
     $('#join .close').click(function(){

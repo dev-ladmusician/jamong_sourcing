@@ -334,6 +334,20 @@ a, a:hover{
     top:65px;
     right: 0;
 }
+
+#jm-user-setting .list-user-setting{
+    list-style: none;
+    padding: 0;
+}
+#jm-user-setting .list-user-setting li span {
+    font-size: 16px;
+    color: #3a3a3a;
+    padding-left: 13px;
+    font-weight: bold;
+}
+#jm-user-setting .list-user-setting li img{
+    vertical-align: bottom;
+}
 .popup-container:target
 {
     visibility: visible;
@@ -353,6 +367,10 @@ a, a:hover{
     height: 110px;
     margin-left: auto;
     margin-right: 0;
+}
+#login .login-header a:first-child,
+#join .login-header a:last-child{
+    color: #3493D5;
 }
 .popup-container .popup-login-container .close-popup {
     position: absolute;
@@ -381,7 +399,7 @@ a, a:hover{
     margin-bottom: 10px;
 }
 .popup-container .form-group:first-child{
-    font-size: 18px;
+    font-size: 22px;
     color: #3A3A3A;
     font-weight: bold;
 }
@@ -432,21 +450,11 @@ a, a:hover{
     opacity: 0.5;
 }
 
-#jm-user-setting .list-user-setting{
-    list-style: none;
-    padding: 0;
+#jm-auth-join .form-group span{
+    font-size: 11px;
+    color: #3A3A3A;
 }
-/*.main-sidebar .sidebar-service .sidebar-menu li i {*/
-    /*color: #3a3a3a;*/
-    /*font-size: 16px;*/
-/*}*/
-
-#jm-user-setting .list-user-setting li span {
-    font-size: 16px;
-    color: #3a3a3a;
-    padding-left: 13px;
-    font-weight: bold;
-}
-#jm-user-setting .list-user-setting li img{
-    vertical-align: bottom;
+#jm-auth-join .check-box{
+    padding: 2px;
+    vertical-align: sub;
 }
