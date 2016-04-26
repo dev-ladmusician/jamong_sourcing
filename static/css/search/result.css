@@ -10,8 +10,6 @@
 
 .jm-search .category-list>div{
     border: solid 1px #d3d9de;
-    padding-top: 10px;
-    padding-bottom: 20px;
 }
 
 .video-large img {
@@ -22,8 +20,6 @@
 .video-small {
     display: inline-block;
     min-height: 150px;
-    padding: 5px 3px 0 3px;
-
 }
 
 .video-small img {

@@ -1,7 +1,3 @@
-.list-hot, .list-new {
-    margin-top: 30px;
-}
-
 .list-hot .list-header,
 .list-new .list-header {
     color: #3493D5;
@@ -11,7 +7,7 @@
 
 .list-hot .list-header span,
 .list-new .list-header span {
-    padding: 0 15px;
+    /*padding: 0 15px;*/
 }
 
 .list-hot .list-header a,
@@ -28,8 +24,6 @@
 .video-small {
     display: inline-block;
     min-height: 150px;
-    padding: 5px 3px 0 3px;
-
 }
 
 .video-small img {

@@ -11,14 +11,7 @@
 
 .jm-channels .channels-list>div{
     border: solid 1px #d3d9de;
-    padding-top: 10px;
-    padding-bottom: 20px;
 }
-
-.video-small {
-    padding: 5px 3px 0 3px;
-}
-
 .video-small img {
     height: 150px;
     width: 100%;

@@ -1,12 +1,12 @@
 <div class="content-wrapper col-lg-9 col-md-9 col-sm-12">
     <section class="jm-channels">
         <div class="header solid-border-box padding-normal">
-            채널
+            채널 리스트
         </div>
 
         <div class="channels-list">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 padding-outer">
+                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-inner">
                     <div class=" solid-border-box padding-normal col-lg-12 col-md-12 col-sm-12" >
                         <div class="col-lg-5 col-md-6 col-sm-12 padding-none" >
                             <img src="/JAMONG/static/img/ex_1.png" alt="">
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-inner">
                     <div class=" solid-border-box padding-normal col-lg-12 col-md-12 col-sm-12" >
                         <div class="col-lg-5 col-md-6 col-sm-12 padding-none" >
                             <img src="/JAMONG/static/img/ex_2.png" alt="">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-inner">
                     <div class=" solid-border-box padding-normal col-lg-12 col-md-12 col-sm-12" >
                         <div class="col-lg-5 col-md-6 col-sm-12 padding-none" >
                             <img src="/JAMONG/static/img/ex_3.png" alt="">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-inner">
                     <div class=" solid-border-box padding-normal col-lg-12 col-md-12 col-sm-12" >
                         <div class="col-lg-5 col-md-6 col-sm-12 padding-none" >
                             <img src="/JAMONG/static/img/ex_4.png" alt="">
@@ -99,7 +99,7 @@
                     </div>
 
                 </div>
-                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-inner">
                     <div class=" solid-border-box padding-normal col-lg-12 col-md-12 col-sm-12" >
                         <div class="col-lg-5 col-md-6 col-sm-12 padding-none" >
                             <img src="/JAMONG/static/img/ex_5.png" alt="">
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-inner">
                     <div class=" solid-border-box padding-normal col-lg-12 col-md-12 col-sm-12" >
                         <div class="col-lg-5 col-md-6 col-sm-12 padding-none" >
                             <img src="/JAMONG/static/img/ex_6.png" alt="">

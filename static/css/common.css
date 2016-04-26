@@ -19,6 +19,7 @@ a, a:hover{
     -moz-transition: -moz-transform .3s ease-in-out, margin .3s ease-in-out;
     -o-transition: -o-transform .3s ease-in-out, margin .3s ease-in-out;
     transition: transform .3s ease-in-out, margin .3s ease-in-out;
+    padding: 0;
 }
 
 .solid-border-box {
@@ -53,6 +54,14 @@ a, a:hover{
 
 .padding-none{
     padding: 0;
+}
+
+.padding-inner{
+    padding: 15px 0 0 15px;
+}
+
+.padding-outer{
+    padding: 0 15px 15px 0;
 }
 .float-right{
     float: right;
