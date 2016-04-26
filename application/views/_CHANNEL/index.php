@@ -28,7 +28,7 @@
 
         <div class="tab-content col-lg-12">
             <!--            home-->
-            <div id="channel-home" class="active col-lg-12 tab">
+            <div id="channel-home" class="col-lg-12 tab active">
                 <div class="main-video">
                     <div class="video-large col-lg-12">
                         <a href="<?=site_url('/player')?>"><img src="/JAMONG/static/img/video_1.jpg" alt=""></a>
@@ -344,7 +344,51 @@
             <!--            sub-->
 
             <div id="channel-sub" class="col-lg-12 tab">
-                sub
+                <div class="subscriber-item col-lg-4">
+                    <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png')?>" alt=""></div>
+                    <div class="item-info">
+                        <div>이름</div>
+                        <div>구독  <div>100</div></div>
+                        <div>채널 수 <div>100</div></div>
+                    </div>
+                </div>
+
+                <div class="subscriber-item col-lg-4">
+                    <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png')?>" alt=""></div>
+                    <div class="item-info">
+                        <div>이름</div>
+                        <div>구독  <div>100</div></div>
+                        <div>채널 수 <div>100</div></div>
+                    </div>
+                </div>
+
+                <div class="subscriber-item col-lg-4">
+                    <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png')?>" alt=""></div>
+                    <div class="item-info">
+                        <div>이름</div>
+                        <div>구독  <div>100</div></div>
+                        <div>채널 수 <div>100</div></div>
+                    </div>
+                </div>
+
+                <div class="subscriber-item col-lg-4">
+                    <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png')?>" alt=""></div>
+                    <div class="item-info">
+                        <div>이름</div>
+                        <div>구독  <div>100</div></div>
+                        <div>채널 수 <div>100</div></div>
+                    </div>
+                </div>
+
+                <div class="subscriber-item col-lg-4">
+                    <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png')?>" alt=""></div>
+                    <div class="item-info">
+                        <div>이름</div>
+                        <div>구독  <div>100</div></div>
+                        <div>채널 수 <div>100</div></div>
+                    </div>
+                </div>
+
                 <div class="solid-border-box col-lg-12 col-md-12 col-sm-12 padding-normal text-center">
                     <a class="load-more" href="#">더보기<i class="glyphicon glyphicon-menu-down"></i></a>
                 </div>

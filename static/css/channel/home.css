@@ -85,12 +85,15 @@
     font-size: 13px;
 }
 
-.jm-channel-home .load-more{
-    text-decoration: none;
-    color: #3a3a3a;
-    font-weight: bold;
-    line-height: 1;
+/*subscriber*/
+#channel-sub{
+    /*padding-top: 30px;*/
 }
-.jm-channel-home .load-more i{
-    padding-left: 5px;
+.subscriber-item{
+    padding: 25px;
+}
+.subscriber-item .item-img, .jm-channel-home .item-info,
+.item-info>div:nth-child(2), .item-info>div:last-child{
+    display: inline-block;
+    vertical-align: middle;
 }

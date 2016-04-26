@@ -1,4 +1,7 @@
 /*common things*/
+a, a:hover{
+    text-decoration: none;
+}
 .body-container {
     position: relative;
     background-color: #F5F4F9;
@@ -25,6 +28,16 @@
 
 .solid-border-bottom {
     border-bottom: solid 1px #d3d9de;
+}
+
+.load-more{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-weight: bold;
+    line-height: 1;
+}
+.load-more i{
+    padding-left: 5px;
 }
 
 .padding-normal{
