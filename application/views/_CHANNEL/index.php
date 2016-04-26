@@ -29,17 +29,21 @@
         <div class="tab-content col-lg-12">
             <!--            home-->
             <div id="channel-home" class="col-lg-12 tab active">
-                <div class="main-video padding-normal">
+                <div class="main-video padding-normal col-lg-12">
                     <div class="padding-none video-large col-lg-8">
                         <a href="<?=site_url('/player')?>"><img src="/JAMONG/static/img/video_1.jpg" alt=""></a>
                     </div>
                     <div class="padding-none video-des col-lg-4">
-                        <p class="video-des-title">
+                        <div class="video-des-title">
                             Fit girls - 커플요가
-                        </p>
-                        <p class="video-des-content">
+                        </div>
+                        <div class="video-des-content">
                             서울 호서 예술 실용 전문학교 실용무용예술학부1
-                        </p>
+                        </div>
+                        <div class="video-des-bottom">
+                            <div class="channel-title">자몽</div>
+                            <div class="upload-date">2016. 04. 25</div>
+                        </div>
                     </div>
                 </div>
 
