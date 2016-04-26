@@ -166,7 +166,178 @@
             <!--            vr-->
 
             <div id="channel-vr" class=" col-lg-12 tab">
-                vr
+                <div class="padding-normal solid-border-bottom col-lg-12 text-right">
+                    <select name="order" id="jm-channel-order">
+                        <option value="recently">신규순</option>
+                    </select>
+                    <select name="view" id="jm-channel-view">
+                        <option value="list">리스트형으로 보기</option>
+                        <option value="card">카드형으로 보기</option>
+                    </select>
+                </div>
+
+                <div class="list-hot">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_1.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_2.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_3.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_4.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div><div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_1.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_2.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_3.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_4.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div><div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_1.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_2.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_3.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                            <div class="solid-border-box">
+                                <img src="/JAMONG/static/img/ex_4.png" alt="">
+
+                                <div class="video-des">
+                                    <p class="video-des-title">테스트</p>
+
+                                    <p class="video-des-publisher">게시자: 고퀄</p>
+
+                                    <p class="video-des-hits">조회수</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solid-border-box col-lg-12 col-md-12 col-sm-12 padding-normal text-center">
+                    <a class="load-more" href="#">더보기<i class="glyphicon glyphicon-menu-down"></i></a>
+                </div>
 
             </div><!-- VR ****************************************************************************************-->
 
@@ -174,7 +345,9 @@
 
             <div id="channel-sub" class="col-lg-12 tab">
                 sub
-
+                <div class="solid-border-box col-lg-12 col-md-12 col-sm-12 padding-normal text-center">
+                    <a class="load-more" href="#">더보기<i class="glyphicon glyphicon-menu-down"></i></a>
+                </div>
             </div><!-- SUB ****************************************************************************************-->
         </div>
 

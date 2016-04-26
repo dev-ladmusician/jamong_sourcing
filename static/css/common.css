@@ -34,6 +34,9 @@
 .padding-none{
     padding: 0;
 }
+.float-right{
+    float: right;
+}
 /*header*/
 .main-header {
     background-color: #3493D5;

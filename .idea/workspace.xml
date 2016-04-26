@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/static/css/common.css" line="128" />
+    <bookmark url="file://$PROJECT_DIR$/static/css/common.css" line="131" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5b96607-68b3-4ce2-82d4-fa539d4f9e8c" name="Default" comment="" />
@@ -41,9 +41,8 @@
             <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.66394556">
-                  <caret line="168" column="18" selection-start-line="168" selection-start-column="18" selection-end-line="168" selection-end-column="18" />
+                  <caret line="178" column="36" selection-start-line="178" selection-start-column="36" selection-end-line="178" selection-end-column="36" />
                   <folding>
-                    <element signature="n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
                     <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
                     <element signature="n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
                     <element signature="n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
@@ -57,7 +56,29 @@
                     <element signature="n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
                     <element signature="n#div#2;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
                     <element signature="n#div#3;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#2;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#4;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#5;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#6;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#7;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#8;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#9;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#10;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+                    <element signature="n#div#11;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="result.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/views/_SEARCH/result.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-19.107143">
+                  <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="113" selection-end-column="14" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -65,8 +86,8 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/_CHANNELS/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.857142">
-                  <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+                <state vertical-scroll-proportion="79.60714">
+                  <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -136,16 +157,6 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="login.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/static/css/auth/login.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.3571428">
-                  <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/static/css/channel/index.css">
               <provider selected="true" editor-type-id="text-editor">
@@ -166,11 +177,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static/css/common.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.03448276">
-                  <caret line="341" column="1" selection-start-line="341" selection-start-column="1" selection-end-line="341" selection-end-column="1" />
+                <state vertical-scroll-proportion="0.67375886">
+                  <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="result.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/css/search/result.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-7.5689654">
+                  <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -179,18 +200,18 @@
           <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/static/css/channel/home.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-14.928572">
-                  <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+                <state vertical-scroll-proportion="-23.535715">
+                  <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.43945578">
-                  <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="183" selection-end-column="14" />
+                <state vertical-scroll-proportion="-10.857142">
+                  <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
                   <folding>
                     <element signature="n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
                     <element signature="n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
@@ -221,8 +242,8 @@
           <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/static/css/home/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="17.178572">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="1" />
+                <state vertical-scroll-proportion="-33.25">
+                  <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -320,13 +341,13 @@
         <option value="$PROJECT_DIR$/application/views/_AUTH/login.php" />
         <option value="$PROJECT_DIR$/static/css/channel/hoem.css" />
         <option value="$PROJECT_DIR$/static/js/common.js" />
-        <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/footer.php" />
         <option value="$PROJECT_DIR$/static/js/channel/index.js" />
         <option value="$PROJECT_DIR$/static/css/channel/index.css" />
         <option value="$PROJECT_DIR$/static/js/channel/home.js" />
-        <option value="$PROJECT_DIR$/static/css/channel/home.css" />
         <option value="$PROJECT_DIR$/application/views/_HOME/index.php" />
+        <option value="$PROJECT_DIR$/static/css/channel/home.css" />
+        <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
       </list>
     </option>
@@ -1115,21 +1136,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/search/result.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-39.357143">
-          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_SEARCH/result.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-63.785713">
-          <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/player/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1308,26 +1314,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.03448276">
-          <caret line="341" column="1" selection-start-line="341" selection-start-column="1" selection-end-line="341" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_LAYOUT/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-82.10714">
           <caret line="121" column="50" selection-start-line="121" selection-start-column="50" selection-end-line="121" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CHANNELS/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.857142">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1347,22 +1337,6 @@
           <folding>
             <element signature="e#509#554#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/home/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="17.178572">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="58" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/channel/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.928572">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,10 +1367,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_SEARCH/result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.107143">
+          <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="113" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_CHANNELS/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="79.60714">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43945578">
-          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="183" selection-end-column="14" />
+        <state vertical-scroll-proportion="-10.857142">
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
@@ -1423,12 +1413,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/home/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-33.25">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/search/result.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5689654">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/channel/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.535715">
+          <caret line="93" column="16" selection-start-line="93" selection-start-column="16" selection-end-line="93" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67375886">
+          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66394556">
-          <caret line="168" column="18" selection-start-line="168" selection-start-column="18" selection-end-line="168" selection-end-column="18" />
+          <caret line="178" column="36" selection-start-line="178" selection-start-column="36" selection-end-line="178" selection-end-column="36" />
           <folding>
-            <element signature="n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#1;n#div#1;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#1;n#div#1;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
@@ -1442,6 +1463,18 @@
             <element signature="n#div#0;n#div#1;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#div#1;n#div#2;n#div#0;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#7;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#8;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#9;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#10;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#11;n#div#0;n#div#1;n#div#1;n#div#2;n#section#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

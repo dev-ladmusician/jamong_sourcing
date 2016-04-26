@@ -17,7 +17,7 @@
 }
 .tab-content{
     border: solid 1px #d3d9de;
-    padding: 10px;
+    padding: 0;
 }
 
 .tab-content .tab.active {
@@ -83,4 +83,14 @@
 .video-des .video-des-publisher,
 .video-des .video-des-hits {
     font-size: 13px;
+}
+
+.jm-channel-home .load-more{
+    text-decoration: none;
+    color: #3a3a3a;
+    font-weight: bold;
+    line-height: 1;
+}
+.jm-channel-home .load-more i{
+    padding-left: 5px;
 }
