@@ -7,20 +7,20 @@
     font-weight: bold;
 }
 
-.tab.active {
+.tab-links .tab.active {
     border-bottom: 3px solid #3493D5;
 }
 
+.tab-content .tab{
+    display: none;
+    padding: 0;
+}
 .tab-content{
     border: solid 1px #d3d9de;
     padding: 10px;
 }
-.tab-content>div {
-    display: none;
-    padding: 0;
-}
 
-.tab-content.active {
+.tab-content .tab.active {
     display: block;
 }
 
