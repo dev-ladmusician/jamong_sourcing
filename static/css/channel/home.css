@@ -1,7 +1,41 @@
-.jm-channel-home .tab-links a:hover{
+.jm-channel-home .channel-header img {
+    width: 100%;
+}
+
+.jm-channel-home .channel-header .video-des {
+    position: static;
+}
+
+.jm-channel-home .channel-header .video-des .des-title {
+    font-size: 24px;
+    color: #3a3a3a;
+    font-weight: bold;
+}
+
+.jm-channel-home .channel-header .video-des .des-content {
+    color: #3a3a3a;
+    font-size: 14px;
+}
+
+.jm-channel-home .channel-header .video-des .des-info {
+    position: absolute;
+    bottom: 10px;
+    color: #d3d9de;
+}
+.jm-channel-home .channel-header .video-des .des-info span{
+    padding: 0 3px;
+}
+.jm-channel-home .btn-ch-ok{
+    color: white;
+    font-weight: bold;
+    background-color: #3493D5;
+    border-radius: 5px;
+}
+.jm-channel-home .tab-links a:hover {
     border-bottom: 3px solid #3493D5;
 }
-.jm-channel-home .tab-links a{
+
+.jm-channel-home .tab-links a {
     text-decoration: none;
     color: #3a3a3a;
     font-weight: bold;
@@ -11,11 +45,12 @@
     border-bottom: 3px solid #3493D5;
 }
 
-.tab-content .tab{
+.tab-content .tab {
     display: none;
     padding: 0;
 }
-.tab-content{
+
+.tab-content {
     border: solid 1px #d3d9de;
     padding: 0;
 }
@@ -55,7 +90,7 @@
 .video-small {
     display: inline-block;
     min-height: 150px;
-    padding: 5px 3px 0 3px;
+    padding: 10px 5px;
 
 }
 
@@ -86,14 +121,16 @@
 }
 
 /*subscriber*/
-#channel-sub{
+#channel-sub {
     /*padding-top: 30px;*/
 }
-.subscriber-item{
+
+.subscriber-item {
     padding: 25px;
 }
+
 .subscriber-item .item-img, .jm-channel-home .item-info,
-.item-info>div:nth-child(2), .item-info>div:last-child{
+.item-info > div:nth-child(2), .item-info > div:last-child {
     display: inline-block;
     vertical-align: middle;
 }

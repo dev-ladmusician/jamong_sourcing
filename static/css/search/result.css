@@ -51,13 +51,3 @@
 .video-des .video-des-hits {
     font-size: 13px;
 }
-
-.jm-search .load-more{
-    text-decoration: none;
-    color: #3a3a3a;
-    font-weight: bold;
-    line-height: 1;
-}
-.jm-search .load-more i{
-    padding-left: 5px;
-}

@@ -1,10 +1,10 @@
 <div class="content-wrapper col-lg-9 col-md-9 col-sm-12">
     <section class="jm-channel-home">
-        <div class="header solid-border-box padding-normal col-lg-12">
-            <div class="col-lg-2">
+        <div class="channel-header solid-border-box padding-normal col-lg-12">
+            <div class="col-lg-2 padding-none">
                 <img src="<?= site_url('/static/img/fb_logo.png') ?>" alt="">
             </div>
-            <div class="col-lg-10">
+            <div class="col-lg-10 video-des">
                 <div class="des-title">
                     Jamong
                 </div>
@@ -12,10 +12,10 @@
                     VR 콘테츠 전문 제작 기업인 자몽의 360 비디오 채널입니다.
                 </div>
                 <div class="des-info">
-                    <span>VR컨텐츠 <span>35</span></span>
-                    <span>구독자 <span>2154</span></span>
+                    <span>VR컨텐츠 <span><b>35</b></span></span>
+                    <span>구독자 <span><b>2154</b></span></span>
                     <a href="#" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
-                    <a href="#" class="btn-ch-subs "><i class="glyphicon glyphicon-check"></i> 구독</a>
+                    <a href="#" class="btn-ch-ok padding-normal "><i class="glyphicon glyphicon-ok"></i> 구독</a>
                 </div>
             </div>
         </div>
@@ -29,9 +29,17 @@
         <div class="tab-content col-lg-12">
             <!--            home-->
             <div id="channel-home" class="col-lg-12 tab active">
-                <div class="main-video">
-                    <div class="video-large col-lg-12">
+                <div class="main-video padding-normal">
+                    <div class="padding-none video-large col-lg-8">
                         <a href="<?=site_url('/player')?>"><img src="/JAMONG/static/img/video_1.jpg" alt=""></a>
+                    </div>
+                    <div class="padding-none video-des col-lg-4">
+                        <p class="video-des-title">
+                            Fit girls - 커플요가
+                        </p>
+                        <p class="video-des-content">
+                            서울 호서 예술 실용 전문학교 실용무용예술학부1
+                        </p>
                     </div>
                 </div>
 
