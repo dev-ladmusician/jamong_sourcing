@@ -1,3 +1,12 @@
+.sc-main{
+    padding-left: 20px;
+}
+.sc-main-hot{
+    padding-top: 20px;
+}
+.sc-main-new{
+    padding-top: 5px;
+}
 .list-hot .list-header,
 .list-new .list-header {
     color: #3493D5;

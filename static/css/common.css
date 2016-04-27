@@ -1,3 +1,7 @@
+/*setting fonts*/
+div, span, a, p{
+    font-family: "NotoSans", sans-serif;
+}
 /*common things*/
 a, a:hover{
     text-decoration: none;
@@ -73,6 +77,7 @@ a, a:hover{
 
 .main-header .logo img {
     width: 250px;
+    padding: 4px 0;
 }
 
 .navbar {
@@ -85,7 +90,10 @@ a, a:hover{
     float: right;
     padding: 5px 0;
 }
-
+.navbar .search-container, .navbar .image-container{
+    display: inline-block;
+    vertical-align: middle;
+}
 .navbar .nav-search {
     background-color: white;
     padding: 5px;
@@ -155,24 +163,18 @@ a, a:hover{
     font-weight: bold;
 }
 
-.main-sidebar .sidebar-category .sidebar-menu a,
-.main-sidebar .sidebar-channel .sidebar-menu a,
-.main-sidebar .sidebar-service .sidebar-menu a {
-    text-decoration: none;
-}
 
 .main-sidebar .sidebar-category .sidebar-menu li,
 .main-sidebar .sidebar-channel .sidebar-menu li,
 .main-sidebar .sidebar-service .sidebar-menu li {
     list-style: none;
-    padding: 10px 0;
-    text-decoration: none;
+    padding: 10px 0 10px 15px;
     color: #3a3a3a;
     font-weight: bold;
-    padding-left: 15px;
 }
 
-.main-sidebar .sidebar-category .sidebar-menu li span {
+.main-sidebar .sidebar-category .sidebar-menu li span
+{
     font-size: 13px;
     color: #d3d9de;
 }
@@ -182,7 +184,9 @@ a, a:hover{
     font-size: 16px;
 }
 
-.main-sidebar .sidebar-service .sidebar-menu li span {
+.main-sidebar .sidebar-channel .sidebar-menu li span ,
+.main-sidebar .sidebar-service .sidebar-menu li span
+{
     font-size: 14px;
     color: #3a3a3a;
     padding-left: 13px;
@@ -372,7 +376,7 @@ a, a:hover{
 #jm-user-setting .popup-login-container{
     position: relative;
     overflow: hidden;
-    width: 170px;
+    width: 200px;
     height: 110px;
     margin-left: auto;
     margin-right: 0;

@@ -41,22 +41,22 @@
                     <div class="solid-border-bottom menu-header">채널 <span>Top 30</span></div>
                     <ul class="sidebar-menu solid-border-bottom">
                         <a href="<?= site_url('/channel/home?channel=jamong')?>">
-                            <li>jamong</li>
+                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
                         </a>
                         <a href="#">
-                            <li>GOQUAL</li>
+                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
                         </a>
                         <a href="#">
-                            <li>jamong</li>
+                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
                         </a>
                         <a href="#">
-                            <li>GOQUAL</li>
+                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
                         </a>
                         <a href="#">
-                            <li>jamong</li>
+                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
                         </a>
                         <a href="#">
-                            <li>GOQUAL</li>
+                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
                         </a>
                     </ul>
                     <div><a href="<?= site_url('/channels')?>">더보기 ></a></div>

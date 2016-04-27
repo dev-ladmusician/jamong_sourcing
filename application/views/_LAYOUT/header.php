@@ -68,9 +68,13 @@
     <header class="main-header">
         <div class="container">
             <nav class="navbar navbar-static-top" role="navigation">
-                <a href="<?= site_url('/home/index') ?>" class="logo">
-                    <img src="<?=base_url('/static/img/dongsin_logo.png')?>" alt="">
-                </a>
+
+                <div class="image-container">
+                    <a href="<?= site_url('/home/index') ?>" class="logo">
+                        <img src="<?= base_url('/static/img/dongsin_logo.png') ?>" alt="">
+                    </a>
+                </div>
+
 
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
@@ -81,13 +85,14 @@
 
                 <div class="navbar-custom-menu">
                     <div class="nav navbar-nav">
-                        <div class="inline-block">
-                            <form class="nav-search" action="<?=site_url('search/result')?>" method="get">
+                        <div class="search-container">
+                            <form class="nav-search" action="<?= site_url('search/result') ?>" method="get">
                                 <input id="jm-search" name="search_query" type="text" placeholder="검색어를 입력해주세요.">
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </form>
                         </div>
-                            <a href="#jm-user-setting"><img id="jm-user" class="user" src="<?= site_url('/static/img/user.png')?>" alt=""></a>
+                        <a href="#jm-user-setting"><img id="jm-user" class="user"
+                                                        src="<?= site_url('/static/img/user.png') ?>" alt=""></a>
                     </div>
                 </div>
             </nav>
