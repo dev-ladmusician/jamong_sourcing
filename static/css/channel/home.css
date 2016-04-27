@@ -84,10 +84,11 @@
 }
 #channel-home .main-video .video-des{
     position: static;
+    padding: 20px 20px 0 20px;
 }
 #channel-home .main-video .video-des-bottom{
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
 }
 #channel-home .video-small{
     padding: 20px 0 0 0;
