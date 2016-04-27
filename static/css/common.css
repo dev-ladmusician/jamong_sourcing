@@ -80,6 +80,8 @@ a, a:hover{
 
 .load-more{
     background-color: white;
+    text-align: center;
+    padding: 10px 13px;
 }
 .load-more a{
     text-decoration: none;
@@ -118,9 +120,10 @@ a, a:hover{
     float: right;
 }
 
-.header{
+.page-header{
     background-color: white;
     padding: 10px 13px;
+    margin: 0;
 }
 
 .jm-main {
@@ -231,6 +234,7 @@ a, a:hover{
     padding: 10px 0 10px 15px;
     color: #3a3a3a;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .main-sidebar .sidebar-category .sidebar-menu li span
