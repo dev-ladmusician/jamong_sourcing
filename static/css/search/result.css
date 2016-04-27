@@ -1,49 +1,10 @@
-.jm-search .header{
-    background-color: white;
-    padding: 10px 13px;
+.jm-search{
+    padding-left: 20px;
 }
-
+.jm-search select{
+    float: right;
+}
 .jm-search select option,
 .jm-search select optgroup{
     color: #3a3a3a;
-}
-
-.jm-search .category-list>div{
-    border: solid 1px #d3d9de;
-}
-
-.video-large img {
-    width: 100%;
-    height: 400px;
-}
-
-.video-small {
-    display: inline-block;
-    min-height: 150px;
-}
-
-.video-small img {
-    width: 100%;
-    height: 110px;
-}
-
-.video-des {
-    height: 68px;
-    padding: 5px 10px;
-    background-color: white;
-}
-
-.video-des p {
-    margin: 0;
-    color: #3a3a3a;
-}
-
-.video-des .video-des-title {
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.video-des .video-des-publisher,
-.video-des .video-des-hits {
-    font-size: 13px;
 }
