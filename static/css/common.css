@@ -99,6 +99,7 @@ a, a:hover{
     border: solid 1px #d3d9de;
     text-decoration: none;
     padding: 10px 13px;
+    line-height: 1;
 }
 .padding-normal{
     padding: 10px 13px;
