@@ -59,6 +59,10 @@
     font-weight: bold;
 }
 
+.jm-channel-home .tab-links .tab{
+    padding: 0 5px 10px 5px;
+    margin: 0 5px;
+}
 .jm-channel-home .tab-content .tab {
     display: none;
     padding: 0;

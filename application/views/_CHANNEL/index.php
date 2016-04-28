@@ -22,9 +22,9 @@
             </div>
 
             <div class="tab-links col-lg-12 solid-border-bottom">
-                <a href="#channel-home" class="padding-normal active tab">홈</a>
-                <a href="#channel-vr" class="padding-normal tab">VR컨텐츠</a>
-                <a href="#channel-sub" class="padding-normal tab">구독자</a>
+                <a href="#channel-home" class="active tab">홈</a>
+                <a href="#channel-vr" class="tab">VR컨텐츠</a>
+                <a href="#channel-sub" class="tab">구독자</a>
             </div>
 
             <div class="tab-content col-lg-12">
