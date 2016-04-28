@@ -1,9 +1,15 @@
 /**
  * Created by ladmusician on 15. 9. 6..
  */
+$(window).load(function(){
+   //var popup = $('.popup-container');
+   // var visible = popup.css('visibility');
+   // console.log(visible);
+});
 $(document).ready(function () {
 
     setUserSettingMargin();
+
     $(window).resize(function(){
         var header = $('.main-header .container');
         var header_margin = header.outerWidth(true) - header.outerWidth() ;

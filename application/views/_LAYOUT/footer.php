@@ -65,13 +65,13 @@
         <ul class="list-user-setting">
             <a href="#login">
                 <li class="solid-border-bottom padding-normal">
-                    <img src="<?=base_url('/static/img/ic_log_in.png')?>" alt="IC_PNG">
+                    <img src="<?= base_url('/static/img/ic_log_in.png') ?>" alt="IC_PNG">
                     <span>로그인</span>
                 </li>
             </a>
             <a href="#join">
                 <li class="padding-normal">
-                    <img src="<?=base_url('/static/img/ic_join.png')?>" alt="IC_PNG">
+                    <img src="<?= base_url('/static/img/ic_join.png') ?>" alt="IC_PNG">
                     <span>회원가입</span>
                 </li>
             </a>
@@ -83,7 +83,8 @@
 
     <div class="popup-login-container solid-border-box">
         <a class="close" href="#">&times;</a>
-        <div class="login-header solid-border-bottom text-center">
+
+        <div class="login-header solid-border-bottom">
             <a href="#login">로그인</a>
             <a href="#join">회원가입</a>
         </div>
@@ -98,15 +99,15 @@
                 <input type="password" placeholder="Password" class="solid-border-box">
             </div>
             <div class="form-group btn-login-submit">
-                <a href="" >로그인</a>
+                <a href="">로그인</a>
             </div>
             <div class="form-group btn-fb-login">
-                <a href="" >페이스북으로 로그인</a>
+                <a href="">페이스북으로 로그인</a>
             </div>
         </form>
         <div class="login-footer text-center">
-            <a href="" class="btn-login-wh solid-border-box">ID 찾기</a>
-            <a href="" class="btn-login-wh solid-border-box" >PW 찾기</a>
+            <a href="#find-id" class="btn-login-wh solid-border-box">ID 찾기</a>
+            <a href="#find-password" class="btn-login-wh solid-border-box">PW 찾기</a>
         </div>
     </div>
 </div>
@@ -115,7 +116,8 @@
 
     <div class="popup-login-container solid-border-box">
         <a class="close" href="#">&times;</a>
-        <div class="login-header solid-border-bottom text-center">
+
+        <div class="login-header solid-border-bottom">
             <a href="#login">로그인</a>
             <a href="#join">회원가입</a>
         </div>
@@ -136,10 +138,10 @@
                 <input type="password" placeholder="비밀번호 확인" class="solid-border-box">
             </div>
             <div class="form-group btn-login-submit">
-                <a href="" >회원가입</a>
+                <a href="">회원가입</a>
             </div>
             <div class="form-group btn-fb-login">
-                <a href="" >페이스북으로 가입하기</a>
+                <a href="">페이스북으로 가입하기</a>
             </div>
             <div class="form-group">
                 <input class="check-box" type="checkbox"><span>이용약관과 개인정보취급방침을 모두 읽고, 동의합니다.</span>
@@ -147,6 +149,58 @@
         </form>
     </div>
 </div>
+
+<div id="find-id" class="popup-container ">
+
+    <div class="popup-login-container solid-border-box">
+        <a class="close" href="#">&times;</a>
+
+        <div class="login-header solid-border-bottom">
+            <a href="#login">로그인</a>
+            <a href="#join">회원가입</a>
+        </div>
+        <form id="jm-auth-find-id" action="post">
+            <div class="form-group">
+                이메일 찾기
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="닉네임" class="solid-border-box">
+            </div>
+            <div class="form-group btn-login-submit">
+                <a href="">이메일 찾기</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="find-password" class="popup-container ">
+
+    <div class="popup-login-container solid-border-box">
+        <a class="close" href="#">&times;</a>
+
+        <div class="login-header solid-border-bottom">
+            <a href="#login">로그인</a>
+            <a href="#join">회원가입</a>
+        </div>
+        <form id="jm-auth-find-password" action="post">
+            <div class="form-group">
+                비밀번호 찾기
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="이메일" class="solid-border-box">
+            </div>
+            <div class="form-group btn-login-submit">
+                <a href="">비밀번호 재설정</a>
+            </div>
+            <ul class="form-group">
+                <li>가입시 등록했던 이메일로 임시 비밀번호를 보내드립니다.</li>
+                <li>메일 발송 후 1시간 이내로 발송된 비밀번호로 로그인을 해야 변경됩니다.</li>
+            </ul>
+        </form>
+    </div>
+</div>
+
+
 <div id="fade" class="popup-bg"></div>
 
 <script src="<?php echo base_url() ?>static/js/krpano/krpano.js"></script>
@@ -154,7 +208,6 @@
 <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="/static/js/ajaxBody.js"></script>
 <script src="/static/js/smoothscroll.js"></script>
-
 
 
 <script src="<?php echo base_url() ?>static/js/common.js"></script>
