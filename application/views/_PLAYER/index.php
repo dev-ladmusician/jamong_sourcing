@@ -3,21 +3,22 @@
         <div class="row">
             <div class=" col-lg-9 col-md-8 padding-none">
 
-                <div class="jm-player-video solid-border-box col-lg-12">
+                <div class="jm-player-video solid-border-box col-lg-12 padding-none">
                     <div id="pano"></div>
-                    <div class="video-des padding-normal solid-border-bottom">
+                    <div class="solid-border-bottom video-des">
                         <p class="video-des-title">Fit girls - 커플요가</p>
 
-                        <div class="video-info">
-                            <div class="video-des-publisher">게시자</div>
-                            <div class="video-des-date">게시일</div>
-                            <div class="video-des-hits">조회수</div>
+                        <div class="video-des-info">
+                            <div class="video-des-publisher">게시자 : <span>자몽</span></div>
+                            <div class="video-des-date">게시일 : <span>2016.04.05</span></div>
+                            <div class="video-des-hits">조회수 <span>2048</span>회</div>
                         </div>
+
                     </div>
 
-                    <div class="video-action padding-normal">
-                        <a href=#"><i class="glyphicon glyphicon-heart-empty"></i>11111</a>
-                        <a href="#"><i class="glyphicon glyphicon-share-alt"></i>공유</a>
+                    <div class="video-action">
+                        <a href=#"><i class="glyphicon glyphicon-heart-empty ic-heart"></i><span>1111</span></a>
+                        <a href="#"><i class="glyphicon glyphicon-share-alt ic-share"></i>공유</a>
                     </div>
                 </div>
 

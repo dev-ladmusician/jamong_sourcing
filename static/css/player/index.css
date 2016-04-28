@@ -2,23 +2,46 @@
     padding-left: 20px;;
 }
 
+/*
+player
+*/
 #pano {
     width: 100%;
     height: 400px;
 }
 
-/*
-player
-*/
-.jm-player-video .video-des-title {
-    font-weight: bold;
-    font-size: 15px;
-    color: #3a3a3a;
+.jm-player-video .video-des {
+    padding: 20px 0;
+    margin: 0 20px;
+    height: initial;
+
 }
 
-.jm-player-video .video-info {
+.jm-player-video .video-des-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #3a3a3a;
+    padding-bottom: 20px;
+}
+
+.jm-player-video .video-des-info {
     color: #d3d9de;
     font-weight: bold;
+    position: relative;
+}
+
+.jm-player-video .video-des-info .video-des-hits {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.jm-player-video .video-des-info .video-des-hits {
+    font-size: 18px;
+}
+
+.jm-player-video .video-action{
+    padding: 10px 20px;
 }
 
 .jm-player-video .video-action a {
@@ -27,9 +50,20 @@ player
     color: #d3d9de;
 }
 
-.jm-player-video .video-action a:first-child i {
+.jm-player-video .video-action .ic-heart{
     color: red;
+    font-size: 25px;
+}
+.jm-player-video .video-action .ic-share{
     font-size: 20px;
+}
+/*The number of hearts*/
+.jm-player-video .video-action span,
+.jm-player-video .video-action .ic-heart,
+.jm-player-video .video-action .ic-share,
+.jm-player-video .video-action a
+{
+    vertical-align: middle;
 }
 
 /*
@@ -93,25 +127,30 @@ comment
     list-style: none;
     padding: 0;
 }
-.jm-player-comment .comment-list .comment-group .comment-item-img{
+
+.jm-player-comment .comment-list .comment-group .comment-item-img {
     margin: 20px 20px 20px 0;
 }
-.jm-player-comment .comment-list .comment-group .comment-item-name span:first-child{
+
+.jm-player-comment .comment-list .comment-group .comment-item-name span:first-child {
     font-size: 16px;
     color: #3a3a3a;
     font-weight: bold;
 }
-.jm-player-comment .comment-list .comment-group .comment-item-name span:last-child{
+
+.jm-player-comment .comment-list .comment-group .comment-item-name span:last-child {
     float: right;
     font-weight: bold;
     color: #d3d9de;
 }
-.jm-player-comment .comment-list .comment-group .comment-item-contents{
+
+.jm-player-comment .comment-list .comment-group .comment-item-contents {
     width: 526px;
     vertical-align: middle;
     line-height: 1.5;
 }
-.jm-player-comment .comment-list .comment-group .comment-item-content{
+
+.jm-player-comment .comment-list .comment-group .comment-item-content {
     overflow-y: scroll;
     max-height: 46px;
 }
