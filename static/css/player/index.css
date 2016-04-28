@@ -1,5 +1,5 @@
 .jm-player {
-    padding: 0 20px;;
+    padding-right:20px;
 }
 
 /*
@@ -145,7 +145,7 @@ comment
 }
 
 .jm-player-comment .comment-list .comment-group .comment-item-contents {
-    width: 526px;
+    width: 516px;
     vertical-align: middle;
     line-height: 1.5;
 }

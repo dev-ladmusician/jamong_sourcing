@@ -1,5 +1,8 @@
 .sc-main{
-    padding-left: 20px;
+    /*padding-left: 20px;*/
+}
+.sc-main .video-large a{
+    display: block;
 }
 .sc-main-hot{
     padding-top: 20px;
