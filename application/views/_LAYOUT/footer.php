@@ -139,7 +139,7 @@
                 <a href="" >회원가입</a>
             </div>
             <div class="form-group btn-fb-login">
-                <a href="" >페이스북으로 로그인</a>
+                <a href="" >페이스북으로 가입하기</a>
             </div>
             <div class="form-group">
                 <input class="check-box" type="checkbox"><span>이용약관과 개인정보취급방침을 모두 읽고, 동의합니다.</span>

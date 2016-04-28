@@ -199,3 +199,10 @@ channel
 /*
 recommend vr list
 */
+.jm-player-recommend .header{
+    padding: 10px 13px
+}
+.jm-player-recommend .recommend-list{
+    max-height: 600px;
+    overflow-y: scroll;
+}

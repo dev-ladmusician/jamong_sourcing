@@ -86,13 +86,58 @@
                 </div>
             </div>
 
-            <div class="jm-player-recommend solid-border-box col-lg-12 ">
-                <div class="header solid-border-bottom padding-normal">
+            <div class="jm-player-recommend solid-border-box col-lg-12 padding-none">
+                <div class="header solid-border-bottom">
                     추천 VR컨텐츠
                 </div>
-                <ul>
+                <div class="recommend-list">
+                    <div class="video-small">
+                        <img src="/JAMONG/static/img/ex_6.png" alt="">
 
-                </ul>
+                        <div class="video-des padding-none">
+                            <p class="video-des-title">테스트</p>
+
+                            <p class="video-des-publisher">게시자: 고퀄</p>
+
+                            <p class="video-des-hits">조회수</p>
+                        </div>
+                    </div>
+                    <div class="video-small">
+                        <img src="/JAMONG/static/img/ex_6.png" alt="">
+
+                        <div class="video-des padding-none">
+                            <p class="video-des-title">테스트</p>
+
+                            <p class="video-des-publisher">게시자: 고퀄</p>
+
+                            <p class="video-des-hits">조회수</p>
+                        </div>
+                    </div>
+                    <div class="video-small">
+                        <img src="/JAMONG/static/img/ex_6.png" alt="">
+
+                        <div class="video-des padding-none">
+                            <p class="video-des-title">테스트</p>
+
+                            <p class="video-des-publisher">게시자: 고퀄</p>
+
+                            <p class="video-des-hits">조회수</p>
+                        </div>
+                    </div>
+                    <div class="video-small">
+                        <img src="/JAMONG/static/img/ex_6.png" alt="">
+
+                        <div class="video-des padding-none">
+                            <p class="video-des-title">테스트</p>
+
+                            <p class="video-des-publisher">게시자: 고퀄</p>
+
+                            <p class="video-des-hits">조회수</p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
 

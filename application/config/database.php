@@ -62,10 +62,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'goqualweb';
-$db['default']['password'] = 'goqual12!@';
-$db['default']['database'] = 'goqualweb';
+$db['default']['hostname'] = 'dongshindb.c8n3o6so1jye.ap-northeast-1.rds.amazonaws.com';
+$db['default']['username'] = 'dongshindbuser';
+$db['default']['password'] = 'ehdtlselql0304!#';
+$db['default']['database'] = 'dongshindb';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;
