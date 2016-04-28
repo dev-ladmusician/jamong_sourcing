@@ -1,5 +1,5 @@
 .jm-player {
-    padding-left: 20px;;
+    padding: 0 20px;;
 }
 
 /*
@@ -164,27 +164,37 @@ comment
 /*
 channel
 */
-
-.jm-player-channel img {
-    width: 50px;
-    height: 50px;
-}
-
-.jm-player-channel .image-container, .jm-player-channel .des-group {
-    display: inline-block;
-}
-
-.jm-player-channel {
+.jm-player-channel{
+    padding: 15px;
     margin-bottom: 20px;
 }
-
-.jm-player-channel .des-group {
+.jm-player-channel .image-container,
+.jm-player-channel .des-group{
     display: inline-block;
+    vertical-align: middle;
+}
+.jm-player-channel .des-group{
+    padding-left: 15px;
+}
+.jm-player-channel .des-group .des-title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #3a3a3a;
+}
+.jm-player-channel .des-group .des-title,
+.jm-player-channel .des-group .des-info{
+    display: block;
+}
+.jm-player-channel img {
+    width: 80px;
+    height: 80px;
+}
+.jm-player-channel .btn-ch-subs{
+    margin-top: 5px;
+    padding: 8px;
+    display: block;
 }
 
-.jm-player-recommend .header {
-
-}
 
 /*
 recommend vr list

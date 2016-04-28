@@ -536,3 +536,12 @@ a, a:hover{
     padding: 2px;
     vertical-align: sub;
 }
+
+@media (min-width: 1200px){
+    .main-sidebar {
+        width: 22%;
+    }
+    .content-wrapper{
+        width: 78%;
+    }
+}
