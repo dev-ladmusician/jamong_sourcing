@@ -4,10 +4,11 @@
 
 .jm-channels .video-small img {
     height: 150px;
+    width: 150px;
 }
 
 .jm-channels .video-small .solid-border-box{
-    padding: 20px;
+    padding: 15px;
     position: static;
 }
 .jm-channels .video-small .btn-ch-subs{
@@ -25,13 +26,14 @@
 }
 
 .jm-channels .des-title {
-    color: #3493D5;
+    color: #3493D4;
     font-weight: bold;
     font-size: 16px;
+
 }
 
 .jm-channels .des-content {
-    color: #3a3a3a;
+    color: #96989c;
     font-size: 13px;
     height: 85px;
     max-height: 85px;
@@ -44,7 +46,12 @@
 
 .jm-channels .des-info > div {
     font-size: 13px;
-    color: #d3d9de;
+    color: #96989c;
     padding-right: 10px;
     display: inline-block;
+}
+
+.jm-channels .des-info div span{
+    padding-left: 5px;
+    font-weight: bold;
 }

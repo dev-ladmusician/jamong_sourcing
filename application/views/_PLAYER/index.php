@@ -31,7 +31,7 @@
                             <img src="<?= site_url('/static/img/user.png') ?>" alt="">
                         </div>
                         <div class="comment-content">
-                            <textarea name="user-comment" id="jm-comment" cols="53" rows="4"></textarea>
+                            <textarea placeholder="댓글을 입력하세요" name="user-comment" id="jm-comment"></textarea>
                         </div>
                         <div class="btn-cm-submit comment-submit">
                             <a href="#" class="">등록</a>

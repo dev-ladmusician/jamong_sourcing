@@ -41,6 +41,12 @@ $(document).ready(function () {
     $('#login .close').click(function(){
         $('#fade').css("display","none");
     });
+    $('#find-id .close').click(function(){
+        $('#fade').css("display","none");
+    });
+    $('#find-password .close').click(function(){
+        $('#fade').css("display","none");
+    });
 });
 
 function setUserSettingMargin(){

@@ -3,8 +3,7 @@
 }
 .jm-search select{
     float: right;
-}
-.jm-search select option,
-.jm-search select optgroup{
-    color: #3a3a3a;
+    border: solid 1px #e4e5e8;
+    border-radius: 5px;
+    color: #96989c;
 }

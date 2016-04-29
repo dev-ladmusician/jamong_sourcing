@@ -20,19 +20,19 @@
 
 .jm-channel-home .channel-header .video-des .des-title {
     font-size: 24px;
-    color: #3a3a3a;
+    color: #96989c;
     font-weight: bold;
 }
 
 .jm-channel-home .channel-header .video-des .des-content {
-    color: #3a3a3a;
+    color: #96989c;
     font-size: 14px;
 }
 
 .jm-channel-home .channel-header .video-des .des-info {
     position: absolute;
     bottom: 30px;
-    color: #d3d9de;
+    color: #646469;
 }
 .jm-channel-home .channel-header .video-des .des-info span{
     padding-right:3px;
@@ -47,7 +47,7 @@
 .jm-channel-home .btn-ch-ok{
     color: white;
     font-weight: bold;
-    background-color: #3493D5;
+    background-color: #3493D4;
     border-radius: 5px;
     padding: 8px;
 }
@@ -58,12 +58,12 @@
 }
 .jm-channel-home .tab-links a:hover,
 .tab-links .tab.active {
-    border-bottom: 4px solid #3493D5;
+    border-bottom: 4px solid #3493D4;
 }
 
 .jm-channel-home .tab-links a {
     text-decoration: none;
-    color: #3a3a3a;
+    color: #96989c;
     font-weight: bold;
 }
 
@@ -98,6 +98,7 @@
 }
 #channel-home .main-video .video-des .video-des-title{
     font-size: 18px;
+    padding-bottom: 15px;
 }
 #channel-home .main-video .video-des-bottom{
     position: absolute;
@@ -121,7 +122,11 @@
 #channel-home .video-small:last-child{
     padding-left: 15px;
 }
-
+/*vr*/
+#channel-vr select{
+    border: solid 1px #e4e5e8;
+    border-radius: 5px;
+}
 /*subscriber*/
 #channel-sub{
     background-color: white;
@@ -133,7 +138,7 @@
 #channel-vr .load-more,
 #channel-sub .load-more
 {
-    border-top: solid 1px #d3d9de;
+    border-top: solid 1px #e4e5e8;
 }
 
 .subscriber-item .item-img, .jm-channel-home .item-info,

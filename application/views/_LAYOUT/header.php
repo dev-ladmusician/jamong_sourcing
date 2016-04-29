@@ -12,8 +12,6 @@
     <link href="<?php echo base_url() ?>static/css/common.css" rel="stylesheet">
     <link href="/static/lib/animation/animate.css" rel="stylesheet">
 
-    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-
     <?php
     $total_url = $_SERVER['PHP_SELF'];
     $arr_splitted_url = explode('/', $total_url);

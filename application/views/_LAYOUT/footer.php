@@ -59,18 +59,18 @@
 
 <div id="jm-user-setting" class="popup-container ">
 
-    <div class="popup-login-container solid-border-box">
+    <div class="popup-login-container">
         <a class="close" href="#">&times;</a>
 
         <ul class="list-user-setting">
             <a href="#login">
-                <li class="solid-border-bottom padding-normal">
+                <li class="solid-border-bottom">
                     <img src="<?= base_url('/static/img/ic_log_in.png') ?>" alt="IC_PNG">
                     <span>로그인</span>
                 </li>
             </a>
             <a href="#join">
-                <li class="padding-normal">
+                <li>
                     <img src="<?= base_url('/static/img/ic_join.png') ?>" alt="IC_PNG">
                     <span>회원가입</span>
                 </li>
