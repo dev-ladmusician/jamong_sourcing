@@ -8,8 +8,13 @@
 
 .jm-channels .video-small .solid-border-box{
     padding: 20px;
+    position: static;
 }
-
+.jm-channels .video-small .btn-ch-subs{
+    position: absolute;
+    right: 0;
+    /*bottom: 0;*/
+}
 .video-des {
     padding: 0 10px 0px 20px;
 }

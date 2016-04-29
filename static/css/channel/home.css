@@ -35,13 +35,21 @@
     color: #d3d9de;
 }
 .jm-channel-home .channel-header .video-des .des-info span{
-    padding: 0 3px;
+    padding-right:3px;
+}
+.jm-channel-home .channel-header .video-des .des-info>span
+{
+    margin-right: 9px;
+}
+.jm-channel-home .btn-ch-subs{
+    margin-right: 15px;
 }
 .jm-channel-home .btn-ch-ok{
     color: white;
     font-weight: bold;
     background-color: #3493D5;
     border-radius: 5px;
+    padding: 8px;
 }
 
 .jm-channel-home .tab-links{
@@ -80,9 +88,6 @@
 #channel-home{
     padding: 20px 20px 0 20px;
 }
-#channel-home .main-video{
-    background-color: white;
-}
 #channel-home .video-large img {
     width: 100%;
     height: 400px;
@@ -91,12 +96,30 @@
     position: static;
     padding: 20px 20px 0 20px;
 }
+#channel-home .main-video .video-des .video-des-title{
+    font-size: 18px;
+}
 #channel-home .main-video .video-des-bottom{
     position: absolute;
     bottom: 20px;
 }
 #channel-home .video-small{
-    padding: 20px 0 0 0;
+    padding: 20px 0 20px 0;
+}
+
+#channel-home .video-small:first-child{
+    padding-right: 15px;
+}
+#channel-home .video-small:nth-child(2){
+    padding-left: 5px;
+    padding-right: 10px;
+}
+#channel-home .video-small:nth-child(3){
+    padding-left: 10px;
+    padding-right: 5px;
+}
+#channel-home .video-small:last-child{
+    padding-left: 15px;
 }
 
 /*subscriber*/
