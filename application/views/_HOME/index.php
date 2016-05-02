@@ -1,7 +1,6 @@
 <div class="content-wrapper col-lg-9 col-md-9 col-sm-12">
     <section class="sc-main">
         <div class="row">
-
             <div class="main-video padding-none col-lg-12">
                 <div class="video-large">
                     <a href="<?= site_url('/player') ?>"><img src="/JAMONG/static/img/video_1.jpg" alt=""></a>

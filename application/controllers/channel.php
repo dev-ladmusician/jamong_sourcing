@@ -4,25 +4,18 @@ class Channel extends CORE_Controller {
 
     function __construct () {
         parent::__construct();
+        $this->load->model('category_model');
     }
 
     function index()
     {
-        $this->__get_views('_CHANNEL/index');
+        $nav = $this->category_model->gets();
+        $this->__get_views('_CHANNEL/index', $nav);
     }
 
     function home()
     {
-        $this->__get_views('_CHANNEL/index');
-    }
-
-    function list_VR()
-    {
-        $this->__get_views('_CHANNEL/list_vr');
-    }
-
-    function list_sub()
-    {
-        $this->__get_views('_CHANNEL/list_sub');
+        $nav = $this->category_model->gets();
+        $this->__get_views('_CHANNEL/index', $nav);
     }
 }

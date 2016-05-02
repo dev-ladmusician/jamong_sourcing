@@ -4,10 +4,12 @@ class Channels extends CORE_Controller {
 
     function __construct () {
         parent::__construct();
+        $this->load->model('category_model');
     }
 
     function index()
     {
-        $this->__get_views('_CHANNELS/index');
+        $nav = $this->category_model->gets();
+        $this->__get_views('_CHANNELS/index', $nav);
     }
 }

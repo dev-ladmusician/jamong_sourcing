@@ -26,14 +26,6 @@
                         <iframe
                             src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fjamong360%2F%3Ffref%3Dts&width=450&layout=standard&action=like&show_faces=false&share=true&height=35&appId"
                             height="35" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                        <!--                        <div class="float-right">-->
-                        <!--                            <a href="#" class="btn-ft-blue">-->
-                        <!--                                <img src="-->
-                        <? //= base_url('/static/img/fb_logo_2.png') ?><!--" alt="FACEBOOK_LOGO">좋아요</a>-->
-                        <!--                            <a href="#" class="btn-ft-blue">공유하기</a>-->
-                        <!---->
-                        <!--                            <div class="text-ft-sns">12명이 좋아합니다. 친구들이 무엇을 좋아하는지<br>알아보려면 가입하기</div>-->
-                        <!--                        </div>-->
                     </div>
                 </div>
 
@@ -248,6 +240,6 @@ if (strpos($filename, 'index.php')) {
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
-    </
-    body >
-    < / html >
+
+    </body>
+    </html>

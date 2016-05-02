@@ -9,7 +9,7 @@ class CORE_Controller extends CI_Controller {
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
     }
 
-    function __get_views($viewStr, $data = null) {
+    function __get_views($viewStr,  $nav=null, $data = null) {
 
         if (strpos($viewStr, 'AUTH')) {
             $this->load->view('_AUTH/header.php');
@@ -18,7 +18,7 @@ class CORE_Controller extends CI_Controller {
         }else{
             $this->load->view('_LAYOUT/header.php');
 
-            $this->load->view('_LAYOUT/navbar.php');
+            $this->load->view('_LAYOUT/navbar.php', array('category_item'=>$nav));
 
             if ($data != null) {
                 $this->load->view($viewStr, $data);
