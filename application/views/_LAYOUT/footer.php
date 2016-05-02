@@ -23,13 +23,17 @@
                         <a href="" class="btn-ft-white">도움말</a>
                     </div>
                     <div class="col-lg-5 col-md-4 col-sm-12">
-                        <div class="float-right">
-                            <a href="#" class="btn-ft-blue">
-                                <img src="<?= base_url('/static/img/fb_logo_2.png') ?>" alt="FACEBOOK_LOGO">좋아요</a>
-                            <a href="#" class="btn-ft-blue">공유하기</a>
-
-                            <div class="text-ft-sns">12명이 좋아합니다. 친구들이 무엇을 좋아하는지<br>알아보려면 가입하기</div>
-                        </div>
+                        <iframe
+                            src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fjamong360%2F%3Ffref%3Dts&width=450&layout=standard&action=like&show_faces=false&share=true&height=35&appId"
+                            height="35" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        <!--                        <div class="float-right">-->
+                        <!--                            <a href="#" class="btn-ft-blue">-->
+                        <!--                                <img src="-->
+                        <? //= base_url('/static/img/fb_logo_2.png') ?><!--" alt="FACEBOOK_LOGO">좋아요</a>-->
+                        <!--                            <a href="#" class="btn-ft-blue">공유하기</a>-->
+                        <!---->
+                        <!--                            <div class="text-ft-sns">12명이 좋아합니다. 친구들이 무엇을 좋아하는지<br>알아보려면 가입하기</div>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
 

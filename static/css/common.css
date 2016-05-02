@@ -358,6 +358,18 @@ a, a:hover{
     padding: 5px;
 }
 
+.footer-container .row iframe{
+    border:none;
+    overflow: hidden;
+    display: block;
+    float: right;
+    color: white;
+}
+
+#facebook .plugin .pluginFontHelvetica{
+    color: white;
+}
+
 .footer-container .row .footer-text .btn-ft-blue {
     background-color: #3956A0;
     color: white;
