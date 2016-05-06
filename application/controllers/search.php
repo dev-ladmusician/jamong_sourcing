@@ -7,6 +7,7 @@ class Search extends CORE_Controller
     {
         parent::__construct();
         $this->load->model('category_model');
+        $this->load->model('channel_model');
     }
 
     function index()
@@ -16,17 +17,15 @@ class Search extends CORE_Controller
 
     function result()
     {
-        $nav = $this->category_model->gets();
         $str = $this->input->get('search_query');
 
-        //get data from db
+        $categories= $this->category_model->gets();
+        $channels = $this->channel_model->gets();
 
-        //get counts of results
         $count = 6;
-        $this->__get_views('_SEARCH/result', $nav,  array('search_query' => $str,
-            'count' => $count));
 
-//        echo json_encode(array('search_query' => $str,
-//                                'count' => $count), JSON_PRETTY_PRINT);
+        $this->__get_views('_SEARCH/result', array('categories' => $categories, 'channels'=>$channels),
+            array('search_query' => $str,
+                'count' => $count));
     }
 }

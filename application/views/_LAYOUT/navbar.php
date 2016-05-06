@@ -7,7 +7,7 @@
                     <div class="solid-border-bottom menu-header">카테고리</div>
                     <ul class="sidebar-menu">
                         <?php
-                        foreach( $category_item as $item){?>
+                        foreach( $categories as $item){?>
                             <a href="<?= site_url('/category?id='.$item->catenum)?>">
                                 <li><?= $item->name_kr?> <span> <?= $item->name_en?></span></li>
                             </a>
@@ -20,24 +20,14 @@
                 <section class="sidebar-channel solid-border-box ">
                     <div class="solid-border-bottom menu-header">채널 <span>Top 30</span></div>
                     <ul class="sidebar-menu solid-border-bottom">
-                        <a href="<?= site_url('/channel/home?channel=jamong')?>">
-                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
-                        </a>
-                        <a href="#">
-                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
-                        </a>
-                        <a href="#">
-                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
-                        </a>
-                        <a href="#">
-                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
-                        </a>
-                        <a href="#">
-                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
-                        </a>
-                        <a href="#">
-                            <li><img src="<?= site_url('/static/img/fb_logo.png')?>" alt=""><span>jamong</span></li>
-                        </a>
+                        <?php
+                        foreach($channels as $channel){?>
+                            <a href="<?=site_url('/channel/home?channelId='.$channel->channelnum)?>">
+                                <li><img src="<?= $channel->ch_picture ?>" alt="">
+                                <span><?= $channel->channelname?></span></li>
+                            </a>
+                        <?php
+                        }?>
                     </ul>
                     <div><a href="<?= site_url('/channels')?>">더보기 ></a></div>
                 </section>

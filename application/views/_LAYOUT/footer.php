@@ -59,7 +59,7 @@
         <a class="close" href="#">&times;</a>
 
         <ul class="list-user-setting">
-            <a href="#login">
+            <a href="<?= site_url('/auth/login')?>">
                 <li class="solid-border-bottom">
                     <img src="<?= base_url('/static/img/ic_log_in.png') ?>" alt="IC_PNG">
                     <span>로그인</span>

@@ -300,6 +300,10 @@ a, a:hover{
     font-weight: bold;
 }
 
+.main-sidebar .sidebar-channel ul li img{
+    width: 45px;
+    height: 45px;
+}
 .main-sidebar .sidebar-service .sidebar-menu li span
 {
     padding-left: 13px;

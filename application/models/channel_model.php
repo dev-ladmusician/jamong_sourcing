@@ -1,15 +1,18 @@
 <?php
-class Category_model extends CI_Model {
+class Channel_model extends CI_Model {
     private $table;
     function __construct()
     {
         parent::__construct();
-        $this->table = 'jumper__category';
+        $this->table = 'jumper__channellist';
     }
 
     function gets(){
-        $this->db->select('*');
+        $this->db->select('jumper__channellist.channelname, jumper__channellist.channelnum, jumper__channel_profile.ch_picture');
         $this->db->where('isdeprecated',false);
+        $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum');
+        $this->db->limit(30);
+        $this->db->order_by('follow', 'asc');
         $this->db->from($this->table);
         return $this->db->get()->result();
     }

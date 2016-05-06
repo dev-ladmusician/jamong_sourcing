@@ -50,8 +50,6 @@ class User_model extends CI_Model {
         } else {
             return 0;
         }
-
-        return $result;
     }
 
     function add_user_by_fb($data)

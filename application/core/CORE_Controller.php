@@ -11,6 +11,8 @@ class CORE_Controller extends CI_Controller {
 
     function __get_views($viewStr,  $nav=null, $data = null) {
 
+
+
         if (strpos($viewStr, 'AUTH')) {
             $this->load->view('_AUTH/header.php');
             $this->load->view($viewStr);
@@ -18,7 +20,7 @@ class CORE_Controller extends CI_Controller {
         }else{
             $this->load->view('_LAYOUT/header.php');
 
-            $this->load->view('_LAYOUT/navbar.php', array('category_item'=>$nav));
+            $this->load->view('_LAYOUT/navbar.php', $nav);
 
             if ($data != null) {
                 $this->load->view($viewStr, $data);
