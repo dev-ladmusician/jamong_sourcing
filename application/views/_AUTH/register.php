@@ -22,27 +22,27 @@
                         <input type="number" size="6" name="input-age" min="13" max="99" value="21" class="solid-border-box">
                     </div>
                     <div class="form-group radio-input-male">
-                        <input id="male" type="radio" name="gender" value="Male">
+                        <input id="male" type="radio" name="input-gender" value="Male">
                         <label for="male">남자</label>
                     </div>
                     <div class="form-group radio-input-female">
-                        <input id="female" type="radio"  name="gender" value="Female">
+                        <input id="female" type="radio"  name="input-gender" value="Female">
                         <label for="female">여자</label>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="비밀번호" class="solid-border-box">
+                        <input type="password" name="input-password" placeholder="비밀번호" class="solid-border-box">
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="비밀번호 확인" class="solid-border-box">
+                        <input type="password" name="input-password-confirm" placeholder="비밀번호 확인" class="solid-border-box">
                     </div>
-                    <div class="form-group btn-login-submit">
-                        <a href="">회원가입</a>
+                    <div class="form-group">
+                        <input name="input-agree" class="check-box" type="checkbox"><span>이용약관과 개인정보취급방침을 모두 읽고, 동의합니다.</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn-login-submit" value="회원가입">
                     </div>
                     <div class="form-group btn-fb-login">
                         <a href="">페이스북으로 가입하기</a>
-                    </div>
-                    <div class="form-group">
-                        <input class="check-box" type="checkbox"><span>이용약관과 개인정보취급방침을 모두 읽고, 동의합니다.</span>
                     </div>
                 </form>
 

@@ -19,6 +19,7 @@ class Auth extends CORE_Controller {
         $this->__get_views('_AUTH/register');
     }
 
+
     function find_id(){
         $this->__get_views('_AUTH/find_id');
     }
