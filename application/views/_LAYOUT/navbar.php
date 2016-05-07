@@ -8,7 +8,7 @@
                     <ul class="sidebar-menu">
                         <?php
                         foreach( $categories as $item){?>
-                            <a href="<?= site_url('/category?id='.$item->catenum)?>">
+                            <a href="<?= site_url('/category?categoryId='.$item->catenum)?>">
                                 <li><?= $item->name_kr?> <span> <?= $item->name_en?></span></li>
                             </a>
                             <?php

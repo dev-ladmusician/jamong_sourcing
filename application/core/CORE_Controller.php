@@ -11,8 +11,6 @@ class CORE_Controller extends CI_Controller {
 
     function __get_views($viewStr,  $nav=null, $data = null) {
 
-
-
         if (strpos($viewStr, 'AUTH')) {
             $this->load->view('_AUTH/header.php');
             $this->load->view($viewStr);

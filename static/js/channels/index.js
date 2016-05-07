@@ -1,5 +1,4 @@
-$(document).ready(function(){
-
+$(document).ready(function () {
     var page = 1;
     var per_page = 8;
     var last_page = -1;
@@ -10,8 +9,7 @@ $(document).ready(function(){
     get_items(page, per_page);
 
     function get_items(page, perPage) {
-        var categoryId = $('#jm-category-id').val();
-        var api = '/JAMONG/api/category/get_contents_by_category?page=' + page + '&perPage=' + perPage + '&categoryId=' + categoryId;
+        var api = '/JAMONG/api/channels/get_channel_list?page=' + page + '&perPage=' +perPage;
 
         processing = true;
         ajax_loader.show();
@@ -27,12 +25,11 @@ $(document).ready(function(){
                     per_page = data.per_page;
                     last_page = data.last_page;
                     total_count = data.total_count;
-                    $('.jm-category .category-list').append(data.data);
+                    $('.jm-channels .channels-list').append(data.data);
                 } else {
-                    $('.jm-category .category-list').html(data.data);
+                    $('.jm-channels .channels-list').html(data.data);
                 }
 
-                console.log(data.data);
                 console.log(data.page);
                 console.log(data.per_page);
                 console.log(data.last_page);
@@ -43,9 +40,10 @@ $(document).ready(function(){
             }, 'json');
     }
 
-    $('.jm-category .load-more').click(function(){
+    $('.jm-channels .load-more').click(function(){
         if (!processing && page < last_page) {
             get_items(++page, per_page);
         }
     });
 });
+

@@ -1,3 +1,95 @@
 .jm-login{
-    background-color: rgba(0,0,0,0.5);
+    padding: 15px 0;
+}
+
+.form-container{
+    width: 400px;
+    margin: auto;
+    border-radius: 5px;
+}
+.header a:first-child{
+    color: #3493D4;
+}
+.header a{
+    text-decoration: none;
+    display: inline-flex;
+    color: #646469;
+    font-size: 16px;
+    font-family: "Noto Sans Medium";
+}
+.header a:first-child{
+    padding: 15px 77px;
+    border-right: solid 1px #e4e5e8;
+}
+.header a:last-child{
+    padding: 15px 0 15px 70px;
+}
+
+.footer-container{
+    position: fixed;
+    bottom: 0;
+}
+
+#jm-auth-login{
+    padding: 15px 20px;
+}
+
+.form-group{
+text-align: center;
+width: 300px;
+margin: 0 auto 12px auto;
+}
+.form-group:first-child{
+font-size: 25px;
+color: #646469;
+font-weight: bold;
+padding-top: 5px;
+padding-bottom: 13px;
+font-family: "Noto Sans Medium";
+}
+
+.form-group input{
+    width: 300px;
+    border-radius: 5px;
+    padding: 11px;
+    /*margin: 5px;*/
+    text-align: left;
+}
+
+.popup-container .login-footer{
+    border-top: solid 1px #d3d9de;
+    padding: 30px 0;
+}
+.popup-container .login-footer a{
+    display: inline-block;
+    text-decoration: none;
+    color: #3493D4;
+    font-weight: bold;
+}
+
+#jm-auth-join .form-group span{
+    font-size: 11px;
+    color: #96989c;
+}
+#jm-auth-join .check-box{
+    padding: 2px;
+    vertical-align: sub;
+    width: 20px;
+}
+#jm-auth-find-id, #jm-auth-find-password{
+    padding-bottom: 46px;
+}
+
+#jm-auth-find-id > div:first-child,
+#jm-auth-find-password > div:first-child
+{
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+#jm-auth-find-password ul{
+    list-style-type: circle;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 12px;
 }

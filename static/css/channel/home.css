@@ -10,7 +10,8 @@
 }
 
 .jm-channel-home .channel-header img {
-    width: 100%;
+    width: 130px;
+    height: 130px;
 }
 
 .jm-channel-home .channel-header .video-des {

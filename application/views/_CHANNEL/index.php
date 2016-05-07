@@ -3,18 +3,18 @@
         <div class="row solid-border-empty">
             <div class="channel-header solid-border-bottom col-lg-12">
                 <div class="col-lg-2 padding-none">
-                    <img src="<?= site_url('/static/img/fb_logo.png') ?>" alt="">
+                    <img src="<?= $channel->ch_picture ?>" alt="">
                 </div>
                 <div class="col-lg-10 video-des">
                     <div class="des-title">
-                        Jamong
+                        <?= $channel->channelname?>
                     </div>
                     <div class="des-content">
-                        VR 콘테츠 전문 제작 기업인 자몽의 360 비디오 채널입니다.
+                        <?= $channel->chdesc?>
                     </div>
                     <div class="des-info">
-                        <span>VR컨텐츠 <span><b>35</b></span></span>
-                        <span>구독자 <span><b>2154</b></span></span>
+                        <span>VR컨텐츠 <span><b><?= $channel->contents?></b></span></span>
+                        <span>구독자 <span><b><?= $channel->follow?></b></span></span>
                         <a href="#" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
                         <a href="#" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
                     </div>
