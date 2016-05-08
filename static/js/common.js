@@ -31,22 +31,6 @@ $(document).ready(function () {
             $('.nav-search').submit();
         }
     });
-
-    $('#jm-user-setting .list-user-setting a').click(function(){
-        $('#fade').css("display","initial");
-    });
-    $('#join .close').click(function(){
-        $('#fade').css("display","none");
-    });
-    $('#login .close').click(function(){
-        $('#fade').css("display","none");
-    });
-    $('#find-id .close').click(function(){
-        $('#fade').css("display","none");
-    });
-    $('#find-password .close').click(function(){
-        $('#fade').css("display","none");
-    });
 });
 
 function setUserSettingMargin(){
