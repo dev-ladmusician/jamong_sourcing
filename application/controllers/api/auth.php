@@ -4,6 +4,7 @@ class Auth extends CORE_Controller {
 
     function __construct () {
         parent::__construct();
+        $this->load->model('user_model');
     }
 
     function register(){
@@ -26,8 +27,14 @@ class Auth extends CORE_Controller {
                                 "gender" => $gender,
                                 "password" => $password);
 
-                            var_dump($input_data);
-
+                            $rtv = $this->user_model->add($input_data);
+                            if($rtv){
+                                $this->session->set_flashdata('message', '회원등록에 성공 했습니다.');
+                                redirect('/auth/login');
+                            }else{
+                                $this->session->set_flashdata('message', '회원등록에 실패 했습니다.');
+                                redirect('/auth/register');
+                            }
                         }else{
                             $this->session->set_flashdata('message', '이용약관과 개인정보취급방침에 동의해주세요.');
                             redirect('/auth/register');

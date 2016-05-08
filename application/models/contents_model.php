@@ -39,4 +39,33 @@ class Contents_model extends CI_Model {
         $this->db->where(array('cate'=>$categoryId, "uploadstat"=> "Complete"));
         return $this->db->count_all_results($this->table);
     }
+
+    function get_main_video(){
+        $this->db->select('picture, inum, filename');
+        $this->db->where("uploadstat" , "Complete");
+        $this->db->order_by('hit','desc');
+        $this->db->limit(1);
+        $this->db->from($this->table);
+        return $this->db->get()->row();
+    }
+
+    function get_vr_list_hot(){
+
+        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->where("uploadstat" , "Complete");
+        $this->db->order_by('hit','desc');
+        $this->db->limit(8);
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
+    function get_vr_list_new(){
+
+        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->where("uploadstat" , "Complete");
+        $this->db->order_by('datetime','desc');
+        $this->db->limit(8);
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
 }

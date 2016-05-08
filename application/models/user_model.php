@@ -271,13 +271,15 @@ class User_model extends CI_Model
     function add($data)
     {
         $input_data = array(
+            'age' => $data['age'],
+            'gender' => $data['gender'],
             'email' => $data['email'],
             'password' => $data['password'],
             'joinday' => date("y-m-d+H:i:s"),
             'accounttype' => 'email',
             'state' => 'active',
             'is_admin' => FALSE,
-            'is_superadmin' => FALSE,
+            'is_superadmin' => FALSE
         );
 
         $this->db->insert($this->table, $input_data);
