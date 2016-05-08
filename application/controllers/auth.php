@@ -4,14 +4,17 @@ class Auth extends CORE_Controller {
 
     function __construct () {
         parent::__construct();
+        $this->load->model('user_model');
+
     }
 
     function index()
     {
-        $this->__get_views('_AUTH/index');
+        $this->__get_views('_AUTH/login');
     }
 
-    function login(){
+    function login()
+    {
         $this->__get_views('_AUTH/login');
     }
 
@@ -27,4 +30,12 @@ class Auth extends CORE_Controller {
     function find_password(){
         $this->__get_views('_AUTH/find_password');
     }
+
+    function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('/auth/login');
+    }
+
+
 }

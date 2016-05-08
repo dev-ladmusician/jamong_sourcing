@@ -5,9 +5,77 @@ class Auth extends CORE_Controller {
     function __construct () {
         parent::__construct();
         $this->load->model('user_model');
+        $this->load->library('form_validation');
     }
 
-    function register(){
+    function submit_login(){
+        $this->__is_logined();
+
+        $this->form_validation->set_rules('jm-login-id', '이메일', 'required|valid_email');
+        $this->form_validation->set_rules('jm-login-password', '비밀번호', 'required');
+
+        $isValidate = $this->form_validation->run();
+
+        $email = $this->input->post('jm-login-id');
+        $password = $this->input->post('jm-login-password');
+
+        if ($isValidate) {
+            $input_data = array('email' => $email);
+
+            $rtv = $this->user_model->get_user_by_email($input_data);
+
+            // db 정보와 확인
+            if ($rtv != null && count($rtv) > 0) {
+                $user = $rtv[0];
+                if ($user->email == $input_data['email'] && $this->keyEncrypt($password) == $user->password) {
+                    if ($user->state == "active") {
+//                        if ($user->is_admin || $user->is_superadmin) {
+                            $this->handle_login($user);
+//                        } else {
+//                            $this->session->set_flashdata('message', '관리자만 접근할 수 있습니다.');
+//                            redirect('auth/login');
+//                        }
+                    } else {
+                        $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
+                        redirect('auth/login');
+                    }
+                } else {
+                    $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
+                    redirect('auth/login');
+                }
+            } else {
+                $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
+                if ($this->input->get('returnURL') === "") {
+                    $this->__get_views('_AUTH/login');
+                }
+            }
+        }else {
+            $this->session->set_flashdata('message', '이메일과 비밀번호를 입력해주세요.');
+            redirect('auth/login');
+//            $this->__get_views('_AUTH/login', array('returnURL' => $this->input->get('returnURL')));
+        }
+    }
+
+    function handle_login($user)
+    {
+        $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
+        $this->session->set_userdata('userid', $user->userNumber);
+        $this->session->set_userdata('is_login', true);
+        $this->session->set_userdata('email', $user->email);
+        $this->session->set_userdata('nickname', $user->nickName);
+        $this->session->set_userdata('isadmin', $user->is_admin);
+        $this->session->set_userdata('issuperadmin', $user->is_superadmin);
+
+        $returnURL = $this->input->get('returnURL');
+
+        if ($returnURL === false || $returnURL === "") {
+            redirect('home/index');
+        }
+
+        redirect($returnURL);
+    }
+
+    function submit_register(){
         $nickName = $this->input->post('input-nickname');
         $email = $this->input->post('input-email');
         $age = $this->input->post('input-age');
@@ -25,7 +93,7 @@ class Auth extends CORE_Controller {
                                 "email" => $email,
                                 "age" => $age,
                                 "gender" => $gender,
-                                "password" => $password);
+                                "password" => $this->keyEncrypt($password));
 
                             $rtv = $this->user_model->add($input_data);
                             if($rtv){

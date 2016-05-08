@@ -160,14 +160,18 @@ class User_model extends CI_Model
         $query_str = "Select a.*".
             ", (select  picture from jamong__tb_users_picture where userNumber=".$user_id.") as picture".
             ", (select  nickName from jumper_user where userNumber=".$user_id.") as nickName".
-            ", (select  count(*) from jumper__channellist where userNumber=".$user_id.") as Ch_Cnt".
-            ", (select  count(*) from jumper__favorites where userNumber=".$user_id.") as Favor_Cnt".
-            ", (select count(*) from jumper__mychannels where userNumber=".$user_id.") as S_Cnt".
-            ", (select follow from jumper__channellist where userNumber=".$user_id.") as Follow_Cnt".
             ", (select count(ainum) from jamong__tb_purchasehistory where userNumber=".$user_id.") as Purchase_Cnt".
             " from jamong__tb_users a Where userNumber = ".$user_id;
         $query = $this->db->query($query_str);
         return $query->result();
+    }
+
+    function check_user_admin($user_id) {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where('userNumber', $user_id);
+
+        return $this->db->get()->result();
     }
 
     function change_admin($user_id, $is_admin)
@@ -209,6 +213,22 @@ class User_model extends CI_Model
             $data = array(
                 'blockdate' => date('Y-m-d H:i:s'),
                 'state' => 'block'
+            );
+
+            $this->db->where('userNumber', $user_id);
+            $this->db->update($this->table, $data);
+
+            return $this->db->affected_rows();
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    function resolve_state_block($user_id)
+    {
+        try {
+            $data = array(
+                'state' => 'active'
             );
 
             $this->db->where('userNumber', $user_id);
@@ -271,15 +291,13 @@ class User_model extends CI_Model
     function add($data)
     {
         $input_data = array(
-            'age' => $data['age'],
-            'gender' => $data['gender'],
             'email' => $data['email'],
             'password' => $data['password'],
             'joinday' => date("y-m-d+H:i:s"),
             'accounttype' => 'email',
             'state' => 'active',
             'is_admin' => FALSE,
-            'is_superadmin' => FALSE
+            'is_superadmin' => FALSE,
         );
 
         $this->db->insert($this->table, $input_data);

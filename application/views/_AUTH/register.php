@@ -8,7 +8,7 @@
                     <a href="<?= site_url('/auth/register') ?>">회원가입</a>
                 </div>
 
-                <form id="jm-auth-join" action="<?=site_url('api/auth/register')?>"  method="post">
+                <form id="jm-auth-join" action="<?=site_url('api/auth/submit_register')?>"  method="post">
                     <div class="form-group">
                         JOIN
                     </div>
