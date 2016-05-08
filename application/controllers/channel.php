@@ -6,6 +6,7 @@ class Channel extends CORE_Controller {
         parent::__construct();
         $this->load->model('category_model');
         $this->load->model('channel_model');
+        $this->load->model('contents_model');
     }
 
     function index()
@@ -23,9 +24,13 @@ class Channel extends CORE_Controller {
 
         $categories= $this->category_model->gets();
         $channels = $this->channel_model->gets();
+        $main_video = $this->contents_model->get_main_video_by_channel($channelId);
+        $vr_list_hot = $this->contents_model->get_vr_list_hot_by_channel($channelId);
+        $vr_list_new = $this->contents_model->get_vr_list_new_by_channel($channelId);
 
         $rtv = $this->channel_model->get_by_id($channelId);
 //        var_dump($rtv);
-        $this->__get_views('_CHANNEL/index', array('categories' => $categories, 'channels'=>$channels), array('channel'=>$rtv));
+        $this->__get_views('_CHANNEL/index', array('categories' => $categories, 'channels'=>$channels),
+            array('channel'=>$rtv, 'main_video' => $main_video, 'vr_list_hot' => $vr_list_hot, 'vr_list_new' => $vr_list_new));
     }
 }

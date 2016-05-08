@@ -32,18 +32,20 @@
                 <div id="channel-home" class="col-lg-12 tab active">
                     <div class="main-video padding-none col-lg-12 solid-border-box">
                         <div class="padding-none video-large col-lg-8">
-                            <a href="<?= site_url('/player') ?>"><img src="/JAMONG/static/img/video_1.jpg" alt=""></a>
+                            <a href="<?= site_url('/player?contentId='). $main_video->inum ?>">
+                                <img src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/<?= $main_video->picture ?>" alt="">
+                            </a>
                         </div>
                         <div class="padding-none video-des col-lg-4">
                             <div class="video-des-title">
-                                Fit girls - 커플요가
+                                <?= $main_video->title?>
                             </div>
                             <div class="video-des-content">
-                                서울 호서 예술 실용 전문학교 실용무용예술학부1
+                                <?= $main_video->talk?>
                             </div>
                             <div class="video-des-bottom">
-                                <div class="channel-title">자몽</div>
-                                <div class="upload-date">2016. 04. 25</div>
+                                <div class="channel-title"><?= $main_video->nickName?></div>
+                                <div class="upload-date"><?= $main_video->datetime?></div>
                             </div>
                         </div>
                     </div>
@@ -55,59 +57,27 @@
                                 <a href="#"><span>more</span></a>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 padding-none">
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                    <div class="solid-border-box">
-                                        <img src="/JAMONG/static/img/ex_1.png" alt="">
+                                <?php
+                                foreach ($vr_list_hot as $item) {
+                                    ?>
+                                    <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
+                                        <div class="solid-border-box">
+                                            <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
+                                                <img src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>" alt="">
+                                            </a>
 
-                                        <div class="video-des">
-                                            <p class="video-des-title">테스트</p>
+                                            <div class="video-des">
+                                                <p class="video-des-title"><?= $item->title?></p>
 
-                                            <p class="video-des-publisher">게시자: 고퀄</p>
+                                                <p class="video-des-publisher">게시자: <?= $item->nickName?></p>
 
-                                            <p class="video-des-hits">조회수</p>
+                                                <p class="video-des-hits">조회수 <?= $item->hit?></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                    <div class="solid-border-box">
-                                        <img src="/JAMONG/static/img/ex_2.png" alt="">
-
-                                        <div class="video-des">
-                                            <p class="video-des-title">테스트</p>
-
-                                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                                            <p class="video-des-hits">조회수</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                    <div class="solid-border-box">
-                                        <img src="/JAMONG/static/img/ex_3.png" alt="">
-
-                                        <div class="video-des">
-                                            <p class="video-des-title">테스트</p>
-
-                                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                                            <p class="video-des-hits">조회수</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                    <div class="solid-border-box">
-                                        <img src="/JAMONG/static/img/ex_4.png" alt="">
-
-                                        <div class="video-des">
-                                            <p class="video-des-title">테스트</p>
-
-                                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                                            <p class="video-des-hits">조회수</p>
-                                        </div>
-                                    </div>
-
-                                </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </section>
 
@@ -121,59 +91,27 @@
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 padding-none">
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                    <div class="solid-border-box">
-                                        <img src="/JAMONG/static/img/ex_1.png" alt="">
+                                <?php
+                                foreach ($vr_list_new as $item) {
+                                    ?>
+                                    <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
+                                        <div class="solid-border-box">
+                                            <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
+                                                <img src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>" alt="">
+                                            </a>
 
-                                        <div class="video-des">
-                                            <p class="video-des-title">테스트</p>
+                                            <div class="video-des">
+                                                <p class="video-des-title"><?= $item->title?></p>
 
-                                            <p class="video-des-publisher">게시자: 고퀄</p>
+                                                <p class="video-des-publisher">게시자: <?= $item->nickName?></p>
 
-                                            <p class="video-des-hits">조회수</p>
+                                                <p class="video-des-hits">조회수 <?= $item->hit?></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                    <div class="solid-border-box">
-                                        <img src="/JAMONG/static/img/ex_2.png" alt="">
-
-                                        <div class="video-des">
-                                            <p class="video-des-title">테스트</p>
-
-                                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                                            <p class="video-des-hits">조회수</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                    <div class="solid-border-box">
-                                        <img src="/JAMONG/static/img/ex_3.png" alt="">
-
-                                        <div class="video-des">
-                                            <p class="video-des-title">테스트</p>
-
-                                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                                            <p class="video-des-hits">조회수</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                    <div class="solid-border-box">
-                                        <img src="/JAMONG/static/img/ex_4.png" alt="">
-
-                                        <div class="video-des">
-                                            <p class="video-des-title">테스트</p>
-
-                                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                                            <p class="video-des-hits">조회수</p>
-                                        </div>
-                                    </div>
-
-                                </div>
+                                    <?php
+                                }
+                                ?>
                             </div>
 
                         </section>

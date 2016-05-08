@@ -68,4 +68,33 @@ class Contents_model extends CI_Model {
         $this->db->from($this->table);
         return $this->db->get()->result();
     }
+
+    function get_main_video_by_channel($channelId){
+        $this->db->select('picture, inum, filename, talk, title, nickName, datetime');
+        $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId));
+        $this->db->order_by('hit','desc');
+        $this->db->limit(1);
+        $this->db->from($this->table);
+        return $this->db->get()->row();
+    }
+
+    function get_vr_list_hot_by_channel($channelId){
+
+        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId));
+        $this->db->order_by('hit','desc');
+        $this->db->limit(4);
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
+    function get_vr_list_new_by_channel($channelId){
+
+        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId));
+        $this->db->order_by('datetime','desc');
+        $this->db->limit(4);
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
 }

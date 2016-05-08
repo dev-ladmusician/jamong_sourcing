@@ -12,6 +12,4 @@ $(document).ready(function(){
         $(currentAttrValue).addClass('active').siblings().removeClass('active');
         e.preventDefault();
     });
-})/**
- * Created by SangBeom on 2016-04-26.
- */
+});
