@@ -29,7 +29,6 @@ class Channel extends CORE_Controller {
         $vr_list_new = $this->contents_model->get_vr_list_new_by_channel($channelId);
 
         $rtv = $this->channel_model->get_by_id($channelId);
-//        var_dump($rtv);
         $this->__get_views('_CHANNEL/index', array('categories' => $categories, 'channels'=>$channels),
             array('channel'=>$rtv, 'main_video' => $main_video, 'vr_list_hot' => $vr_list_hot, 'vr_list_new' => $vr_list_new));
     }

@@ -10,13 +10,7 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    var page = 1;
-    var per_page = 8;
-    var last_page = -1;
-    var total_count = -1;
-    var processing = false;
-    var ajax_loader = $('.jm-ajax-loader-sub');
-    //
+
     var vr_page = 1;
     var vr_per_page = 8;
     var vr_last_page = -1;
@@ -55,7 +49,15 @@ $(document).ready(function () {
             }, 'json');
     };
 
+    var page = 1;
+    var per_page = 6;
+    var last_page = -1;
+    var total_count = -1;
+    var processing = false;
+    var ajax_loader = $('.jm-ajax-loader-sub');
+
     get_subs_items(page, per_page);
+
 
     function get_subs_items(page, perPage) {
         var channelId = $('#jm-channel-id').val();

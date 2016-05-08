@@ -16,7 +16,7 @@ class Player extends CORE_Controller {
         $channels = $this->channel_model->gets();
         $contents = $this->contents_model->getByContentId($contentId);
         $channel = $this->channel_model->get_by_id($contents->ch);
-        
+
         $this->__get_views('_PLAYER/index', array('categories' => $categories, 'channels'=>$channels),
             array('content_info'=> $contents, 'channel_info'=> $channel));
     }
