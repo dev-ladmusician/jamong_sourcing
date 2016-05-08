@@ -6,18 +6,18 @@
                 <div class="jm-player-video solid-border-box col-lg-12 padding-none">
                     <div id="pano"></div>
                     <div class="solid-border-bottom video-des">
-                        <p class="video-des-title">Fit girls - 커플요가</p>
+                        <p class="video-des-title"><?= $content_info->title?></p>
 
                         <div class="video-des-info">
-                            <div class="video-des-publisher">게시자 : <span>자몽</span></div>
-                            <div class="video-des-date">게시일 : <span>2016.04.05</span></div>
-                            <div class="video-des-hits">조회수 <span>2048</span>회</div>
+                            <div class="video-des-publisher">게시자 : <span><?= $content_info->nickName?></span></div>
+                            <div class="video-des-date">게시일 : <span><?= $content_info->datetime?></span></div>
+                            <div class="video-des-hits">조회수 <span><?= $content_info->hit?></span>회</div>
                         </div>
 
                     </div>
 
                     <div class="video-action">
-                        <a href=#"><i class="glyphicon glyphicon-heart-empty ic-heart"></i><span>1111</span></a>
+                        <a href=#"><i class="glyphicon glyphicon-heart-empty ic-heart"></i><span><?= $content_info->likes?></span></a>
                         <a href="#"><i class="glyphicon glyphicon-share-alt ic-share"></i>공유</a>
                     </div>
                 </div>
@@ -69,17 +69,19 @@
         <div class="col-lg-3 col-md-4 padding-none">
             <div class="jm-player-channel solid-border-box col-lg-12">
                 <div class="image-container">
-                    <img src="<?= site_url('static/img/ex_1.png') ?>" alt="">
+                    <a href="<?= site_url('/channel/home?channelId='.$channel_info->channelnum)?>">
+                        <img src="<?= site_url('static/img/ex_1.png') ?>" alt="">
+                    </a>
                 </div>
 
 
                 <div class="des-group">
                     <div class="des-title">
-                        Jamong
+                        <?= $channel_info->channelname?>
                     </div>
 
                     <div class="des-info">
-                        구독자 <span>2154명</span>
+                        구독자 <span><?= $channel_info->follow?></span>
                     </div>
                     <a href="" class="btn-ch-subs"><i class="glyphicon glyphicon-plus"></i>구독하기</a>
 

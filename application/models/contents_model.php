@@ -14,6 +14,7 @@ class Contents_model extends CI_Model {
         return $this->db->get()->result();
     }
 
+
     function getById($id){
         $this->db->select('picture, title, hit');
         $this->db->where(array("cate"=> $id, "uploadstat"=> "Complete"));
@@ -115,5 +116,12 @@ class Contents_model extends CI_Model {
     function get_vr_list_count_by_channel($channelId){
         $this->db->where(array('ch'=>$channelId, "uploadstat"=> "Complete"));
         return $this->db->count_all_results($this->table);
+    }
+
+    function getByContentId($contentId){
+        $this->db->select('nickName, picture, filename, hit, title, ch, likes, datetime');
+        $this->db->where("inum" , $contentId);
+        $this->db->from($this->table);
+        return $this->db->get()->row();
     }
 }

@@ -137,6 +137,10 @@
                     <div class=" list-vr col-lg-12 col-md-12 col-sm-12 padding-outer">
                     </div>
 
+                    <div class="jm-ajax-loader-container text-center">
+                        <img class="jm-ajax-loader-vr" src="<?= site_url('/static/img/loader.gif')?>" />
+                    </div>
+
                     <div class="load-more col-lg-12 col-md-12 col-sm-12 text-center">
                         <a href="#">더보기<i class="glyphicon glyphicon-menu-down"></i></a>
                     </div>
@@ -147,74 +151,12 @@
                 <!--            sub-->
 
                 <div id="channel-sub" class="col-lg-12 tab">
-                    <div class="subscriber-item col-lg-4">
-                        <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png') ?>" alt="">
-                        </div>
-                        <div class="item-info">
-                            <div>이름</div>
-                            <div>구독
-                                <div>100</div>
-                            </div>
-                            <div>채널 수
-                                <div>100</div>
-                            </div>
-                        </div>
+
+                    <div class=" list-sub">
                     </div>
 
-                    <div class="subscriber-item col-lg-4">
-                        <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png') ?>" alt="">
-                        </div>
-                        <div class="item-info">
-                            <div>이름</div>
-                            <div>구독
-                                <div>100</div>
-                            </div>
-                            <div>채널 수
-                                <div>100</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="subscriber-item col-lg-4">
-                        <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png') ?>" alt="">
-                        </div>
-                        <div class="item-info">
-                            <div>이름</div>
-                            <div>구독
-                                <div>100</div>
-                            </div>
-                            <div>채널 수
-                                <div>100</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="subscriber-item col-lg-4">
-                        <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png') ?>" alt="">
-                        </div>
-                        <div class="item-info">
-                            <div>이름</div>
-                            <div>구독
-                                <div>100</div>
-                            </div>
-                            <div>채널 수
-                                <div>100</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="subscriber-item col-lg-4">
-                        <div class="item-img"><img class="user" src="<?= site_url('/static/img/user.png') ?>" alt="">
-                        </div>
-                        <div class="item-info">
-                            <div>이름</div>
-                            <div>구독
-                                <div>100</div>
-                            </div>
-                            <div>채널 수
-                                <div>100</div>
-                            </div>
-                        </div>
+                    <div class="jm-ajax-loader-container text-center">
+                        <img class="jm-ajax-loader-sub" src="<?= site_url('/static/img/loader.gif')?>" />
                     </div>
 
                     <div class="load-more col-lg-12 col-md-12 col-sm-12 text-center">
