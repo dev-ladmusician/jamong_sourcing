@@ -97,4 +97,23 @@ class Contents_model extends CI_Model {
         $this->db->from($this->table);
         return $this->db->get()->result();
     }
+
+    function get_vr_list_by_channel($channelId ,$page, $per_page){
+        if ($page === 1) {
+            $this->db->limit($per_page);
+
+        } else {
+            $this->db->limit($per_page, ($page - 1) * $per_page);
+        }
+        $this->db->select('inum, nickName, picture, filename, hit, title');
+        $this->db->where(array('ch'=>$channelId, "uploadstat"=> "Complete"));
+//        $this->db->order_by('follow', 'asc');
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
+    function get_vr_list_count_by_channel($channelId){
+        $this->db->where(array('ch'=>$channelId, "uploadstat"=> "Complete"));
+        return $this->db->count_all_results($this->table);
+    }
 }
