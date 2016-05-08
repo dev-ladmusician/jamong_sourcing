@@ -21,7 +21,7 @@
     <favorites_list name="CodeIgniter-2.2.3" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7605304">
+    <splitter split-orientation="horizontal" split-proportion="0.5080214">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
@@ -138,10 +138,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.41906476">
+                <state vertical-scroll-proportion="-8.321428">
                   <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
                   <folding />
                 </state>
@@ -158,11 +158,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static/css/common.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="594" column="0" selection-start-line="594" selection-start-column="0" selection-end-line="600" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.9106464">
+                  <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -287,7 +287,6 @@
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/category_contents_item.php" />
         <option value="$PROJECT_DIR$/application/views/_CATEGORY/index.php" />
         <option value="$PROJECT_DIR$/static/css/auth/register.css" />
-        <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/application/views/_AUTH/register.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/auth.php" />
         <option value="$PROJECT_DIR$/application/models/user_model.php" />
@@ -297,6 +296,7 @@
         <option value="$PROJECT_DIR$/application/models/contents_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
         <option value="$PROJECT_DIR$/application/views/_HOME/index.php" />
+        <option value="$PROJECT_DIR$/static/css/common.css" />
       </list>
     </option>
   </component>
@@ -1025,7 +1025,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05873715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17621145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1331,14 +1331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="594" column="0" selection-start-line="594" selection-start-column="0" selection-end-line="600" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/channels/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1427,18 +1419,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5215827">
+          <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41906476">
+        <state vertical-scroll-proportion="-8.321428">
           <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
+    <entry file="file://$PROJECT_DIR$/static/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5215827">
-          <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.9106464">
+          <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
           <folding />
         </state>
       </provider>

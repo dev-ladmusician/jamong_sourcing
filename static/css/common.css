@@ -104,6 +104,8 @@ a, a:hover{
     font-size: 14px;
     padding-bottom: 5px;
     font-family: "Noto Sans Medium";
+    overflow-y: hidden;
+    max-height: 25px;
 }
 
 .video-des .video-des-publisher,
