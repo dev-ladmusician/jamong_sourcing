@@ -8,6 +8,10 @@ class Auth extends CORE_Controller {
         $this->load->library('form_validation');
     }
 
+    function logout(){
+
+    }
+
     function submit_login(){
         $this->__is_logined();
 
@@ -68,6 +72,7 @@ class Auth extends CORE_Controller {
 
         $returnURL = $this->input->get('returnURL');
 
+//        var_dump($returnURL);
         if ($returnURL === false || $returnURL === "") {
             redirect('home/index');
         }
@@ -89,7 +94,8 @@ class Auth extends CORE_Controller {
                 if(strlen($password)){
                     if( strcmp($password,$password_confirm) == 0 ){
                         if($agree){
-                            $input_data = array("nickName" => $nickName,
+                            $input_data = array(
+                                "nickName" => $nickName,
                                 "email" => $email,
                                 "age" => $age,
                                 "gender" => $gender,
@@ -97,6 +103,7 @@ class Auth extends CORE_Controller {
 
                             $rtv = $this->user_model->add($input_data);
                             if($rtv){
+                                $this->user_model->add_nickname($rtv, $input_data);
                                 $this->session->set_flashdata('message', '회원등록에 성공 했습니다.');
                                 redirect('/auth/login');
                             }else{

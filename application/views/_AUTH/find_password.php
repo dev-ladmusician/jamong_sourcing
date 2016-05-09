@@ -1,5 +1,5 @@
 <div class="row">
-    <section class="jm-login">
+    <section class="jm-find-password">
         <div class="container">
 
             <div class="form-container solid-border-box">

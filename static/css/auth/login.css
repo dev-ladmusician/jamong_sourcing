@@ -1,9 +1,14 @@
+html, body{
+    height: 100%;
+    background-color: #F5F4F9;
+}
 .jm-login{
-    padding: 15px 0;
+    padding: 100px 0;
 }
 
 .form-container{
     width: 400px;
+    height: 430px;
     margin: auto;
     border-radius: 5px;
 }

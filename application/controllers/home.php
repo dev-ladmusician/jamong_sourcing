@@ -13,6 +13,14 @@ class Home extends CORE_Controller
 
     function index()
     {
+//        $user_id = $this->session->userdata('userid');
+//        $is_superadmin = $this->session->userdata('issuperadmin');
+//        $is_login = $this->session->userdata('is_login');
+//        $email = $this->session->userdata('email');
+//        $nickname = $this->session->userdata('nickname');
+//        $is_admin = $this->session->userdata('isadmin');
+
+
         $categories = $this->category_model->gets();
         $channels = $this->channel_model->gets();
         $main_video = $this->contents_model->get_main_video();

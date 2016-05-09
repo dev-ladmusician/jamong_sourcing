@@ -34,7 +34,7 @@ class Auth extends CORE_Controller {
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('/auth/login');
+        redirect('/home/index');
     }
 
 
