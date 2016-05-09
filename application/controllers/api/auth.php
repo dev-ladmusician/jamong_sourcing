@@ -63,12 +63,15 @@ class Auth extends CORE_Controller {
     function handle_login($user)
     {
         $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
-        $this->session->set_userdata('userid', $user->userNumber);
+        $userId = $this->session->set_userdata('userid', $user->userNumber);
         $this->session->set_userdata('is_login', true);
         $this->session->set_userdata('email', $user->email);
         $this->session->set_userdata('nickname', $user->nickName);
         $this->session->set_userdata('isadmin', $user->is_admin);
         $this->session->set_userdata('issuperadmin', $user->is_superadmin);
+
+        $profile_url = $this->user_model->get_profile_image_by_id($userId);
+        $this->session->set_userdata('profile_url', $profile_url);
 
         $returnURL = $this->input->get('returnURL');
 

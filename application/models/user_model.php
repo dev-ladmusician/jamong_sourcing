@@ -24,24 +24,15 @@ class User_model extends CI_Model
         return $query->result();
     }
 
+    function get_profile_image_by_id($userNumber){
+        $this->db->select('picture');
+        $this->db->where('userNumber',$userNumber);
+        $this->db->from('jamong__tb_users_picture');
+        return $this->db->get()->row();
+    }
+
     function gets()
     {
-//        $query_str = "SELECT jamong__tb_users.userNumber, picture, count(channelnum) as channelNum FROM jamong__tb_users ".
-//                     "LEFT JOIN jamong__tb_users_picture ".
-//                     "ON jamong__tb_users.userNumber = jamong__tb_users_picture.userNumber ".
-//                     "LEFT JOIN jumper__channellist ".
-//                     "ON jamong__tb_users.userNumber = jumper__channellist.userNumber ".
-//                     "GROUP BY userNumber";
-//        $query = $this->db->query($query_str);
-//        return $query->result();
-
-//        $this->db->select('jamong__tb_users.userNumber, jamong__tb_users_picture.picture');
-//        $this->db->from($this->table);
-//        $this->db->join('jamong__tb_users_picture', 'jamong__tb_users_picture.userNumber = jamong__tb_users.userNumber', 'left');
-//        $this->db->join('jumper__channellist', 'jumper__channellist.userNumber = jamong__tb_users.userNumber', 'left');
-//        $this->db->group_by('jamong__tb_users.userNumber');
-//        return $this->db->get()->result();
-
         $this->db->select('*');
         $this->db->from('jamong__tb_users_picture');
         return $this->db->get()->result();

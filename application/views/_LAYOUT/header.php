@@ -89,8 +89,21 @@
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </form>
                         </div>
-                        <a href="#jm-user-setting"><img id="jm-user" class="user"
-                                                        src="<?= site_url('/static/img/user.png') ?>" alt=""></a>
+                        <a href="#jm-user-setting">
+                            <?php
+                            $profile_url = $this->session->userdata('profile_url');
+                            if ($this->session->userdata('is_login') &&  ( $profile_url!= null) ) {
+                                ?>
+                                <img id="jm-user" class="user" src="<?=  $profile_url?>" alt="">
+                                <?php
+
+                            } else {
+                                ?>
+                                <img id="jm-user" class="user" src="<?= site_url('/static/img/user.png') ?>" alt="">
+                                <?php
+                            }
+                            ?>
+                        </a>
                     </div>
                 </div>
             </nav>
