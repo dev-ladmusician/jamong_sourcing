@@ -9,11 +9,17 @@ class Home extends CORE_Controller
         $this->load->model('category_model');
         $this->load->model('channel_model');
         $this->load->model('contents_model');
+        $this->load->model('user_model');
     }
 
     function index()
     {
-//        $user_id = $this->session->userdata('userid');
+
+        $user_id = $this->session->userdata('userid');
+        if($user_id){
+            $profile_url = $this->user_model->get_profile_image_by_id($user_id);
+            $this->session->set_userdata('profile_url', $profile_url->picture);
+        }
 //        $is_superadmin = $this->session->userdata('issuperadmin');
 //        $is_login = $this->session->userdata('is_login');
 //        $email = $this->session->userdata('email');

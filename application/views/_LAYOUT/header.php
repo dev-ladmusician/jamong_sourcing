@@ -91,10 +91,9 @@
                         </div>
                         <a href="#jm-user-setting">
                             <?php
-                            $profile_url = $this->session->userdata('profile_url');
-                            if ($this->session->userdata('is_login') &&  ( $profile_url!= null) ) {
+                            if ( $this->session->userdata('profile_url')  ) {
                                 ?>
-                                <img id="jm-user" class="user" src="<?=  $profile_url?>" alt="">
+                                <img id="jm-user" class="user" src="<?=  $this->session->userdata('profile_url') ?>" alt="">
                                 <?php
 
                             } else {

@@ -70,16 +70,14 @@ class Auth extends CORE_Controller {
         $this->session->set_userdata('isadmin', $user->is_admin);
         $this->session->set_userdata('issuperadmin', $user->is_superadmin);
 
-        $profile_url = $this->user_model->get_profile_image_by_id($userId);
-        $this->session->set_userdata('profile_url', $profile_url);
+//        $profile_url = $this->user_model->get_profile_image_by_id($userId);
+//        $this->session->set_userdata('profile_url', $profile_url->picture);
 
         $returnURL = $this->input->get('returnURL');
 
-//        var_dump($returnURL);
         if ($returnURL === false || $returnURL === "") {
             redirect('home/index');
         }
-
         redirect($returnURL);
     }
 
