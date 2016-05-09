@@ -31,4 +31,16 @@ class Subscriber_model extends CI_Model {
         $this->db->where('channelnum',$channelId);
         return $this->db->count_all_results($this->table);
     }
+
+    function is_subscibed_channel($channelId, $userId){
+        $this->db->select('*');
+        $this->db->where(array('userNumber'=> $userId, 'channelnum'=>$channelId));
+        $this->db->from('jumper__mychannels');
+        $rtv = $this->db->get()->row();
+
+        if(empty($rtv)){
+            return false;
+        }
+        return true;
+    }
 }

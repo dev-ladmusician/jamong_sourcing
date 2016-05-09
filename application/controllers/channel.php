@@ -7,6 +7,7 @@ class Channel extends CORE_Controller {
         $this->load->model('category_model');
         $this->load->model('channel_model');
         $this->load->model('contents_model');
+        $this->load->model('subscriber_model');
     }
 
     function index()
@@ -29,7 +30,15 @@ class Channel extends CORE_Controller {
         $vr_list_new = $this->contents_model->get_vr_list_new_by_channel($channelId);
 
         $rtv = $this->channel_model->get_by_id($channelId);
+
+        $userId = $this->session->userdata('userid');
+
+        $is_subscribed = false;
+        if($userId){
+            $is_subscribed = $this->subscriber_model->is_subscibed_channel($channelId, $userId);
+        }
+
         $this->__get_views('_CHANNEL/index', array('categories' => $categories, 'channels'=>$channels),
-            array('channel'=>$rtv, 'main_video' => $main_video, 'vr_list_hot' => $vr_list_hot, 'vr_list_new' => $vr_list_new));
+            array('is_subscribed' => $is_subscribed,'channel'=>$rtv, 'main_video' => $main_video, 'vr_list_hot' => $vr_list_hot, 'vr_list_new' => $vr_list_new));
     }
 }

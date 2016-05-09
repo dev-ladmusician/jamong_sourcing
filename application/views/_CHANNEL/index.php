@@ -2,22 +2,34 @@
     <section class="jm-channel-home">
         <div class="row solid-border-empty">
             <div class="channel-header solid-border-bottom col-lg-12">
-                <input id="jm-channel-id" type="hidden" value="<?= $channel->channelnum?>">
+                <input id="jm-channel-id" type="hidden" value="<?= $channel->channelnum ?>">
+
                 <div class="col-lg-2 padding-none">
                     <img src="<?= $channel->ch_picture ?>" alt="">
                 </div>
                 <div class="col-lg-10 video-des">
                     <div class="des-title">
-                        <?= $channel->channelname?>
+                        <?= $channel->channelname ?>
                     </div>
                     <div class="des-content">
-                        <?= $channel->chdesc?>
+                        <?= $channel->chdesc ?>
                     </div>
                     <div class="des-info">
-                        <span>VR컨텐츠 <span><b><?= $channel->contents?></b></span></span>
-                        <span>구독자 <span><b><?= $channel->follow?></b></span></span>
-                        <a href="#" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
-                        <a href="#" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
+                        <span>VR컨텐츠 <span><b><?= $channel->contents ?></b></span></span>
+                        <span>구독자 <span><b><?= $channel->follow ?></b></span></span>
+
+                        <?php
+                        if ($is_subscribed) {
+                            ?>
+                            <a href="#" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
+                            <?php
+                        } else { ?>
+                            <a href="#" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
+                            <?php
+                        }
+                        ?>
+
+
                     </div>
                 </div>
             </div>
@@ -33,20 +45,22 @@
                 <div id="channel-home" class="col-lg-12 tab active">
                     <div class="main-video padding-none col-lg-12 solid-border-box">
                         <div class="padding-none video-large col-lg-8">
-                            <a href="<?= site_url('/player?contentId='). $main_video->inum ?>">
-                                <img src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/<?= $main_video->picture ?>" alt="">
+                            <a href="<?= site_url('/player?contentId=') . $main_video->inum ?>">
+                                <img
+                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/<?= $main_video->picture ?>"
+                                    alt="">
                             </a>
                         </div>
                         <div class="padding-none video-des col-lg-4">
                             <div class="video-des-title">
-                                <?= $main_video->title?>
+                                <?= $main_video->title ?>
                             </div>
                             <div class="video-des-content">
-                                <?= $main_video->talk?>
+                                <?= $main_video->talk ?>
                             </div>
                             <div class="video-des-bottom">
-                                <div class="channel-title"><?= $main_video->nickName?></div>
-                                <div class="upload-date"><?= $main_video->datetime?></div>
+                                <div class="channel-title"><?= $main_video->nickName ?></div>
+                                <div class="upload-date"><?= $main_video->datetime ?></div>
                             </div>
                         </div>
                     </div>
@@ -64,15 +78,17 @@
                                     <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
                                         <div class="solid-border-box">
                                             <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
-                                                <img src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>" alt="">
+                                                <img
+                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>"
+                                                    alt="">
                                             </a>
 
                                             <div class="video-des">
-                                                <p class="video-des-title"><?= $item->title?></p>
+                                                <p class="video-des-title"><?= $item->title ?></p>
 
-                                                <p class="video-des-publisher">게시자: <?= $item->nickName?></p>
+                                                <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
 
-                                                <p class="video-des-hits">조회수 <?= $item->hit?></p>
+                                                <p class="video-des-hits">조회수 <?= $item->hit ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -98,15 +114,17 @@
                                     <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
                                         <div class="solid-border-box">
                                             <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
-                                                <img src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>" alt="">
+                                                <img
+                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>"
+                                                    alt="">
                                             </a>
 
                                             <div class="video-des">
-                                                <p class="video-des-title"><?= $item->title?></p>
+                                                <p class="video-des-title"><?= $item->title ?></p>
 
-                                                <p class="video-des-publisher">게시자: <?= $item->nickName?></p>
+                                                <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
 
-                                                <p class="video-des-hits">조회수 <?= $item->hit?></p>
+                                                <p class="video-des-hits">조회수 <?= $item->hit ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +156,7 @@
                     </div>
 
                     <div class="jm-ajax-loader-container text-center">
-                        <img class="jm-ajax-loader-vr" src="<?= site_url('/static/img/loader.gif')?>" />
+                        <img class="jm-ajax-loader-vr" src="<?= site_url('/static/img/loader.gif') ?>"/>
                     </div>
 
                     <div class="load-more col-lg-12 col-md-12 col-sm-12 text-center">
@@ -156,7 +174,7 @@
                     </div>
 
                     <div class="jm-ajax-loader-container text-center">
-                        <img class="jm-ajax-loader-sub" src="<?= site_url('/static/img/loader.gif')?>" />
+                        <img class="jm-ajax-loader-sub" src="<?= site_url('/static/img/loader.gif') ?>"/>
                     </div>
 
                     <div class="load-more col-lg-12 col-md-12 col-sm-12 text-center">
