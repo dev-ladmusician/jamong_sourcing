@@ -176,7 +176,7 @@ channel
 .jm-player-channel .image-container,
 .jm-player-channel .des-group{
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .jm-player-channel .des-group{
     padding-left: 15px;
@@ -201,6 +201,16 @@ channel
     margin-top: 5px;
     padding: 8px;
     display: block;
+}
+
+.jm-player-channel .btn-ch-ok{
+    color: white;
+    font-weight: bold;
+    background-color: #3493D4;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    margin-top: 8px;
 }
 
 

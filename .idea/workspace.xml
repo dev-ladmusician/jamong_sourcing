@@ -24,7 +24,7 @@
     <favorites_list name="CodeIgniter-2.2.3" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.40474743">
+    <splitter split-orientation="horizontal" split-proportion="0.8958587">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
@@ -37,31 +37,51 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="register.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/static/css/auth/register.css">
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.60837436">
+                  <caret line="26" column="133" selection-start-line="26" selection-start-column="133" selection-end-line="26" selection-end-column="133" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/static/js/player/index.js">
+          <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/css/channel/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+                <state vertical-scroll-proportion="-0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="register.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/_AUTH/register.php">
+          <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/css/channel/home.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="13" column="0" selection-start-line="10" selection-start-column="64" selection-end-line="13" selection-end-column="0" />
+                <state vertical-scroll-proportion="-4.3103447">
+                  <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="53" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/css/player/index.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-20.178572">
+                  <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="channel.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-15.607142">
+                  <caret line="29" column="85" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
                   <folding />
                 </state>
               </provider>
@@ -77,11 +97,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="channel.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="channel.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.74876845">
-                  <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
+                <state vertical-scroll-proportion="-25.785715">
+                  <caret line="38" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
                   <folding>
                     <marker date="1462785780780" expanded="true" signature="2600:3005" placeholder="..." />
                   </folding>
@@ -89,11 +109,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user_model.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
+          <file leaf-file-name="player.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/api/player.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-17.642857">
-                  <caret line="26" column="36" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="36" />
+                <state vertical-scroll-proportion="-18.321428">
+                  <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -109,26 +129,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="find_id.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/static/css/auth/find_id.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="20" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="61" selection-end-column="1" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/_AUTH/login.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -136,8 +136,28 @@
           <file leaf-file-name="channel_list_item.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_list_item.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-14.25">
-                  <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+                <state vertical-scroll-proportion="-10.857142">
+                  <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="channels.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/channels.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.428571">
+                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="player.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/player.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-12.214286">
+                  <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -146,57 +166,9 @@
           <file leaf-file-name="channel_model.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.948276">
-                  <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+                <state vertical-scroll-proportion="-8.896552">
+                  <caret line="35" column="212" selection-start-line="35" selection-start-column="202" selection-end-line="35" selection-end-column="212" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-14.928572">
-                  <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-                  <folding>
-                    <marker date="1462782484175" expanded="true" signature="1776:1979" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="2028:2345" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="2137:2345" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="2222:2345" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="2294:2345" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="2429:2636" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="2770:3384" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="2828:2921" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="2981:3073" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="3132:3353" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="3478:4226" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="3532:4226" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="3607:3761" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="3846:4226" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="4088:4226" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="4159:4226" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="4320:4547" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="4665:5028" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="5394:6152" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="5448:6152" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="5532:5686" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="5772:6152" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="6014:6152" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="6085:6152" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="6246:6473" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="6591:6954" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="7496:8277" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="7586:8016" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="7654:7754" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="7820:7989" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="8104:8131" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="8203:8277" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="8422:8538" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="8780:8999" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="8825:8852" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="8924:8999" placeholder="..." />
-                    <marker date="1462782484175" expanded="true" signature="9144:9260" placeholder="..." />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -204,29 +176,31 @@
           <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/_CHANNELS/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="-6.785714">
+                  <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-14.928572">
-                  <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="channel.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-15.607142">
-                  <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-                  <folding />
+                <state vertical-scroll-proportion="0.6551724">
+                  <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+                  <folding>
+                    <marker date="1462787141696" expanded="true" signature="5119:7057" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="5176:5228" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="5273:7037" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="5319:5708" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="5452:5681" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="5754:6143" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="5887:6116" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="6189:6578" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="6322:6551" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="6624:7013" placeholder="..." />
+                    <marker date="1462787141696" expanded="true" signature="6757:6986" placeholder="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -251,11 +225,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/_CATEGORY/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.30418718">
-                  <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+                <state vertical-scroll-proportion="-12.214286">
+                  <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -289,9 +263,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/_AUTH/footer.php" />
-        <option value="$PROJECT_DIR$/static/css/channel/home.css" />
-        <option value="$PROJECT_DIR$/application/views/_CHANNELS/index.php" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/channel_list_item.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/channels.php" />
         <option value="$PROJECT_DIR$/static/js/channels/index.js" />
@@ -305,8 +276,6 @@
         <option value="$PROJECT_DIR$/static/js/channel/index.js" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php" />
         <option value="$PROJECT_DIR$/application/views/_CATEGORY/index.php" />
-        <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
-        <option value="$PROJECT_DIR$/application/controllers/player.php" />
         <option value="$PROJECT_DIR$/application/models/category_model.php" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/channel_subs_item.php" />
         <option value="$PROJECT_DIR$/static/js/common.js" />
@@ -337,9 +306,14 @@
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/header.php" />
         <option value="$PROJECT_DIR$/application/models/channel_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/channel.php" />
-        <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
         <option value="$PROJECT_DIR$/application/models/subscriber_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
+        <option value="$PROJECT_DIR$/application/controllers/channels.php" />
+        <option value="$PROJECT_DIR$/application/controllers/api/player.php" />
+        <option value="$PROJECT_DIR$/application/controllers/player.php" />
+        <option value="$PROJECT_DIR$/static/css/player/index.css" />
+        <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
+        <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
       </list>
     </option>
   </component>
@@ -769,10 +743,6 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_SEARCH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1175,45 +1145,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/category_contents_item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="16" selection-start-column="14" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="27" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/category_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0357144">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_AUTH/find_id.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/player.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1455,26 +1390,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/channels.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.857142">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/channel_profile_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.948276">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1487,34 +1406,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_list_item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.25">
-          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.214286">
-          <caret line="18" column="51" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.714285">
           <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.607142">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1527,53 +1422,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
+    <entry file="file://$PROJECT_DIR$/application/views/_CATEGORY/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.928572">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-          <folding>
-            <marker date="1462782484175" expanded="true" signature="1776:1979" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="2028:2345" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="2137:2345" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="2222:2345" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="2294:2345" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="2429:2636" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="2770:3384" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="2828:2921" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="2981:3073" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="3132:3353" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="3478:4226" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="3532:4226" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="3607:3761" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="3846:4226" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="4088:4226" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="4159:4226" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="4320:4547" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="4665:5028" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="5394:6152" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="5448:6152" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="5532:5686" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="5772:6152" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="6014:6152" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="6085:6152" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="6246:6473" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="6591:6954" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="7496:8277" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="7586:8016" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="7654:7754" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="7820:7989" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="8104:8131" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="8203:8277" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="8422:8538" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="8780:8999" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="8825:8852" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="8924:8999" placeholder="..." />
-            <marker date="1462782484175" expanded="true" signature="9144:9260" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-12.214286">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_list_item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.857142">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_CHANNELS/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.785714">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.214286">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/channels.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.428571">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.785715">
+          <caret line="38" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1462785780780" expanded="true" signature="2600:3005" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/player.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.321428">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/channel/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1581,29 +1488,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/channel/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3103447">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="53" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/player/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.178572">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/player.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.214286">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.896552">
+          <caret line="35" column="212" selection-start-line="35" selection-start-column="202" selection-end-line="35" selection-end-column="212" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.928572">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CATEGORY/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30418718">
-          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/channel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74876845">
-          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.6551724">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
-            <marker date="1462785780780" expanded="true" signature="2600:3005" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="5119:7057" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="5176:5228" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="5273:7037" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="5319:5708" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="5452:5681" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="5754:6143" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="5887:6116" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="6189:6578" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="6322:6551" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="6624:7013" placeholder="..." />
+            <marker date="1462787141696" expanded="true" signature="6757:6986" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.607142">
+          <caret line="29" column="85" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60837436">
+          <caret line="26" column="133" selection-start-line="26" selection-start-column="133" selection-end-line="26" selection-end-column="133" />
+          <folding />
         </state>
       </provider>
     </entry>
