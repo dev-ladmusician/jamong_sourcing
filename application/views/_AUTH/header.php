@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title>JAMONG</title>
+    <title>동신대학교</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta charset="utf-8">
@@ -65,6 +65,18 @@
         <?php
     }
     ?>
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar navbar-static-top" role="navigation">
+
+                <div class="image-container">
+                    <a href="<?= site_url('/home/index') ?>" class="logo">
+                        <img src="<?= base_url('/static/img/dongsin_logo.png') ?>" alt="">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
 
 

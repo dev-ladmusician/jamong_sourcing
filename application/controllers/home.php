@@ -15,6 +15,7 @@ class Home extends CORE_Controller
     function index()
     {
 
+        //로그인 한 경우, profile_image가 등록되어 있으면,
         $user_id = $this->session->userdata('userid');
         if($user_id){
             $profile_url = $this->user_model->get_profile_image_by_id($user_id);
