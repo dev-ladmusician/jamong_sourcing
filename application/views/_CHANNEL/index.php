@@ -21,10 +21,10 @@
                         <?php
                         if ($is_subscribed) {
                             ?>
-                            <a href="#" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
+                            <a href="<?= site_url('api/channel/subscribe_update?channelId='.$channel->channelnum.'&is_subscribed=false')?>" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
                             <?php
                         } else { ?>
-                            <a href="#" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
+                            <a href="<?= site_url('api/channel/subscribe_update?channelId='.$channel->channelnum. '&is_subscribed=true')?>" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
                             <?php
                         }
                         ?>
