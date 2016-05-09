@@ -86,7 +86,7 @@ $(document).ready(function () {
             }, function (arg) {
                 console.log('error!!: ' + arg);
             }, 'json');
-    }
+    };
 
     $('#channel-vr .load-more').click(function () {
         if (!vr_processing && vr_page < vr_last_page) {

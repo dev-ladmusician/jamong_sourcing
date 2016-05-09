@@ -2,6 +2,7 @@
     <section class="jm-search">
         <div class="row solid-border-empty">
             <div class="page-header solid-border-bottom"><?= '"' . $search_query . '" ' . $count ?>개의 VR컨텐츠
+                <input id="jm-search-query" type="hidden" value="<?= $search_query ?>">
                 <select title="jm-filter">
                     <optgroup label="업로드 날짜">
                         <option value="">오늘</option>
@@ -23,87 +24,12 @@
                 </select>
             </div>
 
+
             <div class="result-list col-lg-12 col-md-12 col-sm-12 padding-outer solid-border-bottom">
-                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="solid-border-box">
-                        <img src="/JAMONG/static/img/ex_1.png" alt="">
+            </div>
 
-                        <div class="video-des">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="solid-border-box">
-                        <img src="/JAMONG/static/img/ex_2.png" alt="">
-
-                        <div class="video-des">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="solid-border-box">
-                        <img src="/JAMONG/static/img/ex_3.png" alt="">
-
-                        <div class="video-des">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="solid-border-box">
-                        <img src="/JAMONG/static/img/ex_4.png" alt="">
-
-                        <div class="video-des">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="solid-border-box">
-                        <img src="/JAMONG/static/img/ex_5.png" alt="">
-
-                        <div class="video-des">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6">
-                    <div class="solid-border-box">
-                        <img src="/JAMONG/static/img/ex_6.png" alt="">
-
-                        <div class="video-des">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="jm-ajax-loader-container text-center">
+                <img class="jm-ajax-loader" src="<?= site_url('/static/img/loader.gif') ?>"/>
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 load-more padding-normal text-center">

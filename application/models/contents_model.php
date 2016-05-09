@@ -7,16 +7,17 @@ class Contents_model extends CI_Model {
         $this->table = 'jumper_talk';
     }
 
-    function get_items_by_search($search_str,$page = 1, $per_page =8){
+    function get_items_by_search($search_str, $page, $per_page){
         if($page==1){
-            $query_str = "SELECT * FROM dongshindb.jumper_talk ".
-                "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch".
+            $query_str = "SELECT * FROM dongshindb.jumper_talk".
+                " LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch".
                 " WHERE jumper_talk.nickname like '%" .$search_str. "%' ".
                 " OR jumper_talk.title like '%" .$search_str. "%' ".
                 " OR jumper_talk.talk like '%" .$search_str. "%' ".
                 " OR jumper__channellist.channelname like '%" .$search_str. "%' ".
-//                " ORDER BY jumper_talk.inum DESC".
-                "LIMIT ". $per_page;
+                " OR jumper__channellist.channelname like '%" .$search_str. "%' ".
+                " ORDER BY jumper_talk.inum DESC" .
+                " LIMIT ". $per_page ;
         }else{
             $query_str = "SELECT * FROM dongshindb.jumper_talk ".
                 "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch".
@@ -24,8 +25,8 @@ class Contents_model extends CI_Model {
                 " OR jumper_talk.title like '%" .$search_str. "%' ".
                 " OR jumper_talk.talk like '%" .$search_str. "%' ".
                 " OR jumper__channellist.channelname like '%" .$search_str. "%' ".
-//                " ORDER BY jumper_talk.inum DESC".
-                "LIMIT ". $per_page. "OFFSET " .($page -1) * $per_page;
+                " ORDER BY jumper_talk.inum DESC" .
+                " LIMIT ". $per_page. " OFFSET " . ( ($page -1) * $per_page ) ;
         }
 
         $rtv = $this->db->query($query_str);

@@ -22,14 +22,10 @@ class Search extends CORE_Controller
 
         $categories= $this->category_model->gets();
         $channels = $this->channel_model->gets();
-        $result = $this->contents_model->get_items_by_search($str, 1);
-
+//
         $count = $this->contents_model->get_total_count_by_search($str);
 
-        var_dump($result);
-        var_dump($count);
         $this->__get_views('_SEARCH/result', array('categories' => $categories, 'channels'=>$channels),
-            array('search_query' => $str,
-                'count' => $count));
+            array('search_query' => $str,'count' => $count));
     }
 }
