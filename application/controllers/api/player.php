@@ -49,7 +49,7 @@ class Player extends CORE_Controller
         $total_count = $this->comment_model->get_total_count_comment($content_id);
         $last_page = ceil($total_count / $per_page);
 
-        $view_data = array('items' => $comments, 'is_last' => $last_page == $page);
+        $view_data = array('items' => $comments);
 
         $pass_data = array(
             'page' => $page,
@@ -58,6 +58,7 @@ class Player extends CORE_Controller
             'last_page' => $last_page,
             'count' => count($comments),
             'data' => $this->load->view("_PARTIAL/comment.php", $view_data, true),
+            'is_last' => $last_page == $page
         );
         echo json_encode($pass_data);
     }

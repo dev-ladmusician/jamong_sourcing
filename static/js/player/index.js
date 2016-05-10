@@ -36,7 +36,7 @@ $(document).ready(function(){
     });
 
     var page = 1;
-    var per_page = 10;
+    var per_page = 30;
     var last_page = -1;
     var total_count = -1;
     var processing = false;
@@ -56,12 +56,15 @@ $(document).ready(function(){
             function (data) {
                 ajax_loader.hide();
                 processing = false;
-                console.log(data);
                 page = data.page;
                 per_page = data.per_page;
                 last_page = data.last_page;
                 total_count = data.total_count;
                 $('.comment-list').append(data.data);
+
+                if (data.is_last) {
+                    $('.load-more').hide();
+                }
             }, function (arg) {
                 console.log('error!!: ' + arg);
             }, 'json');
