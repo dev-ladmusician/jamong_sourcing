@@ -53,6 +53,11 @@ html, body{
     font-family: "Noto Sans Medium";
 }
 
+.form-group:nth-child(10) input{
+    text-align: center;
+    border: none;
+}
+
 .form-group input{
     width: 300px;
     border-radius: 5px;

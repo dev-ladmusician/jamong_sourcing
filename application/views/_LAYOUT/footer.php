@@ -104,6 +104,7 @@
 </div>
 
 <script src="<?php echo base_url() ?>static/js/krpano/krpano.js"></script>
+<script src="<?php echo base_url() ?>static/jamongplayer/embedpano.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="/static/js/ajaxBody.js"></script>

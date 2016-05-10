@@ -8,7 +8,23 @@ class Channel extends CORE_Controller
         parent::__construct();
         $this->load->model('contents_model');
         $this->load->model('subscriber_model');
+        $this->load->model('channel_model');
     }
+
+//    function update_follow($channelId,$is_subscribed){
+//        $follow = $this->subscriber_model->get_count_users_by_channel($channelId);
+//        $rtv = $this->channel_model->update_follow($channelId,$follow);
+//        var_dump($rtv);
+//        if($rtv){
+//            if($is_subscribed){
+//                $this->session->set_flashdata('message', '채널을 구독했습니다.');
+//                redirect('channel/home?channelId='.$channelId);
+//            }else{
+//                $this->session->set_flashdata('message', '채널 구독을 취소했습니다.');
+//                redirect('channel/home?channelId='.$channelId);
+//            }
+//        }
+//    }
 
     function subscribe_update(){
         $this->__require_login();
@@ -20,7 +36,9 @@ class Channel extends CORE_Controller
         //구독할때 add
         if(strcmp($is_subscribed, 'true') == 0){
             $rtv = $this->subscriber_model->add($channelId,$userId);
+
             if($rtv=='1'){
+                //            update_follow($channelId,true);
                 $this->session->set_flashdata('message', '채널을 구독했습니다.');
                 redirect('channel/home?channelId='.$channelId);
             }else{
@@ -29,7 +47,9 @@ class Channel extends CORE_Controller
             }
         }else{
             $rtv = $this->subscriber_model->delete($channelId,$userId);
+
             if($rtv=='1'){
+                //            update_follow($channelId,false);
                 $this->session->set_flashdata('message', '채널 구독을 취소했습니다.');
                 redirect('channel/home?channelId='.$channelId);
             }else{
@@ -40,6 +60,7 @@ class Channel extends CORE_Controller
 
 
     }
+
     function get_vr_list_by_channel()
     {
         $channelId = $this->input->get('channelId');

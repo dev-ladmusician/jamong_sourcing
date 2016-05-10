@@ -24,6 +24,7 @@ class Channel_model extends CI_Model {
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
+
         $this->db->select('jumper__channellist.channelname, jumper__channellist.channelnum, jumper__channellist.nickName, jumper__channellist.chdesc, jumper__channellist.contents, jumper__channellist.follow, jumper__channel_profile.ch_picture');
         $this->db->where('isdeprecated',false);
         $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum');
@@ -43,5 +44,12 @@ class Channel_model extends CI_Model {
 
     function get_all_count() {
         return $this->db->count_all_results($this->table);
+    }
+
+    function update_follow($channelId , $follow){
+
+        $this->db->where('channelnum', $channelId);
+        $this->db->update($this->table, array('follow'=> $follow));
+        return $this->db->get()->result();
     }
 }

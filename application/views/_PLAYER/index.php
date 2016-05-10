@@ -3,6 +3,9 @@
         <div class=" col-lg-9 col-md-8 padding-none">
             <section class="jm-player">
 
+                <?php
+                var_dump($content_info);
+                ?>
                 <div class="jm-player-video solid-border-box col-lg-12 padding-none">
                     <div id="pano"></div>
                     <div class="solid-border-bottom video-des">

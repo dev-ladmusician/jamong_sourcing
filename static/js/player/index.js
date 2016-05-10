@@ -20,10 +20,11 @@ $(window).load(function(){
     reset_recommend_list_max_height();
 });
 $(document).ready(function(){
-    var dir = 'static/js/krpano/';
-    //embedpano({swf:dir + "krpano.swf", xml:dir +"krpano.xml", target:"pano", html5:"only"});
-    embedpano({mp4:"https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/original/video103.mp4"
-        , xml:dir +"krpano.xml", target:"pano", html5:"only"});
+    embedpano({
+        swf:"http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/jamongplayer/kp_jamong.swf",
+        xml:"http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/jamongplayer/video.xml",
+        target:"pano",
+        html5:"only"});
 
     $('.load-more').click(function(){
         reset_recommend_list_max_height();

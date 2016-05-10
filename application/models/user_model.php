@@ -318,4 +318,28 @@ class User_model extends CI_Model
             return false;
         }
     }
+
+    function get_user_id_by_email($email){
+        try {
+            $this->db->select('userNumber');
+            $this->db->where('email' ,  $email);
+            $this->db->from($this->table);
+            return $this->db->get()->row();
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
+
+    function get_user_id_by_nickName($nickName){
+        try{
+            $this->db->select('userNumber');
+            $this->db->where('nickName' ,  $nickName);
+            $this->db->from('jumper_user');
+            return $this->db->get()->row();
+        }
+        catch(Exception $e){
+            return $e;
+        }
+
+    }
 }
