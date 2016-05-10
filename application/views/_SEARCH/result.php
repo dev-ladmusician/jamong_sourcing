@@ -1,7 +1,8 @@
 <div class="content-wrapper col-lg-9 col-md-9 col-sm-12">
     <section class="jm-search">
         <div class="row solid-border-empty">
-            <div class="page-header solid-border-bottom"><?= '"' . $search_query . '" ' . $count ?>개의 VR컨텐츠
+            <div class="page-header solid-border-bottom">
+                <span class="jamong-search-result"><?= '"' . $search_query . '" ' ?></span>
                 <input id="jm-search-query" type="hidden" value="<?= $search_query ?>">
                 <select title="jm-filter">
                     <optgroup label="업로드 날짜">

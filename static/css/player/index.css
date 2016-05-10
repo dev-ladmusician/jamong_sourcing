@@ -91,6 +91,9 @@ comment
     padding: 20px 0;
     text-align: center;
 }
+#jm-form-comment .jamong-user-profile {
+    width: 70px;
+}
 
 .btn-cm-submit a {
     color: white;
@@ -121,6 +124,8 @@ comment
     border-color: #e4e5e8;
     height: 80px;
     width: 410px;
+    max-width: 410px;
+    min-height: 80px;
     vertical-align: text-top;
     padding: 5px;
 }
