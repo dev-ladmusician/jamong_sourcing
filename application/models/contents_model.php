@@ -108,6 +108,50 @@ class Contents_model extends CI_Model {
         return $this->db->get()->result();
     }
 
+    function get_vr_list_hot_more($page=1, $per_page=8){
+        if ($page === 1) {
+            $this->db->limit($per_page);
+
+        } else {
+            $this->db->limit($per_page, ($page - 1) * $per_page);
+        }
+
+        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->where("uploadstat" , "Complete");
+        $this->db->order_by('hit','desc');
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
+    function get_vr_list_new_more($page=1, $per_page=8){
+        if ($page === 1) {
+            $this->db->limit($per_page);
+
+        } else {
+            $this->db->limit($per_page, ($page - 1) * $per_page);
+        }
+
+        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->where("uploadstat" , "Complete");
+        $this->db->order_by('datetime','desc');
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
+    function get_contents_by_recent($page=1, $per_page=8){
+        if ($page === 1) {
+            $this->db->limit($per_page);
+
+        } else {
+            $this->db->limit($per_page, ($page - 1) * $per_page);
+        }
+        $this->db->select('inum, nickName, picture, datetime, hit, title');
+        $this->db->where("uploadstat" , "Complete");
+        $this->db->order_by('datetime', 'desc');
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
     function get_all_count($categoryId){
         $this->db->where(array('cate'=>$categoryId, "uploadstat"=> "Complete"));
         return $this->db->count_all_results($this->table);
@@ -123,7 +167,6 @@ class Contents_model extends CI_Model {
     }
 
     function get_vr_list_hot(){
-
         $this->db->select('picture, inum, filename, hit, nickName, title');
         $this->db->where("uploadstat" , "Complete");
         $this->db->order_by('hit','desc');

@@ -17,8 +17,8 @@ class Category extends CORE_Controller
 
         //인기
         if($categoryId == 9){
-            $rtv = $this->contents_model->get_contents_by_hit($categoryId, $page, $per_page);
-            $total_count = $this->contents_model->get_count($categoryId);
+            $rtv = $this->contents_model->get_vr_list_hot_more($page, $per_page);
+            $total_count = 50;
             $last_page = ceil($total_count / $per_page);
             $view_data = array('items'=>$rtv, 'count'=>$total_count);
             $pass_data = array(
@@ -32,8 +32,8 @@ class Category extends CORE_Controller
             echo json_encode($pass_data);
 
         }else if($categoryId == 10){
-            $rtv = $this->contents_model->get_contents_by_recent($categoryId, $page, $per_page);
-            $total_count = $this->contents_model->get_all_count($categoryId);
+            $rtv = $this->contents_model->get_vr_list_new_more( $page, $per_page);
+            $total_count = 50;
             $last_page = ceil($total_count / $per_page);
             $view_data = array('items'=>$rtv, 'count'=>$total_count);
             $pass_data = array(
