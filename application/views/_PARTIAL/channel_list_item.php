@@ -21,7 +21,7 @@ foreach ($items as $item) {
                         <div>VR컨텐츠<span><?= $item->contents ?></span></div>
                         <div>구독자<span><?= $item->follow ?></span></div>
                     </div>
-                    <?php if ($item->userNumber != null) { ?>
+                    <?php if (isset($item->userNumber) && $item->userNumber != null) { ?>
                         <a href="#" class="btn-ch-subs-cancel btn-ch-subs">
                             <i class="glyphicon glyphicon-remove"></i> 구독취소</a>
                     <?php } else { ?>

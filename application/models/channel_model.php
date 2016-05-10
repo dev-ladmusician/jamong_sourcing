@@ -35,7 +35,7 @@ class Channel_model extends CI_Model {
     function get_channel_list_with_my_subscribe($page, $per_page) {
         $query = "";
         if ($this->session->userdata('userid')) {
-            $query = "SELECT  ch.channelname, ch.chdesc,
+            $query = "SELECT ch.channelname, ch.chdesc,
                 ch.contents, ch.follow, ch.channelnum,
                 profile.ch_picture,
                 sub.userNumber
@@ -47,7 +47,9 @@ class Channel_model extends CI_Model {
                 "ON profile.channelnum = ch.channelnum ".
                 "WHERE   ch.isdeprecated = false ";
         } else {
-            $query = "SELECT  * FROM ".
+            $query = "SELECT  ch.channelname, ch.chdesc,
+                ch.contents, ch.follow, ch.channelnum,
+                profile.ch_picture FROM ".
                 "dongshindb.jumper__channellist ch ".
                 "LEFT OUTER JOIN jumper__channel_profile profile ".
                 "ON profile.channelnum = ch.channelnum ".
