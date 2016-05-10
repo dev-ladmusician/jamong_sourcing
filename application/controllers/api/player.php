@@ -7,19 +7,59 @@ class Player extends CORE_Controller
     {
         parent::__construct();
         $this->load->model('subscriber_model');
+        $this->load->model('comment_model');
     }
 
     function submit_comment() {
         $content_id = $this->input->get('contentId');
         $user_id = $this->session->userdata('userid');
         $comment = $this->input->post('user-comment');
+        $flash_str = "";
 
         if ($this->session->userdata('is_login')) {
-
+            $rtv = $this->comment_model->add($content_id, $user_id, $comment);
+            if ($rtv <= 0) $flash_str = "댓글 다는데 오류가 발생했습니다.";
         } else {
-            $this->session->set_flashdata('message', '로그인해주세요.');
-            redirect('/player/index?contentId='.$content_id);
+            $flash_str = "로그인 해주세요.";
         }
+        if (strlen($flash_str) > 0) $this->session->set_flashdata('message', $flash_str);
+        redirect('/player/index?contentId='.$content_id);
+    }
+
+    function test() {
+        $content_id = $this->input->get('contentId');
+        $comments = $this->comment_model->gets($content_id, 1, 100);
+
+        $rtv = array(
+            'contentId' => $content_id,
+            'items' => $comments
+        );
+        echo json_encode($rtv, JSON_PRETTY_PRINT);
+    }
+
+    function get_comments() {
+        $content_id = $this->input->get('contentId');
+        $page = $this->input->get('page');
+        $per_page = $this->input->get('perPage');
+
+        if (!$page) $page = 1;
+        if (!$per_page) $per_page = 10;
+
+        $comments = $this->comment_model->gets($content_id, $page, $per_page);
+        $total_count = $this->comment_model->get_total_count_comment($content_id);
+        $last_page = ceil($total_count / $per_page);
+
+        $view_data = array('items' => $comments, 'is_last' => $last_page == $page);
+
+        $pass_data = array(
+            'page' => $page,
+            'per_page' => $per_page,
+            'total_count' => $total_count,
+            'last_page' => $last_page,
+            'count' => count($comments),
+            'data' => $this->load->view("_PARTIAL/comment.php", $view_data, true),
+        );
+        echo json_encode($pass_data);
     }
 
     function subscribe_update(){

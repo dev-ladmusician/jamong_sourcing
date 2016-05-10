@@ -50,6 +50,14 @@ a, a:hover{
     padding: 0 0 0 20px;
 }
 
+/* ajax loader */
+.jm-ajax-loader-container {
+    padding: 50px;
+}
+.jm-ajax-loader-container img {
+    width: 30px;
+}
+
 .solid-border-box {
     border: solid 1px #e4e5e8;
     background-color: white;
