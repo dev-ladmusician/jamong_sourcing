@@ -47,7 +47,7 @@
                         <div class="padding-none video-large col-lg-8">
                             <a href="<?= site_url('/player?contentId=') . $main_video->inum ?>">
                                 <img
-                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/<?= $main_video->picture ?>"
+                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/high_thumb.png"
                                     alt="">
                             </a>
                         </div>
@@ -79,7 +79,7 @@
                                         <div class="solid-border-box">
                                             <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
                                                 <img
-                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>"
+                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
                                                     alt="">
                                             </a>
 
@@ -115,7 +115,7 @@
                                         <div class="solid-border-box">
                                             <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
                                                 <img
-                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>"
+                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
                                                     alt="">
                                             </a>
 

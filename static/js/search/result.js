@@ -12,7 +12,7 @@ $(document).ready(function(){
     get_search_items(page, per_page);
 
     function get_search_items(page, perPage) {
-        var query = $('#jm-search-query').val();
+        var query = $('#jm-search').val();
         var api = '/JAMONG/api/search/search_result?page=' + page + '&perPage=' + perPage + '&search_query=' + query;
 
         console.log(query);
@@ -32,8 +32,8 @@ $(document).ready(function(){
                     last_page = data.last_page;
                     total_count = data.total_count;
                     $('.result-list').append(data.data);
-
-                    $('.jamong-search-result').text($('.jamong-search-result').text() + data.total_count + "개의 콘텐츠");
+                    var title = query + data.total_count + "개의 콘텐츠";
+                    $('.jamong-search-result').text(title);
                 } else {
                     $('.result-list').html(data.data);
                 }

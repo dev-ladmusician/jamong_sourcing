@@ -3,7 +3,7 @@
         <div class="solid-border-box">
             <a href="<?= site_url('/player?contentId='.$item->inum)?>">
                 <img
-                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/<?= $item->picture ?>"
+                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
                     alt="">
             </a>
 
