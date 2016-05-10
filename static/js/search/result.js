@@ -26,11 +26,14 @@ $(document).ready(function(){
                 processing = false;
 
                 if (data.total_count) {
+                    console.log(data);
                     page = data.page;
                     per_page = data.per_page;
                     last_page = data.last_page;
                     total_count = data.total_count;
                     $('.result-list').append(data.data);
+
+                    $('.jamong-search-result').text($('.jamong-search-result').text() + data.total_count + "개의 콘텐츠");
                 } else {
                     $('.result-list').html(data.data);
                 }

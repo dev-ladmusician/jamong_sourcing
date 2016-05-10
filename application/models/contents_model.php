@@ -7,38 +7,73 @@ class Contents_model extends CI_Model {
         $this->table = 'jumper_talk';
     }
 
-    function get_items_by_search($page, $per_page, $query_str) {
-        if ($page == 1) {
-            $query_str = "SELECT * FROM dongshindb.jumper_talk ".
-                "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".
-                "WHERE jumper_talk.nickName like '%goqual%' ".
-                "OR jumper_talk.title like '%goqual%' ".
-                "OR jumper_talk.talk like '%goqual%' ".
-                "OR jumper__channellist.channelname like '%goqual%' ".
-                "ORDER BY jumper_talk.inum DESC ".
-                "LIMIT ". $per_page;
-        } else {
-            $query_str = "SELECT * FROM dongshindb.jumper_talk ".
-                "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".
-                "WHERE jumper_talk.nickName like '%".$query_str."%' ".
-                "OR jumper_talk.title like '%".$query_str."%' ".
-                "OR jumper_talk.talk like '%".$query_str."%' ".
-                "OR jumper__channellist.channelname like '%".$query_str."%' ".
-                "ORDER BY jumper_talk.inum DESC ".
-                "LIMIT ". $per_page. " OFFSET " .($page -1) * $per_page;
-        }
+    function get_items_by_search($page, $per_page, $query_str, $filter, $sorting) {
+//        $query_str = "SELECT * FROM dongshindb.jumper_talk ".
+//            "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".
+//            "WHERE jumper_talk.nickName like '%".$query_str."%' ".
+//            "OR jumper_talk.title like '%".$query_str."%' ".
+//            "OR jumper_talk.talk like '%".$query_str."%' ".
+//            "OR jumper__channellist.channelname like '%".$query_str."%' ".
+//            "ORDER BY jumper_talk.inum DESC ".
+//            "LIMIT ". $per_page. " OFFSET " .($page -1) * $per_page;
+
+        $query_str = "SELECT * FROM dongshindb.jumper_talk ".
+            "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".
+            "WHERE jumper_talk.nickName like '%".$query_str."%' ".
+            "OR jumper_talk.title like '%".$query_str."%' ".
+            "OR jumper_talk.talk like '%".$query_str."%' ".
+            "OR jumper__channellist.channelname like '%".$query_str."%' ";
+
+        if (isset($filter['today'])) $query_str = $query_str."AND jumper_talk.created >= ".date('Y-m-d') .' ';
+        if (isset($filter['yesterday'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-1 day", time())) .' ';
+        if (isset($filter['week'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-7 day", time())) .' ';
+        if (isset($filter['month'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-30 day", time())) .' ';
+        if (isset($filter['year'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-366 day", time())) .' ';
+
+        if (isset($sorting['like'])) $query_str = $query_str."ORDER BY jumper_talk.likes DESC ";
+        if (isset($sorting['hit'])) $query_str = $query_str."ORDER BY jumper_talk.hit DESC ";
+        if (isset($sorting['date'])) $query_str = $query_str."ORDER BY jumper_talk.inum DESC ";
+
+        if (!$sorting) $query_str = $query_str."ORDER BY jumper_talk.inum DESC ";
+        $query_str = $query_str."LIMIT ". $per_page. " OFFSET " .($page -1) * $per_page;
 
         $query = $this->db->query($query_str);
         return $query->result();
     }
 
-    function get_total_count_by_search($query_str) {
+    function test ($page, $per_page, $query_str, $filter) {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->join('jumper__channellist', 'jumper__channellist.channelnum = jumper_talk.ch', 'left');
+        $this->db->or_like('jumper_talk.nickName', '%'.$query_str.'%');
+        $this->db->or_like('jumper_talk.talk', '%'.$query_str.'%');
+        $this->db->or_like('jumper_talk.title', '%'.$query_str.'%');
+        $this->db->or_like('jumper__channellist.channelname', '%'.$query_str.'%');
+        $this->db->order_by('jumper_talk.inum', 'desc');
+        $this->db->limit($per_page, ($page - 1) * $per_page);
+
+        return $this->db->get()->result();
+    }
+
+    function get_total_count_by_search($query_str, $filter, $sorting) {
         $query_str = "SELECT jumper_talk.inum FROM dongshindb.jumper_talk ".
             "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".
-            "WHERE jumper_talk.nickName like '%goqual%' ".
-            "OR jumper_talk.title like '%goqual%' ".
-            "OR jumper_talk.talk like '%goqual%' ".
-            "OR jumper__channellist.channelname like '%goqual%' ";
+            "WHERE jumper_talk.nickName like '%".$query_str."%' ".
+            "OR jumper_talk.title like '%".$query_str."%' ".
+            "OR jumper_talk.talk like '%".$query_str."%' ".
+            "OR jumper__channellist.channelname like '%".$query_str."%' ";
+
+        if (isset($filter['today'])) $query_str = $query_str."AND jumper_talk.created >= ".date('Y-m-d') .' ';
+        if (isset($filter['yesterday'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-1 day", time())) .' ';
+        if (isset($filter['week'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-7 day", time())) .' ';
+        if (isset($filter['month'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-30 day", time())) .' ';
+        if (isset($filter['year'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-366 day", time())) .' ';
+
+        if (isset($sorting['like'])) $query_str = $query_str."ORDER BY jumper_talk.likes DESC ";
+        if (isset($sorting['hit'])) $query_str = $query_str."ORDER BY jumper_talk.hit DESC ";
+        if (isset($sorting['date'])) $query_str = $query_str."ORDER BY jumper_talk.inum DESC ";
+
+        if (!$sorting) $query_str = $query_str."ORDER BY jumper_talk.inum DESC ";
 
         $query = $this->db->query($query_str);
         return count($query->result());

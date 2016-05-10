@@ -26,9 +26,14 @@
                     <div class="header solid-border-bottom">
                         댓글 <span>70</span>
                     </div>
-                    <div id="jm-form-comment" class="solid-border-bottom ">
+                    <!-- 댓글 입력 -->
+                    <form id="jm-form-comment" class="solid-border-bottom ">
                         <div class="comment-img">
-                            <img src="<?= site_url('/static/img/user.png') ?>" alt="">
+                            <?php if ($this->session->userdata('profile_url') != false) { ?>
+                                <img class="jamong-user-profile" src="<?= $this->session->userdata('profile_url') ?>" alt="">
+                            <?php } else { ?>
+                                <img class="jamong-user-profile" src="<?= site_url('/static/img/user.png') ?>" alt="">
+                            <?php } ?>
                         </div>
                         <div class="comment-content">
                             <textarea placeholder="댓글을 입력하세요" name="user-comment" id="jm-comment"></textarea>
@@ -36,7 +41,9 @@
                         <div class="btn-cm-submit comment-submit">
                             <a href="#" class="">등록</a>
                         </div>
-                    </div>
+                    </form>
+
+                    <!-- 댓글 -->
                     <div class="comment-list-container">
                         <ul class="comment-list">
                             <li class="comment-group">
