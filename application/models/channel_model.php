@@ -52,4 +52,10 @@ class Channel_model extends CI_Model {
         $this->db->update($this->table, array('follow'=> $follow));
         return $this->db->get()->result();
     }
+
+    function get_follow_count_by_channel($channelId){
+        $this->db->like('channelnum', $channelId);
+        $this->db->from('jumper__channellist');
+        return $this->db->count_all_results();
+    }
 }

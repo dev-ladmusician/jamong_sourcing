@@ -2,10 +2,6 @@
     <div class="row">
         <div class=" col-lg-9 col-md-8 padding-none">
             <section class="jm-player">
-
-                <?php
-                var_dump($content_info);
-                ?>
                 <div class="jm-player-video solid-border-box col-lg-12 padding-none">
                     <div id="pano"></div>
                     <div class="solid-border-bottom video-des">
@@ -20,7 +16,18 @@
                     </div>
 
                     <div class="video-action">
-                        <a href=#"><i class="glyphicon glyphicon-heart-empty ic-heart"></i><span><?= $content_info->likes?></span></a>
+                        <?php
+                        if ($is_liked) {
+                            ?>
+                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId . '&is_liked=false') ?>"
+                               class="btn-ch-subs"><i class="glyphicon glyphicon-heart ic-heart"></i><span><?= $content_info->likes?></span></a>
+                            <?php
+                        } else { ?>
+                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId. '&is_liked=true') ?>"
+                               class="btn-ch-subs"><i class="glyphicon glyphicon-heart-empty ic-heart"></i><span><?= $content_info->likes?></span></a>
+                            <?php
+                        }
+                        ?>
                         <a href="#"><i class="glyphicon glyphicon-share-alt ic-share"></i>공유</a>
                     </div>
                 </div>
