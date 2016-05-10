@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="load-more col-lg-12 col-md-12 col-sm-12 text-center">
-                    <a href="#">더보기<i class="glyphicon glyphicon-menu-down"></i></a>
+                    <a href="javascript:void(0);">더보기<i class="glyphicon glyphicon-menu-down"></i></a>
                 </div>
             </section>
         </div>

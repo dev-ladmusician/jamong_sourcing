@@ -36,7 +36,7 @@ $(document).ready(function(){
     });
 
     var page = 1;
-    var per_page = 30;
+    var per_page = 10;
     var last_page = -1;
     var total_count = -1;
     var processing = false;
@@ -70,7 +70,7 @@ $(document).ready(function(){
             }, 'json');
     };
 
-    $('.jm-search .load-more').click(function () {
+    $('.load-more').click(function () {
         if (!processing && page < last_page) {
             get_search_items(++page, per_page);
         }
