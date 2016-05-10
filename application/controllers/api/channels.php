@@ -9,34 +9,70 @@ class Channels extends CORE_Controller
         $this->load->model('channel_model');
         $this->load->model('subscriber_model');
     }
-
-    function get_channel_list()
-    {
+    function test() {
         $page = $this->input->get('page');
         $per_page = $this->input->get('perPage');
-        $rtv = $this->channel_model->get_channel_list($page, $per_page);
-        $total_count = $this->channel_model->get_all_count();
 
+        if(!$page) $page = 1;
+        if(!$per_page) $per_page = 8;
+
+        $channels = $this->channel_model->get_channel_list_with_my_subscribe($page, $per_page);
+        $total_count = $this->channel_model->get_all_count();
         $last_page = ceil($total_count / $per_page);
 
-        $is_login = $this->session->userdata('is_login');
-
-        $subs = array();
-        if($is_login){
-            $userId = $this->session->userdata('userid');
-            $subs = $this->subscriber_model->get_channel_list_by_user($userId);
-        }
-
-        $view_data = array('items'=>$rtv, 'count'=>$total_count, 'subs'=>$subs);
-
-        $pass_data = array('data'=> $this->load->view('_PARTIAL/channel_list_item.php',$view_data, true),
-                            'page'=> $page,
-                            'per_page' => $per_page,
-                            'total_count' => $total_count,
-                            'last_page' => $last_page);
-
-        echo json_encode($pass_data);
+        echo json_encode($channels, JSON_PRETTY_PRINT);
     }
+
+    function get_channel_list() {
+        $page = $this->input->get('page');
+        $per_page = $this->input->get('perPage');
+
+        if(!$page) $page = 1;
+        if(!$per_page) $per_page = 8;
+
+        $channels = $this->channel_model->get_channel_list_with_my_subscribe($page, $per_page);
+        $total_count = $this->channel_model->get_all_count();
+        $last_page = ceil($total_count / $per_page);
+
+        $view_data = array('items'=>$channels);
+
+        $pass_data = array(
+            'page'=> $page,
+            'per_page' => $per_page,
+            'total_count' => $total_count,
+            'last_page' => $last_page,
+            'data'=> $this->load->view('_PARTIAL/channel_list_item.php', $view_data, true));
+
+        echo json_encode($pass_data, JSON_PRETTY_PRINT);
+    }
+
+//    function get_channel_list()
+//    {
+//        $page = $this->input->get('page');
+//        $per_page = $this->input->get('perPage');
+//        $rtv = $this->channel_model->get_channel_list($page, $per_page);
+//        $total_count = $this->channel_model->get_all_count();
+//
+//        $last_page = ceil($total_count / $per_page);
+//
+//        $is_login = $this->session->userdata('is_login');
+//
+//        $subs = array();
+//        if($is_login){
+//            $userId = $this->session->userdata('userid');
+//            $subs = $this->subscriber_model->get_channel_list_by_user($userId);
+//        }
+//
+//        $view_data = array('items'=>$rtv, 'count'=>$total_count, 'subs'=>$subs);
+//
+//        $pass_data = array('data'=> $this->load->view('_PARTIAL/channel_list_item.php',$view_data, true),
+//                            'page'=> $page,
+//                            'per_page' => $per_page,
+//                            'total_count' => $total_count,
+//                            'last_page' => $last_page);
+//
+//        echo json_encode($pass_data);
+//    }
 
 //    function subscribe_update(){
 //        $this->__require_login();

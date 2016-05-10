@@ -4,7 +4,7 @@ $(document).ready(function () {
     var last_page = -1;
     var total_count = -1;
     var processing = false;
-    var ajax_loader = $('.jm-ajax-loader');
+    var ajax_loader = $('.jm-ajax-loader-container');
 
     get_items(page, per_page);
 
@@ -16,25 +16,18 @@ $(document).ready(function () {
 
         getJson(api, {},
             function (data) {
-
                 ajax_loader.hide();
                 processing = false;
 
-                if (data.total_count) {
-                    page = data.page;
-                    per_page = data.per_page;
-                    last_page = data.last_page;
-                    total_count = data.total_count;
-                    $('.jm-channels .channels-list').append(data.data);
-                } else {
-                    $('.jm-channels .channels-list').html(data.data);
+                page = data.page;
+                per_page = data.per_page;
+                last_page = data.last_page;
+                total_count = data.total_count;
+                $('.jm-channels .channels-list').append(data.data);
+
+                if (page == last_page) {
+                    $('.load-more').hide();
                 }
-
-                console.log(data.page);
-                console.log(data.per_page);
-                console.log(data.last_page);
-                console.log(data.total_count);
-
             }, function (arg) {
                 console.log('error!!: ' + arg);
             }, 'json');

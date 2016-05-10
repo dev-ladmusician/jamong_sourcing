@@ -139,12 +139,17 @@ a, a:hover{
 }
 
 .btn-ch-subs{
-    color: #3493D4;
     border-radius: 5px;
     border: solid 1px #e4e5e8;
     text-decoration: none;
     padding: 8px;
     line-height: 1;
+}
+.btn-ch-subs-plus {
+    color: #3493D4;
+}
+.btn-ch-subs-cancel {
+    color: #EA6645;
 }
 .padding-normal{
     padding: 10px 13px;

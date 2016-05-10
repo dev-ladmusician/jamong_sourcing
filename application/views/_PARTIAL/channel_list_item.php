@@ -1,5 +1,4 @@
 <?php
-var_dump($subs);
 foreach ($items as $item) {
     ?>
     <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-inner">
@@ -22,7 +21,14 @@ foreach ($items as $item) {
                         <div>VR컨텐츠<span><?= $item->contents ?></span></div>
                         <div>구독자<span><?= $item->follow ?></span></div>
                     </div>
-                    <a href="#" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
+                    <?php if ($item->userNumber != null) { ?>
+                        <a href="#" class="btn-ch-subs-cancel btn-ch-subs">
+                            <i class="glyphicon glyphicon-remove"></i> 구독취소</a>
+                    <?php } else { ?>
+                        <a href="#" class="btn-ch-subs btn-ch-subs-plus">
+                            <i class="glyphicon glyphicon-plus"></i> 구독하기</a>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>
