@@ -7,6 +7,43 @@ class Contents_model extends CI_Model {
         $this->table = 'jumper_talk';
     }
 
+    function get_items_by_search($page, $per_page, $query_str) {
+        if ($page == 1) {
+            $query_str = "SELECT * FROM dongshindb.jumper_talk ".
+                "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".
+                "WHERE jumper_talk.nickName like '%goqual%' ".
+                "OR jumper_talk.title like '%goqual%' ".
+                "OR jumper_talk.talk like '%goqual%' ".
+                "OR jumper__channellist.channelname like '%goqual%' ".
+                "ORDER BY jumper_talk.inum DESC ".
+                "LIMIT ". $per_page;
+        } else {
+            $query_str = "SELECT * FROM dongshindb.jumper_talk ".
+                "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".
+                "WHERE jumper_talk.nickName like '%".$query_str."%' ".
+                "OR jumper_talk.title like '%".$query_str."%' ".
+                "OR jumper_talk.talk like '%".$query_str."%' ".
+                "OR jumper__channellist.channelname like '%".$query_str."%' ".
+                "ORDER BY jumper_talk.inum DESC ".
+                "LIMIT ". $per_page. " OFFSET " .($page -1) * $per_page;
+        }
+
+        $query = $this->db->query($query_str);
+        return $query->result();
+    }
+
+    function get_total_count_by_search($query_str) {
+        $query_str = "SELECT jumper_talk.inum FROM dongshindb.jumper_talk ".
+            "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".
+            "WHERE jumper_talk.nickName like '%goqual%' ".
+            "OR jumper_talk.title like '%goqual%' ".
+            "OR jumper_talk.talk like '%goqual%' ".
+            "OR jumper__channellist.channelname like '%goqual%' ";
+
+        $query = $this->db->query($query_str);
+        return count($query->result());
+    }
+
     function gets(){
         $this->db->select('*');
         $this->db->where('isdeprecated',false);
