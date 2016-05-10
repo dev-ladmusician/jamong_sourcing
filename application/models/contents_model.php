@@ -101,7 +101,7 @@ class Contents_model extends CI_Model {
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
-        $this->db->select('inum, nickName, filename, datetime, hit, title');
+        $this->db->select('inum, nickName, filename, datetime, hit, title, cate');
         $this->db->where(array('cate'=>$categoryId, "uploadstat"=> "Complete"));
 //        $this->db->order_by('follow', 'asc');
         $this->db->from($this->table);
@@ -116,7 +116,7 @@ class Contents_model extends CI_Model {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
 
-        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
         $this->db->where("uploadstat" , "Complete");
         $this->db->order_by('hit','desc');
         $this->db->from($this->table);
@@ -131,7 +131,7 @@ class Contents_model extends CI_Model {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
 
-        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
         $this->db->where("uploadstat" , "Complete");
         $this->db->order_by('datetime','desc');
         $this->db->from($this->table);
@@ -153,7 +153,7 @@ class Contents_model extends CI_Model {
     }
 
     function get_vr_list_hot(){
-        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
         $this->db->where("uploadstat" , "Complete");
         $this->db->order_by('hit','desc');
         $this->db->limit(8);
@@ -163,7 +163,7 @@ class Contents_model extends CI_Model {
 
     function get_vr_list_new(){
 
-        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
         $this->db->where("uploadstat" , "Complete");
         $this->db->order_by('datetime','desc');
         $this->db->limit(8);
@@ -182,7 +182,7 @@ class Contents_model extends CI_Model {
 
     function get_vr_list_hot_by_channel($channelId){
 
-        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId));
         $this->db->order_by('hit','desc');
         $this->db->limit(4);
@@ -192,7 +192,7 @@ class Contents_model extends CI_Model {
 
     function get_vr_list_new_by_channel($channelId){
 
-        $this->db->select('picture, inum, filename, hit, nickName, title');
+        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId));
         $this->db->order_by('datetime','desc');
         $this->db->limit(4);
@@ -207,7 +207,7 @@ class Contents_model extends CI_Model {
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
-        $this->db->select('inum, nickName, picture, filename, hit, title');
+        $this->db->select('inum, nickName, picture, filename, hit, title, cate');
         $this->db->where(array('ch'=>$channelId, "uploadstat"=> "Complete"));
 //        $this->db->order_by('follow', 'asc');
         $this->db->from($this->table);
@@ -220,7 +220,7 @@ class Contents_model extends CI_Model {
     }
 
     function getByContentId($contentId){
-        $this->db->select('nickName, picture, filename, hit, title, ch, likes, datetime, type');
+        $this->db->select('nickName, picture, filename, hit, title, ch, likes, datetime, type, cate');
         $this->db->where("inum" , $contentId);
         $this->db->from($this->table);
         return $this->db->get()->row();
