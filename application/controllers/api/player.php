@@ -63,6 +63,12 @@ class Player extends CORE_Controller
         echo json_encode($pass_data);
     }
 
+    function delete_comment() {
+        $comment_id = $this->input->get('commentId');
+        $rtv = $this->comment_model->delete($comment_id);
+        echo json_encode($rtv, JSON_PRETTY_PRINT);
+    }
+
     function subscribe_update(){
         $this->__require_login();
 

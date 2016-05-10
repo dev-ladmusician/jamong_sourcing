@@ -149,10 +149,18 @@ comment
     color: #646469;
     font-weight: bold;
 }
-
-.jm-player-comment .comment-list .comment-group .comment-item-name span:last-child {
+.jm-player-comment .comment-list .comment-group .comment-item-name span.comment-warning {
     float: right;
     color: #96989c;
+}
+.jm-player-comment .comment-list .comment-group .comment-item-name span.comment-delete {
+    float: right;
+    color: #FB8684;
+    margin-right: 10px;
+}
+.jm-player-comment .comment-list .comment-group .comment-item-name span.comment-delete:hover,
+.jm-player-comment .comment-list .comment-group .comment-item-name span.comment-warning:hover{
+    cursor: pointer;
 }
 
 .jm-player-comment .comment-list .comment-group .comment-item-contents {

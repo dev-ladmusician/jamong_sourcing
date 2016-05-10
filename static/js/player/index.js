@@ -65,16 +65,37 @@ $(document).ready(function(){
                 if (data.is_last) {
                     $('.load-more').hide();
                 }
+                handleCommentDelet();
             }, function (arg) {
                 console.log('error!!: ' + arg);
             }, 'json');
     };
 
+    // show more comment
     $('.load-more').click(function () {
         if (!processing && page < last_page) {
             get_search_items(++page, per_page);
         }
     });
+
+    function handleCommentDelet() {
+        // delete comment
+        $('.comment-delete').click(function (e) {
+            e.preventDefault();
+            var commentId = $(this).attr('id');
+            getJson('/JAMONG/api/player/delete_comment?commentId=' + commentId, {},
+                function (data) {
+                    console.log(data);
+                    if (data > 0) {
+                        window.location.href = "/JAMONG/player?contentId=" + contentId;
+                    } else {
+                        alert('댓글을 삭제하는데 오류가 발생헀습니다.');
+                    }
+                }, function (arg) {
+                    console.log('error!!: ' + arg);
+                }, 'json');
+        });
+    }
 });
 
 function reset_recommend_list_max_height(){

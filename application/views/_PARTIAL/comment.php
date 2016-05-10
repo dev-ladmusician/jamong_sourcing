@@ -7,7 +7,10 @@
             <div class="comment-item-contents">
                 <div class="comment-item-name">
                     <span><?php echo $item->nickName; ?></span>
-                    <span>신고</span>
+                    <span class="comment-warning">신고</span>
+                    <?php if ($item->userNumber == $this->session->userdata('userid')) { ?>
+                        <span class="comment-delete" id="<?php echo $item->inum; ?>">삭제</span>
+                    <?php } ?>
                 </div>
                 <div class="comment-item-content">
                     <?php echo $item->comments ?>

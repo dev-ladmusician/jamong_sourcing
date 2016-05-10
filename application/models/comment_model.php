@@ -19,7 +19,7 @@ class Comment_model extends CI_Model {
     }
 
     function gets($content_id, $page, $per_page) {
-        $this->db->select('jumper__comments.comments, jumper_user.nickName,
+        $this->db->select('jumper__comments.inum, jumper__comments.comments, jumper_user.nickName,
                            jumper__comments.V_inum, jumper__comments.isdeprecated,
                            jumper_user.userNumber,
                            jamong__tb_users_picture.picture');
@@ -40,5 +40,18 @@ class Comment_model extends CI_Model {
         $this->db->where('V_inum', $content_id);
         $this->db->where('isdeprecated', false);
         return count($this->db->get()->result());
+    }
+
+    function delete($comment_id) {
+        try {
+            $data = array (
+                'isdeprecated' => true
+            );
+            $this->db->where('inum', $comment_id);
+            $this->db->update($this->table, $data);
+            return $this->db->affected_rows();
+        } catch(Exception $e) {
+            return -1;
+        }
     }
 }
