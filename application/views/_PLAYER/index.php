@@ -27,7 +27,9 @@
                         댓글 <span>70</span>
                     </div>
                     <!-- 댓글 입력 -->
-                    <form id="jm-form-comment" class="solid-border-bottom ">
+                    <form id="jm-form-comment" class="solid-border-bottom "
+                          method="post" action="<?= site_url('/api/player/submit_comment?contentId=' . $contentId)?>">
+                        <input type="hidden" name="user-id" value="<?php echo $this->session->userdata('userid'); ?>" />
                         <div class="comment-img">
                             <?php if ($this->session->userdata('profile_url') != false) { ?>
                                 <img class="jamong-user-profile" src="<?= $this->session->userdata('profile_url') ?>" alt="">
@@ -39,6 +41,7 @@
                             <textarea placeholder="댓글을 입력하세요" name="user-comment" id="jm-comment"></textarea>
                         </div>
                         <div class="btn-cm-submit comment-submit">
+<!--                            <input type="submit" value="등록" />-->
                             <a href="#" class="">등록</a>
                         </div>
                     </form>

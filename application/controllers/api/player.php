@@ -9,6 +9,19 @@ class Player extends CORE_Controller
         $this->load->model('subscriber_model');
     }
 
+    function submit_comment() {
+        $content_id = $this->input->get('contentId');
+        $user_id = $this->session->userdata('userid');
+        $comment = $this->input->post('user-comment');
+
+        if ($this->session->userdata('is_login')) {
+
+        } else {
+            $this->session->set_flashdata('message', '로그인해주세요.');
+            redirect('/player/index?contentId='.$content_id);
+        }
+    }
+
     function subscribe_update(){
         $this->__require_login();
 
