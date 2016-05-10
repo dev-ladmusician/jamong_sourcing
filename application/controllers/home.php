@@ -9,10 +9,25 @@ class Home extends CORE_Controller
         $this->load->model('category_model');
         $this->load->model('channel_model');
         $this->load->model('contents_model');
+        $this->load->model('user_model');
     }
 
     function index()
     {
+
+        //로그인 한 경우, profile_image가 등록되어 있으면,
+        $user_id = $this->session->userdata('userid');
+        if($user_id){
+            $profile_url = $this->user_model->get_profile_image_by_id($user_id);
+            $this->session->set_userdata('profile_url', $profile_url->picture);
+        }
+//        $is_superadmin = $this->session->userdata('issuperadmin');
+//        $is_login = $this->session->userdata('is_login');
+//        $email = $this->session->userdata('email');
+//        $nickname = $this->session->userdata('nickname');
+//        $is_admin = $this->session->userdata('isadmin');
+
+
         $categories = $this->category_model->gets();
         $channels = $this->channel_model->gets();
         $main_video = $this->contents_model->get_main_video();

@@ -37,6 +37,7 @@ class Channel_model extends CI_Model {
         $this->db->where(array('isdeprecated'=> false, 'jumper__channellist.channelnum' =>$id));
         $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum');
         $this->db->from($this->table);
+
         return $this->db->get()->row();
     }
 

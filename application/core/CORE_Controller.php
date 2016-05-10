@@ -82,7 +82,7 @@ class CORE_Controller extends CI_Controller
         // 로그인이 되어 있지 않다면 로그인 페이지로 리다이렉션
         if ($this->session->userdata('is_login')) {
             if ($return_url == "") {
-                redirect('/Home/index');
+                redirect('/home/index');
             }
             redirect($return_url);
         }

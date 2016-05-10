@@ -21,7 +21,9 @@ $(window).load(function(){
 });
 $(document).ready(function(){
     var dir = 'static/js/krpano/';
-    embedpano({swf:dir + "krpano.swf", xml:dir +"krpano.xml", target:"pano", html5:"only"});
+    //embedpano({swf:dir + "krpano.swf", xml:dir +"krpano.xml", target:"pano", html5:"only"});
+    embedpano({mp4:"https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/original/video103.mp4"
+        , xml:dir +"krpano.xml", target:"pano", html5:"only"});
 
     $('.load-more').click(function(){
         reset_recommend_list_max_height();

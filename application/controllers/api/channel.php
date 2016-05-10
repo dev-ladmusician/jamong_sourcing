@@ -10,6 +10,36 @@ class Channel extends CORE_Controller
         $this->load->model('subscriber_model');
     }
 
+    function subscribe_update(){
+        $this->__require_login();
+
+        $userId = $this->session->userdata('userid');
+        $channelId = $this->input->get('channelId');
+        $is_subscribed = $this->input->get('is_subscribed');
+
+        //구독할때 add
+        if(strcmp($is_subscribed, 'true') == 0){
+            $rtv = $this->subscriber_model->add($channelId,$userId);
+            if($rtv=='1'){
+                $this->session->set_flashdata('message', '채널을 구독했습니다.');
+                redirect('channel/home?channelId='.$channelId);
+            }else{
+                $this->session->set_flashdata('message', '채널을 구독하는 데 오류가 발생했습니다.');
+                redirect('channel/home?channelId='.$channelId);
+            }
+        }else{
+            $rtv = $this->subscriber_model->delete($channelId,$userId);
+            if($rtv=='1'){
+                $this->session->set_flashdata('message', '채널 구독을 취소했습니다.');
+                redirect('channel/home?channelId='.$channelId);
+            }else{
+                $this->session->set_flashdata('message', '채널을 구독을 취소하는데 오류가 발생했습니다.');
+                redirect('channel/home?channelId='.$channelId);
+            }
+        }
+
+
+    }
     function get_vr_list_by_channel()
     {
         $channelId = $this->input->get('channelId');

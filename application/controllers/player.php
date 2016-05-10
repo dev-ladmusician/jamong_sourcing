@@ -7,6 +7,7 @@ class Player extends CORE_Controller {
         $this->load->model('category_model');
         $this->load->model('channel_model');
         $this->load->model('contents_model');
+        $this->load->model('subscriber_model');
     }
 
     function index()
@@ -17,7 +18,14 @@ class Player extends CORE_Controller {
         $contents = $this->contents_model->getByContentId($contentId);
         $channel = $this->channel_model->get_by_id($contents->ch);
 
+        $userId = $this->session->userdata('userid');
+
+        $is_subscribed = false;
+        if($userId){
+            $is_subscribed = $this->subscriber_model->is_subscibed_channel($contents->ch, $userId);
+        }
+
         $this->__get_views('_PLAYER/index', array('categories' => $categories, 'channels'=>$channels),
-            array('content_info'=> $contents, 'channel_info'=> $channel));
+            array('contentId'=>$contentId,'is_subscribed' => $is_subscribed, 'content_info'=> $contents, 'channel_info'=> $channel));
     }
 }

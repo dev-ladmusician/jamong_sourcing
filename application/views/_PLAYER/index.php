@@ -70,7 +70,7 @@
             <div class="jm-player-channel solid-border-box col-lg-12">
                 <div class="image-container">
                     <a href="<?= site_url('/channel/home?channelId='.$channel_info->channelnum)?>">
-                        <img src="<?= site_url('static/img/ex_1.png') ?>" alt="">
+                        <img src="<?= $channel_info->ch_picture ?>" alt="">
                     </a>
                 </div>
 
@@ -83,7 +83,17 @@
                     <div class="des-info">
                         구독자 <span><?= $channel_info->follow?></span>
                     </div>
-                    <a href="" class="btn-ch-subs"><i class="glyphicon glyphicon-plus"></i>구독하기</a>
+                    <?php
+                    if ($is_subscribed) {
+                        ?>
+                        <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum.'&is_subscribed=false')?>" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
+                        <?php
+                    } else { ?>
+                        <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum. '&is_subscribed=true')?>" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
+                        <?php
+                    }
+                    ?>
+<!--                    <a href="" class="btn-ch-subs"><i class="glyphicon glyphicon-plus"></i>구독하기</a>-->
 
                 </div>
             </div>

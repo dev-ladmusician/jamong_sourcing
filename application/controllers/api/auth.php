@@ -8,6 +8,10 @@ class Auth extends CORE_Controller {
         $this->load->library('form_validation');
     }
 
+    function logout(){
+
+    }
+
     function submit_login(){
         $this->__is_logined();
 
@@ -59,19 +63,21 @@ class Auth extends CORE_Controller {
     function handle_login($user)
     {
         $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
-        $this->session->set_userdata('userid', $user->userNumber);
+        $userId = $this->session->set_userdata('userid', $user->userNumber);
         $this->session->set_userdata('is_login', true);
         $this->session->set_userdata('email', $user->email);
         $this->session->set_userdata('nickname', $user->nickName);
         $this->session->set_userdata('isadmin', $user->is_admin);
         $this->session->set_userdata('issuperadmin', $user->is_superadmin);
 
+//        $profile_url = $this->user_model->get_profile_image_by_id($userId);
+//        $this->session->set_userdata('profile_url', $profile_url->picture);
+
         $returnURL = $this->input->get('returnURL');
 
         if ($returnURL === false || $returnURL === "") {
             redirect('home/index');
         }
-
         redirect($returnURL);
     }
 
@@ -89,7 +95,8 @@ class Auth extends CORE_Controller {
                 if(strlen($password)){
                     if( strcmp($password,$password_confirm) == 0 ){
                         if($agree){
-                            $input_data = array("nickName" => $nickName,
+                            $input_data = array(
+                                "nickName" => $nickName,
                                 "email" => $email,
                                 "age" => $age,
                                 "gender" => $gender,
@@ -97,6 +104,7 @@ class Auth extends CORE_Controller {
 
                             $rtv = $this->user_model->add($input_data);
                             if($rtv){
+                                $this->user_model->add_nickname($rtv, $input_data);
                                 $this->session->set_flashdata('message', '회원등록에 성공 했습니다.');
                                 redirect('/auth/login');
                             }else{

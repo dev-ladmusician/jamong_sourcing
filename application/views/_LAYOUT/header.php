@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-    <title>JAMONG</title>
+    <title>동신대학교</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta charset="utf-8">
@@ -73,7 +73,6 @@
                     </a>
                 </div>
 
-
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -89,8 +88,20 @@
                                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                             </form>
                         </div>
-                        <a href="#jm-user-setting"><img id="jm-user" class="user"
-                                                        src="<?= site_url('/static/img/user.png') ?>" alt=""></a>
+                        <a href="#jm-user-setting">
+                            <?php
+                            if ( $this->session->userdata('profile_url')  ) {
+                                ?>
+                                <img id="jm-user" class="user" src="<?=  $this->session->userdata('profile_url') ?>" alt="">
+                                <?php
+
+                            } else {
+                                ?>
+                                <img id="jm-user" class="user" src="<?= site_url('/static/img/user.png') ?>" alt="">
+                                <?php
+                            }
+                            ?>
+                        </a>
                     </div>
                 </div>
             </nav>

@@ -1,6 +1,6 @@
-<div class="row">
+<!--<div class="row">-->
     <section class="jm-login">
-        <div class="container">
+        <div class="container-wrapper">
 
             <div class="form-container solid-border-box">
 
@@ -32,4 +32,4 @@
             </div>
         </div>
     </section>
-</div>
+<!--</div>-->
