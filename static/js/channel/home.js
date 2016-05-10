@@ -10,6 +10,10 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
+    //$('.btn-ch-subs').on('click', function (e) {
+    //    var value = $('.value-subs-count').val();
+    //    console.log("구독자 수 " + value);
+    //});
 
     var vr_page = 1;
     var vr_per_page = 8;

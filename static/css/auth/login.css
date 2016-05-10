@@ -61,6 +61,11 @@ font-family: "Noto Sans Medium";
     text-align: left;
 }
 
+.form-group:nth-child(4) input{
+    text-align: center;
+    border: none;
+}
+
 .popup-container .login-footer{
     border-top: solid 1px #d3d9de;
     padding: 30px 0;
@@ -98,3 +103,4 @@ font-family: "Noto Sans Medium";
     text-align: left;
     font-size: 12px;
 }
+

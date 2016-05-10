@@ -13,10 +13,10 @@
                         비밀번호 찾기
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="이메일" class="solid-border-box">
+                        <input type="email" placeholder="이메일" class="solid-border-box" required>
                     </div>
-                    <div class="form-group btn-login-submit">
-                        <a href="">비밀번호 재설정</a>
+                    <div class="form-group">
+                        <input class="btn-login-submit" type="submit" value="비밀번호 재설정" href="">
                     </div>
                     <ul class="form-group">
                         <li>가입시 등록했던 이메일로 임시 비밀번호를 보내드립니다.</li>

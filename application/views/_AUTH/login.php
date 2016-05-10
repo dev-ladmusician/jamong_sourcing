@@ -13,10 +13,10 @@
                         LOGIN
                     </div>
                     <div class="form-group">
-                        <input name="jm-login-id" type="email" placeholder="ID" class="solid-border-box">
+                        <input name="jm-login-id" type="email" placeholder="ID" class="solid-border-box" required>
                     </div>
                     <div class="form-group">
-                        <input name="jm-login-password" type="password" placeholder="Password" class="solid-border-box">
+                        <input name="jm-login-password" type="password" placeholder="Password" class="solid-border-box" required>
                     </div>
                     <div class="form-group">
                         <input class="btn-login-submit" type="submit" value="로그인">

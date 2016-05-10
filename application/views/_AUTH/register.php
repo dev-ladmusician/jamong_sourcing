@@ -13,13 +13,13 @@
                         JOIN
                     </div>
                     <div class="form-group">
-                        <input name="input-nickname" type="text" placeholder="닉네임" class="solid-border-box">
+                        <input name="input-nickname" type="text" placeholder="닉네임" class="solid-border-box" required>
                     </div>
                     <div class="form-group">
-                        <input name="input-email" type="email" placeholder="이메일" class="solid-border-box">
+                        <input name="input-email" type="email" placeholder="이메일" class="solid-border-box" required>
                     </div>
                     <div class="form-group">
-                        <input type="number" size="6" name="input-age" min="13" max="99" value="21" class="solid-border-box">
+                        <input type="number" size="6" name="input-age" min="13" max="99" value="21" class="solid-border-box" required>
                     </div>
                     <div class="form-group radio-input-male">
                         <input id="male" type="radio" name="input-gender" value="Male">
@@ -30,13 +30,13 @@
                         <label for="female">여자</label>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="input-password" placeholder="비밀번호" class="solid-border-box">
+                        <input type="password" name="input-password" placeholder="비밀번호" class="solid-border-box" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="input-password-confirm" placeholder="비밀번호 확인" class="solid-border-box">
+                        <input type="password" name="input-password-confirm" placeholder="비밀번호 확인" class="solid-border-box" required>
                     </div>
                     <div class="form-group">
-                        <input name="input-agree" class="check-box" type="checkbox"><span>이용약관과 개인정보취급방침을 모두 읽고, 동의합니다.</span>
+                        <input name="input-agree" class="check-box" type="checkbox" required><span>이용약관과 개인정보취급방침을 모두 읽고, 동의합니다.</span>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn-login-submit" value="회원가입">

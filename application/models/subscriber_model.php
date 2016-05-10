@@ -69,4 +69,12 @@ class Subscriber_model extends CI_Model
         $this->db->where('channelnum', $channelId);
         return $this->db->count_all_results($this->table);
     }
+
+    function get_channel_list_by_user($userId){
+        $this->db->select('*');
+        $this->db->where('userNumber', $userId);
+        $this->db->from($this->table);
+        $rtv = $this->db->get()->result();
+        return $rtv;
+    }
 }

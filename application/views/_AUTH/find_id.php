@@ -13,7 +13,7 @@
                         이메일 찾기
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="닉네임" class="solid-border-box">
+                        <input type="text" placeholder="닉네임" class="solid-border-box" required>
                     </div>
                     <div class="form-group">
                         <input class="btn-login-submit" type="submit" value="이메일 찾기">

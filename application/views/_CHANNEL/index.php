@@ -15,16 +15,18 @@
                         <?= $channel->chdesc ?>
                     </div>
                     <div class="des-info">
-                        <span>VR컨텐츠 <span><b><?= $channel->contents ?></b></span></span>
-                        <span>구독자 <span><b><?= $channel->follow ?></b></span></span>
+                        <span>VR컨텐츠 <span class="value-content-count"><b><?= $channel->contents ?></b></span></span>
+                        <span>구독자 <span class="value-subs-count"><b><?= $channel->follow ?></b></span></span>
 
                         <?php
                         if ($is_subscribed) {
                             ?>
-                            <a href="<?= site_url('api/channel/subscribe_update?channelId='.$channel->channelnum.'&is_subscribed=false')?>" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
+                            <a href="<?= site_url('api/channel/subscribe_update?channelId=' . $channel->channelnum . '&is_subscribed=false') ?>"
+                               class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
                             <?php
                         } else { ?>
-                            <a href="<?= site_url('api/channel/subscribe_update?channelId='.$channel->channelnum.'&is_subscribed=true')?>" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
+                            <a href="<?= site_url('api/channel/subscribe_update?channelId=' . $channel->channelnum . '&is_subscribed=true') ?>"
+                               class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
                             <?php
                         }
                         ?>
@@ -60,9 +62,10 @@
                             </div>
                             <div class="video-des-bottom">
                                 <div class="channel-title"><?= $main_video->nickName ?></div>
-                                <div class="upload-date"><?= $main_video->datetime ?></div>
+                                <div class="upload-date"><?= $main_video->datetime?></div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="list-hot col-lg-12 padding-none">
@@ -74,6 +77,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 padding-none">
                                 <?php
                                 foreach ($vr_list_hot as $item) {
+
                                     ?>
                                     <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
                                         <div class="solid-border-box">
@@ -110,25 +114,27 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 padding-none">
                                 <?php
                                 foreach ($vr_list_new as $item) {
-                                    ?>
-                                    <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                        <div class="solid-border-box">
-                                            <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
-                                                <img
-                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
-                                                    alt="">
-                                            </a>
+                                    if ($item->cate > 0) {
+                                        ?>
+                                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
+                                            <div class="solid-border-box">
+                                                <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
+                                                    <img
+                                                        src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
+                                                        alt="">
+                                                </a>
 
-                                            <div class="video-des">
-                                                <p class="video-des-title"><?= $item->title ?></p>
+                                                <div class="video-des">
+                                                    <p class="video-des-title"><?= $item->title ?></p>
 
-                                                <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
+                                                    <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
 
-                                                <p class="video-des-hits">조회수 <?= $item->hit ?></p>
+                                                    <p class="video-des-hits">조회수 <?= $item->hit ?></p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <?php
+                                        <?php
+                                    }
                                 }
                                 ?>
                             </div>

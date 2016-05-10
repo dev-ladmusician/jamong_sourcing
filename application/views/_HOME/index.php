@@ -3,23 +3,10 @@
         <div class="row">
             <div class="main-video padding-none col-lg-12">
                 <div class="video-large">
-
-                    <?php
-                    foreach ($vr_list_hot as $item) {
-                        if ($item->cate > 0) {
-                            ?>
-                            <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
-                                <img
-                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/high_thumb.png"
-                                    alt="">
-                            </a>
-                            <?php
-                            break;
-                        }
-                    }
-                    ?>
-
-
+                    <a href="<?= site_url('/player?contentId=') . $main_video->inum ?>">
+                        <img
+                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/high_thumb.png"
+                            alt=""></a>
                 </div>
             </div>
 
@@ -32,28 +19,26 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 padding-outer">
                         <?php
                         foreach ($vr_list_hot as $item) {
-                            if ($item->cate > 0) {
-                                ?>
+                            ?>
 
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-inner">
-                                    <div class="solid-border-box">
-                                        <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
-                                            <img
-                                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
-                                                alt="">
-                                        </a>
+                            <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-inner">
+                                <div class="solid-border-box">
+                                    <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
+                                        <img
+                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
+                                            alt="">
+                                    </a>
 
-                                        <div class="video-des">
-                                            <p class="video-des-title"><?= $item->title ?></p>
+                                    <div class="video-des">
+                                        <p class="video-des-title"><?= $item->title ?></p>
 
-                                            <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
+                                        <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
 
-                                            <p class="video-des-hits">조회수: <?= $item->hit ?></p>
-                                        </div>
+                                        <p class="video-des-hits">조회수: <?= $item->hit ?></p>
                                     </div>
                                 </div>
-                                <?php
-                            }
+                            </div>
+                            <?php
                         }
                         ?>
                     </div>
@@ -71,27 +56,25 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 padding-outer">
                         <?php
                         foreach ($vr_list_new as $item) {
-                            if ($item->cate > 0) {
-                                ?>
-                                <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-inner">
-                                    <div class="solid-border-box">
-                                        <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
-                                            <img
-                                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
-                                                alt="">
-                                        </a>
+                            ?>
+                            <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 padding-inner">
+                                <div class="solid-border-box">
+                                    <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
+                                        <img
+                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
+                                            alt="">
+                                    </a>
 
-                                        <div class="video-des">
-                                            <p class="video-des-title"><?= $item->title ?></p>
+                                    <div class="video-des">
+                                        <p class="video-des-title"><?= $item->title ?></p>
 
-                                            <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
+                                        <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
 
-                                            <p class="video-des-hits">조회수: <?= $item->hit ?></p>
-                                        </div>
+                                        <p class="video-des-hits">조회수: <?= $item->hit ?></p>
                                     </div>
                                 </div>
-                                <?php
-                            }
+                            </div>
+                            <?php
                         }
                         ?>
                     </div>
