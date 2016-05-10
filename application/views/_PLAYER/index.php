@@ -1,3 +1,4 @@
+<input type="hidden" id="jamong-content-id" value="<?php echo $contentId; ?>" />
 <div class="content-wrapper col-lg-9 col-md-9 col-sm-12">
     <div class="row">
         <div class=" col-lg-9 col-md-8 padding-none">
@@ -37,7 +38,9 @@
                         댓글 <span>70</span>
                     </div>
                     <!-- 댓글 입력 -->
-                    <form id="jm-form-comment" class="solid-border-bottom ">
+                    <form id="jm-form-comment" class="solid-border-bottom "
+                          method="post" action="<?= site_url('/api/player/submit_comment?contentId=' . $contentId)?>">
+                        <input type="hidden" name="user-id" value="<?php echo $this->session->userdata('userid'); ?>" />
                         <div class="comment-img">
                             <?php if ($this->session->userdata('profile_url') != false) { ?>
                                 <img class="jamong-user-profile" src="<?= $this->session->userdata('profile_url') ?>" alt="">
@@ -55,31 +58,16 @@
 
                     <!-- 댓글 -->
                     <div class="comment-list-container">
+                        <div class="jm-ajax-loader-container text-center">
+                            <img class="jm-ajax-loader" src="<?= site_url('/static/img/loader.gif')?>" />
+                        </div>
                         <ul class="comment-list">
-                            <li class="comment-group">
-                                <div class="comment-item-img">
-                                    <img src="<?= site_url('/static/img/user.png') ?>" alt="">
-                                </div>
-                                <div class="comment-item-contents">
-                                    <div class="comment-item-name">
-                                        <span>Jamong</span>
-                                        <span>신고</span>
-                                    </div>
-                                    <div class="comment-item-content">
-                                        테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다.
-                                        테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다. 테스트입니다.
-                                        테스트입니다.
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
                 </div>
-
                 <div class="load-more col-lg-12 col-md-12 col-sm-12 text-center">
-                    <a href="#">더보기<i class="glyphicon glyphicon-menu-down"></i></a>
+                    <a href="javascript:void(0);">더보기<i class="glyphicon glyphicon-menu-down"></i></a>
                 </div>
-
             </section>
         </div>
 

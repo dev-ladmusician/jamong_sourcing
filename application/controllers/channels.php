@@ -10,7 +10,6 @@ class Channels extends CORE_Controller {
 
     function index()
     {
-
         $categories= $this->category_model->gets();
         $channels = $this->channel_model->gets();
 

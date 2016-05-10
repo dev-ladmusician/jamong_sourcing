@@ -69,7 +69,7 @@ comment
 */
 .jm-player-comment {
     margin-top: 20px;
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .jm-player-comment .header {
@@ -142,16 +142,25 @@ comment
 }
 .jm-player-comment .comment-list .comment-group .comment-item-img img{
     vertical-align: text-top;
+    width: 70px;
 }
 .jm-player-comment .comment-list .comment-group .comment-item-name span:first-child {
     font-size: 16px;
     color: #646469;
     font-weight: bold;
 }
-
-.jm-player-comment .comment-list .comment-group .comment-item-name span:last-child {
+.jm-player-comment .comment-list .comment-group .comment-item-name span.comment-warning {
     float: right;
     color: #96989c;
+}
+.jm-player-comment .comment-list .comment-group .comment-item-name span.comment-delete {
+    float: right;
+    color: #FB8684;
+    margin-right: 10px;
+}
+.jm-player-comment .comment-list .comment-group .comment-item-name span.comment-delete:hover,
+.jm-player-comment .comment-list .comment-group .comment-item-name span.comment-warning:hover{
+    cursor: pointer;
 }
 
 .jm-player-comment .comment-list .comment-group .comment-item-contents {
