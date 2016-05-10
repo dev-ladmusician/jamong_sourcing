@@ -42,11 +42,8 @@ class Subscriber_model extends CI_Model
         return $this->db->get()->result();
     }
 
-//    function get_profile_pictue()
-
     function get_all_count($channelId)
     {
-        $this->db->where('channelnum', $channelId);
         return $this->db->count_all_results($this->table);
     }
 
@@ -61,5 +58,15 @@ class Subscriber_model extends CI_Model
             return false;
         }
         return true;
+    }
+
+    function get_count_channels_by_user($userId){
+        $this->db->where('userNumber', $userId);
+        return $this->db->count_all_results($this->table);
+    }
+
+    function get_count_users_by_channel($channelId){
+        $this->db->where('channelnum', $channelId);
+        return $this->db->count_all_results($this->table);
     }
 }

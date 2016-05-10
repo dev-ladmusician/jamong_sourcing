@@ -14,7 +14,7 @@
                 <section class="sc-main-hot">
                     <div class="list-header solid-border-bottom  padding-normal">
                         <span>인기VR컨텐츠</span>
-                        <a href="<?= site_url('/category?query=hot') ?>"><span>more</span></a>
+                        <a href="<?= site_url('/category?categoryId=9') ?>"><span>more</span></a>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 padding-outer">
                         <?php
@@ -49,7 +49,7 @@
                 <section class="sc-main-new">
                     <div class="list-header solid-border-bottom col-lg-12 padding-normal">
                         <span>신규VR컨텐츠</span>
-                        <a href="<?= site_url('/category?query=new') ?>"><span>more</span></a>
+                        <a href="<?= site_url('/category?categoryId=10') ?>"><span>more</span></a>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 padding-outer">
