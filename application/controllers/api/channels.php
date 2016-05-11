@@ -21,7 +21,7 @@ class Channels extends CORE_Controller
         if(strcmp($is_subscribed, 'true') == 0){
             $rtv = $this->subscriber_model->add($channelId,$userId);
             $count = $this->subscriber_model->get_count_users_by_channel($channelId);
-            var_dump($count);
+
             if($rtv=='1'){
                 $this->channel_model->update_follow($channelId, $count);
                 $this->session->set_flashdata('message', '채널을 구독했습니다.');
@@ -33,7 +33,7 @@ class Channels extends CORE_Controller
         }else{
             $rtv = $this->subscriber_model->delete($channelId,$userId);
             $count = $this->subscriber_model->get_count_users_by_channel($channelId);
-            var_dump($count);
+
             if($rtv=='1'){
                 $this->channel_model->update_follow($channelId, $count);
                 $this->session->set_flashdata('message', '채널 구독을 취소했습니다.');
