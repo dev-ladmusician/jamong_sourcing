@@ -20,12 +20,12 @@
                         <?php
                         if ($is_liked) {
                             ?>
-                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId . '&is_liked=false') ?>"
-                               class="btn-ch-subs"><i class="glyphicon glyphicon-heart ic-heart"></i><span><?= $content_info->likes?></span></a>
+                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId . '&is_liked=false') ?>">
+                                <i class="glyphicon glyphicon-heart ic-heart"></i><span><?= $content_info->likes?></span></a>
                             <?php
                         } else { ?>
-                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId. '&is_liked=true') ?>"
-                               class="btn-ch-subs"><i class="glyphicon glyphicon-heart-empty ic-heart"></i><span><?= $content_info->likes?></span></a>
+                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId. '&is_liked=true') ?>">
+                                <i class="glyphicon glyphicon-heart-empty ic-heart"></i><span><?= $content_info->likes?></span></a>
                             <?php
                         }
                         ?>
