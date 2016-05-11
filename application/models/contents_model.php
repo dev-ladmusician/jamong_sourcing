@@ -154,7 +154,7 @@ class Contents_model extends CI_Model {
 
         $this->db->select('picture, inum, filename, view, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "cate >" =>0));
-        $this->db->order_by('datetime','desc');
+        $this->db->order_by('created','desc');
         $this->db->limit(8);
         $this->db->from($this->table);
         return $this->db->get()->result();
