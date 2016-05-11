@@ -61,14 +61,16 @@ class Subscriber_model extends CI_Model
     }
 
     function get_count_channels_by_user($userId){
-        $this->db->where('userNumber', $userId);
+        $this->db->like('userNumber', $userId);
         return $this->db->count_all_results($this->table);
     }
 
     function get_count_users_by_channel($channelId){
-        $this->db->where('channelnum', $channelId);
+        $this->db->like('channelnum', $channelId);
         return $this->db->count_all_results($this->table);
     }
+
+
 
     function get_channel_list_by_user($userId){
         $this->db->select('*');

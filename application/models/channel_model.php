@@ -85,10 +85,9 @@ class Channel_model extends CI_Model {
     }
 
     function update_follow($channelId , $follow){
-
         $this->db->where('channelnum', $channelId);
         $this->db->update($this->table, array('follow'=> $follow));
-        return $this->db->get()->result();
+//        return $this->db->get()->result();
     }
 
     function get_follow_count_by_channel($channelId){
