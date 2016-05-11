@@ -20,7 +20,7 @@ $(document).ready(function () {
     var vr_last_page = -1;
     var vr_total_count = -1;
     var vr_processing = false;
-    var vr_ajax_loader = $('.jm-ajax-loader-vr');
+    var vr_ajax_loader = $('.jm-ajax-loader-container-vr');
 
     get_vr_list_items(vr_page, vr_per_page);
 
@@ -58,7 +58,7 @@ $(document).ready(function () {
     var last_page = -1;
     var total_count = -1;
     var processing = false;
-    var ajax_loader = $('.jm-ajax-loader-sub');
+    var ajax_loader = $('.jm-ajax-loader-container-sub');
 
     get_subs_items(page, per_page);
 

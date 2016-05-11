@@ -37,16 +37,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/_HOME/index.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.857142">
-                  <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="channel_list_item.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_list_item.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -67,10 +57,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/static/css/common.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.71581197">
+                <state vertical-scroll-proportion="-11.964286">
                   <caret line="676" column="15" selection-start-line="676" selection-start-column="15" selection-end-line="676" selection-end-column="15" />
                   <folding />
                 </state>
@@ -117,11 +107,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-9.5">
-                  <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
+                <state vertical-scroll-proportion="0.34931508">
+                  <caret line="204" column="85" selection-start-line="204" selection-start-column="85" selection-end-line="204" selection-end-column="85" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/js/channel/home.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -245,7 +245,6 @@
         <option value="$PROJECT_DIR$/static/css/auth/find_id.css" />
         <option value="$PROJECT_DIR$/static/css/auth/find_password.css" />
         <option value="$PROJECT_DIR$/application/models/subscriber_model.php" />
-        <option value="$PROJECT_DIR$/static/js/channel/home.js" />
         <option value="$PROJECT_DIR$/application/views/_AUTH/register.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/player.php" />
         <option value="$PROJECT_DIR$/application/models/contents_model.php" />
@@ -286,13 +285,14 @@
         <option value="$PROJECT_DIR$/static/jamongplayer/video43.xml" />
         <option value="$PROJECT_DIR$/static/js/player/index.js" />
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/navbar.php" />
-        <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/channel_list_item.php" />
         <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/no_item.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/category.php" />
         <option value="$PROJECT_DIR$/static/js/category/index.js" />
         <option value="$PROJECT_DIR$/static/css/common.css" />
+        <option value="$PROJECT_DIR$/static/js/channel/home.js" />
+        <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
       </list>
     </option>
   </component>
@@ -1362,14 +1362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.5">
-          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_list_item.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.392857">
@@ -1420,8 +1412,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71581197">
+        <state vertical-scroll-proportion="-11.964286">
           <caret line="676" column="15" selection-start-line="676" selection-start-column="15" selection-end-line="676" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/channel/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34931508">
+          <caret line="204" column="85" selection-start-line="204" selection-start-column="85" selection-end-line="204" selection-end-column="85" />
           <folding />
         </state>
       </provider>
