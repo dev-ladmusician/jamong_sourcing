@@ -11,7 +11,7 @@
                     <div class="col-lg-2 padding-none">
                         <img src="<?php if ($channel->ch_picture) {
                             echo $channel->ch_picture;
-                        }else {
+                        } else {
                             echo site_url('/static/img/default_thumbnail.jpg');
                         } ?>" alt="">
                     </div>
@@ -38,11 +38,13 @@
                             if (isset($is_subscribed) && $is_subscribed) {
                                 ?>
                                 <a href="<?= site_url('api/channel/subscribe_update?channelId=' . $channel->channelnum . '&is_subscribed=false') ?>"
-                                   class="btn-ch-subs btn-ch-subs-cancel"><i class="glyphicon glyphicon-remove"></i> 구독취소</a>
+                                   class="btn-ch-subs btn-ch-subs-cancel"><i class="glyphicon glyphicon-remove"></i>
+                                    구독취소</a>
                                 <?php
                             } else { ?>
                                 <a href="<?= site_url('api/channel/subscribe_update?channelId=' . $channel->channelnum . '&is_subscribed=true') ?>"
-                                   class="btn-ch-subs btn-ch-subs-plus"><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
+                                   class="btn-ch-subs btn-ch-subs-plus"><i class="glyphicon glyphicon-plus"></i>
+                                    구독하기</a>
                                 <?php
                             }
                             ?>
@@ -63,7 +65,9 @@
                 <!--                            home-->
                 <div id="channel-home" class="col-lg-12 tab active">
                     <div class="main-video padding-none col-lg-12 solid-border-box">
-                        <?php if (!empty($main_video)) {
+                        <?php
+                        if (!empty($main_video)) {
+
                             ?>
                             <div class="padding-none video-large col-lg-8">
                                 <a href="<?= site_url('/player?contentId=') . $main_video->inum ?>">
@@ -81,11 +85,34 @@
                                 </div>
                                 <div class="video-des-bottom">
                                     <div class="channel-title"><?= $main_video->nickName ?></div>
-                                    <input type="hidden" id="channel-handle-date" value="<?= $main_video->datetime?>">
+                                    <input type="hidden" id="channel-handle-date" value="<?= $main_video->datetime ?>">
+
                                     <div class="upload-date video-des-date"></div>
                                 </div>
                             </div>
                             <?php
+                        } else {
+                            ?>
+                            <div class="padding-none video-large col-lg-8">
+                                <a href="#">
+                                    <img
+                                        src="<?= site_url('static/img/default_thumbnail.jpg') ?>"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="padding-none video-des col-lg-4">
+                                <div class="video-des-title">
+                                </div>
+                                <div class="video-des-content">
+                                </div>
+                                <div class="video-des-bottom">
+                                    <div class="channel-title"></div>
+
+                                    <div class="upload-date video-des-date"></div>
+                                </div>
+                            </div>
+                            <?php
+
                         } ?>
 
                     </div>
@@ -119,6 +146,12 @@
                                         </div>
                                         <?php
                                     }
+                                } else { ?>
+                                    <p class="partial-no-item">
+                                        표시할 컨텐츠가 없습니다.
+                                    </p>
+                                    <?php
+
                                 } ?>
 
                             </div>
@@ -134,31 +167,40 @@
                             </div>
 
                             <div class="col-lg-12 col-md-12 col-sm-12 padding-none">
-                                <?php
-                                foreach ($vr_list_new as $item) {
-                                    if ($item->cate > 0) {
-                                        ?>
-                                        <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
-                                            <div class="solid-border-box">
-                                                <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
-                                                    <img
-                                                        src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png" alt="">
-                                                </a>
+                                <?php if (!empty($vr_list_new)) {
+                                    foreach ($vr_list_new as $item) {
+                                        if ($item->cate > 0) {
+                                            ?>
+                                            <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
+                                                <div class="solid-border-box">
+                                                    <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
+                                                        <img
+                                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
+                                                            alt="">
+                                                    </a>
 
-                                                <div class="video-des">
-                                                    <p class="video-des-title">
-                                                        <?= $item->title ?></p>
+                                                    <div class="video-des">
+                                                        <p class="video-des-title">
+                                                            <?= $item->title ?></p>
 
-                                                    <p class="video-des-publisher">게시자:
-                                                        <?= $item->nickName ?></p>
+                                                        <p class="video-des-publisher">게시자:
+                                                            <?= $item->nickName ?></p>
 
-                                                    <p class="video-des-hits">조회수
-                                                        <?= $item->hit ?></p>
+                                                        <p class="video-des-hits">조회수
+                                                            <?= $item->hit ?></p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <?php
+                                            <?php
+                                        }
                                     }
+                                } else {
+                                    ?>
+                                    <p class="partial-no-item partial-no-item-bottom">
+                                        표시할 컨텐츠가 없습니다.
+                                    </p>
+                                    <?php
+
                                 }
                                 ?>
                             </div>
@@ -172,15 +214,15 @@
                 <!--            vr-->
 
                 <div id="channel-vr" class=" col-lg-12 tab">
-<!--                    <div class="padding-normal solid-border-bottom col-lg-12 text-right">-->
-<!--                        <select name="order" id="jm-channel-order">-->
-<!--                            <option value="recently">신규순</option>-->
-<!--                        </select>-->
-<!--                        <select name="view" id="jm-channel-view">-->
-<!--                            <option value="list">리스트형으로 보기</option>-->
-<!--                            <option value="card">카드형으로 보기</option>-->
-<!--                        </select>-->
-<!--                    </div>-->
+                    <!--                    <div class="padding-normal solid-border-bottom col-lg-12 text-right">-->
+                    <!--                        <select name="order" id="jm-channel-order">-->
+                    <!--                            <option value="recently">신규순</option>-->
+                    <!--                        </select>-->
+                    <!--                        <select name="view" id="jm-channel-view">-->
+                    <!--                            <option value="list">리스트형으로 보기</option>-->
+                    <!--                            <option value="card">카드형으로 보기</option>-->
+                    <!--                        </select>-->
+                    <!--                    </div>-->
 
                     <div class="jm-ajax-loader-container jm-ajax-loader-container-vr text-center">
                         <img class="jm-ajax-loader-vr" src="<?= site_url('/static/img/loader.gif') ?>"/>
