@@ -69,9 +69,12 @@ class Channel_model extends CI_Model {
     }
 
     function get_by_id($id){
-        $this->db->select('jumper__channellist.channelname, jumper__channellist.channelnum, jumper__channellist.follow, jumper__channellist.chdesc, jumper__channellist.contents, jumper__channel_profile.ch_picture, jumper__channel_profile.bg_picture');
+        $this->db->select('jumper__channellist.channelname, jumper__channellist.channelnum, jumper__channellist.follow, jumper__channellist.chdesc, jumper__channellist.contents, 
+                           jumper__channel_profile.ch_picture, jumper__channel_profile.bg_picture, 
+                           count(jumper__channels.inum) as contentNum');
         $this->db->where(array('isdeprecated'=> false, 'jumper__channellist.channelnum' =>$id));
         $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum', 'left outer');
+        $this->db->join('jumper__channels', 'jumper__channels.channelnum = jumper__channellist.channelnum', 'left');
         $this->db->from($this->table);
 
         return $this->db->get()->row();

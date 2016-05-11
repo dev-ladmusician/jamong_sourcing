@@ -28,7 +28,7 @@
                         </div>
                         <div class="des-info">
                         <span>VR컨텐츠 <span class="value-content-count"><b><?php if (isset($channel->contents)) {
-                                        echo $channel->contents;
+                                        echo $channel->contentNum;
                                     } ?></b></span></span>
                         <span>구독자 <span class="value-subs-count"><b><?php if (isset($channel->follow)) {
                                         echo $channel->follow;
@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="video-des-bottom">
                                     <div class="channel-title"><?= $main_video->nickName ?></div>
-                                    <input type="hidden" id="channel-handle-date" value="<?= $main_video->datetime ?>">
+                                    <input type="hidden" id="channel-handle-date" value="<?= $main_video->created ?>">
 
                                     <div class="upload-date video-des-date"></div>
                                 </div>
