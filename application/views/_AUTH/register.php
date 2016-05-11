@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <input type="submit" class="btn-login-submit" value="회원가입">
                     </div>
-                    <div class="form-group btn-fb-login">
+                    <div class="form-group btn-fb-join">
                         <a href="">페이스북으로 가입하기</a>
                     </div>
                 </form>

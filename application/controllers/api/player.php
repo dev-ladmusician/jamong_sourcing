@@ -8,6 +8,7 @@ class Player extends CORE_Controller
         parent::__construct();
         $this->load->model('like_model');
         $this->load->model('contents_model');
+        $this->load->model('comment_model');
     }
 
     function like_update()

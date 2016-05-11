@@ -8,72 +8,90 @@ class Auth extends CORE_Controller {
         $this->load->library('form_validation');
     }
 
+    /**
+     * 페이스북 로그인
+     */
     function login_by_fb() {
         $data = array(
             'email' => $_POST['email'],
             'name' => $_POST['name'],
             'id' => $_POST['id'],
         );
-
-        $user = $this->user_model->get_user_by_email($data['email']);
+        $user = $this->user_model->get_user_by_email($data);
 
         // db 정보와 확인
         if ($user != null && count($user) > 0) {
             $user = $user[0];
-            if ($user->email == $data['email']) {
-                if ($user->state == "active") {
-                    $this->handle_login($user);
-                } else {
-                    $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
-                    redirect('auth/login');
-                }
+            if ($user->state == "active") {
+                $this->session->set_userdata('userid', $user->userNumber);
+                $this->session->set_userdata('is_login', true);
+                $this->session->set_userdata('email', $user->email);
+                $this->session->set_userdata('nickname', $user->nickName);
+                $this->session->set_userdata('isadmin', $user->is_admin);
+                $this->session->set_userdata('issuperadmin', $user->is_superadmin);
+
+                echo json_encode(1, JSON_PRETTY_PRINT);
             } else {
-                $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
-                redirect('auth/login');
+                echo json_encode(-1, JSON_PRETTY_PRINT);
             }
         } else {
-            $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
-            if ($this->input->get('returnURL') === "") {
-                $this->__get_views('_AUTH/login');
-            }
+            echo json_encode(-2, JSON_PRETTY_PRINT);
         }
     }
 
-    function join_by_fb()
-    {
+    /**
+     * 페이스북 가입
+     */
+    function join_by_fb() {
         $data = array(
             'email' => $_POST['email'],
             'name' => $_POST['name'],
             'id' => $_POST['id'],
         );
+        $users = $this->user_model->get_user_by_email($data);
 
-        $user = $this->user_model->get_user_by_email($data['email']);
+        // db 정보와 확인
+        if ($users != null && count($users) > 0) {
+            $user = $users[0];
+            if ($user->state == "active") {
+                $this->session->set_userdata('userid', $user->userNumber);
+                $this->session->set_userdata('is_login', true);
+                $this->session->set_userdata('email', $user->email);
+                $this->session->set_userdata('nickname', $user->nickName);
+                $this->session->set_userdata('isadmin', $user->is_admin);
+                $this->session->set_userdata('issuperadmin', $user->is_superadmin);
 
-        if (count($user) > 0) {
-            $this->user_model->logined($user);
-
-            $this->session->set_userdata('userid', $user->_userid);
-            $this->session->set_userdata('email', $user->email);
-            $this->session->set_userdata('username', $user->username);
-            $this->session->set_userdata('is_login', TRUE);
-
-            if ($user->is_admin == 1) {
-                // if admin, return -3
-                echo json_encode(-3, JSON_PRETTY_PRINT);
+                echo json_encode(1, JSON_PRETTY_PRINT);
             } else {
-                echo json_encode(999, JSON_PRETTY_PRINT);
+                echo json_encode(-1, JSON_PRETTY_PRINT);
             }
         } else {
-            $rtv = $this->user_model->add_user_by_fb($data);
+            $input_data = array(
+                "nickName" => explode('@', $data['email'])[0],
+                "email" => $data['email'],
+                "age" => -1,
+                "gender" => -1,
+                'fb' => 1,
+                'fb_id' => $data['id'],
+                "password" => $this->keyEncrypt($data['id']));
 
-            if ($rtv > 0) {
-                $this->session->set_userdata('userid', $rtv);
-                $this->session->set_userdata('email', $data['email']);
-                $this->session->set_userdata('username', $data['name']);
-                $this->session->set_userdata('is_login', TRUE);
+            $rtv_1 = $this->user_model->add_by_fb($input_data);
+            $rtv_2 = $this->user_model->add_nickname($rtv_1, $input_data);
+
+            if ($rtv_1 && $rtv_2) {
+                $users = $this->user_model->get_user_by_email($data);
+                $user = $users[0];
+                $this->session->set_userdata('userid', $user->userNumber);
+                $this->session->set_userdata('is_login', true);
+                $this->session->set_userdata('email', $user->email);
+                $this->session->set_userdata('nickname', $user->nickName);
+                $this->session->set_userdata('isadmin', $user->is_admin);
+                $this->session->set_userdata('issuperadmin', $user->is_superadmin);
+
+                echo json_encode(1, JSON_PRETTY_PRINT);
+            } else {
+                echo json_encode(-2, JSON_PRETTY_PRINT);
             }
-
-            echo json_encode($rtv, JSON_PRETTY_PRINT);
         }
     }
 
@@ -128,15 +146,12 @@ class Auth extends CORE_Controller {
     function handle_login($user)
     {
         $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
-        $userId = $this->session->set_userdata('userid', $user->userNumber);
+        $this->session->set_userdata('userid', $user->userNumber);
         $this->session->set_userdata('is_login', true);
         $this->session->set_userdata('email', $user->email);
         $this->session->set_userdata('nickname', $user->nickName);
         $this->session->set_userdata('isadmin', $user->is_admin);
         $this->session->set_userdata('issuperadmin', $user->is_superadmin);
-
-//        $profile_url = $this->user_model->get_profile_image_by_id($userId);
-//        $this->session->set_userdata('profile_url', $profile_url->picture);
 
         $returnURL = $this->input->get('returnURL');
 
@@ -154,7 +169,6 @@ class Auth extends CORE_Controller {
         $gender = $this->input->post('input-gender');
         $password = $this->input->post('input-password');
         $password_confirm = $this->input->post('input-password-confirm');
-        $agree = $this->input->post('input-agree');
 
         $rtv = $this->user_model->get_user_id_by_nickname($nickName);
         //nickName 중복?
@@ -172,7 +186,7 @@ class Auth extends CORE_Controller {
                             "password" => $this->keyEncrypt($password));
 
                         $rtv_1 = $this->user_model->add($input_data);
-                        $rtv_2 = $this->user_model->add_nickname($rtv, $input_data);
+                        $rtv_2 = $this->user_model->add_nickname($rtv_1, $input_data);
 
                         if ($rtv_1 && $rtv_2) {
                             $this->session->set_flashdata('message', '회원등록에 성공 했습니다.');

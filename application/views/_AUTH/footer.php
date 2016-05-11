@@ -34,8 +34,10 @@ if (strpos($filename, 'index.php')) {
     ?>
     <script src="<?= site_url() ?>/static/js/home/index.js"></script>
 <?php }
-if (strpos($filename, 'auth')) { ?>
+if (strpos($filename, 'login')) { ?>
 <script src="<?= site_url('static/js/fb-login.js') ?>"></script>
+<?php } else if (strpos($filename, 'register')) { ?>
+<script src="<?= site_url('static/js/fb-join.js') ?>"></script>
 <?php } ?>
 
 

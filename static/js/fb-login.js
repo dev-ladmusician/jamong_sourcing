@@ -4,8 +4,8 @@ function statusChangeCallback(response) {
         var url = window.location.href;
         if (url.indexOf("login") >= 0) {
             console.log('login');
-        } else if (url.indexOf("join") >= 0) {
-            console.log('join');
+        } else if (url.indexOf("register") >= 0) {
+            console.log('register');
         }
     } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
@@ -36,10 +36,10 @@ window.fbAsyncInit = function() {
     }
     FB.init({
         appId      : appId,
-        cookie     : true,  // enable cookies to allow the server to access
+        cookie     : false,  // enable cookies to allow the server to access
                             // the session
         xfbml      : true,  // parse social plugins on this page
-        version    : 'v2.2' // use version 2.2
+        version    : 'v2.6' // use version 2.2
     });
 
     // Now that we've initialized the JavaScript SDK, we call
@@ -72,9 +72,8 @@ window.fbAsyncInit = function() {
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
 
-$('.sg-auth-btn-join-fb').click(function () {
+$('.btn-fb-join').click(function () {
     FB.login(function(response) {
-        console.log(response);
         if (response.authResponse) {
             fbJoin();
         }
@@ -94,25 +93,28 @@ $('.btn-fb-login').click(function () {
 
 
 function fbJoin() {
+    console.log('check');
     var url = '/me?fields=name,email';
     FB.api(url, function(response) {
         console.log(response);
-
-        ajax_template('/GOODS/API/auth/add_user_by_fb', response,
-            function (data) {
-                if (data > 0) {
-                    window.location.replace("/GOODS/home/index");
-                } else {
-                    if (data == -3) {
-                        window.location.replace('/MGMT/home/index');
-                    } else {
-                        alert('페이스북으로 가입하는데 오류가 발생했습니다.');
-                    }
-                }
-            },
-            function (arg) {
-                console.log(arg);
-            });
+        // ajax_template('/JAMONG/api/auth/join_by_fb', response,
+        //     function (data) {
+        //         if (data > 0) {
+        //             window.location.replace("/JAMONG/home/index");
+        //         } else {
+        //             if (data == -1) {
+        //                 alert('이용정지된 계정입니다.');
+        //                 window.location.replace('/JAMONG/auth/login');
+        //             } else {
+        //                 alert('회원가입하는데 오류가 발생했습니다.');
+        //                 window.location.replace('/JAMONG/auth/register');
+        //             }
+        //         }
+        //     },
+        //     function (arg) {
+        //         alert('회원가입하는데 오류가 발생했습니다.');
+        //         window.location.replace('/JAMONG/auth/register');
+        //     });
     });
 }
 
@@ -120,26 +122,27 @@ function fbLogin() {
     var url = '/me?fields=name,email';
     FB.api(url, function(response) {
         console.log(response);
-
-        ajax_template('/GOODS/API/auth/login_by_fb', response,
+        ajax_template('/JAMONG/api/auth/login_by_fb', response,
             function (data) {
                 console.log(data);
                 if (data > 0) {
-                    window.location.replace("/GOODS/home/index");
+                    window.location.replace("/JAMONG/home/index");
                 } else {
                     if (data == -1) {
-                        alert('아직 something goods 회원이 아니시군요. 회원가입을 해주세요.');
+                        alert('이용정지된 계정입니다.');
+                        window.location.replace('/MGMT/auth/login');
                     } else if (data == -2) {
-                        alert('비밀번호가 올바르지 않습니다.')
-                    } else if (data == -3) {
-                        window.location.replace('/MGMT/home/index');
+                        alert('회원가입을 먼저 해주세요.')
+                        window.location.replace('/JAMONG/auth/register');
                     } else {
-                        alert('페이스북으로 로그인하는데 오류가 발생했습니다.');
+                        window.location.replace('/JAMONG/auth/login');
                     }
                 }
             },
             function (arg) {
                 console.log(arg);
+                alert('로그인하는데 오류가 발생했습니다.');
+                window.location.replace('/JAMONG/auth/login');
             });
     });
 }

@@ -298,6 +298,27 @@ class User_model extends CI_Model
         return $result;
     }
 
+    function add_by_fb($data)
+    {
+        $input_data = array(
+            'email' => $data['email'],
+            'password' => $data['password'],
+            'joinday' => date("y-m-d+H:i:s"),
+            'accounttype' => 'fb',
+            'state' => 'active',
+            'fb' => $data['fb'],
+            'fb_id' => $data['fb_id'],
+            'fbdate' => date("y-m-d+H:i:s"),
+            'is_admin' => FALSE,
+            'is_superadmin' => FALSE,
+        );
+
+        $this->db->insert($this->table, $input_data);
+        $result = $this->db->insert_id();
+
+        return $result;
+    }
+
     function add_nickName($userId, $data){
         $input_data = array(
             'nickName' => $data['nickName'],

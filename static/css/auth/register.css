@@ -57,7 +57,6 @@ html, body{
     text-align: center;
     border: none;
 }
-
 .form-group input{
     width: 300px;
     border-radius: 5px;
@@ -68,7 +67,7 @@ html, body{
 .radio-input-male, .radio-input-female,
 .radio-input-male input, .radio-input-female input
 {
-    width: 130px;
+    width: 130px !important;
 }
 .radio-input-female, .radio-input-male{
     display: inline-block;

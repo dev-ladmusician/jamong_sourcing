@@ -600,7 +600,7 @@ a, a:hover{
     /*margin: 5px;*/
     text-align: left;
 }
-.btn-login-submit, .btn-fb-login{
+.btn-login-submit, .btn-fb-login, .btn-login-submit, .btn-fb-join{
     width: 300px;
     border-radius: 5px;
     padding: 11px;
@@ -615,10 +615,10 @@ a, a:hover{
     color: white;
     text-align: center;
 }
-.btn-fb-login{
+.btn-fb-login, .btn-fb-join{
     background-color: #5a75f9 ;
 }
-.btn-login-submit a , .btn-fb-login a{
+.btn-login-submit a , .btn-fb-login a, .btn-login-submit a , .btn-fb-join a{
     text-decoration: none;
     color: white;
 }
