@@ -23,7 +23,7 @@ class Contents_model extends CI_Model {
         if (isset($filter['year'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-366 day", time())) .' ';
 
         if (isset($sorting['like'])) $query_str = $query_str."ORDER BY jumper_talk.likes DESC ";
-        if (isset($sorting['hit'])) $query_str = $query_str."ORDER BY jumper_talk.hit DESC ";
+        if (isset($sorting['hit'])) $query_str = $query_str."ORDER BY jumper_talk.view DESC ";
         if (isset($sorting['date'])) $query_str = $query_str."ORDER BY jumper_talk.inum DESC ";
 
         if (!$sorting) $query_str = $query_str."ORDER BY jumper_talk.inum DESC ";
@@ -49,7 +49,7 @@ class Contents_model extends CI_Model {
         if (isset($filter['year'])) $query_str = $query_str."AND jumper_talk.created >= ".date("Y-m-d", strtotime("-366 day", time())) .' ';
 
         if (isset($sorting['like'])) $query_str = $query_str."ORDER BY jumper_talk.likes DESC ";
-        if (isset($sorting['hit'])) $query_str = $query_str."ORDER BY jumper_talk.hit DESC ";
+        if (isset($sorting['view'])) $query_str = $query_str."ORDER BY jumper_talk.view DESC ";
         if (isset($sorting['date'])) $query_str = $query_str."ORDER BY jumper_talk.inum DESC ";
 
         if (!$sorting) $query_str = $query_str."ORDER BY jumper_talk.inum DESC ";
@@ -63,9 +63,9 @@ class Contents_model extends CI_Model {
         $this->db->update($this->table, array('likes' => $like_count));
     }
 
-    function update_hit_count($contentId, $hit_count){
+    function update_view_count($contentId, $view_count){
         $this->db->where('inum', $contentId);
-        $this->db->update($this->table, array('hit' => $hit_count));
+        $this->db->update($this->table, array('view' => $view_count));
     }
 
     function gets(){
@@ -77,7 +77,7 @@ class Contents_model extends CI_Model {
 
 
     function getById($id){
-        $this->db->select('picture, title, hit');
+        $this->db->select('picture, title, view');
         $this->db->where(array("cate"=> $id, "uploadstat"=> "Complete"));
         $this->db->from($this->table);
         return $this->db->get()->result();
@@ -90,7 +90,7 @@ class Contents_model extends CI_Model {
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
-        $this->db->select('inum, nickName, filename, datetime, hit, title, cate, picture');
+        $this->db->select('inum, nickName, filename, datetime, view, title, cate, picture');
         $this->db->where(array('cate'=>$categoryId, "uploadstat"=> "Complete"));
 //        $this->db->order_by('follow', 'asc');
         $this->db->from($this->table);
@@ -105,9 +105,9 @@ class Contents_model extends CI_Model {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
 
-        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
+        $this->db->select('picture, inum, filename, view, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "cate >" =>0));
-        $this->db->order_by('hit','desc');
+        $this->db->order_by('view','desc');
         $this->db->from($this->table);
         return $this->db->get()->result();
     }
@@ -120,7 +120,7 @@ class Contents_model extends CI_Model {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
 
-        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
+        $this->db->select('picture, inum, filename, view, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "cate >" =>0));
         $this->db->order_by('created','desc');
         $this->db->from($this->table);
@@ -142,9 +142,9 @@ class Contents_model extends CI_Model {
     }
 
     function get_vr_list_hot(){
-        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
+        $this->db->select('picture, inum, filename, view, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "cate >" =>0));
-        $this->db->order_by('hit','desc');
+        $this->db->order_by('view','desc');
         $this->db->limit(8);
         $this->db->from($this->table);
         return $this->db->get()->result();
@@ -152,16 +152,16 @@ class Contents_model extends CI_Model {
 
     function get_vr_list_new(){
 
-        $this->db->select('picture, inum, filename, hit, nickName, title, cate');
+        $this->db->select('picture, inum, filename, view, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "cate >" =>0));
-        $this->db->order_by('datetime','desc');
+        $this->db->order_by('created','desc');
         $this->db->limit(8);
         $this->db->from($this->table);
         return $this->db->get()->result();
     }
 
     function get_main_video_by_channel($channelId){
-        $this->db->select('picture, inum, filename, talk, title, nickName, datetime');
+        $this->db->select('picture, inum, filename, talk, title, nickName, created');
         $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId));
         $this->db->order_by('view','desc');
         $this->db->limit(1);
@@ -171,10 +171,10 @@ class Contents_model extends CI_Model {
 
     function get_vr_list_hot_by_channel($channelId){
 
-        $this->db->select('picture, inum, filename, hit, nickName, title, cate, talk, datetime');
+        $this->db->select('picture, inum, filename, view, nickName, title, cate, talk, datetime');
 //        $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId, "cate>"=> 0));
         $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId, "cate >"=> 0));
-        $this->db->order_by('hit','desc');
+        $this->db->order_by('view','desc');
         $this->db->limit(4);
         $this->db->from($this->table);
         return $this->db->get()->result();
@@ -182,9 +182,9 @@ class Contents_model extends CI_Model {
 
     function get_vr_list_new_by_channel($channelId){
 
-        $this->db->select('picture, inum, filename, hit, nickName, title, cate, talk, datetime');
+        $this->db->select('picture, inum, filename, view, nickName, title, cate, talk, datetime');
         $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId, "cate >" => 0));
-        $this->db->order_by('datetime','desc');
+        $this->db->order_by('created','desc');
         $this->db->limit(4);
         $this->db->from($this->table);
         return $this->db->get()->result();
@@ -197,7 +197,7 @@ class Contents_model extends CI_Model {
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
-        $this->db->select('inum, nickName, picture, filename, hit, title, cate,picture');
+        $this->db->select('inum, nickName, picture, filename, view, title, cate,picture');
         $this->db->where(array('ch'=>$channelId, "uploadstat"=> "Complete", "cate >" =>0 ));
 //        $this->db->order_by('follow', 'asc');
         $this->db->from($this->table);
@@ -210,7 +210,7 @@ class Contents_model extends CI_Model {
     }
 
     function getByContentId($contentId){
-        $this->db->select('nickName, picture, filename, hit, title, ch, likes, datetime, type, cate');
+        $this->db->select('nickName, picture, filename, view, title, ch, likes, created, type, cate');
         $this->db->where( array("inum" =>$contentId, "cate >" =>0 ));
         $this->db->from($this->table);
         return $this->db->get()->row();

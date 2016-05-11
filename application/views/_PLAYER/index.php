@@ -10,9 +10,10 @@
                         <p class="video-des-title"><?= $content_info->title?></p>
 
                         <div class="video-des-info">
-                            <div class="video-des-publisher">게시자 : <span> <?= $content_info->nickName?></span></div>
-                            <div class="video-des-date">게시일 : <span> <?= $content_info->datetime?></span></div>
-                            <div class="video-des-hits">조회수 <span><?= $content_info->hit?></span>회</div>
+                            <div class="video-des-publisher">게시자 : <span><?= $content_info->nickName?></span></div>
+                            <div class="video-des-date"><span>게시일 :</span> </div>
+                            <input type="hidden" id="player-handle-date" value="<?= $content_info->created?>">
+                            <div class="video-des-hits">조회수 <span><?= $content_info->view?></span>회</div>
                         </div>
 
                     </div>
@@ -20,12 +21,12 @@
                         <?php
                         if ($is_liked) {
                             ?>
-                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId . '&is_liked=false') ?>">
-                                <i class="glyphicon glyphicon-heart ic-heart"></i><span><?= $content_info->likes?></span></a>
+                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId . '&is_liked=false') ?>"
+                               ><i class="glyphicon glyphicon-heart ic-heart"></i><span><?= $content_info->likes?></span></a>
                             <?php
                         } else { ?>
-                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId. '&is_liked=true') ?>">
-                                <i class="glyphicon glyphicon-heart-empty ic-heart"></i><span><?= $content_info->likes?></span></a>
+                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId. '&is_liked=true') ?>"
+                               \><i class="glyphicon glyphicon-heart-empty ic-heart"></i><span><?= $content_info->likes?></span></a>
                             <?php
                         }
                         ?>
@@ -95,10 +96,12 @@
                     <?php
                     if ($is_subscribed) {
                         ?>
-                        <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum.'&is_subscribed=false')?>" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
+                        <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum.'&is_subscribed=false')?>"
+                           class="btn-ch-subs-cancel btn-ch-subs"><i class="glyphicon glyphicon-remove"></i> 구독취소</a>
                         <?php
                     } else { ?>
-                        <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum. '&is_subscribed=true')?>" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
+                        <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum. '&is_subscribed=true')?>"
+                           class="btn-ch-subs btn-ch-subs-plus "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>
                         <?php
                     }
                     ?>

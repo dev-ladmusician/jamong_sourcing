@@ -117,10 +117,9 @@ $(document).ready(function () {
 
 function handle_date(){
     var handle_date = $('#channel-handle-date').val();
-    var str = handle_date.split('+');
+    var str = handle_date.split(' ');
     var date = str[0];
     var date_arr = date.split('-');
-    var result = '20' + date_arr[0] + '년 ' + date_arr[1] + '월 ' + date_arr[2] + '일';
-    console.log(result);
+    var result = date_arr[0] + '년 ' + date_arr[1] + '월 ' + date_arr[2] + '일';
     $('#channel-home .main-video .video-des-bottom .video-des-date').append('<span>'+result+'</span>')
 }

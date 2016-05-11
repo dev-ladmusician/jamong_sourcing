@@ -106,6 +106,7 @@
                             <?php
                         } else {
                             ?>
+
                             <div class="padding-none video-large col-lg-8">
                                 <a href="#">
                                     <img
@@ -113,16 +114,10 @@
                                         alt="">
                                 </a>
                             </div>
-                            <div class="padding-none video-des col-lg-4">
-                                <div class="video-des-title">
-                                </div>
-                                <div class="video-des-content">
-                                </div>
-                                <div class="video-des-bottom">
-                                    <div class="channel-title"></div>
-
-                                    <div class="upload-date video-des-date"></div>
-                                </div>
+                            <div class="padding-none video-no-item col-lg-4">
+                                <p class="partial-no-item">
+                                    등록된 영상이 없습니다.
+                                </p>
                             </div>
                             <?php
 
@@ -166,7 +161,7 @@
 
                                                     <p class="video-des-publisher">게시자:<?= $item->nickName ?></p>
 
-                                                    <p class="video-des-hits">조회수<?= $item->hit ?></p>
+                                                    <p class="video-des-hits">조회수<?= $item->view ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -226,7 +221,7 @@
                                                             <?= $item->nickName ?></p>
 
                                                         <p class="video-des-hits">조회수
-                                                            <?= $item->hit ?></p>
+                                                            <?= $item->view ?></p>
                                                     </div>
                                                 </div>
                                             </div>

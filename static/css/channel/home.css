@@ -105,6 +105,9 @@
     position: absolute;
     bottom: 20px;
 }
+#channel-home .main-video .video-no-item p {
+    color: #d3d9de;
+}
 #channel-home .video-small{
     padding: 20px 0 20px 0;
 }
