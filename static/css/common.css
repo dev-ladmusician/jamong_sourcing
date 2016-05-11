@@ -151,6 +151,14 @@ a, a:hover{
 .btn-ch-subs-cancel {
     color: #EA6645;
 }
+.btn-ch-subs-plus:hover{
+    color: #3493D4;
+    opacity: 0.7;
+}
+.btn-ch-subs-cancel:hover{
+    color: #EA6645;
+    opacity: 0.7;
+}
 .padding-normal{
     padding: 10px 13px;
 }
