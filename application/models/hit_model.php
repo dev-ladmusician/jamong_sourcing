@@ -1,22 +1,22 @@
 <?php
 
-class Like_model extends CI_Model
+class Hit_model extends CI_Model
 {
     private $table;
 
     function __construct()
     {
         parent::__construct();
-        $this->table = 'jumper__likes';
+        $this->table = 'jumper__hits';
     }
 
-    function get_like_count_by_content($contentId){
+    function get_hit_count_by_content($contentId){
         $this->db->like('inum', $contentId);
         $this->db->from($this->table);
         return $this->db->count_all_results();
     }
 
-    function is_liked_content($contentId, $userId)
+    function is_hit_content($contentId, $userId)
     {
         $this->db->select('*');
         $this->db->where(array('userNumber' => $userId, 'inum' => $contentId));

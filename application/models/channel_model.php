@@ -59,7 +59,7 @@ class Channel_model extends CI_Model {
         $query = $query."LIMIT ". $per_page. " OFFSET " .($page -1) * $per_page;
 
         $query = $this->db->query($query);
-        return $query->result();
+        return $query->get()->result();
     }
 
     function get_by_id($id){
