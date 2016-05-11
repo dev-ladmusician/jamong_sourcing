@@ -146,6 +146,5 @@ if (strpos($filename, 'index.php')) {
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
 
-    </
-    body >
-    < / html >
+</body>
+</html>
