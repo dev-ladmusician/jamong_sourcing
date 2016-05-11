@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="video-des-bottom">
                                     <div class="channel-title"><?= $main_video->nickName ?></div>
-                                    <input type="hidden" id="channel-handle-date" value="<?= $main_video->datetime ?>">
+                                    <input type="hidden" id="channel-handle-date" value="<?= $main_video->created ?>">
 
                                     <div class="upload-date video-des-date"></div>
                                 </div>
