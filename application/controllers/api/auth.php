@@ -154,8 +154,6 @@ class Auth extends CORE_Controller {
 
         if ($end_block_date > $block_date) {
             $rtv = $this->user_model->change_state_block_to_active($user->userNumber);
-
-            var_dump($rtv);
             if ($rtv > 0) {
                 $this->handle_login($user);
             }  else {

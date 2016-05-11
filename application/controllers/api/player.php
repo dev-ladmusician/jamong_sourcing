@@ -11,9 +11,7 @@ class Player extends CORE_Controller
         $this->load->model('comment_model');
     }
 
-    function like_update()
-    {
-
+    function like_update() {
         $this->__require_login();
         $contentId = $this->input->get('contentId');
         $userId = $this->session->userdata('userid');
@@ -93,7 +91,7 @@ class Player extends CORE_Controller
             'last_page' => $last_page,
             'count' => count($comments),
             'data' => $this->load->view("_PARTIAL/comment.php", $view_data, true),
-            'is_last' => $last_page == $page
+            'is_last' => $last_page <= $page
         );
         echo json_encode($pass_data);
     }
