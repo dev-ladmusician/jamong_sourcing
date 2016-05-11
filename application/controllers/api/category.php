@@ -22,9 +22,10 @@ class Category extends CORE_Controller
             $last_page = ceil($total_count / $per_page);
             $view_data = array('items'=>$rtv, 'count'=>$total_count);
 
-            if(count($rtv)){
+            if( ($page == 1 ) && ( count($rtv) == 0) ){
+
                 $pass_data = array(
-                    'data'=> $this->load->view('_PARTIAL/category_contents_item.php',$view_data, true),
+                    'data'=> $this->load->view('_PARTIAL/no_item.php', true),
                     'page'=> $page,
                     'per_page' => $per_page,
                     'total_count' => $total_count,
@@ -33,7 +34,7 @@ class Category extends CORE_Controller
                 echo json_encode($pass_data);
             }else{
                 $pass_data = array(
-                    'data'=> $this->load->view('_PARTIAL/no_item.php', true),
+                    'data'=> $this->load->view('_PARTIAL/category_contents_item.php',$view_data, true),
                     'page'=> $page,
                     'per_page' => $per_page,
                     'total_count' => $total_count,
@@ -48,9 +49,10 @@ class Category extends CORE_Controller
             $last_page = ceil($total_count / $per_page);
             $view_data = array('items'=>$rtv, 'count'=>$total_count);
 
-            if(count($rtv)){
+            if( ($page==1) && (count($rtv) == 0) ){
+
                 $pass_data = array(
-                    'data'=> $this->load->view('_PARTIAL/category_contents_item.php',$view_data, true),
+                    'data'=> $this->load->view('_PARTIAL/no_item.php',$view_data, true),
                     'page'=> $page,
                     'per_page' => $per_page,
                     'total_count' => $total_count,
@@ -58,8 +60,9 @@ class Category extends CORE_Controller
                 );
                 echo json_encode($pass_data);
             }else{
+
                 $pass_data = array(
-                    'data'=> $this->load->view('_PARTIAL/no_item.php',$view_data, true),
+                    'data'=> $this->load->view('_PARTIAL/category_contents_item.php',$view_data, true),
                     'page'=> $page,
                     'per_page' => $per_page,
                     'total_count' => $total_count,
@@ -74,7 +77,7 @@ class Category extends CORE_Controller
             $last_page = ceil($total_count / $per_page);
             $view_data = array('items'=>$rtv, 'count'=>$total_count);
 
-            if(count($rtv)){
+            if($total_count){
                 $pass_data = array(
                     'data'=> $this->load->view('_PARTIAL/category_contents_item.php',$view_data, true),
                     'page'=> $page,

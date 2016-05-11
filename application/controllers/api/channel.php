@@ -73,7 +73,7 @@ class Channel extends CORE_Controller
 
         $view_data = array('items'=>$rtv, 'count'=>$total_count);
 
-        if(count($rtv)){
+        if($total_count){
             $pass_data = array('data'=> $this->load->view('_PARTIAL/channel_vr_list_item.php',$view_data, true),
                 'page'=> $page,
                 'per_page' => $per_page,
@@ -104,7 +104,7 @@ class Channel extends CORE_Controller
 
         $view_data = array('items'=>$rtv, 'count'=>$total_count);
 
-        if(count($rtv)){
+        if($total_count){
             $pass_data = array('data'=> $this->load->view('_PARTIAL/channel_subs_item.php',$view_data, true),
                 'page'=> $page,
                 'per_page' => $per_page,

@@ -72,14 +72,25 @@ class Channels extends CORE_Controller
 
         $view_data = array('items'=>$channels);
 
-        $pass_data = array(
-            'page'=> $page,
-            'per_page' => $per_page,
-            'total_count' => $total_count,
-            'last_page' => $last_page,
-            'data'=> $this->load->view('_PARTIAL/channel_list_item.php', $view_data, true));
+        if($total_count){
+            $pass_data = array(
+                'page'=> $page,
+                'per_page' => $per_page,
+                'total_count' => $total_count,
+                'last_page' => $last_page,
+                'data'=> $this->load->view('_PARTIAL/channel_list_item.php', $view_data, true));
 
-        echo json_encode($pass_data, JSON_PRETTY_PRINT);
+            echo json_encode($pass_data, JSON_PRETTY_PRINT);
+        }else{
+            $pass_data = array(
+                'page'=> $page,
+                'per_page' => $per_page,
+                'total_count' => $total_count,
+                'last_page' => $last_page,
+                'data'=> $this->load->view('_PARTIAL/no_item.php', $view_data, true));
+
+            echo json_encode($pass_data, JSON_PRETTY_PRINT);
+        }
     }
 
 //    function get_channel_list()

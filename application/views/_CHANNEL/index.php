@@ -181,11 +181,11 @@
 <!--                        </select>-->
 <!--                    </div>-->
 
-                    <div class=" list-vr col-lg-12 col-md-12 col-sm-12 padding-outer">
-                    </div>
-
                     <div class="jm-ajax-loader-container jm-ajax-loader-container-vr text-center">
                         <img class="jm-ajax-loader-vr" src="<?= site_url('/static/img/loader.gif') ?>"/>
+                    </div>
+
+                    <div class=" list-vr col-lg-12 col-md-12 col-sm-12 padding-outer">
                     </div>
 
                     <div class="load-more col-lg-12 col-md-12 col-sm-12 text-center">
@@ -199,11 +199,11 @@
 
                 <div id="channel-sub" class="col-lg-12 tab">
 
-                    <div class=" list-sub">
+                    <div class="jm-ajax-loader-container jm-ajax-loader-container-sub text-center">
+                        <img class="jm-ajax-loader-sub" src="<?= site_url('/static/img/loader.gif') ?>"/>
                     </div>
 
-                    <div class="jm-ajax-loader-container-sub text-center">
-                        <img class="jm-ajax-loader-sub" src="<?= site_url('/static/img/loader.gif') ?>"/>
+                    <div class=" list-sub">
                     </div>
 
                     <div class="load-more col-lg-12 col-md-12 col-sm-12 text-center">
