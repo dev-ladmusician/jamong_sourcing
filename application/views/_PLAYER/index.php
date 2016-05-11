@@ -15,7 +15,6 @@
                             <input type="hidden" id="player-handle-date" value="<?= $content_info->created?>">
                             <div class="video-des-hits">조회수 <span><?= $content_info->view?></span>회</div>
                         </div>
-
                     </div>
                     <div class="video-action">
                         <?php

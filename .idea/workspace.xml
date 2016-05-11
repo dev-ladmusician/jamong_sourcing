@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a5b96607-68b3-4ce2-82d4-fa539d4f9e8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/channel_model.php" afterPath="$PROJECT_DIR$/application/models/channel_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/channel.php" afterPath="$PROJECT_DIR$/application/controllers/channel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/contents_model.php" afterPath="$PROJECT_DIR$/application/models/contents_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_CHANNEL/index.php" afterPath="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php" afterPath="$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_PLAYER/index.php" afterPath="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
     </list>
     <ignored path="CodeIgniter-2.2.3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,8 +42,38 @@
       <file leaf-file-name="channel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="28" column="72" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="72" />
+            <state relative-caret-position="110">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1219">
+              <caret line="23" column="107" selection-start-line="23" selection-start-column="105" selection-end-line="23" selection-end-column="107" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="channel_vr_list_item.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="160" column="114" selection-start-line="160" selection-start-column="114" selection-end-line="160" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -49,26 +82,26 @@
       <file leaf-file-name="contents_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/contents_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2265">
-              <caret line="175" column="55" selection-start-line="175" selection-start-column="55" selection-end-line="175" selection-end-column="55" />
+            <state relative-caret-position="495">
+              <caret line="163" column="88" selection-start-line="163" selection-start-column="88" selection-end-line="163" selection-end-column="88" />
               <folding>
                 <element signature="n#get_items_by_search#0;n#Contents_model#0;n#!!top" expanded="false" />
-                <marker date="1462991548000" expanded="true" signature="281:437" placeholder="SELECT * FRO... jumper_talk" />
-                <marker date="1462991548000" expanded="true" signature="281:720" placeholder="SELECT * FRO... jumper_talk" />
-                <marker date="1462991548000" expanded="true" signature="2043:2497" placeholder="SELECT jumpe... jumper_talk" />
+                <marker date="1462991811000" expanded="true" signature="281:437" placeholder="SELECT * FRO... jumper_talk" />
+                <marker date="1462991811000" expanded="true" signature="281:720" placeholder="SELECT * FRO... jumper_talk" />
+                <marker date="1462991811000" expanded="true" signature="2044:2498" placeholder="SELECT jumpe... jumper_talk" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="channel_model.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="channel_model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="126" selection-start-line="17" selection-start-column="126" selection-end-line="17" selection-end-column="126" />
+            <state relative-caret-position="521">
+              <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
               <folding>
-                <marker date="1462991620000" expanded="true" signature="1916:2482" placeholder="SELECT ch.ch... jumper__channellist" />
-                <marker date="1462991620000" expanded="true" signature="2525:2886" placeholder="SELECT ch.ch... jumper__channellist" />
+                <marker date="1462991704000" expanded="true" signature="1916:2482" placeholder="SELECT ch.ch... jumper__channellist" />
+                <marker date="1462991704000" expanded="true" signature="2525:2886" placeholder="SELECT ch.ch... jumper__channellist" />
               </folding>
             </state>
           </provider>
@@ -101,13 +134,11 @@
         <option value="$PROJECT_DIR$/application/views/_HOME/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
         <option value="$PROJECT_DIR$/static/js/channel/index.js" />
-        <option value="$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php" />
         <option value="$PROJECT_DIR$/application/views/_CATEGORY/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/player.php" />
         <option value="$PROJECT_DIR$/application/models/category_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/channel.php" />
         <option value="$PROJECT_DIR$/application/models/subscriber_model.php" />
-        <option value="$PROJECT_DIR$/application/controllers/channel.php" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/channel_subs_item.php" />
         <option value="$PROJECT_DIR$/static/js/channel/home.js" />
         <option value="$PROJECT_DIR$/static/js/common.js" />
@@ -136,11 +167,13 @@
         <option value="$PROJECT_DIR$/static/js/player/index.js" />
         <option value="$PROJECT_DIR$/static/css/player/index.css" />
         <option value="$PROJECT_DIR$/application/controllers/api/auth.php" />
-        <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
         <option value="$PROJECT_DIR$/static/css/common.css" />
-        <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
-        <option value="$PROJECT_DIR$/application/models/contents_model.php" />
         <option value="$PROJECT_DIR$/application/models/channel_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/channel.php" />
+        <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
+        <option value="$PROJECT_DIR$/application/models/contents_model.php" />
+        <option value="$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php" />
+        <option value="$PROJECT_DIR$/application/views/_CHANNEL/index.php" />
       </list>
     </option>
   </component>
@@ -274,24 +307,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeIgniter-2.2.3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -656,12 +671,12 @@
       <workItem from="1462947233669" duration="35000" />
       <workItem from="1462947288026" duration="4220000" />
       <workItem from="1462954421273" duration="2351000" />
-      <workItem from="1462962620256" duration="6599000" />
+      <workItem from="1462962620256" duration="6876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33702000" />
+    <option name="totallyTimeSpent" value="33979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -729,7 +744,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/static/js/player/index.js</url>
-          <line>49</line>
+          <line>48</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -902,13 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/channels.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1067,26 +1075,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="106" column="14" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -1099,35 +1091,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+          <folding>
+            <marker date="1462991704000" expanded="true" signature="1916:2482" placeholder="SELECT ch.ch... jumper__channellist" />
+            <marker date="1462991704000" expanded="true" signature="2525:2886" placeholder="SELECT ch.ch... jumper__channellist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/channel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="28" column="72" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="72" />
+        <state relative-caret-position="110">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/contents_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
-          <caret line="175" column="55" selection-start-line="175" selection-start-column="55" selection-end-line="175" selection-end-column="55" />
+        <state relative-caret-position="495">
+          <caret line="163" column="88" selection-start-line="163" selection-start-column="88" selection-end-line="163" selection-end-column="88" />
           <folding>
             <element signature="n#get_items_by_search#0;n#Contents_model#0;n#!!top" expanded="false" />
-            <marker date="1462991548000" expanded="true" signature="281:437" placeholder="SELECT * FRO... jumper_talk" />
-            <marker date="1462991548000" expanded="true" signature="281:720" placeholder="SELECT * FRO... jumper_talk" />
-            <marker date="1462991548000" expanded="true" signature="2043:2497" placeholder="SELECT jumpe... jumper_talk" />
+            <marker date="1462991811000" expanded="true" signature="281:437" placeholder="SELECT * FRO... jumper_talk" />
+            <marker date="1462991811000" expanded="true" signature="281:720" placeholder="SELECT * FRO... jumper_talk" />
+            <marker date="1462991811000" expanded="true" signature="2044:2498" placeholder="SELECT jumpe... jumper_talk" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+    <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="126" selection-start-line="17" selection-start-column="126" selection-end-line="17" selection-end-column="126" />
-          <folding>
-            <marker date="1462991620000" expanded="true" signature="1916:2482" placeholder="SELECT ch.ch... jumper__channellist" />
-            <marker date="1462991620000" expanded="true" signature="2525:2886" placeholder="SELECT ch.ch... jumper__channellist" />
-          </folding>
+        <state relative-caret-position="-1219">
+          <caret line="23" column="107" selection-start-line="23" selection-start-column="105" selection-end-line="23" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_CHANNEL/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="160" column="114" selection-start-line="160" selection-start-column="114" selection-end-line="160" selection-end-column="114" />
+          <folding />
         </state>
       </provider>
     </entry>

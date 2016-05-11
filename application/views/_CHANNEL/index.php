@@ -158,10 +158,8 @@
 
                                                 <div class="video-des">
                                                     <p class="video-des-title"><?= $item->title ?></p>
-
-                                                    <p class="video-des-publisher">게시자:<?= $item->nickName ?></p>
-
-                                                    <p class="video-des-hits">조회수<?= $item->view ?></p>
+                                                    <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
+                                                    <p class="video-des-hits">조회수 <?= $item->view ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -214,14 +212,9 @@
                                                     </a>
 
                                                     <div class="video-des">
-                                                        <p class="video-des-title">
-                                                            <?= $item->title ?></p>
-
-                                                        <p class="video-des-publisher">게시자:
-                                                            <?= $item->nickName ?></p>
-
-                                                        <p class="video-des-hits">조회수
-                                                            <?= $item->view ?></p>
+                                                        <p class="video-des-title"><?= $item->title ?></p>
+                                                        <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
+                                                        <p class="video-des-hits">조회수 <?= $item->view ?></p>
                                                     </div>
                                                 </div>
                                             </div>
