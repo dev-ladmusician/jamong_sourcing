@@ -68,6 +68,7 @@ $(document).ready(function(){
                 total_count = data.total_count;
                 $('.comment-list').append(data.data);
 
+                $('.jamong-comment-total').html(data.total_count);
                 if (data.is_last) {
                     $('.load-more').hide();
                 }

@@ -35,7 +35,7 @@
 
                 <div class="jm-player-comment solid-border-box col-lg-12">
                     <div class="header solid-border-bottom">
-                        댓글 <span>70</span>
+                        댓글 <span class="jamong-comment-total">0</span>
                     </div>
                     <!-- 댓글 입력 -->
                     <form id="jm-form-comment" class="solid-border-bottom "

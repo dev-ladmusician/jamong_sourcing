@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5b96607-68b3-4ce2-82d4-fa539d4f9e8c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/player.php" afterPath="$PROJECT_DIR$/application/controllers/api/player.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/player/index.css" afterPath="$PROJECT_DIR$/static/css/player/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_PLAYER/index.php" afterPath="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/player/index.js" afterPath="$PROJECT_DIR$/static/js/player/index.js" />
     </list>
     <ignored path="CodeIgniter-2.2.3.iws" />
@@ -28,21 +27,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="244">
-                  <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+                <state relative-caret-position="214">
+                  <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="player.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="player.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/controllers/api/player.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="514">
-                  <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+                <state relative-caret-position="214">
+                  <caret line="73" column="42" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
                   <folding />
                 </state>
               </provider>
@@ -55,8 +54,8 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static/js/player/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="55" column="50" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="50" />
+                <state relative-caret-position="388">
+                  <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
                   <folding />
                 </state>
               </provider>
@@ -109,7 +108,6 @@
         <option value="$PROJECT_DIR$/static/js/search/result.js" />
         <option value="$PROJECT_DIR$/application/models/contents_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/search.php" />
-        <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/channels.php" />
         <option value="$PROJECT_DIR$/application/views/_CHANNELS/index.php" />
         <option value="$PROJECT_DIR$/static/js/channels/index.js" />
@@ -129,8 +127,9 @@
         <option value="$PROJECT_DIR$/application/models/user_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/auth.php" />
         <option value="$PROJECT_DIR$/static/css/player/index.css" />
-        <option value="$PROJECT_DIR$/static/js/player/index.js" />
         <option value="$PROJECT_DIR$/application/controllers/api/player.php" />
+        <option value="$PROJECT_DIR$/static/js/player/index.js" />
+        <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
       </list>
     </option>
   </component>
@@ -584,12 +583,12 @@
       <workItem from="1462947233669" duration="35000" />
       <workItem from="1462947288026" duration="4220000" />
       <workItem from="1462954421273" duration="2351000" />
-      <workItem from="1462962620256" duration="1618000" />
+      <workItem from="1462962620256" duration="1720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28721000" />
+    <option name="totallyTimeSpent" value="28823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1020,26 +1019,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/player.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="214">
+          <caret line="73" column="42" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/player/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="55" column="50" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="50" />
+        <state relative-caret-position="388">
+          <caret line="70" column="66" selection-start-line="70" selection-start-column="66" selection-end-line="70" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/player.php">
+    <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+        <state relative-caret-position="214">
+          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
           <folding />
         </state>
       </provider>
