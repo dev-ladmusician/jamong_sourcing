@@ -4,7 +4,13 @@
     <bookmark url="file://$PROJECT_DIR$/application/views/_LAYOUT/header.php" line="92" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a5b96607-68b3-4ce2-82d4-fa539d4f9e8c" name="Default" comment="" />
+=======
+    <list default="true" id="a5b96607-68b3-4ce2-82d4-fa539d4f9e8c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
+    </list>
+>>>>>>> 8517471d8043b27bddf3c248d6c8cd1dcbf5317b
     <ignored path="CodeIgniter-2.2.3.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -24,6 +30,7 @@
     <favorites_list name="CodeIgniter-2.2.3" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <splitter split-orientation="horizontal" split-proportion="0.5230474">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -164,6 +171,20 @@
         </leaf>
       </split-second>
     </splitter>
+=======
+    <leaf>
+      <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/common.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="106" column="14" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> 8517471d8043b27bddf3c248d6c8cd1dcbf5317b
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -217,6 +238,7 @@
         <option value="$PROJECT_DIR$/application/controllers/api/player.php" />
         <option value="$PROJECT_DIR$/application/core/CORE_Controller.php" />
         <option value="$PROJECT_DIR$/static/js/player/index.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/static/js/channel/home.js" />
         <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/static/css/channel/home.css" />
@@ -229,7 +251,13 @@
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/category_contents_item.php" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/channel_vr_list_item.php" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/search_item.php" />
+=======
+        <option value="$PROJECT_DIR$/static/css/player/index.css" />
+        <option value="$PROJECT_DIR$/application/controllers/api/auth.php" />
+        <option value="$PROJECT_DIR$/application/models/contents_model.php" />
+>>>>>>> 8517471d8043b27bddf3c248d6c8cd1dcbf5317b
         <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
+        <option value="$PROJECT_DIR$/static/css/common.css" />
       </list>
     </option>
   </component>
@@ -904,15 +932,36 @@
       <created>1448260746194</created>
       <option name="number" value="Default" />
       <updated>1448260746194</updated>
+<<<<<<< HEAD
     </task>
     <servers />
   </component>
+=======
+      <workItem from="1462712032652" duration="13199000" />
+      <workItem from="1462884837884" duration="5906000" />
+      <workItem from="1462942976221" duration="1392000" />
+      <workItem from="1462947233669" duration="35000" />
+      <workItem from="1462947288026" duration="4220000" />
+      <workItem from="1462954421273" duration="2351000" />
+      <workItem from="1462962620256" duration="5262000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="32365000" />
+  </component>
+>>>>>>> 8517471d8043b27bddf3c248d6c8cd1dcbf5317b
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.009375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14592275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> 8517471d8043b27bddf3c248d6c8cd1dcbf5317b
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15539113" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1343,6 +1392,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/application/views/_SEARCH/result.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.724138">
@@ -1352,6 +1402,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
+=======
+    <entry file="file://$PROJECT_DIR$/application/models/contents_model.php">
+>>>>>>> 8517471d8043b27bddf3c248d6c8cd1dcbf5317b
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.086207">
           <caret line="15" column="89" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
@@ -1363,6 +1416,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61455524">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="106" column="14" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
           <folding />
         </state>
       </provider>

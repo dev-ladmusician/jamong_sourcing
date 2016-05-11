@@ -98,8 +98,8 @@ a, a:hover{
 }
 
 .video-des {
-    height: 65px;
-    padding: 5px 10px;
+    min-height: 86px;
+    padding: 10px 10px;
     background-color: white;
 }
 
