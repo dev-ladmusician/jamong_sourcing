@@ -37,7 +37,6 @@ class Channel extends CORE_Controller {
         if($userId){
             $is_subscribed = $this->subscriber_model->is_subscibed_channel($channelId, $userId);
         }
-
         $this->__get_views('_CHANNEL/index', array('categories' => $categories, 'channels'=>$channels),
             array('is_subscribed' => $is_subscribed,'channel'=>$rtv, 'main_video' => $main_video, 'vr_list_hot' => $vr_list_hot, 'vr_list_new' => $vr_list_new));
     }

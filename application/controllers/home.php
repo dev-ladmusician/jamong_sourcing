@@ -17,9 +17,14 @@ class Home extends CORE_Controller
 
         //로그인 한 경우, profile_image가 등록되어 있으면,
         $user_id = $this->session->userdata('userid');
+
         if($user_id){
             $profile_url = $this->user_model->get_profile_image_by_id($user_id);
-            $this->session->set_userdata('profile_url', $profile_url->picture);
+            if(count($profile_url)){
+                $this->session->set_userdata('profile_url', $profile_url->picture);
+            }else{
+                $this->session->set_userdata('profile_url', null);
+            }
         }
 //        $is_superadmin = $this->session->userdata('issuperadmin');
 //        $is_login = $this->session->userdata('is_login');

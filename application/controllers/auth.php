@@ -20,9 +20,9 @@ class Auth extends CORE_Controller {
         $email = $this->user_model->get_email_by_user_id($userId);
 
         if(count($email)){
-            $this->__get_views('_AUTH/login',array('email'=> $email));
+            $this->__get_views('_AUTH/login',null, array('email'=> $email->email));
         }else{
-            $this->__get_views('_AUTH/login',array('email'=> null));
+            $this->__get_views('_AUTH/login',null,array('email'=> null));
         }
     }
 
@@ -42,7 +42,7 @@ class Auth extends CORE_Controller {
     function logout()
     {
         $this->session->sess_destroy();
-        redirect('/home/index');
+        redirect('/auth/login');
     }
 
 

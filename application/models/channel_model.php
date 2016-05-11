@@ -10,7 +10,7 @@ class Channel_model extends CI_Model {
     function gets(){
         $this->db->select('jumper__channellist.channelname, jumper__channellist.channelnum, jumper__channel_profile.ch_picture');
         $this->db->where('isdeprecated',false);
-        $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum');
+        $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum', 'left outer');
         $this->db->limit(30);
         $this->db->order_by('follow', 'asc');
         $this->db->from($this->table);
@@ -65,7 +65,7 @@ class Channel_model extends CI_Model {
     function get_by_id($id){
         $this->db->select('jumper__channellist.channelname, jumper__channellist.channelnum, jumper__channellist.follow, jumper__channellist.chdesc, jumper__channellist.contents, jumper__channel_profile.ch_picture, jumper__channel_profile.bg_picture');
         $this->db->where(array('isdeprecated'=> false, 'jumper__channellist.channelnum' =>$id));
-        $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum');
+        $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum', 'left outer');
         $this->db->from($this->table);
 
         return $this->db->get()->row();

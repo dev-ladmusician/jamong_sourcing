@@ -142,6 +142,46 @@ class Auth extends CORE_Controller
         }
     }
 
+    function send_mail()
+    {
+        $email = $this->input->post('jm-password-input');
+        var_dump($email);
+//        if(isset($email))
+//        $user = $this->user_model->get_user_by_email($email);
+//        var_dump($user);
+
+
+//        $receiver = 'janghan3150@gmail.com';    // 받는 사람
+//        $subject = " [[동신대학교]] 임시 비밀번호 입니다."; // 제목
+//        $content = "<b>이름 : </b>" . $data['name'] . "<br>" .
+//            "<b>연락처: </b>" . $data['contact'] . "<br>" .
+//            "<b>이메일 : </b>" . $data['email'] . "<br>" .
+//            "<b>문의분류 : </b>" . $data['category'] . "<br>" .
+//            "<b>문의제목 : </b>" . $data['title'] . "<br>" .
+//            "<b>문의내용 :</b>" . $data['content']. "<br>" ;
+//
+//        $headers = "From: " . strip_tags($data['email']) . "\r\n";
+//        $headers .= "Reply-To: " . strip_tags($data['email']) . "\r\n";
+//        $headers .= "MIME-Version: 1.0\r\n";
+//        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+//
+//        $success = mail($receiver, $subject, $content, $headers);
+//
+//        if ($success) {
+//            echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
+//            echo '<script type="text/javascript" >';
+//            echo 'alert("성공적으로 전송되었습니다");';
+//            echo 'window.location = "http://itscodia.com/CODIA/home/inquiry";';
+//            echo '</script>';
+//        } else {
+//            echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
+//            echo '<script type="text/javascript" >';
+//            echo 'alert("전송에 실패하였습니다");';
+//            echo 'window.history.back();';
+//            echo '</script>';
+//        }
+    }
+
     /**
      * 로그인
      * email, password

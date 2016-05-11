@@ -13,7 +13,18 @@
                     LOGIN
                 </div>
                 <div class="form-group">
-                    <input name="jm-login-id" type="email" placeholder="ID" class="solid-border-box" required>
+                    <?php
+                    if(isset($email)){
+                        ?>
+                        <input name="jm-login-id" type="email" value="<?= $email?>" class="solid-border-box" required>
+                        <?php
+                    }else{?>
+
+                        <input name="jm-login-id" type="email" placeholder="E-mail" class="solid-border-box" required>
+                        <?php
+
+                    }
+                    ?>
                 </div>
                 <div class="form-group">
                     <input name="jm-login-password" type="password" placeholder="Password" class="solid-border-box"

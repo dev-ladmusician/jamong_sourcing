@@ -1,31 +1,5 @@
 
-</div><!-- body container-->
-
-<!--<div class="footer-container">-->
-<!--    <section class="auth-footer">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="footer-text col-lg-12">-->
-<!---->
-<!--                    <div class="col-lg-5 col-sm-12">-->
-<!--                        <a class="footer-logo">-->
-<!--                            <img src="--><?//= base_url('/static/img/dongsin_logo.png') ?><!--" alt="">-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-4 col-sm-12">-->
-<!--                        COPYRIGHT JAMONG INC. ALL RIGHTS RESERVED.-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-3 col-sm-12">-->
-<!--                        <div class="float-right">-->
-<!--                            <span>Google play</span>-->
-<!--                            <img src="--><?//= base_url('/static/img/fb_logo.png') ?><!--" alt="FACEBOOK_LOGO">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--</div>-->
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
