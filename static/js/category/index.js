@@ -28,15 +28,14 @@ $(document).ready(function(){
                     last_page = data.last_page;
                     total_count = data.total_count;
                     $('.jm-category .category-list').append(data.data);
+
+                    if (page == last_page) {
+                        $('.load-more').hide();
+                    }
                 } else {
                     $('.jm-category .category-list').html(data.data);
                 }
 
-                console.log(data.data);
-                console.log(data.page);
-                console.log(data.per_page);
-                console.log(data.last_page);
-                console.log(data.total_count);
 
             }, function (arg) {
                 console.log('error!!: ' + arg);
