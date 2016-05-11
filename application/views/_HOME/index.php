@@ -5,16 +5,16 @@
                 <div class="video-large">
                     <a href="<?= site_url('/player?contentId=') . $main_video->inum ?>">
                         <?php
-                        if ($item->picture) {
+                        if ($main_video->picture) {
                             ?>
                             <img
-                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/high_thumb.png"
+                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/high_thumb.png"
                                 alt="">
                             <?php
                         } else {
                             ?>
                             <img
-                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/high_00001.png"
+                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/high_00001.png"
                                 alt="">
                             <?php
 
