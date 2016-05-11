@@ -1,23 +1,11 @@
-///**
-// * Created by SangBeom on 2016-04-20.
-// */
-//embedpano(
-//    {
-//        //used in flash
-//        //swf: "krpano.swf",
-//
-//        //null is used
-//        //xml: "pano.xml",
-//        xml: null,
-//
-//        //The #id of the html element where the viewer should be embedded.
-//        // There will be an 'alert()' error when no target will be set.
-//        target: "pano"
-//    });
 $(window).load(function(){
     reset_recommend_list_max_height();
 });
 $(document).ready(function(){
+
+    handle_date();
+    console.log(handle_date);
+
     var filename = $('#jamong-content-file-name').val();
     console.log(filename);
 
@@ -111,4 +99,13 @@ function reset_recommend_list_max_height(){
     var target_header = $('.jm-player-recommend .header').outerHeight();
     var target = $('.jm-player-recommend .recommend-list');
     target.css("max-height", row_height - upper_item_height - target_header + "px");
+}
+
+function handle_date(){
+    var handle_date = $('#player-handle-date').val();
+    var str = handle_date.split('+');
+    var date = str[0];
+    var date_arr = date.split('-');
+    var result = '20' + date_arr[0] + '년 ' + date_arr[1] + '월 ' + date_arr[2] + '일';
+    $('.jm-player .jm-player-video .video-des-info .video-des-date span').append('<span>'+result+'</span>')
 }
