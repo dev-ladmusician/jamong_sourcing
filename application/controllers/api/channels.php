@@ -9,17 +9,9 @@ class Channels extends CORE_Controller
         $this->load->model('channel_model');
         $this->load->model('subscriber_model');
     }
+
     function test() {
-        $page = $this->input->get('page');
-        $per_page = $this->input->get('perPage');
-
-        if(!$page) $page = 1;
-        if(!$per_page) $per_page = 8;
-
-        $channels = $this->channel_model->get_channel_list_with_my_subscribe($page, $per_page);
-        $total_count = $this->channel_model->get_all_count();
-        $last_page = ceil($total_count / $per_page);
-
+        $channels = $this->channel_model->test();
         echo json_encode($channels, JSON_PRETTY_PRINT);
     }
 

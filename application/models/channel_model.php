@@ -7,6 +7,13 @@ class Channel_model extends CI_Model {
         $this->table = 'jumper__channellist';
     }
 
+    function test() {
+        $this->db->select('*');
+        $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum', 'left outer');
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
     function gets(){
         $this->db->select('jumper__channellist.channelname, jumper__channellist.channelnum, jumper__channel_profile.ch_picture');
         $this->db->where('isdeprecated',false);
@@ -38,8 +45,7 @@ class Channel_model extends CI_Model {
             $query = "SELECT ch.channelname, ch.chdesc,
                 ch.contents, ch.follow, ch.channelnum,
                 profile.ch_picture,
-                sub.userNumber
-                FROM ".
+                sub.userNumber FROM ".
                 "dongshindb.jumper__channellist ch ".
                 "LEFT OUTER JOIN jumper__mychannels sub ".
                 "ON ch.channelnum = sub.channelnum AND sub.userNumber = ".$this->session->userdata('userid'). " ".
