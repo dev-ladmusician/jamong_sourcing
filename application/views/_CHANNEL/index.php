@@ -28,7 +28,7 @@
                         </div>
                         <div class="des-info">
                         <span>VR컨텐츠 <span class="value-content-count"><b><?php if (isset($channel->contents)) {
-                                        echo $channel->contents;
+                                        echo $channel->contentNum;
                                     } ?></b></span></span>
                         <span>구독자 <span class="value-subs-count"><b><?php if (isset($channel->follow)) {
                                         echo $channel->follow;
@@ -158,10 +158,8 @@
 
                                                 <div class="video-des">
                                                     <p class="video-des-title"><?= $item->title ?></p>
-
-                                                    <p class="video-des-publisher">게시자:<?= $item->nickName ?></p>
-
-                                                    <p class="video-des-hits">조회수<?= $item->view ?></p>
+                                                    <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
+                                                    <p class="video-des-hits">조회수 <?= $item->view ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -214,14 +212,9 @@
                                                     </a>
 
                                                     <div class="video-des">
-                                                        <p class="video-des-title">
-                                                            <?= $item->title ?></p>
-
-                                                        <p class="video-des-publisher">게시자:
-                                                            <?= $item->nickName ?></p>
-
-                                                        <p class="video-des-hits">조회수
-                                                            <?= $item->view ?></p>
+                                                        <p class="video-des-title"><?= $item->title ?></p>
+                                                        <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
+                                                        <p class="video-des-hits">조회수 <?= $item->view ?></p>
                                                     </div>
                                                 </div>
                                             </div>

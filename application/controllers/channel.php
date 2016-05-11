@@ -10,8 +10,7 @@ class Channel extends CORE_Controller {
         $this->load->model('subscriber_model');
     }
 
-    function index()
-    {
+    function index() {
 
         $categories= $this->category_model->gets();
         $channels = $this->channel_model->gets();
@@ -19,8 +18,7 @@ class Channel extends CORE_Controller {
         $this->__get_views('_CHANNEL/index', array('categories' => $categories, 'channels'=>$channels));
     }
 
-    function home()
-    {
+    function home() {
         $channelId = $this->input->get('channelId');
 
         $categories= $this->category_model->gets();
