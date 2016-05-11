@@ -7,7 +7,7 @@
     <plugin name="video"
             url.flash="%SWFPATH%/plugins/videoplayer.swf"
             url.html5="%SWFPATH%/plugins/videoplayer.js"
-            videourl="https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/original/a246b338dfcec7040b.mp4"
+            videourl="http://ssproxy.ucloudbiz.olleh.com/v1/AUTH_b0ad3866-b002-4ec5-b1d9-7f221dd3417c/video_all/a482ducku83h72kxr_4k.mp4"
             pausedonstart="false"
             loop="true"
             volume="1.0"

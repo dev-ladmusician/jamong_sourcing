@@ -18,11 +18,17 @@ $(window).load(function(){
     reset_recommend_list_max_height();
 });
 $(document).ready(function(){
+    var filename = $('#jamong-content-file-name').val();
+    console.log(filename);
+
+    var dir = "https://s3-ap-northeast-1.amazonaws.com/dongshin.movie/playlist/";
+
     embedpano({
         swf:"http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/jamongplayer/kp_jamong.swf",
-        xml:"http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/jamongplayer/video.xml",
+        //xml:"http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/jamongplayer/" +filename + '.xml',
+        xml: dir + filename +'/' + filename + '.xml',
         target:"pano",
-        html5:"only"});
+        html5:"auto"});
 
     $('.load-more').click(function(){
         reset_recommend_list_max_height();
