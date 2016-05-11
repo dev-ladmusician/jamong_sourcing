@@ -18,7 +18,7 @@
                 </section>
 
                 <section class="sidebar-channel solid-border-box ">
-                    <div class="solid-border-bottom menu-header">채널 <span>Top 30</span></div>
+                    <div class="solid-border-bottom menu-header">채널</div>
                     <ul class="sidebar-menu solid-border-bottom">
                         <?php
                         foreach($channels as $channel){?>
