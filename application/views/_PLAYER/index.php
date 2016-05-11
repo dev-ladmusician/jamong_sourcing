@@ -1,4 +1,5 @@
 <input type="hidden" id="jamong-content-id" value="<?php echo $contentId; ?>" />
+<input type="hidden" id="jamong-content-file-name" value="<?php echo $content_info->filename; ?>" />
 <div class="content-wrapper col-lg-9 col-md-9 col-sm-12">
     <div class="row">
         <div class=" col-lg-9 col-md-8 padding-none">
@@ -15,7 +16,6 @@
                         </div>
 
                     </div>
-
                     <div class="video-action">
                         <?php
                         if ($is_liked) {
