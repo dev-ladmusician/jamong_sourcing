@@ -104,7 +104,7 @@ class Contents_model extends CI_Model {
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
-        $this->db->select('inum, nickName, filename, datetime, hit, title, cate');
+        $this->db->select('inum, nickName, filename, datetime, hit, title, cate, picture');
         $this->db->where(array('cate'=>$categoryId, "uploadstat"=> "Complete"));
 //        $this->db->order_by('follow', 'asc');
         $this->db->from($this->table);
@@ -136,7 +136,7 @@ class Contents_model extends CI_Model {
 
         $this->db->select('picture, inum, filename, hit, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "cate >" =>0));
-        $this->db->order_by('datetime','desc');
+        $this->db->order_by('created','desc');
         $this->db->from($this->table);
         return $this->db->get()->result();
     }
@@ -211,7 +211,7 @@ class Contents_model extends CI_Model {
         } else {
             $this->db->limit($per_page, ($page - 1) * $per_page);
         }
-        $this->db->select('inum, nickName, picture, filename, hit, title, cate');
+        $this->db->select('inum, nickName, picture, filename, hit, title, cate,picture');
         $this->db->where(array('ch'=>$channelId, "uploadstat"=> "Complete", "cate >" =>0 ));
 //        $this->db->order_by('follow', 'asc');
         $this->db->from($this->table);
