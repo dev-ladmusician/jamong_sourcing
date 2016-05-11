@@ -2,9 +2,8 @@
  * Created by ladmusician on 15. 9. 6..
  */
 $(window).load(function(){
-   //var popup = $('.popup-container');
-   // var visible = popup.css('visibility');
-   // console.log(visible);
+
+
 });
 $(document).ready(function () {
 

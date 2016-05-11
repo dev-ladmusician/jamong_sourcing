@@ -10,8 +10,52 @@ class Channels extends CORE_Controller
         $this->load->model('subscriber_model');
     }
 
+    function subscribe_update(){
+        $this->__require_login();
+
+        $userId = $this->session->userdata('userid');
+        $channelId = $this->input->get('channelId');
+        $is_subscribed = $this->input->get('is_subscribed');
+
+        //구독할때 add
+        if(strcmp($is_subscribed, 'true') == 0){
+            $rtv = $this->subscriber_model->add($channelId,$userId);
+
+            if($rtv=='1'){
+                //            update_follow($channelId,true);
+                $this->session->set_flashdata('message', '채널을 구독했습니다.');
+                redirect('channels');
+            }else{
+                $this->session->set_flashdata('message', '채널을 구독하는 데 오류가 발생했습니다.');
+                redirect('channels');
+            }
+        }else{
+            $rtv = $this->subscriber_model->delete($channelId,$userId);
+
+            if($rtv=='1'){
+                //            update_follow($channelId,false);
+                $this->session->set_flashdata('message', '채널 구독을 취소했습니다.');
+                redirect('channels');
+            }else{
+                $this->session->set_flashdata('message', '채널을 구독을 취소하는데 오류가 발생했습니다.');
+                redirect('channels');
+            }
+        }
+
+
+    }
+
     function test() {
-        $channels = $this->channel_model->test();
+        $page = $this->input->get('page');
+        $per_page = $this->input->get('perPage');
+
+        if(!$page) $page = 1;
+        if(!$per_page) $per_page = 8;
+
+        $channels = $this->channel_model->get_channel_list_with_my_subscribe($page, $per_page);
+        $total_count = $this->channel_model->get_all_count();
+        $last_page = ceil($total_count / $per_page);
+
         echo json_encode($channels, JSON_PRETTY_PRINT);
     }
 
@@ -42,7 +86,7 @@ class Channels extends CORE_Controller
 //    {
 //        $page = $this->input->get('page');
 //        $per_page = $this->input->get('perPage');
-//        $rtv = $this->channel_model->get_channel_list($page, $per_page);
+//        $rtv = $this->channel_model->get_channel_list_with_my_subscribe($page, $per_page);
 //        $total_count = $this->channel_model->get_all_count();
 //
 //        $last_page = ceil($total_count / $per_page);

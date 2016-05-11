@@ -298,6 +298,18 @@ class User_model extends CI_Model
         return $result;
     }
 
+    function add_nickName($userId, $data){
+        $input_data = array(
+            'nickName' => $data['nickName'],
+            'userNumber' => $userId
+        );
+
+        $this->db->insert('jumper_user', $input_data);
+        $result = $this->db->insert_id();
+
+        return $result;
+    }
+
     function update($data)
     {
         try {
@@ -341,5 +353,17 @@ class User_model extends CI_Model
             return $e;
         }
 
+    }
+
+    function get_email_by_user_id($user_id){
+        try{
+            $this->db->select('email');
+            $this->db->where('userNumber' ,  $user_id);
+            $this->db->from($this->table);
+            return $this->db->get()->row();
+        }
+        catch(Exception $e){
+            return $e;
+        }
     }
 }

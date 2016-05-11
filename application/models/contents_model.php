@@ -84,6 +84,11 @@ class Contents_model extends CI_Model {
         $this->db->update($this->table, array('likes' => $like_count));
     }
 
+    function update_hit_count($contentId, $hit_count){
+        $this->db->where('inum', $contentId);
+        $this->db->update($this->table, array('hit' => $hit_count));
+    }
+
     function gets(){
         $this->db->select('*');
         $this->db->where('isdeprecated',false);

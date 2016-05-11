@@ -9,6 +9,7 @@ class Player extends CORE_Controller {
         $this->load->model('contents_model');
         $this->load->model('subscriber_model');
         $this->load->model('like_model');
+        $this->load->model('hit_model');
     }
 
     function index()
@@ -26,6 +27,12 @@ class Player extends CORE_Controller {
         if($userId){
             $is_subscribed = $this->subscriber_model->is_subscibed_channel($contents->ch, $userId);
             $is_liked = $this->like_model->is_liked_content($contentId, $userId);
+            $is_hit = $this->hit_model->is_hit_content($contentId, $userId);
+            if(!$is_hit) {
+                $this->hit_model->add($contentId, $userId);
+                $hit_count = $this->hit_model->get_hit_count_by_content($contentId);
+                $this->contents_model->update_hit_count($contentId, $hit_count);
+            }
         }
 
         $this->__get_views('_PLAYER/index', array('categories' => $categories, 'channels'=>$channels),

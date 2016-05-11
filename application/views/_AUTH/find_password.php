@@ -8,12 +8,12 @@
                     <a href="<?= site_url('/auth/login') ?>">로그인</a>
                     <a href="<?= site_url('/auth/register') ?>">회원가입</a>
                 </div>
-                <form id="jm-auth-find-password" action="post">
+                <form id="jm-auth-find-password" method="post" action="<?= site_url('/api/auth/send_mail')?>/">
                     <div class="form-group">
                         비밀번호 찾기
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="이메일" class="solid-border-box" required>
+                        <input name="jm-password-input" type="email" placeholder="이메일" class="solid-border-box" required>
                     </div>
                     <div class="form-group">
                         <input class="btn-login-submit" type="submit" value="비밀번호 재설정" href="">

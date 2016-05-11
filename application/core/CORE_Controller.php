@@ -16,7 +16,13 @@ class CORE_Controller extends CI_Controller
 
         if (strpos($viewStr, 'AUTH')) {
             $this->load->view('_AUTH/header.php');
-            $this->load->view($viewStr);
+
+            if ($data != null) {
+                $this->load->view($viewStr, $data);
+            } else {
+                $this->load->view($viewStr);
+            }
+
             $this->load->view('_AUTH/footer.php');
         } else {
             $this->load->view('_LAYOUT/header.php');
