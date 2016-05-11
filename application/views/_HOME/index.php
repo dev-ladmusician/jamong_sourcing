@@ -61,7 +61,7 @@
 
                                         <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
 
-                                        <p class="video-des-hits">조회수: <?= $item->hit ?></p>
+                                        <p class="video-des-hits">조회수: <?= $item->view ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
 
                                         <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
 
-                                        <p class="video-des-hits">조회수: <?= $item->hit ?></p>
+                                        <p class="video-des-hits">조회수: <?= $item->view ?></p>
                                     </div>
                                 </div>
                             </div>
