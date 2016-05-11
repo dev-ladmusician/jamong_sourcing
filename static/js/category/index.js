@@ -5,7 +5,7 @@ $(document).ready(function(){
     var last_page = -1;
     var total_count = -1;
     var processing = false;
-    var ajax_loader = $('.jm-ajax-loader');
+    var ajax_loader = $('.jm-ajax-loader-container');
 
     get_items(page, per_page);
 

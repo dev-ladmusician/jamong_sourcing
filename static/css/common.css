@@ -674,6 +674,7 @@ a, a:hover{
     font-size: 14px;
     color: #3A3A3A;
     text-align: center;
+    padding: 40px 0 10px 0;
 }
 @media (min-width: 1200px){
     .main-sidebar {
