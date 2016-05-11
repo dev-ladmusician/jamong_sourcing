@@ -180,11 +180,12 @@ class Contents_model extends CI_Model {
         return $this->db->get()->result();
     }
 
-    function get_vr_list_new_by_channel($channelId){
+    function get_vr_list_new_by_channel($channelId)
+    {
 
         $this->db->select('picture, inum, filename, view, nickName, title, cate, talk, datetime');
-        $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId, "cate >" => 0));
-        $this->db->order_by('created','desc');
+        $this->db->where(array("uploadstat" => "Complete", "ch" => $channelId, "cate >" => 0));
+        $this->db->order_by('created', 'desc');
         $this->db->limit(4);
         $this->db->from($this->table);
         return $this->db->get()->result();
