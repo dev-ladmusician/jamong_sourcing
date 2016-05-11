@@ -27,7 +27,6 @@ class Home extends CORE_Controller
 //        $nickname = $this->session->userdata('nickname');
 //        $is_admin = $this->session->userdata('isadmin');
 
-
         $categories = $this->category_model->gets();
         $channels = $this->channel_model->gets();
         $main_video = $this->contents_model->get_main_video();

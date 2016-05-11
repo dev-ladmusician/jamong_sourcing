@@ -79,6 +79,11 @@ class Contents_model extends CI_Model {
         return count($query->result());
     }
 
+    function update_like_count($contentId, $like_count){
+        $this->db->where('inum', $contentId);
+        $this->db->update($this->table, array('likes' => $like_count));
+    }
+
     function gets(){
         $this->db->select('*');
         $this->db->where('isdeprecated',false);

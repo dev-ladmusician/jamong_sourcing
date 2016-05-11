@@ -6,6 +6,44 @@ class Player extends CORE_Controller
     function __construct()
     {
         parent::__construct();
+<<<<<<< HEAD
+        $this->load->model('like_model');
+        $this->load->model('contents_model');
+    }
+
+    function like_update(){
+
+        $this->__require_login();
+        $contentId = $this->input->get('contentId');
+        $userId = $this->session->userdata('userid');
+        $is_liked = $this->input->get('is_liked');
+
+        //좋아 할때 add
+        if(strcmp($is_liked, 'true') == 0){
+            $rtv = $this->like_model->add($contentId,$userId);
+            if($rtv=='1'){
+                $like_count = $this->like_model->get_like_count_by_content($contentId);
+                $this->contents_model->update_like_count($contentId, $like_count);
+                $this->session->set_flashdata('message', '좋아요 :)');
+                redirect('player?contentId='.$contentId);
+            }else{
+                $this->session->set_flashdata('message', '오류가 발생했습니다.');
+                redirect('player?contentId='.$contentId);
+            }
+        }else{
+            $rtv = $this->like_model->delete($contentId,$userId);
+            $like_count = $this->like_model->get_like_count_by_content($contentId);
+            $this->contents_model->update_like_count($contentId, $like_count);
+            if($rtv=='1'){
+                $this->session->set_flashdata('message', '좋아요 취소 :(');
+                redirect('player?contentId='.$contentId);
+            }else{
+                $this->session->set_flashdata('message', '오류가 발생했습니다.');
+                redirect('player?contentId='.$contentId);
+            }
+        }
+
+=======
         $this->load->model('subscriber_model');
         $this->load->model('comment_model');
     }
@@ -67,6 +105,7 @@ class Player extends CORE_Controller
         $comment_id = $this->input->get('commentId');
         $rtv = $this->comment_model->delete($comment_id);
         echo json_encode($rtv, JSON_PRETTY_PRINT);
+>>>>>>> 9969477c589617a552ea8f0e1ba7fbe4f335478e
     }
 
     function subscribe_update(){
@@ -81,6 +120,8 @@ class Player extends CORE_Controller
         if(strcmp($is_subscribed, 'true') == 0){
             $rtv = $this->subscriber_model->add($channelId,$userId);
             if($rtv=='1'){
+                $like_count = $this->like_model->get_like_count_by_content($contentId);
+                $this->contents_model->update_like_count($contentId, $like_count);
                 $this->session->set_flashdata('message', '채널을 구독했습니다.');
                 redirect('player?contentId='.$contentId);
             }else{
@@ -97,8 +138,6 @@ class Player extends CORE_Controller
                 redirect('player?contentId='.$contentId);
             }
         }
-
-
     }
 
 }
