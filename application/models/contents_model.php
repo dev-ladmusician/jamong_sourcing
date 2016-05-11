@@ -210,7 +210,7 @@ class Contents_model extends CI_Model {
     }
 
     function getByContentId($contentId){
-        $this->db->select('nickName, picture, filename, view, title, ch, likes, datetime, type, cate');
+        $this->db->select('nickName, picture, filename, view, title, ch, likes, created, type, cate');
         $this->db->where( array("inum" =>$contentId, "cate >" =>0 ));
         $this->db->from($this->table);
         return $this->db->get()->row();

@@ -12,7 +12,7 @@
                         <div class="video-des-info">
                             <div class="video-des-publisher">게시자 : <span><?= $content_info->nickName?></span></div>
                             <div class="video-des-date"><span>게시일 :</span> </div>
-                            <input type="hidden" id="player-handle-date" value="<?= $content_info->datetime?>">
+                            <input type="hidden" id="player-handle-date" value="<?= $content_info->created?>">
                             <div class="video-des-hits">조회수 <span><?= $content_info->view?></span>회</div>
                         </div>
 
