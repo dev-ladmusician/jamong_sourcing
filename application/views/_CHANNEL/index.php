@@ -202,7 +202,7 @@
                     <div class=" list-sub">
                     </div>
 
-                    <div class="jm-ajax-loader-container jm-ajax-loader-container-sub text-center">
+                    <div class="jm-ajax-loader-container-sub text-center">
                         <img class="jm-ajax-loader-sub" src="<?= site_url('/static/img/loader.gif') ?>"/>
                     </div>
 
