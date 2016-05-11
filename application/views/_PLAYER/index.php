@@ -75,7 +75,11 @@
             <div class="jm-player-channel solid-border-box col-lg-12">
                 <div class="image-container">
                     <a href="<?= site_url('/channel/home?channelId='.$channel_info->channelnum)?>">
-                        <img src="<?= $channel_info->ch_picture ?>" alt="">
+                        <img src="<?php if($channel_info->ch_picture ){
+                            echo $channel_info->ch_picture ;
+                        }else{
+                            echo site_url('static/img/default_thumbnail.jpg');
+                        } ?>" alt="">
                     </a>
                 </div>
 
