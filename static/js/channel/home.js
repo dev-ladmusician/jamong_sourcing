@@ -44,6 +44,10 @@ $(document).ready(function () {
                     vr_last_page = data.last_page;
                     vr_total_count = data.total_count;
                     $('#channel-vr .list-vr').append(data.data);
+
+                    if (vr_page == vr_last_page) {
+                        $('.load-more').hide();
+                    }
                 } else {
                     $('#channel-vr .list-vr').html(data.data);
                 }
@@ -83,6 +87,9 @@ $(document).ready(function () {
                     last_page = data.last_page;
                     total_count = data.total_count;
                     $('#channel-sub .list-sub').append(data.data);
+                    if (page == last_page) {
+                        $('.load-more').hide();
+                    }
                 } else {
                     $('#channel-sub .list-sub').html(data.data);
                 }

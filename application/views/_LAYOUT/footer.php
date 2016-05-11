@@ -71,7 +71,7 @@
                 <?php
                 if ( !strcmp($this->session->userdata('isadmin'),'1') || !strcmp($this->session->userdata('issuperadmin'),'1')) {
                     ?>
-                    <a href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/MGMT">
+                    <a href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/MGMT/home/index">
                         <li>
                             <img src="<?= base_url('/static/img/ic_join.png') ?>" alt="IC_PNG">
                             <span>관리자 페이지</span>
