@@ -2,7 +2,11 @@
 <?php foreach ($items as $item) { ?>
         <li class="comment-group">
             <div class="comment-item-img">
-                <img class="jm-user-profile" src="<?php echo $item->picture ?>" alt="">
+                <?php if (strlen($item->picture) > 0) { ?>
+                    <img class="jm-user-profile" src="<?php echo $item->picture ?>" alt="">
+                <?php } else { ?>
+                    <img class="jm-user-profile" src="<?=site_url('static/img/user.png')?>" alt="">
+                <?php } ?>
             </div>
             <div class="comment-item-contents">
                 <div class="comment-item-name">

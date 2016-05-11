@@ -1,30 +1,112 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Auth extends CORE_Controller
-{
-
+class Auth extends CORE_Controller {
     function __construct()
     {
         parent::__construct();
         $this->load->model('user_model');
         $this->load->library('form_validation');
     }
-    function submit_find_id(){
-        $nickName = $this->input->post('nickName');
-        $rtv = $this->user_model->get_user_id_by_nickName($nickName);
 
-        if(count($rtv)){
-            $this->session->set_flashdata('message', '이메일을 찾았습니다.');
-            redirect('auth/login?userId='.$rtv->userNumber);
-        }else{
-            $this->session->set_flashdata('message', '닉네임이 존재하지 않습니다.');
-            redirect('auth/find_id');
+    /**
+     * 페이스북 로그인
+     */
+    function login_by_fb() {
+        $data = array(
+            'email' => $_POST['email'],
+            'name' => $_POST['name'],
+            'id' => $_POST['id'],
+        );
+        $user = $this->user_model->get_user_by_email($data);
+
+        // db 정보와 확인
+        if ($user != null && count($user) > 0) {
+            $user = $user[0];
+            if ($user->state == "active") {
+                $this->session->set_userdata('userid', $user->userNumber);
+                $this->session->set_userdata('is_login', true);
+                $this->session->set_userdata('email', $user->email);
+                $this->session->set_userdata('nickname', $user->nickName);
+                $this->session->set_userdata('isadmin', $user->is_admin);
+                $this->session->set_userdata('issuperadmin', $user->is_superadmin);
+
+                echo json_encode(1, JSON_PRETTY_PRINT);
+            } else {
+                echo json_encode(-1, JSON_PRETTY_PRINT);
+            }
+        } else {
+            echo json_encode(-2, JSON_PRETTY_PRINT);
         }
-
     }
 
-    function submit_login()
-    {
+    /**
+     * 페이스북 가입
+     */
+    function join_by_fb() {
+        $data = array(
+            'email' => $_POST['email'],
+            'name' => $_POST['name'],
+            'id' => $_POST['id'],
+        );
+        $users = $this->user_model->get_user_by_email($data);
+
+        // db 정보와 확인
+        if ($users != null && count($users) > 0) {
+            $user = $users[0];
+            if ($user->state == "active") {
+                $this->session->set_userdata('userid', $user->userNumber);
+                $this->session->set_userdata('is_login', true);
+                $this->session->set_userdata('email', $user->email);
+                $this->session->set_userdata('nickname', $user->nickName);
+                $this->session->set_userdata('isadmin', $user->is_admin);
+                $this->session->set_userdata('issuperadmin', $user->is_superadmin);
+
+                echo json_encode(1, JSON_PRETTY_PRINT);
+            } else {
+                echo json_encode(-1, JSON_PRETTY_PRINT);
+            }
+        } else {
+            $input_data = array(
+                "nickName" => explode('@', $data['email'])[0],
+                "email" => $data['email'],
+                "age" => -1,
+                "gender" => -1,
+                'fb' => 1,
+                'fb_id' => $data['id'],
+                "password" => $this->keyEncrypt($data['id']));
+
+            $rtv_1 = $this->user_model->add_by_fb($input_data);
+            $rtv_2 = $this->user_model->add_nickname($rtv_1, $input_data);
+
+            if ($rtv_1 && $rtv_2) {
+                $users = $this->user_model->get_user_by_email($data);
+                $user = $users[0];
+                $this->session->set_userdata('userid', $user->userNumber);
+                $this->session->set_userdata('is_login', true);
+                $this->session->set_userdata('email', $user->email);
+                $this->session->set_userdata('nickname', $user->nickName);
+                $this->session->set_userdata('isadmin', $user->is_admin);
+                $this->session->set_userdata('issuperadmin', $user->is_superadmin);
+
+                echo json_encode(1, JSON_PRETTY_PRINT);
+            } else {
+                echo json_encode(-2, JSON_PRETTY_PRINT);
+            }
+        }
+    }
+
+    function test() {
+        $rtv = $this->user_model->get_user_by_email(array('email' => $this->input->get('email')));
+        $user = $rtv[0];
+
+        $block_date = $user->blockdate;
+        $end_block_date = date("Y-m-d", strtotime("-". $user->blockday." day", time()));
+        var_dump($block_date < $end_block_date);
+        var_dump($block_date > $end_block_date);
+        //var_dump($user);
+    }
+
+    function submit_login() {
         $this->__is_logined();
 
         $this->form_validation->set_rules('jm-login-id', '이메일', 'required|valid_email');
@@ -47,8 +129,7 @@ class Auth extends CORE_Controller
                     if ($user->state == "active") {
                         $this->handle_login($user);
                     } else {
-                        $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
-                        redirect('auth/login');
+                        $this->handle_block_user($user);
                     }
                 } else {
                     $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
@@ -67,18 +148,35 @@ class Auth extends CORE_Controller
         }
     }
 
+    function handle_block_user($user) {
+        $block_date = $user->blockdate;
+        $end_block_date = date("Y-m-d", strtotime("-". $user->blockday." day", time()));
+
+        if ($end_block_date > $block_date) {
+            $rtv = $this->user_model->change_state_block_to_active($user->userNumber);
+
+            var_dump($rtv);
+            if ($rtv > 0) {
+                $this->handle_login($user);
+            }  else {
+                $this->session->set_flashdata('message', '로그인하는데 오류가 발생했습니다.');
+                redirect('auth/login');
+            }
+        } else {
+            $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
+            redirect('auth/login');
+        }
+    }
+
     function handle_login($user)
     {
         $this->session->set_flashdata('message', '로그인에 성공하였습니다.');
-        $userId = $this->session->set_userdata('userid', $user->userNumber);
+        $this->session->set_userdata('userid', $user->userNumber);
         $this->session->set_userdata('is_login', true);
         $this->session->set_userdata('email', $user->email);
         $this->session->set_userdata('nickname', $user->nickName);
         $this->session->set_userdata('isadmin', $user->is_admin);
         $this->session->set_userdata('issuperadmin', $user->is_superadmin);
-
-//        $profile_url = $this->user_model->get_profile_image_by_id($userId);
-//        $this->session->set_userdata('profile_url', $profile_url->picture);
 
         $returnURL = $this->input->get('returnURL');
 
@@ -122,7 +220,6 @@ class Auth extends CORE_Controller
                             $this->session->set_flashdata('message', '회원등록에 실패 했습니다.');
                             redirect('/auth/register');
                         }
-
                     } else {
                         $this->session->set_flashdata('message', '비밀번호가 일치하지 않습니다.');
                         redirect('/auth/register');
@@ -140,82 +237,5 @@ class Auth extends CORE_Controller
             $this->session->set_flashdata('message', '이미 존재하는 닉네임 입니다');
             redirect('/auth/register');
         }
-    }
-
-    function send_mail()
-    {
-        $email = $this->input->post('jm-password-input');
-        var_dump($email);
-//        if(isset($email))
-//        $user = $this->user_model->get_user_by_email($email);
-//        var_dump($user);
-
-
-//        $receiver = 'janghan3150@gmail.com';    // 받는 사람
-//        $subject = " [[동신대학교]] 임시 비밀번호 입니다."; // 제목
-//        $content = "<b>이름 : </b>" . $data['name'] . "<br>" .
-//            "<b>연락처: </b>" . $data['contact'] . "<br>" .
-//            "<b>이메일 : </b>" . $data['email'] . "<br>" .
-//            "<b>문의분류 : </b>" . $data['category'] . "<br>" .
-//            "<b>문의제목 : </b>" . $data['title'] . "<br>" .
-//            "<b>문의내용 :</b>" . $data['content']. "<br>" ;
-//
-//        $headers = "From: " . strip_tags($data['email']) . "\r\n";
-//        $headers .= "Reply-To: " . strip_tags($data['email']) . "\r\n";
-//        $headers .= "MIME-Version: 1.0\r\n";
-//        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-//
-//        $success = mail($receiver, $subject, $content, $headers);
-//
-//        if ($success) {
-//            echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
-//            echo '<script type="text/javascript" >';
-//            echo 'alert("성공적으로 전송되었습니다");';
-//            echo 'window.location = "http://itscodia.com/CODIA/home/inquiry";';
-//            echo '</script>';
-//        } else {
-//            echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
-//            echo '<script type="text/javascript" >';
-//            echo 'alert("전송에 실패하였습니다");';
-//            echo 'window.history.back();';
-//            echo '</script>';
-//        }
-    }
-
-    /**
-     * 로그인
-     * email, password
-     * 로그인 성공시 userNumber return
-     * 로그인 실패시 -1 return
-     */
-    function login()
-    {
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
-
-        $user = $this->user_model->get_user_by_email(array('email' => $email));
-
-        if ($user != null && $user->email == $email &&
-            $this->keyEncrypt($password) == $user->password
-        ) {
-            echo json_encode($user->userNumber, JSON_PRETTY_PRINT);
-        } else {
-            echo json_encode(-1, JSON_PRETTY_PRINT);
-        }
-    }
-
-    function join()
-    {
-        $email = $this->input->post('email');
-        $nickname = $this->input->post('nickname');
-        $password = $this->input->post('password');
-
-        $user = $this->user_model->add(
-            array(
-                'email' => $email,
-                'password' => $this->keyEncrypt($password),
-                'nickname' => $nickname
-            )
-        );
     }
 }

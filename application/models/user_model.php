@@ -216,6 +216,22 @@ class User_model extends CI_Model
         }
     }
 
+    function change_state_block_to_active($user_id)
+    {
+        try {
+            $data = array(
+                'state' => 'active'
+            );
+
+            $this->db->where('userNumber', $user_id);
+            $this->db->update($this->table, $data);
+
+            return $this->db->affected_rows();
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
     function resolve_state_block($user_id)
     {
         try {
@@ -288,6 +304,27 @@ class User_model extends CI_Model
             'joinday' => date("y-m-d+H:i:s"),
             'accounttype' => 'email',
             'state' => 'active',
+            'is_admin' => FALSE,
+            'is_superadmin' => FALSE,
+        );
+
+        $this->db->insert($this->table, $input_data);
+        $result = $this->db->insert_id();
+
+        return $result;
+    }
+
+    function add_by_fb($data)
+    {
+        $input_data = array(
+            'email' => $data['email'],
+            'password' => $data['password'],
+            'joinday' => date("y-m-d+H:i:s"),
+            'accounttype' => 'fb',
+            'state' => 'active',
+            'fb' => $data['fb'],
+            'fb_id' => $data['fb_id'],
+            'fbdate' => date("y-m-d+H:i:s"),
             'is_admin' => FALSE,
             'is_superadmin' => FALSE,
         );
