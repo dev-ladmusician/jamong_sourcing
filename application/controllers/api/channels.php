@@ -10,7 +10,8 @@ class Channels extends CORE_Controller
         $this->load->model('subscriber_model');
     }
 
-    function subscribe_update(){
+    function subscribe_update()
+    {
         $this->__require_login();
 
         $userId = $this->session->userdata('userid');
@@ -18,27 +19,27 @@ class Channels extends CORE_Controller
         $is_subscribed = $this->input->get('is_subscribed');
 
         //구독할때 add
-        if(strcmp($is_subscribed, 'true') == 0){
-            $rtv = $this->subscriber_model->add($channelId,$userId);
+        if (strcmp($is_subscribed, 'true') == 0) {
+            $rtv = $this->subscriber_model->add($channelId, $userId);
             $count = $this->subscriber_model->get_count_users_by_channel($channelId);
 
-            if($rtv=='1'){
+            if ($rtv == '1') {
                 $this->channel_model->update_follow($channelId, $count);
                 $this->session->set_flashdata('message', '채널을 구독했습니다.');
                 redirect('channels');
-            }else{
+            } else {
                 $this->session->set_flashdata('message', '채널을 구독하는 데 오류가 발생했습니다.');
                 redirect('channels');
             }
-        }else{
-            $rtv = $this->subscriber_model->delete($channelId,$userId);
+        } else {
+            $rtv = $this->subscriber_model->delete($channelId, $userId);
             $count = $this->subscriber_model->get_count_users_by_channel($channelId);
 
-            if($rtv=='1'){
+            if ($rtv == '1') {
                 $this->channel_model->update_follow($channelId, $count);
                 $this->session->set_flashdata('message', '채널 구독을 취소했습니다.');
                 redirect('channels');
-            }else{
+            } else {
                 $this->session->set_flashdata('message', '채널을 구독을 취소하는데 오류가 발생했습니다.');
                 redirect('channels');
             }
@@ -47,12 +48,13 @@ class Channels extends CORE_Controller
 
     }
 
-    function test() {
+    function test()
+    {
         $page = $this->input->get('page');
         $per_page = $this->input->get('perPage');
 
-        if(!$page) $page = 1;
-        if(!$per_page) $per_page = 8;
+        if (!$page) $page = 1;
+        if (!$per_page) $per_page = 8;
 
         $channels = $this->channel_model->get_channel_list_with_my_subscribe($page, $per_page);
         $total_count = $this->channel_model->get_all_count();
@@ -61,35 +63,36 @@ class Channels extends CORE_Controller
         echo json_encode($channels, JSON_PRETTY_PRINT);
     }
 
-    function get_channel_list() {
+    function get_channel_list()
+    {
         $page = $this->input->get('page');
         $per_page = $this->input->get('perPage');
 
-        if(!$page) $page = 1;
-        if(!$per_page) $per_page = 8;
+        if (!$page) $page = 1;
+        if (!$per_page) $per_page = 8;
 
         $channels = $this->channel_model->get_channel_list_with_my_subscribe($page, $per_page);
         $total_count = $this->channel_model->get_all_count();
         $last_page = ceil($total_count / $per_page);
 
-        $view_data = array('items'=>$channels);
+        $view_data = array('items' => $channels);
 
-        if($total_count){
+        if ($total_count) {
             $pass_data = array(
-                'page'=> $page,
+                'page' => $page,
                 'per_page' => $per_page,
                 'total_count' => $total_count,
                 'last_page' => $last_page,
-                'data'=> $this->load->view('_PARTIAL/channel_list_item.php', $view_data, true));
+                'data' => $this->load->view('_PARTIAL/channel_list_item.php', $view_data, true));
 
             echo json_encode($pass_data, JSON_PRETTY_PRINT);
-        }else{
+        } else {
             $pass_data = array(
-                'page'=> $page,
+                'page' => $page,
                 'per_page' => $per_page,
                 'total_count' => $total_count,
                 'last_page' => $last_page,
-                'data'=> $this->load->view('_PARTIAL/no_item.php', $view_data, true));
+                'data' => $this->load->view('_PARTIAL/no_item.php', $view_data, true));
 
             echo json_encode($pass_data, JSON_PRETTY_PRINT);
         }
