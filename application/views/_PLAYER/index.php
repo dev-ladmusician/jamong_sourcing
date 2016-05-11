@@ -10,8 +10,8 @@
                         <p class="video-des-title"><?= $content_info->title?></p>
 
                         <div class="video-des-info">
-                            <div class="video-des-publisher">게시자 : <span><?= $content_info->nickName?></span></div>
-                            <div class="video-des-date">게시일 : <span><?= $content_info->datetime?></span></div>
+                            <div class="video-des-publisher">게시자 : <span> <?= $content_info->nickName?></span></div>
+                            <div class="video-des-date">게시일 : <span> <?= $content_info->datetime?></span></div>
                             <div class="video-des-hits">조회수 <span><?= $content_info->hit?></span>회</div>
                         </div>
 

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5b96607-68b3-4ce2-82d4-fa539d4f9e8c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/auth.php" afterPath="$PROJECT_DIR$/application/controllers/api/auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/contents_model.php" afterPath="$PROJECT_DIR$/application/models/contents_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_PLAYER/index.php" afterPath="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
     </list>
     <ignored path="CodeIgniter-2.2.3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,24 +26,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="auth.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/auth.php">
+      <file leaf-file-name="contents_model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/contents_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding>
+                <element signature="n#get_items_by_search#0;n#Contents_model#0;n#!!top" expanded="false" />
+                <marker date="1462976838000" expanded="true" signature="281:677" placeholder="SELECT * FRO... jumper_talk" />
+                <marker date="1462976838000" expanded="true" signature="2000:2411" placeholder="SELECT jumpe... jumper_talk" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/common.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="126" column="20" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="139" column="39" selection-start-line="139" selection-start-column="39" selection-end-line="139" selection-end-column="39" />
-              <folding>
-                <element signature="n#submit_register#0;n#Auth#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,7 +103,6 @@
         <option value="$PROJECT_DIR$/application/controllers/search.php" />
         <option value="$PROJECT_DIR$/application/views/_SEARCH/result.php" />
         <option value="$PROJECT_DIR$/static/js/search/result.js" />
-        <option value="$PROJECT_DIR$/application/models/contents_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/search.php" />
         <option value="$PROJECT_DIR$/application/controllers/channels.php" />
         <option value="$PROJECT_DIR$/application/views/_CHANNELS/index.php" />
@@ -101,7 +114,6 @@
         <option value="$PROJECT_DIR$/application/views/_LAYOUT/footer.php" />
         <option value="$PROJECT_DIR$/static/css/auth/register.css" />
         <option value="$PROJECT_DIR$/application/views/_AUTH/register.php" />
-        <option value="$PROJECT_DIR$/static/css/common.css" />
         <option value="$PROJECT_DIR$/application/views/_AUTH/footer.php" />
         <option value="$PROJECT_DIR$/static/js/fb-login.js" />
         <option value="$PROJECT_DIR$/static/js/fb-join.js" />
@@ -110,9 +122,11 @@
         <option value="$PROJECT_DIR$/application/models/user_model.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/player.php" />
         <option value="$PROJECT_DIR$/static/js/player/index.js" />
-        <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
         <option value="$PROJECT_DIR$/static/css/player/index.css" />
         <option value="$PROJECT_DIR$/application/controllers/api/auth.php" />
+        <option value="$PROJECT_DIR$/application/models/contents_model.php" />
+        <option value="$PROJECT_DIR$/static/css/common.css" />
+        <option value="$PROJECT_DIR$/application/views/_PLAYER/index.php" />
       </list>
     </option>
   </component>
@@ -606,12 +620,12 @@
       <workItem from="1462947233669" duration="35000" />
       <workItem from="1462947288026" duration="4220000" />
       <workItem from="1462954421273" duration="2351000" />
-      <workItem from="1462962620256" duration="2664000" />
+      <workItem from="1462962620256" duration="4503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29767000" />
+    <option name="totallyTimeSpent" value="31606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -989,25 +1003,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/contents_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="214" column="25" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,11 +1042,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/common.css">
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="58" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="95">
+          <caret line="114" column="46" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="46" />
+          <folding>
+            <element signature="n#submit_register#0;n#Auth#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1059,13 +1060,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
+    <entry file="file://$PROJECT_DIR$/application/models/contents_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="139" column="39" selection-start-line="139" selection-start-column="39" selection-end-line="139" selection-end-column="39" />
+        <state relative-caret-position="240">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
-            <element signature="n#submit_register#0;n#Auth#0;n#!!top" expanded="false" />
+            <element signature="n#get_items_by_search#0;n#Contents_model#0;n#!!top" expanded="false" />
+            <marker date="1462976838000" expanded="true" signature="281:677" placeholder="SELECT * FRO... jumper_talk" />
+            <marker date="1462976838000" expanded="true" signature="2000:2411" placeholder="SELECT jumpe... jumper_talk" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="126" column="20" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/_PLAYER/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="74" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>
