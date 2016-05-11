@@ -18,6 +18,7 @@ class Player extends CORE_Controller {
         $channels = $this->channel_model->gets();
         $contents = $this->contents_model->getByContentId($contentId);
         $channel = $this->channel_model->get_by_id($contents->ch);
+        $recommend = $this->contents_model->get_vr_list_random();
 
         $userId = $this->session->userdata('userid');
 
@@ -29,6 +30,7 @@ class Player extends CORE_Controller {
         }
 
         $this->__get_views('_PLAYER/index', array('categories' => $categories, 'channels'=>$channels),
-            array('contentId'=>$contentId,'is_subscribed' => $is_subscribed, 'is_liked' => $is_liked, 'content_info'=> $contents, 'channel_info'=> $channel));
+            array('contentId'=>$contentId,'is_subscribed' => $is_subscribed, 'is_liked' => $is_liked,
+                'content_info'=> $contents, 'channel_info'=> $channel, 'recommend' => $recommend));
     }
 }

@@ -114,52 +114,41 @@
                     추천 VR컨텐츠
                 </div>
                 <div class="recommend-list">
-                    <div class="video-small">
-                        <img src="/JAMONG/static/img/ex_6.png" alt="">
+                    <?php
+                    foreach($recommend as $item){?>
+                        <div class="video-small">
+                            <a href="<?= site_url('/player?contentId=' . $item->inum) ?>">
+                                <?php
+                                if ($item->picture) {
+                                    ?>
+                                    <img
+                                        src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
+                                        alt="">
+                                    <?php
+                                } else {
+                                    ?>
+                                    <img
+                                        src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_00001.png"
+                                        alt="">
+                                    <?php
 
-                        <div class="video-des padding-none">
-                            <p class="video-des-title">테스트</p>
+                                }
+                                ?>
+                            </a>
 
-                            <p class="video-des-publisher">게시자: 고퀄</p>
+                            <div class="video-des padding-none">
+                                <p class="video-des-title"><?= $item->title?></p>
 
-                            <p class="video-des-hits">조회수</p>
+                                <p class="video-des-publisher"><?= $item->nickName?></p>
+
+                                <p class="video-des-hits">조회수: <?= $item->view?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="video-small">
-                        <img src="/JAMONG/static/img/ex_6.png" alt="">
-
-                        <div class="video-des padding-none">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-                    <div class="video-small">
-                        <img src="/JAMONG/static/img/ex_6.png" alt="">
-
-                        <div class="video-des padding-none">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-                    <div class="video-small">
-                        <img src="/JAMONG/static/img/ex_6.png" alt="">
-
-                        <div class="video-des padding-none">
-                            <p class="video-des-title">테스트</p>
-
-                            <p class="video-des-publisher">게시자: 고퀄</p>
-
-                            <p class="video-des-hits">조회수</p>
-                        </div>
-                    </div>
-
+                        <?php
+                    }
+                    ?>
                 </div>
+            </div>
 
             </div>
 

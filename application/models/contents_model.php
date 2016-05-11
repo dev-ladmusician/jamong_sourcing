@@ -141,6 +141,15 @@ class Contents_model extends CI_Model {
         return $this->db->get()->row();
     }
 
+    function get_vr_list_random(){
+        $this->db->select('picture, inum, filename, view, nickName, title, cate');
+        $this->db->where(array("uploadstat"=>"Complete", "cate >" =>0));
+        $this->db->order_by('inum','random');
+        $this->db->limit(5);
+        $this->db->from($this->table);
+        return $this->db->get()->result();
+    }
+
     function get_vr_list_hot(){
         $this->db->select('picture, inum, filename, view, nickName, title, cate');
         $this->db->where(array("uploadstat"=>"Complete", "cate >" =>0));
