@@ -95,7 +95,8 @@
                     <?php
                     if ($is_subscribed) {
                         ?>
-                        <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum.'&is_subscribed=false')?>" class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
+                        <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum.'&is_subscribed=false')?>"
+                           class="btn-ch-subs-cancel btn-ch-subs"><i class="glyphicon glyphicon-ok"></i> 구독취소</a>
                         <?php
                     } else { ?>
                         <a href="<?= site_url('api/player/subscribe_update?contentId='.$contentId.'&channelId='.$channel_info->channelnum. '&is_subscribed=true')?>" class="btn-ch-subs "><i class="glyphicon glyphicon-plus"></i> 구독하기</a>

@@ -38,7 +38,7 @@
                             if (isset($is_subscribed) && $is_subscribed) {
                                 ?>
                                 <a href="<?= site_url('api/channel/subscribe_update?channelId=' . $channel->channelnum . '&is_subscribed=false') ?>"
-                                   class="btn-ch-ok"><i class="glyphicon glyphicon-ok"></i> 구독</a>
+                                   class="btn-ch-subs-cancel btn-ch-subs"><i class="glyphicon glyphicon-ok"></i> 구독취소</a>
                                 <?php
                             } else { ?>
                                 <a href="<?= site_url('api/channel/subscribe_update?channelId=' . $channel->channelnum . '&is_subscribed=true') ?>"
