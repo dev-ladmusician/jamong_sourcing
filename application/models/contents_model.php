@@ -33,20 +33,6 @@ class Contents_model extends CI_Model {
         return $query->result();
     }
 
-    function test ($page, $per_page, $query_str, $filter) {
-        $this->db->select('*');
-        $this->db->from($this->table);
-        $this->db->join('jumper__channellist', 'jumper__channellist.channelnum = jumper_talk.ch', 'left');
-        $this->db->or_like('jumper_talk.nickName', '%'.$query_str.'%');
-        $this->db->or_like('jumper_talk.talk', '%'.$query_str.'%');
-        $this->db->or_like('jumper_talk.title', '%'.$query_str.'%');
-        $this->db->or_like('jumper__channellist.channelname', '%'.$query_str.'%');
-        $this->db->order_by('jumper_talk.inum', 'desc');
-        $this->db->limit($per_page, ($page - 1) * $per_page);
-
-        return $this->db->get()->result();
-    }
-
     function get_total_count_by_search($query_str, $filter, $sorting) {
         $query_str = "SELECT jumper_talk.inum FROM dongshindb.jumper_talk ".
             "LEFT JOIN jumper__channellist ON jumper__channellist.channelnum = jumper_talk.ch ".

@@ -121,6 +121,10 @@ a, a:hover{
     font-size: 13px;
     line-height: 1;
     color: #96989c;
+    margin-top: 10px;
+}
+.video-des-date {
+    margin-top: 5px;
 }
 
 .load-more{
