@@ -9,8 +9,10 @@
                     } ?>">
 
                     <div class="col-lg-2 padding-none">
-                        <img src="<?php if (isset($channel->ch_picture)) {
+                        <img src="<?php if ($channel->ch_picture) {
                             echo $channel->ch_picture;
+                        }else {
+                            echo site_url('/static/img/default_thumbnail.jpg');
                         } ?>" alt="">
                     </div>
                     <div class="col-lg-10 video-des">
