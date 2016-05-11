@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5b96607-68b3-4ce2-82d4-fa539d4f9e8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/fb-join.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/auth.php" afterPath="$PROJECT_DIR$/application/controllers/api/auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/api/player.php" afterPath="$PROJECT_DIR$/application/controllers/api/player.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/user_model.php" afterPath="$PROJECT_DIR$/application/models/user_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_AUTH/footer.php" afterPath="$PROJECT_DIR$/application/views/_AUTH/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_AUTH/header.php" afterPath="$PROJECT_DIR$/application/views/_AUTH/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_AUTH/register.php" afterPath="$PROJECT_DIR$/application/views/_AUTH/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_PARTIAL/comment.php" afterPath="$PROJECT_DIR$/application/views/_PARTIAL/comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/auth/register.css" afterPath="$PROJECT_DIR$/static/css/auth/register.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/fb-login.js" afterPath="$PROJECT_DIR$/static/js/fb-login.js" />
     </list>
     <ignored path="CodeIgniter-2.2.3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +24,39 @@
     <favorites_list name="CodeIgniter-2.2.3" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="auth.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="356">
+                  <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="163" selection-end-column="13" />
+                  <folding>
+                    <element signature="n#submit_register#0;n#Auth#0;n#!!top" expanded="false" />
+                    <marker date="1462962190000" expanded="true" signature="5989:6216" placeholder="//..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="user_model.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="329">
+                  <caret line="218" column="50" selection-start-line="218" selection-start-column="50" selection-end-line="218" selection-end-column="50" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -93,14 +115,14 @@
         <option value="$PROJECT_DIR$/static/css/auth/register.css" />
         <option value="$PROJECT_DIR$/application/views/_AUTH/register.php" />
         <option value="$PROJECT_DIR$/static/css/common.css" />
-        <option value="$PROJECT_DIR$/application/models/user_model.php" />
-        <option value="$PROJECT_DIR$/application/controllers/api/auth.php" />
         <option value="$PROJECT_DIR$/application/views/_AUTH/footer.php" />
         <option value="$PROJECT_DIR$/static/js/fb-login.js" />
         <option value="$PROJECT_DIR$/static/js/fb-join.js" />
         <option value="$PROJECT_DIR$/application/views/_AUTH/header.php" />
         <option value="$PROJECT_DIR$/application/controllers/api/player.php" />
         <option value="$PROJECT_DIR$/application/views/_PARTIAL/comment.php" />
+        <option value="$PROJECT_DIR$/application/models/user_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/api/auth.php" />
       </list>
     </option>
   </component>
@@ -509,19 +531,19 @@
       <workItem from="1462942976221" duration="1392000" />
       <workItem from="1462947233669" duration="35000" />
       <workItem from="1462947288026" duration="4220000" />
-      <workItem from="1462954421273" duration="911000" />
+      <workItem from="1462954421273" duration="2194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25663000" />
+    <option name="totallyTimeSpent" value="26946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14377682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14377682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -582,7 +604,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/static/js/player/index.js</url>
-          <line>55</line>
+          <line>61</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -875,17 +897,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
-          <folding>
-            <element signature="n#submit_login#0;n#Auth#0;n#!!top" expanded="false" />
-            <element signature="n#submit_register#0;n#Auth#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/_AUTH/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -907,25 +918,6 @@
         <state relative-caret-position="270">
           <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/contents_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-525">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="50" selection-end-column="79" />
-          <folding>
-            <marker date="1462947047000" expanded="true" signature="1916:2482" placeholder="SELECT ch.ch... jumper__channellist" />
-            <marker date="1462947047000" expanded="true" signature="2525:2886" placeholder="SELECT ch.ch... jumper__channellist" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -972,11 +964,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/channel_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding>
+            <marker date="1462947047000" expanded="true" signature="1916:2482" placeholder="SELECT ch.ch... jumper__channellist" />
+            <marker date="1462947047000" expanded="true" signature="2525:2886" placeholder="SELECT ch.ch... jumper__channellist" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/contents_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <marker date="1462947047000" expanded="true" signature="836:1232" placeholder="SELECT * FRO... jumper_talk" />
+            <marker date="1462947047000" expanded="true" signature="3255:3666" placeholder="SELECT jumpe... jumper_talk" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="316" column="18" selection-start-line="316" selection-start-column="18" selection-end-line="316" selection-end-column="18" />
+        <state relative-caret-position="329">
+          <caret line="218" column="50" selection-start-line="218" selection-start-column="50" selection-end-line="218" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/api/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="158" column="0" selection-start-line="158" selection-start-column="0" selection-end-line="163" selection-end-column="13" />
+          <folding>
+            <element signature="n#submit_register#0;n#Auth#0;n#!!top" expanded="false" />
+            <marker date="1462962190000" expanded="true" signature="5989:6216" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>

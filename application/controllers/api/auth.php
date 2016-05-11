@@ -95,6 +95,17 @@ class Auth extends CORE_Controller {
         }
     }
 
+    function test() {
+        $rtv = $this->user_model->get_user_by_email(array('email' => $this->input->get('email')));
+        $user = $rtv[0];
+
+        $block_date = $user->blockdate;
+        $end_block_date = date("Y-m-d", strtotime("-". $user->blockday." day", time()));
+        var_dump($block_date < $end_block_date);
+        var_dump($block_date > $end_block_date);
+        //var_dump($user);
+    }
+
     function submit_login() {
         $this->__is_logined();
 
@@ -116,15 +127,9 @@ class Auth extends CORE_Controller {
                 $user = $rtv[0];
                 if ($user->email == $input_data['email'] && $this->keyEncrypt($password) == $user->password) {
                     if ($user->state == "active") {
-//                        if ($user->is_admin || $user->is_superadmin) {
                         $this->handle_login($user);
-//                        } else {
-//                            $this->session->set_flashdata('message', '관리자만 접근할 수 있습니다.');
-//                            redirect('auth/login');
-//                        }
                     } else {
-                        $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
-                        redirect('auth/login');
+                        $this->handle_block_user($user);
                     }
                 } else {
                     $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
@@ -140,6 +145,26 @@ class Auth extends CORE_Controller {
             $this->session->set_flashdata('message', '이메일과 비밀번호를 입력해주세요.');
             redirect('auth/login');
 //            $this->__get_views('_AUTH/login', array('returnURL' => $this->input->get('returnURL')));
+        }
+    }
+
+    function handle_block_user($user) {
+        $block_date = $user->blockdate;
+        $end_block_date = date("Y-m-d", strtotime("-". $user->blockday." day", time()));
+
+        if ($end_block_date > $block_date) {
+            $rtv = $this->user_model->change_state_block_to_active($user->userNumber);
+
+            var_dump($rtv);
+            if ($rtv > 0) {
+                $this->handle_login($user);
+            }  else {
+                $this->session->set_flashdata('message', '로그인하는데 오류가 발생했습니다.');
+                redirect('auth/login');
+            }
+        } else {
+            $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
+            redirect('auth/login');
         }
     }
 
