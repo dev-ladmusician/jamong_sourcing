@@ -98,8 +98,10 @@ class CORE_Controller extends CI_Controller
     function handle_date($date)
     {
         // 00/00/2015 -> 2015-00-00
-        $arr_date = explode('/', $date);
-        return $arr_date[2] . '-' . $arr_date[1] . '-' . $arr_date[0];
+        $arr_date = explode('+', $date);
+        $output = explode('-', $arr_date[0]);
+//        return '20' . $output[0] . '년' . $output[1] . '월' . $output[2] . '일';
+        return 'ok';
     }
 
     function hadle_short_date($date)

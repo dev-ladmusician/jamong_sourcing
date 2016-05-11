@@ -141,10 +141,18 @@
 {
     border-top: solid 1px #e4e5e8;
 }
+.subscriber-item img{
+    width: 70px;
+    height: 70px;
+}
 
 .subscriber-item .item-img, .jm-channel-home .item-info,
 .item-info > div:nth-child(2), .item-info > div:last-child {
     display: inline-block;
     vertical-align: middle;
+}
+
+.partial-no-item{
+    padding-bottom: 30px;
 }
 
