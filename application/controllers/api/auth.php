@@ -1,8 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Auth extends CORE_Controller
-{
-
+class Auth extends CORE_Controller {
     function __construct()
     {
         parent::__construct();
@@ -10,13 +8,76 @@ class Auth extends CORE_Controller
         $this->load->library('form_validation');
     }
 
-    function logout()
-    {
+    function login_by_fb() {
+        $data = array(
+            'email' => $_POST['email'],
+            'name' => $_POST['name'],
+            'id' => $_POST['id'],
+        );
 
+        $user = $this->user_model->get_user_by_email($data['email']);
+
+        // db 정보와 확인
+        if ($user != null && count($user) > 0) {
+            $user = $user[0];
+            if ($user->email == $data['email']) {
+                if ($user->state == "active") {
+                    $this->handle_login($user);
+                } else {
+                    $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
+                    redirect('auth/login');
+                }
+            } else {
+                $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
+                redirect('auth/login');
+            }
+        } else {
+            $this->session->set_flashdata('message', '로그인에 실패하였습니다.');
+            if ($this->input->get('returnURL') === "") {
+                $this->__get_views('_AUTH/login');
+            }
+        }
     }
 
-    function submit_login()
+    function join_by_fb()
     {
+        $data = array(
+            'email' => $_POST['email'],
+            'name' => $_POST['name'],
+            'id' => $_POST['id'],
+        );
+
+        $user = $this->user_model->get_user_by_email($data['email']);
+
+        if (count($user) > 0) {
+            $this->user_model->logined($user);
+
+            $this->session->set_userdata('userid', $user->_userid);
+            $this->session->set_userdata('email', $user->email);
+            $this->session->set_userdata('username', $user->username);
+            $this->session->set_userdata('is_login', TRUE);
+
+            if ($user->is_admin == 1) {
+                // if admin, return -3
+                echo json_encode(-3, JSON_PRETTY_PRINT);
+            } else {
+                echo json_encode(999, JSON_PRETTY_PRINT);
+            }
+        } else {
+            $rtv = $this->user_model->add_user_by_fb($data);
+
+            if ($rtv > 0) {
+                $this->session->set_userdata('userid', $rtv);
+                $this->session->set_userdata('email', $data['email']);
+                $this->session->set_userdata('username', $data['name']);
+                $this->session->set_userdata('is_login', TRUE);
+            }
+
+            echo json_encode($rtv, JSON_PRETTY_PRINT);
+        }
+    }
+
+    function submit_login() {
         $this->__is_logined();
 
         $this->form_validation->set_rules('jm-login-id', '이메일', 'required|valid_email');
@@ -110,8 +171,8 @@ class Auth extends CORE_Controller
                             "gender" => $gender,
                             "password" => $this->keyEncrypt($password));
 
-//                        $rtv_1 = $this->user_model->add($input_data);
-//                        $rtv_2 = $this->user_model->add_nickname($rtv, $input_data);
+                        $rtv_1 = $this->user_model->add($input_data);
+                        $rtv_2 = $this->user_model->add_nickname($rtv, $input_data);
 
                         if ($rtv_1 && $rtv_2) {
                             $this->session->set_flashdata('message', '회원등록에 성공 했습니다.');
@@ -120,8 +181,6 @@ class Auth extends CORE_Controller
                             $this->session->set_flashdata('message', '회원등록에 실패 했습니다.');
                             redirect('/auth/register');
                         }
-
-
                     } else {
                         $this->session->set_flashdata('message', '비밀번호가 일치하지 않습니다.');
                         redirect('/auth/register');
@@ -139,83 +198,5 @@ class Auth extends CORE_Controller
             $this->session->set_flashdata('message', '이미 존재하는 닉네임 입니다');
             redirect('/auth/register');
         }
-//        if(strlen($nickName)){
-//            if($gender){
-//                if(strlen($password)){
-//                    if( strcmp($password,$password_confirm) == 0 ){
-//                        if($agree){
-//                            $input_data = array(
-//                                "nickName" => $nickName,
-//                                "email" => $email,
-//                                "age" => $age,
-//                                "gender" => $gender,
-//                                "password" => $this->keyEncrypt($password));
-//
-//                            $rtv = $this->user_model->add($input_data);
-//                            if($rtv){
-//                                $this->user_model->add_nickname($rtv, $input_data);
-//                                $this->session->set_flashdata('message', '회원등록에 성공 했습니다.');
-//                                redirect('/auth/login');
-//                            }else{
-//                                $this->session->set_flashdata('message', '회원등록에 실패 했습니다.');
-//                                redirect('/auth/register');
-//                            }
-//                        }else{
-//                            $this->session->set_flashdata('message', '이용약관과 개인정보취급방침에 동의해주세요.');
-//                            redirect('/auth/register');
-//                        }
-//                    }else{
-//                        $this->session->set_flashdata('message', '비밀번호와 비밀번호 확인이 일치하지 않습니다.');
-//                        redirect('/auth/register');
-//                    }
-//                }else{
-//                    $this->session->set_flashdata('message', '비밀번호 길이가 너무 짧습니다.');
-//                    redirect('/auth/register');
-//                }
-//            }else{
-//                $this->session->set_flashdata('message', '성별을 선택해 주세요.');
-//                redirect('/auth/register');
-//            }
-//        }else{
-//            $this->session->set_flashdata('message', '닉네임 길이가 너무 짧습니다.');
-//            redirect('/auth/register');
-//        }
-    }
-
-    /**
-     * 로그인
-     * email, password
-     * 로그인 성공시 userNumber return
-     * 로그인 실패시 -1 return
-     */
-    function login()
-    {
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
-
-        $user = $this->user_model->get_user_by_email(array('email' => $email));
-
-        if ($user != null && $user->email == $email &&
-            $this->keyEncrypt($password) == $user->password
-        ) {
-            echo json_encode($user->userNumber, JSON_PRETTY_PRINT);
-        } else {
-            echo json_encode(-1, JSON_PRETTY_PRINT);
-        }
-    }
-
-    function join()
-    {
-        $email = $this->input->post('email');
-        $nickname = $this->input->post('nickname');
-        $password = $this->input->post('password');
-
-        $user = $this->user_model->add(
-            array(
-                'email' => $email,
-                'password' => $this->keyEncrypt($password),
-                'nickname' => $nickname
-            )
-        );
     }
 }
