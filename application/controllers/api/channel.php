@@ -73,13 +73,23 @@ class Channel extends CORE_Controller
 
         $view_data = array('items'=>$rtv, 'count'=>$total_count);
 
-        $pass_data = array('data'=> $this->load->view('_PARTIAL/channel_vr_list_item.php',$view_data, true),
-            'page'=> $page,
-            'per_page' => $per_page,
-            'total_count' => $total_count,
-            'last_page' => $last_page);
+        if(count($rtv)){
+            $pass_data = array('data'=> $this->load->view('_PARTIAL/channel_vr_list_item.php',$view_data, true),
+                'page'=> $page,
+                'per_page' => $per_page,
+                'total_count' => $total_count,
+                'last_page' => $last_page);
 
-        echo json_encode($pass_data);
+            echo json_encode($pass_data);
+        }else{
+            $pass_data = array('data'=> $this->load->view('_PARTIAL/no_item.php',$view_data,true),
+                'page'=> $page,
+                'per_page' => $per_page,
+                'total_count' => $total_count,
+                'last_page' => $last_page);
+
+            echo json_encode($pass_data);
+        }
     }
 
     function get_subs_list_by_channel()
@@ -94,13 +104,23 @@ class Channel extends CORE_Controller
 
         $view_data = array('items'=>$rtv, 'count'=>$total_count);
 
-        $pass_data = array('data'=> $this->load->view('_PARTIAL/channel_subs_item.php',$view_data, true),
-            'page'=> $page,
-            'per_page' => $per_page,
-            'total_count' => $total_count,
-            'last_page' => $last_page);
+        if(count($rtv)){
+            $pass_data = array('data'=> $this->load->view('_PARTIAL/channel_subs_item.php',$view_data, true),
+                'page'=> $page,
+                'per_page' => $per_page,
+                'total_count' => $total_count,
+                'last_page' => $last_page);
 
-        echo json_encode($pass_data);
+            echo json_encode($pass_data);
+        }else{
+            $pass_data = array('data'=> $this->load->view('_PARTIAL/no_item.php',$view_data,true),
+                'page'=> $page,
+                'per_page' => $per_page,
+                'total_count' => $total_count,
+                'last_page' => $last_page);
+
+            echo json_encode($pass_data);
+        }
     }
 
 }

@@ -9,8 +9,10 @@
                     } ?>">
 
                     <div class="col-lg-2 padding-none">
-                        <img src="<?php if (isset($channel->ch_picture)) {
+                        <img src="<?php if ($channel->ch_picture) {
                             echo $channel->ch_picture;
+                        }else {
+                            echo site_url('/static/img/default_thumbnail.jpg');
                         } ?>" alt="">
                     </div>
                     <div class="col-lg-10 video-des">
@@ -169,20 +171,20 @@
                 <!--            vr-->
 
                 <div id="channel-vr" class=" col-lg-12 tab">
-                    <div class="padding-normal solid-border-bottom col-lg-12 text-right">
-                        <select name="order" id="jm-channel-order">
-                            <option value="recently">신규순</option>
-                        </select>
-                        <select name="view" id="jm-channel-view">
-                            <option value="list">리스트형으로 보기</option>
-                            <option value="card">카드형으로 보기</option>
-                        </select>
-                    </div>
+<!--                    <div class="padding-normal solid-border-bottom col-lg-12 text-right">-->
+<!--                        <select name="order" id="jm-channel-order">-->
+<!--                            <option value="recently">신규순</option>-->
+<!--                        </select>-->
+<!--                        <select name="view" id="jm-channel-view">-->
+<!--                            <option value="list">리스트형으로 보기</option>-->
+<!--                            <option value="card">카드형으로 보기</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
 
                     <div class=" list-vr col-lg-12 col-md-12 col-sm-12 padding-outer">
                     </div>
 
-                    <div class="jm-ajax-loader-container text-center">
+                    <div class="jm-ajax-loader-container jm-ajax-loader-container-vr text-center">
                         <img class="jm-ajax-loader-vr" src="<?= site_url('/static/img/loader.gif') ?>"/>
                     </div>
 
@@ -200,7 +202,7 @@
                     <div class=" list-sub">
                     </div>
 
-                    <div class="jm-ajax-loader-container text-center">
+                    <div class="jm-ajax-loader-container-sub text-center">
                         <img class="jm-ajax-loader-sub" src="<?= site_url('/static/img/loader.gif') ?>"/>
                     </div>
 
