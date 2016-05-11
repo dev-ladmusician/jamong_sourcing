@@ -12,7 +12,7 @@ $(document).ready(function(){
     get_search_items(page, per_page);
 
     function get_search_items(page, perPage) {
-        var query = $('#jm-search').val();
+        var query = $('#jm-search-query').val();
         var api = '/JAMONG/api/search/search_result?page=' + page + '&perPage=' + perPage + '&search_query=' + query;
 
         console.log(query);

@@ -9,9 +9,17 @@ class Auth extends CORE_Controller
         $this->load->model('user_model');
         $this->load->library('form_validation');
     }
+    function submit_find_id(){
+        $nickName = $this->input->post('nickName');
+        $rtv = $this->user_model->get_user_id_by_nickName($nickName);
 
-    function logout()
-    {
+        if(count($rtv)){
+            $this->session->set_flashdata('message', '이메일을 찾았습니다.');
+            redirect('auth/login?userId='.$rtv->userNumber);
+        }else{
+            $this->session->set_flashdata('message', '닉네임이 존재하지 않습니다.');
+            redirect('auth/find_id');
+        }
 
     }
 
@@ -37,12 +45,7 @@ class Auth extends CORE_Controller
                 $user = $rtv[0];
                 if ($user->email == $input_data['email'] && $this->keyEncrypt($password) == $user->password) {
                     if ($user->state == "active") {
-//                        if ($user->is_admin || $user->is_superadmin) {
                         $this->handle_login($user);
-//                        } else {
-//                            $this->session->set_flashdata('message', '관리자만 접근할 수 있습니다.');
-//                            redirect('auth/login');
-//                        }
                     } else {
                         $this->session->set_flashdata('message', '이용정지된 사용자 입니다.');
                         redirect('auth/login');
@@ -93,7 +96,6 @@ class Auth extends CORE_Controller
         $gender = $this->input->post('input-gender');
         $password = $this->input->post('input-password');
         $password_confirm = $this->input->post('input-password-confirm');
-        $agree = $this->input->post('input-agree');
 
         $rtv = $this->user_model->get_user_id_by_nickname($nickName);
         //nickName 중복?
@@ -110,8 +112,8 @@ class Auth extends CORE_Controller
                             "gender" => $gender,
                             "password" => $this->keyEncrypt($password));
 
-//                        $rtv_1 = $this->user_model->add($input_data);
-//                        $rtv_2 = $this->user_model->add_nickname($rtv, $input_data);
+                        $rtv_1 = $this->user_model->add($input_data);
+                        $rtv_2 = $this->user_model->add_nickname($rtv_1, $input_data);
 
                         if ($rtv_1 && $rtv_2) {
                             $this->session->set_flashdata('message', '회원등록에 성공 했습니다.');
@@ -120,7 +122,6 @@ class Auth extends CORE_Controller
                             $this->session->set_flashdata('message', '회원등록에 실패 했습니다.');
                             redirect('/auth/register');
                         }
-
 
                     } else {
                         $this->session->set_flashdata('message', '비밀번호가 일치하지 않습니다.');
@@ -139,47 +140,6 @@ class Auth extends CORE_Controller
             $this->session->set_flashdata('message', '이미 존재하는 닉네임 입니다');
             redirect('/auth/register');
         }
-//        if(strlen($nickName)){
-//            if($gender){
-//                if(strlen($password)){
-//                    if( strcmp($password,$password_confirm) == 0 ){
-//                        if($agree){
-//                            $input_data = array(
-//                                "nickName" => $nickName,
-//                                "email" => $email,
-//                                "age" => $age,
-//                                "gender" => $gender,
-//                                "password" => $this->keyEncrypt($password));
-//
-//                            $rtv = $this->user_model->add($input_data);
-//                            if($rtv){
-//                                $this->user_model->add_nickname($rtv, $input_data);
-//                                $this->session->set_flashdata('message', '회원등록에 성공 했습니다.');
-//                                redirect('/auth/login');
-//                            }else{
-//                                $this->session->set_flashdata('message', '회원등록에 실패 했습니다.');
-//                                redirect('/auth/register');
-//                            }
-//                        }else{
-//                            $this->session->set_flashdata('message', '이용약관과 개인정보취급방침에 동의해주세요.');
-//                            redirect('/auth/register');
-//                        }
-//                    }else{
-//                        $this->session->set_flashdata('message', '비밀번호와 비밀번호 확인이 일치하지 않습니다.');
-//                        redirect('/auth/register');
-//                    }
-//                }else{
-//                    $this->session->set_flashdata('message', '비밀번호 길이가 너무 짧습니다.');
-//                    redirect('/auth/register');
-//                }
-//            }else{
-//                $this->session->set_flashdata('message', '성별을 선택해 주세요.');
-//                redirect('/auth/register');
-//            }
-//        }else{
-//            $this->session->set_flashdata('message', '닉네임 길이가 너무 짧습니다.');
-//            redirect('/auth/register');
-//        }
     }
 
     /**
