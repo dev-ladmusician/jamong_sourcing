@@ -171,7 +171,7 @@ class Contents_model extends CI_Model {
 
     function get_main_video_by_channel($channelId){
         $this->db->select('picture, inum, filename, talk, title, nickName, created, view');
-        $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId));
+        $this->db->where(array("uploadstat"=>"Complete", "ch" => $channelId, "cate >"=> 0));
         $this->db->order_by('view','desc');
         $this->db->limit(1);
         $this->db->from($this->table);
