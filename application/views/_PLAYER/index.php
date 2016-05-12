@@ -25,13 +25,15 @@
                             ><i class="glyphicon glyphicon-heart ic-heart"></i><span><?= $content_info->likes ?></span></a>
                             <?php
                         } else { ?>
-                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId . '&is_liked=true') ?>"
-                               \><i class="glyphicon glyphicon-heart-empty ic-heart"></i><span><?= $content_info->likes ?></span></a>
+                            <a href="<?= site_url('api/player/like_update?contentId=' . $contentId . '&is_liked=true') ?>">
+                                <i class="glyphicon glyphicon-heart-empty ic-heart"></i>
+                                <span><?= $content_info->likes ?></span>
+                            </a>
                             <?php
                         }
                         ?>
-                        <button type="button" data-toggle="modal" data-target="#myModal"><i
-                                class="glyphicon glyphicon-share-alt ic-share"></i>공유
+                        <button type="button" data-toggle="modal" data-target="#myModal">
+                            <i class="glyphicon glyphicon-share-alt ic-share"></i>공유
                         </button>
                         <!-- Trigger the modal with a button -->
                         <!--                        <button type="button" class="btn btn-info btn-lg" ">Open Modal</button>-->
@@ -45,8 +47,19 @@
                                         <h4 class="modal-title">페이지 공유하기</h4>
                                     </div>
                                     <div class="modal-body">
+                                        <p>미리 보기</p>
+
+                                        <div>
+                                            <a class="embedly-card"
+                                               href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId ?>">동신대학교</a>
+                                            <script async src="//cdn.embedly.com/widgets/platform.js"
+                                                    charset="UTF-8"></script>
+                                        </div>
                                         <p>Embed Code : 다음 코드를 복사해서 공유하고 싶은 페이지에 붙여넣기 해주세요.</p>
-                                        <textarea id="" cols="60" rows="3"><a class="embedly-card" href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId?>">동신대학교</a> <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+                                        <textarea cols="60" rows="3"><a class="embedly-card"
+                                                                        href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId ?>">동신대학교</a> <script
+                                                async src="//cdn.embedly.com/widgets/platform.js"
+                                                charset="UTF-8"></script>
                                         </textarea>
                                     </div>
                                     <div class="modal-footer">

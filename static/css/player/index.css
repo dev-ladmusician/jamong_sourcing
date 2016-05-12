@@ -55,6 +55,16 @@ player
     font-size: 20px;
     padding-right: 3px;
 }
+.jm-player-video .video-action button{
+    border: none;
+    background-color: transparent;
+    vertical-align: middle;
+    color: #96989c;
+}
+.jm-player-video .modal-footer button{
+    border: 1px #d3d9de solid;
+    border-radius: 3px;
+}
 /*The number of hearts*/
 .jm-player-video .video-action span,
 .jm-player-video .video-action .ic-heart,
