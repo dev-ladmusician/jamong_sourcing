@@ -27,6 +27,9 @@ class Channel extends CORE_Controller {
         $vr_list_hot = $this->contents_model->get_vr_list_hot_by_channel($channelId);
         $vr_list_new = $this->contents_model->get_vr_list_new_by_channel($channelId);
 
+        $count = $this->contents_model->get_vr_list_count_by_channel($channelId);
+        $this->channel_model->update_contentNum($channelId, $count);
+
         $rtv = $this->channel_model->get_by_id($channelId);
 
         $userId = $this->session->userdata('userid');

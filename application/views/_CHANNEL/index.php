@@ -28,7 +28,7 @@
                         </div>
                         <div class="des-info">
                         <span>VR컨텐츠 <span class="value-content-count"><b><?php if (isset($channel->contents)) {
-                                        echo $channel->contentNum;
+                                        echo $channel->contents;
                                     } ?></b></span></span>
                         <span>구독자 <span class="value-subs-count"><b><?php if (isset($channel->follow)) {
                                         echo $channel->follow;
