@@ -22,6 +22,57 @@ class Auth extends CORE_Controller {
         }
     }
 
+    function send_mail($email){
+        $password = 'qwer1234';
+
+        $receiver = 'janghan3150@gmail.com';    // 받는 사람
+        $subject = "[동신대학교] 임시 비밀 번호 입니다."; // 제목
+
+        $content = "<b>아이디 : </b>" . $email."<br>" .
+            "<b>임시 비밀번호 : </b>" . $password ."<br>" .
+            "<a>로그인 바로가기 </a>"
+        ;
+        $headers = "From: 동신대학교 " . "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+        $success = mail($receiver, $subject, $content, $headers);
+
+        if($success){
+            echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
+            echo '<script type="text/javascript" >';
+            echo 'alert("성공적으로 전송되었습니다");';
+            echo 'window.location =' . site_url('/auth/login') .';';
+            echo '</script>';
+        }
+        else{
+            echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
+            echo '<script type="text/javascript" >';
+            echo 'alert("전송에 실패하였습니다");';
+            echo 'window.history.back();';
+            echo '</script>';
+        }
+
+    }
+    function submit_find_password(){
+
+        $data = array(
+            'email' => $_POST['email'],
+        );
+//        $rtv = $this->user_model->get_user_by_email($data);
+
+        $this->session->set_flashdata('message', '이메일로 비밀번호가 전송되었습니다.');
+            redirect('auth/login');
+//        var_dump($rtv[0]);
+//        if ($rtv[0] != null && count($rtv[0]) > 0) {
+//            send_email($email);
+//            $this->user_model->update_password($rtv->userNumber, $this->keyEncrypt('qwer1234'));
+//        } else{
+//            $this->session->set_flashdata('message', '존재하지 않는 이메일 입니다.');
+//            redirect('auth/find_password');
+//        }
+    }
+
     /**
      * 페이스북 로그인
      */

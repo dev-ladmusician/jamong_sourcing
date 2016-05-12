@@ -8,7 +8,10 @@ foreach ($items as $item) {
                 if ($item->picture) {
                     ?>
                     <img
-                        src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
+                        src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $item->filename . '/low_thumb'; ?><?php if (strpos($item->picture, 'high_thumb')) {
+                            $rtv = explode('high_thumb', $item->picture)[1];
+                            echo $rtv;
+                        }?>"
                         alt="">
                     <?php
                 } else {
@@ -19,7 +22,7 @@ foreach ($items as $item) {
                     <?php
 
                 }
-                ?>
+                    ?>
             </a>
 
             <div class="video-des">
