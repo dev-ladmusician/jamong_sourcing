@@ -7,7 +7,8 @@
                 <a href="<?= site_url('/auth/login') ?>">로그인</a>
                 <a href="<?= site_url('/auth/register') ?>">회원가입</a>
             </div>
-            <form id="jm-auth-find-id" action="<?= site_url('/api/auth/submit_find_id') ?>" method="post">
+            <form id="jm-auth-find-id" action="<?= site_url('/api/auth/submit_find_id') ?>" method="post"
+                  enctype="multipart/form-data">
                 <div class="form-group">
                     이메일 찾기
                 </div>

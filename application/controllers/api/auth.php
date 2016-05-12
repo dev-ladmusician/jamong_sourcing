@@ -8,6 +8,20 @@ class Auth extends CORE_Controller {
         $this->load->library('form_validation');
     }
 
+    function submit_find_id(){
+
+        $nickName = $this->input->post('nickName');
+        $rtv = $this->user_model->get_user_id_by_nickName($nickName);
+
+        if ($rtv != null && count($rtv) > 0) {
+            $this->session->set_flashdata('message', "이메일을 찾았습니다. 로그인 화면으로 이동합니다." );
+            redirect('auth/login?userId='. $rtv->userNumber);
+        } else{
+            $this->session->set_flashdata('message', '존재하지 않는 닉네임입니다.');
+            redirect('auth/find_id');
+        }
+    }
+
     /**
      * 페이스북 로그인
      */
