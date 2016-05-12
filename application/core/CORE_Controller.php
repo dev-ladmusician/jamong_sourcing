@@ -110,6 +110,13 @@ class CORE_Controller extends CI_Controller
         return substr($date, 0, 10);
     }
 
+    function handle_title_string($title){
+        if (ceil(strlen($title) / 3) >= 10) {
+            return str_split($title, 10 * 3)[0] . '...';
+        }
+        return $title;
+    }
+
     /**
      * jamong source
      * password decode

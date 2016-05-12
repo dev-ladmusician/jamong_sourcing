@@ -12,7 +12,7 @@ foreach ($items as $item) {
                         src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $item->filename . '/low_thumb'; ?><?php if (strpos($item->picture, 'high_thumb')) {
                             $rtv = explode('high_thumb', $item->picture)[1];
                             echo $rtv;
-                        }?>"
+                        } ?>"
                         alt="">
                     <?php
                 } else {
@@ -27,6 +27,7 @@ foreach ($items as $item) {
             </a>
 
             <div class="video-des">
+
                 <p class="video-des-title"><?= $item->title ?></p>
 
                 <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>

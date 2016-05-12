@@ -113,7 +113,7 @@ a, a:hover{
     padding-bottom: 5px;
     font-family: "Noto Sans Medium";
     overflow-y: hidden;
-    max-height: 25px;
+    max-height: 24px;
 }
 
 .video-des .video-des-publisher,
@@ -357,7 +357,9 @@ a, a:hover{
 .footer-container .row .footer-text div {
     display: inline-block;
 }
-
+.footer-text iframe #u_0_2{
+    color: #d3d9de;
+}
 #language {
     margin-right: 5px;
     font-size: 13px;
