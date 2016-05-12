@@ -63,7 +63,7 @@ class Contents_model extends CI_Model {
         $this->db->update($this->table, array('likes' => $like_count));
     }
 
-    function update_view_count($contentId, $view_count){
+    function update_view($contentId, $view_count){
         $this->db->where('inum', $contentId);
         $this->db->update($this->table, array('view' => $view_count));
     }
@@ -222,6 +222,13 @@ class Contents_model extends CI_Model {
     function getByContentId($contentId){
         $this->db->select('nickName, picture, filename, view, title, ch, likes, created, type, cate');
         $this->db->where( array("inum" =>$contentId, "cate >" =>0 ));
+        $this->db->from($this->table);
+        return $this->db->get()->row();
+    }
+
+    function get_view_by_content_id($contentId){
+        $this->db->select('view');
+        $this->db->where('inum', $contentId);
         $this->db->from($this->table);
         return $this->db->get()->row();
     }

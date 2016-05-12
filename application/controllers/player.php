@@ -16,6 +16,12 @@ class Player extends CORE_Controller {
         $contentId = $this->input->get('contentId');
         $categories= $this->category_model->gets();
         $channels = $this->channel_model->gets();
+        $view = $this->contents_model->get_view_by_content_id($contentId);
+
+        if($view){
+            $this->contents_model->update_view($contentId, intval($view->view) + 1 );
+        }
+
         $contents = $this->contents_model->getByContentId($contentId);
         $channel = $this->channel_model->get_by_id($contents->ch);
         $recommend = $this->contents_model->get_vr_list_random();
