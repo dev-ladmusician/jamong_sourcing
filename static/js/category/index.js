@@ -28,7 +28,7 @@ $(document).ready(function(){
                     last_page = data.last_page;
                     total_count = data.total_count;
                     $('.jm-category .category-list').append(data.data);
-
+                    console.log(data.data);
                     if (page == last_page) {
                         $('.load-more').hide();
                     }

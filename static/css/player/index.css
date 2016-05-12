@@ -64,6 +64,11 @@ player
     vertical-align: middle;
 }
 
+.jm-player-video #myModal textarea{
+    width: 100%;
+    padding: 15px;
+}
+
 /*
 comment
 */

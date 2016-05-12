@@ -10,8 +10,7 @@
                             <img
                                 src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $main_video->filename . '/low_thumb'; ?><?php if (strpos($main_video->picture, 'high_thumb')) {
                                     $rtv = explode('high_thumb', $main_video->picture)[1];
-                                    echo $rtv;
-                                }?>"
+                                    echo $rtv;}else{echo '.png';}?>"
                                 alt="">
                             <?php
                         } else {
@@ -49,7 +48,7 @@
                                                 src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $item->filename . '/low_thumb'; ?><?php if (strpos($item->picture, 'high_thumb')) {
                                                     $rtv = explode('high_thumb', $item->picture)[1];
                                                     echo $rtv;
-                                                }?>"
+                                                }else{echo '.png';}?>"
                                                 alt="">
                                             <?php
                                         } else {
@@ -101,7 +100,7 @@
                                                 src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $item->filename . '/low_thumb'; ?><?php if (strpos($item->picture, 'high_thumb')) {
                                                     $rtv = explode('high_thumb', $item->picture)[1];
                                                     echo $rtv;
-                                                }?>"
+                                                }else{echo '.png';}?>"
                                                 alt="">
                                             <?php
                                         } else {

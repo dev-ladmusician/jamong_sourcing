@@ -38,7 +38,6 @@ class Home extends CORE_Controller
         $vr_list_hot = $this->contents_model->get_vr_list_hot();
         $vr_list_new = $this->contents_model->get_vr_list_new();
 
-//        var_dump($vr_list_new);
         $this->__get_views('_HOME/index', array('categories' => $categories, 'channels' => $channels,
             'main_video' => $main_video, 'vr_list_hot' => $vr_list_hot, 'vr_list_new' => $vr_list_new));
     }

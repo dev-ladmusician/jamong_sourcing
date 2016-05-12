@@ -59,14 +59,17 @@ class Auth extends CORE_Controller {
         $data = array(
             'email' => $_POST['email'],
         );
-//        $rtv = $this->user_model->get_user_by_email($data);
+        $rtv = $this->user_model->get_user_by_email($data);
 
-        $this->session->set_flashdata('message', '이메일로 비밀번호가 전송되었습니다.');
-            redirect('auth/login');
+        var_dump($rtv);
+
 //        var_dump($rtv[0]);
 //        if ($rtv[0] != null && count($rtv[0]) > 0) {
 //            send_email($email);
+//
 //            $this->user_model->update_password($rtv->userNumber, $this->keyEncrypt('qwer1234'));
+//                    $this->session->set_flashdata('message', '이메일로 비밀번호가 전송되었습니다.');
+//                        redirect('auth/login');
 //        } else{
 //            $this->session->set_flashdata('message', '존재하지 않는 이메일 입니다.');
 //            redirect('auth/find_password');
