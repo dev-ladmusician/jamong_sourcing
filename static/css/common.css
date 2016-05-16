@@ -91,12 +91,6 @@ a, a:hover{
     min-height: 150px;
     padding: 15px 0 0 15px;
 }
-
-.video-small img {
-    width: 100%;
-    height: 110px;
-}
-
 .video-des {
     min-height: 86px;
     padding: 10px 10px;
