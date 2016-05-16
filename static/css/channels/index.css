@@ -2,9 +2,22 @@
     /*padding-left: 20px;*/
 }
 
-.jm-channels .video-small img {
+.jm-channels .video-small .image-container{
     height: 150px;
     width: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.jm-channels .video-small .image-container img{
+    position: absolute;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    left: -1000%;
+    right: -1000%;
+    top: -1000%;
+    bottom: -1000%;
 }
 
 .jm-channels .video-small .solid-border-box{

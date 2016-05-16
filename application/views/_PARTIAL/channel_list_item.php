@@ -4,13 +4,15 @@ foreach ($items as $item) {
     <div class="video-small col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-inner">
         <div class=" solid-border-box padding-normal col-lg-12 col-md-12 col-sm-12">
             <div class="col-lg-5 col-md-6 col-sm-12 padding-none">
-                <a href="<?= site_url('/channel/home?channelId='.$item->channelnum)?>">
-                    <img src= <?php if($item->ch_picture){
-                        echo $item->ch_picture;
-                    }else{
-                        echo site_url('static/img/default_thumbnail.jpg');
-                    } ?> alt="">
-                </a>
+                <div class="image-container">
+                    <a href="<?= site_url('/channel/home?channelId='.$item->channelnum)?>">
+                        <img src= <?php if($item->ch_picture){
+                            echo $item->ch_picture;
+                        }else{
+                            echo site_url('static/img/default_thumbnail.jpg');
+                        } ?> alt="">
+                    </a>
+                </div>
             </div>
 
             <div class="video-des col-lg-7 col-md-6 col-sm-12">

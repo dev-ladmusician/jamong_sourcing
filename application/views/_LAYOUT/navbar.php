@@ -23,11 +23,14 @@
                         <?php
                         foreach($channels as $channel){?>
                             <a href="<?=site_url('/channel/home?channelId='.$channel->channelnum)?>">
-                                <li><img src="<?php if($channel->ch_picture ){
-                                        echo $channel->ch_picture;
-                                    }else{
-                                        echo site_url('/static/img/default_thumbnail.jpg');
-                                    } ?>" alt="">
+                                <li>
+                                    <div class="image-container">
+                                        <img src="<?php if($channel->ch_picture ){
+                                            echo $channel->ch_picture;
+                                        }else{
+                                            echo site_url('/static/img/default_thumbnail.jpg');
+                                        } ?>" alt="">
+                                    </div>
                                 <span><?= $channel->channelname?></span></li>
                             </a>
                         <?php
