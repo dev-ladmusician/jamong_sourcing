@@ -12,10 +12,9 @@ $(document).ready(function(){
 
     embedpano({
         swf:"http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/jamongplayer/kp_jamong.swf",
-        //xml:"http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/static/jamongplayer/" +filename + '.xml',
         xml: dir + filename +'/' + filename + '.xml',
         target:"pano",
-        html5:"auto"});
+        html5:"never"});
 
     $('.load-more').click(function(){
         reset_recommend_list_max_height();

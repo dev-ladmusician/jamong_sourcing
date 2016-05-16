@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer-text col-lg-12">
-                    <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="col-lg-5 col-sm-12">
                         <a class="footer-logo">
                             <img src="<?= base_url('/static/img/dongsin_logo.png') ?>" alt="">
                         </a>
@@ -18,11 +18,11 @@
                             <option value="eng">English</option>
                         </select>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="col-lg-3 col-sm-12">
                         <a href="" class="btn-ft-white">최근 동영상</a>
                         <a href="" class="btn-ft-white">도움말</a>
                     </div>
-                    <div class="col-lg-5 col-md-4 col-sm-12">
+                    <div class="col-lg-4 col-sm-12">
                         <iframe
                             src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fjamong360%2F%3Ffref%3Dts&width=450&layout=standard&action=like&show_faces=false&share=true&height=35&appId"
                             height="35" scrolling="no" frameborder="0" allowTransparency="true"></iframe>

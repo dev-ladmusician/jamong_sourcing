@@ -1,6 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Auth extends CORE_Controller {
+class Auth extends CORE_Controller
+{
     function __construct()
     {
         parent::__construct();
@@ -8,78 +9,78 @@ class Auth extends CORE_Controller {
         $this->load->library('form_validation');
     }
 
-    function submit_find_id(){
+    function submit_find_id()
+    {
 
         $nickName = $this->input->post('nickName');
         $rtv = $this->user_model->get_user_id_by_nickName($nickName);
 
         if ($rtv != null && count($rtv) > 0) {
-            $this->session->set_flashdata('message', "이메일을 찾았습니다. 로그인 화면으로 이동합니다." );
-            redirect('auth/login?userId='. $rtv->userNumber);
-        } else{
+            $this->session->set_flashdata('message', "이메일을 찾았습니다. 로그인 화면으로 이동합니다.");
+            redirect('auth/login?userId=' . $rtv->userNumber);
+        } else {
             $this->session->set_flashdata('message', '존재하지 않는 닉네임입니다.');
             redirect('auth/find_id');
         }
     }
 
-    function send_mail($email){
+    function send_mail($email)
+    {
         $password = 'qwer1234';
 
-        $receiver = 'janghan3150@gmail.com';    // 받는 사람
+        $receiver = $email;    // 받는 사람
         $subject = "[동신대학교] 임시 비밀 번호 입니다."; // 제목
 
-        $content = "<b>아이디 : </b>" . $email."<br>" .
-            "<b>임시 비밀번호 : </b>" . $password ."<br>" .
-            "<a>로그인 바로가기 </a>"
-        ;
+        $content = "<b>아이디 : </b>" . $email . "<br>" .
+            "<b>임시 비밀번호 : </b>" . $password . "<br>";
+
         $headers = "From: 동신대학교 " . "\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
         $success = mail($receiver, $subject, $content, $headers);
 
-        if($success){
-            echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
-            echo '<script type="text/javascript" >';
-            echo 'alert("성공적으로 전송되었습니다");';
-            echo 'window.location =' . site_url('/auth/login') .';';
-            echo '</script>';
-        }
-        else{
-            echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
-            echo '<script type="text/javascript" >';
-            echo 'alert("전송에 실패하였습니다");';
-            echo 'window.history.back();';
-            echo '</script>';
-        }
-
+        return $success;
     }
-    function submit_find_password(){
+
+    function submit_find_password()
+    {
 
         $data = array(
             'email' => $_POST['email'],
         );
         $rtv = $this->user_model->get_user_by_email($data);
 
-        var_dump($rtv);
+        if ($rtv[0] != null && count($rtv)) {
 
-//        var_dump($rtv[0]);
-//        if ($rtv[0] != null && count($rtv[0]) > 0) {
-//            send_email($email);
-//
-//            $this->user_model->update_password($rtv->userNumber, $this->keyEncrypt('qwer1234'));
-//                    $this->session->set_flashdata('message', '이메일로 비밀번호가 전송되었습니다.');
-//                        redirect('auth/login');
-//        } else{
-//            $this->session->set_flashdata('message', '존재하지 않는 이메일 입니다.');
-//            redirect('auth/find_password');
-//        }
+            $this->user_model->update_password($rtv[0]->userNumber, $this->keyEncrypt('qwer1234'));
+            $success = $this->send_mail($_POST['email']);
+
+            var_dump($success);
+//            if ($success) {
+//                echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
+//                echo '<script type="text/javascript" >';
+//                echo 'alert("성공적으로 전송되었습니다");';
+//                echo 'window.location =' . site_url('/auth/login') . ';';
+//                echo '</script>';
+//            } else {
+//                echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
+//                echo '<script type="text/javascript" >';
+//                echo 'alert("전송에 실패하였습니다");';
+//                echo 'window.history.back();';
+//                echo '</script>';
+//            }
+        } else {
+            $this->session->set_flashdata('message', '존재하지 않는 이메일 입니다.');
+            redirect('auth/find_password');
+        }
     }
 
     /**
      * 페이스북 로그인
      */
-    function login_by_fb() {
+    function login_by_fb()
+    {
         $data = array(
             'email' => $_POST['email'],
             'name' => $_POST['name'],
@@ -110,7 +111,8 @@ class Auth extends CORE_Controller {
     /**
      * 페이스북 가입
      */
-    function join_by_fb() {
+    function join_by_fb()
+    {
         $data = array(
             'email' => $_POST['email'],
             'name' => $_POST['name'],
@@ -163,18 +165,20 @@ class Auth extends CORE_Controller {
         }
     }
 
-    function test() {
+    function test()
+    {
         $rtv = $this->user_model->get_user_by_email(array('email' => $this->input->get('email')));
         $user = $rtv[0];
 
         $block_date = $user->blockdate;
-        $end_block_date = date("Y-m-d", strtotime("-". $user->blockday." day", time()));
+        $end_block_date = date("Y-m-d", strtotime("-" . $user->blockday . " day", time()));
         var_dump($block_date < $end_block_date);
         var_dump($block_date > $end_block_date);
         //var_dump($user);
     }
 
-    function submit_login() {
+    function submit_login()
+    {
         $this->__is_logined();
 
         $this->form_validation->set_rules('jm-login-id', '이메일', 'required|valid_email');
@@ -214,15 +218,16 @@ class Auth extends CORE_Controller {
         }
     }
 
-    function handle_block_user($user) {
+    function handle_block_user($user)
+    {
         $block_date = $user->blockdate;
-        $end_block_date = date("Y-m-d", strtotime("-". $user->blockday." day", time()));
+        $end_block_date = date("Y-m-d", strtotime("-" . $user->blockday . " day", time()));
 
         if ($end_block_date > $block_date) {
             $rtv = $this->user_model->change_state_block_to_active($user->userNumber);
             if ($rtv > 0) {
                 $this->handle_login($user);
-            }  else {
+            } else {
                 $this->session->set_flashdata('message', '로그인하는데 오류가 발생했습니다.');
                 redirect('auth/login');
             }
