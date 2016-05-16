@@ -8,7 +8,7 @@
                         if ($main_video->picture) {
                             ?>
                             <img
-                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $main_video->filename . '/low_thumb'; ?><?php if (strpos($main_video->picture, 'high_thumb')) {
+                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $main_video->filename . '/high_thumb'; ?><?php if (strpos($main_video->picture, 'high_thumb')) {
                                     $rtv = explode('high_thumb', $main_video->picture)[1];
                                     echo $rtv;
                                 } else {
