@@ -235,6 +235,20 @@ a, a:hover{
     height: 40px;
     border-radius: 50%;
     margin-left: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: text-top;
+}
+.navbar .user img{
+    position: absolute;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    left: -1000%;
+    right: -1000%;
+    top: -1000%;
+    bottom: -1000%;
 }
 .navbar .inline-block{
     display: inline-block;

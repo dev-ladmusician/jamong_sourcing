@@ -89,18 +89,20 @@
                             </form>
                         </div>
                         <a href="#jm-user-setting">
-                            <?php
-                            if ( $this->session->userdata('profile_url')  ) {
-                                ?>
-                                <img id="jm-user" class="user" src="<?=  $this->session->userdata('profile_url') ?>" alt="">
+                            <div class="user">
                                 <?php
+                                if ( $this->session->userdata('profile_url')  ) {
+                                    ?>
+                                    <img id="jm-user"  src="<?=  $this->session->userdata('profile_url') ?>" alt="">
+                                    <?php
 
-                            } else {
+                                } else {
+                                    ?>
+                                    <img id="jm-user" src="<?= site_url('/static/img/user.png') ?>" alt="">
+                                    <?php
+                                }
                                 ?>
-                                <img id="jm-user" class="user" src="<?= site_url('/static/img/user.png') ?>" alt="">
-                                <?php
-                            }
-                            ?>
+                            </div>
                         </a>
                     </div>
                 </div>
