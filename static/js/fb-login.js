@@ -1,3 +1,30 @@
+// Initialize the Amazon Cognito credentials provider
+//AWS.config.region = 'ap-northeast-1'; // Region
+//AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+//    IdentityPoolId: 'ap-northeast-1:0e504a7f-4445-4b47-b9f5-98310fff0d1f',
+//});
+//AWS.config.credentials.get(function(){
+//
+//    var syncClient = new AWS.CognitoSyncManager();
+//
+//    syncClient.openOrCreateDataset('myDataset', function(err, dataset) {
+//
+//        dataset.put('myKey', 'myValue', function(err, record){
+//
+//            dataset.synchronize({
+//
+//                onSuccess: function(data, newRecords) {
+//                    // Your handler code here
+//                    console.log(data);
+//                }
+//
+//            });
+//
+//        });
+//
+//    });
+//
+//});
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
     if (response.status === 'connected') {

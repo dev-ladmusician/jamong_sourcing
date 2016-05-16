@@ -52,14 +52,10 @@
                                         <div>
                                             <a class="embedly-card"
                                                href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId ?>">동신대학교</a>
-                                            <script async src="//cdn.embedly.com/widgets/platform.js"
-                                                    charset="UTF-8"></script>
+                                            <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
                                         </div>
                                         <p>Embed Code : 다음 코드를 복사해서 공유하고 싶은 페이지에 붙여넣기 해주세요.</p>
-                                        <textarea cols="60" rows="3"><a class="embedly-card"
-                                                                        href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId ?>">동신대학교</a> <script
-                                                async src="//cdn.embedly.com/widgets/platform.js"
-                                                charset="UTF-8"></script>
+                                        <textarea cols="60" rows="3"><a class="embedly-card" href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId ?>">동신대학교</a><script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
                                         </textarea>
                                     </div>
                                     <div class="modal-footer">
