@@ -52,10 +52,14 @@
                                         <div>
                                             <a class="embedly-card"
                                                href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId ?>">동신대학교</a>
-                                            <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+                                            <script async src="//cdn.embedly.com/widgets/platform.js"
+                                                    charset="UTF-8"></script>
                                         </div>
                                         <p>Embed Code : 다음 코드를 복사해서 공유하고 싶은 페이지에 붙여넣기 해주세요.</p>
-                                        <textarea cols="60" rows="3"><a class="embedly-card" href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId ?>">동신대학교</a><script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+                                        <textarea cols="60" rows="3"><a class="embedly-card"
+                                                                        href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/player?contentId=<?= $contentId ?>">동신대학교</a><script
+                                                async src="//cdn.embedly.com/widgets/platform.js"
+                                                charset="UTF-8"></script>
                                         </textarea>
                                     </div>
                                     <div class="modal-footer">
@@ -156,29 +160,31 @@
                     foreach ($recommend as $item) {
                         ?>
                         <div class="video-small">
-                            <a href="<?= site_url('/player?contentId=' . $item->inum) ?>">
-                                <?php
-                                if ($item->picture) {
-                                    ?>
-                                    <img
-                                        src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $item->filename . '/low_thumb'; ?><?php if (strpos($item->picture, 'high_thumb')) {
-                                            $rtv = explode('high_thumb', $item->picture)[1];
-                                            echo $rtv;
-                                        }else{
-                                            echo '.png';
-                                        } ?>"
-                                        alt="">
+                            <div class="image-container">
+                                <a href="<?= site_url('/player?contentId=' . $item->inum) ?>">
                                     <?php
-                                } else {
-                                    ?>
-                                    <img
-                                        src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_00001.png"
-                                        alt="">
-                                    <?php
+                                    if ($item->picture) {
+                                        ?>
+                                        <img
+                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $item->filename . '/low_thumb'; ?><?php if (strpos($item->picture, 'high_thumb')) {
+                                                $rtv = explode('high_thumb', $item->picture)[1];
+                                                echo $rtv;
+                                            } else {
+                                                echo '.png';
+                                            } ?>"
+                                            alt="">
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <img
+                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_00001.png"
+                                            alt="">
+                                        <?php
 
-                                }
-                                ?>
-                            </a>
+                                    }
+                                    ?>
+                                </a>
+                            </div>
 
                             <div class="video-des padding-none">
                                 <p class="video-des-title"><?= $item->title ?></p>

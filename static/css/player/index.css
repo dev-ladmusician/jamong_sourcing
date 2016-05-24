@@ -134,6 +134,7 @@ comment
     width: 70px;
     height: 70px;
     overflow: hidden;
+    top: 5px;
 }
 .jm-player-comment .comment-img img {
     position: absolute;
@@ -231,6 +232,23 @@ channel
     padding: 15px;
     margin-bottom: 20px;
 }
+.jm-player-channel .image-container{
+    position: relative;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    top: 1px;
+}
+.jm-player-channel .image-container img {
+    position: absolute;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    left: -1000%;
+    right: -1000%;
+    top: -1000%;
+    bottom: -1000%;
+}
 .jm-player-channel .image-container,
 .jm-player-channel .des-group{
     display: inline-block;
@@ -250,10 +268,6 @@ channel
 .jm-player-channel .des-group .des-title,
 .jm-player-channel .des-group .des-info{
     display: block;
-}
-.jm-player-channel img {
-    width: 80px;
-    height: 80px;
 }
 .jm-player-channel .btn-ch-subs{
     margin-top: 5px;
@@ -279,6 +293,22 @@ recommend vr list
     padding: 10px 13px;
     color: #646469;
     font-weight: bold;
+}
+.jm-player-recommend .image-container{
+    position: relative;
+    overflow: hidden;
+    width: 190px;
+    height: 128px;
+}
+.jm-player-recommend .image-container img{
+    position: absolute;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    left: -1000%;
+    right: -1000%;
+    top: -1000%;
+    bottom: -1000%;
 }
 .jm-player-recommend .video-des{
     padding-top: 8px;
