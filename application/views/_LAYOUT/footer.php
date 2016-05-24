@@ -63,7 +63,7 @@
             if ($this->session->userdata('is_login')) {
                 ?>
                 <a href="<?= site_url('/auth/logout') ?>">
-                    <li class="solid-bozrder-bottom">
+                    <li id="btn-logout" class="solid-bozrder-bottom">
                         <img src="<?= base_url('/static/img/ic_log_in.png') ?>" alt="IC_PNG">
                         <span>로그아웃</span>
                     </li>
@@ -140,7 +140,7 @@ if (strpos($filename, 'index.php')) {
     <script src="<?= site_url() ?>/static/js/home/index.js"></script>
 <?php } ?>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
+<script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
 </body>
 </html>

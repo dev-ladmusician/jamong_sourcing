@@ -108,6 +108,7 @@ a, a:hover{
     font-family: "Noto Sans Medium";
     overflow-y: hidden;
     max-height: 24px;
+    min-height: 24px;
 }
 
 .video-des .video-des-publisher,
@@ -238,7 +239,7 @@ a, a:hover{
     overflow: hidden;
     position: relative;
     display: inline-block;
-    vertical-align: text-top;
+    vertical-align: middle;
 }
 .navbar .user img{
     position: absolute;

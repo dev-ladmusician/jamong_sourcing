@@ -1,4 +1,3 @@
-
 </div><!-- body container-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -6,6 +5,8 @@
 <script src="/static/js/ajaxBody.js"></script>
 <script src="/static/js/smoothscroll.js"></script>
 <script src="<?php echo base_url() ?>static/js/common.js"></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.41.min.js"></script>
+
 
 <?php
 $total_url = $_SERVER['PHP_SELF'];
@@ -35,14 +36,13 @@ if (strpos($filename, 'index.php')) {
     <script src="<?= site_url() ?>/static/js/home/index.js"></script>
 <?php }
 if (strpos($filename, 'login')) { ?>
-<script src="<?= site_url('static/js/fb-login.js') ?>"></script>
+    <script src="<?= site_url('static/js/fb-login.js') ?>"></script>
 <?php } else if (strpos($filename, 'register')) { ?>
-<script src="<?= site_url('static/js/fb-join.js') ?>"></script>
+    <script src="<?= site_url('static/js/fb-join.js') ?>"></script>
 <?php } ?>
 
 
-
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
+<script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

@@ -1,5 +1,9 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+require('/var/www/html/JAMONG/static/aws/aws-autoloader.php');
+
+use Aws\Ses\SesClient;
+
 class Auth extends CORE_Controller
 {
     function __construct()
@@ -24,28 +28,43 @@ class Auth extends CORE_Controller
         }
     }
 
-    function send_mail($email)
+    function send_mail($email, $password)
     {
-        $password = 'qwer1234';
+        //        error_reporting(E_ALL);
+//        ini_set("display_errors", 1);
 
-        $receiver = $email;    // 받는 사람
-        $subject = "[동신대학교] 임시 비밀 번호 입니다."; // 제목
+        $client = SesClient::factory([
+            'version' => 'latest',
+            'region' => 'us-east-1',
+            'credentials' => [
+                'key' => 'AKIAJO2KWDCBJ342FTMQ',
+                'secret' => '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'
+            ]
+        ]);
 
-        $content = "<b>아이디 : </b>" . $email . "<br>" .
-            "<b>임시 비밀번호 : </b>" . $password . "<br>";
+        $body_str = '<p>아이디 : ' . $email . ' </p>';
+        $body_str .= '<p>임시비밀번호 : ' . $password . ' </p>';
+        $body_str .= '<a href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/auth/login"> 로그인으로 이동하기</a>';
+        $result = $client->sendEmail(array(
+            'Source' => 'janghan3150@gmail.com',
+            'Destination' => array(
+                'ToAddresses' => array($email)
+            ),
+            'Message' => array(
+                'Subject' => array('Data' => '[동신대학교] 임시 비밀 번호 입니다.', 'charset' => 'UTF-8'),
+                'Body' => array('Html' => array('Data' => $body_str, 'charset' => 'UTF-8'))
+            )
+        ));
 
-        $headers = "From: 동신대학교 " . "\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-        $success = mail($receiver, $subject, $content, $headers);
-
-        return $success;
+        if(count($result) && $result != null){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     function submit_find_password()
     {
-
         $data = array(
             'email' => $_POST['email'],
         );
@@ -53,23 +72,17 @@ class Auth extends CORE_Controller
 
         if ($rtv[0] != null && count($rtv)) {
 
-            $this->user_model->update_password($rtv[0]->userNumber, $this->keyEncrypt('qwer1234'));
-            $success = $this->send_mail($_POST['email']);
+            $random_password = random_string('alnum',10);
+            $this->user_model->update_password($rtv[0]->userNumber, $this->keyEncrypt($random_password));
+            $success = $this->send_mail($_POST['email'], $random_password);
 
-            var_dump($success);
-//            if ($success) {
-//                echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
-//                echo '<script type="text/javascript" >';
-//                echo 'alert("성공적으로 전송되었습니다");';
-//                echo 'window.location =' . site_url('/auth/login') . ';';
-//                echo '</script>';
-//            } else {
-//                echo '<meta http-equiv="content-type" content="text/html" charset="utf-8">';
-//                echo '<script type="text/javascript" >';
-//                echo 'alert("전송에 실패하였습니다");';
-//                echo 'window.history.back();';
-//                echo '</script>';
-//            }
+            if ($success) {
+                $this->session->set_flashdata('message', '성공적으로 전송되었습니다.');
+                redirect('auth/login');
+            } else {
+                $this->session->set_flashdata('message', '메일 전송에 실패하였습니다.');
+                redirect('auth/find_password');
+            }
         } else {
             $this->session->set_flashdata('message', '존재하지 않는 이메일 입니다.');
             redirect('auth/find_password');

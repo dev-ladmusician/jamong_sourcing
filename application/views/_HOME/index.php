@@ -134,11 +134,12 @@
 
                                     <div class="video-des">
                                         <p class="video-des-title"><?php
-                                            if( ceil( strlen($item->title ) / 3) > 10){
-                                                echo str_split($item->title, 10*3)[0] . '...';
-                                            }else{
+//                                            if( ceil( strlen($item->title ) / 3) > 10){
+//                                                echo str_split($item->title, 10*3)[0] . '...';
+//                                            }else{
                                                 echo $item->title;
-                                            }?></p>
+//                                            }
+                                            ?></p>
 
 
                                         <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>

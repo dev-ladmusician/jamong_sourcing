@@ -1,5 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+
 class Home extends CORE_Controller
 {
 
@@ -14,7 +15,6 @@ class Home extends CORE_Controller
 
     function index()
     {
-
         //로그인 한 경우, profile_image가 등록되어 있으면,
         $user_id = $this->session->userdata('userid');
 
