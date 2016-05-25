@@ -265,8 +265,19 @@ recommend vr list
     color: #646469;
     font-weight: bold;
 }
+.video-small {
+    display: inline-block;
+    min-height: 150px;
+    margin: 15px 15px 0 15px;
+    padding: 0 !important;
+    border: 1px solid #efefef;
+}
+
+.video-small:last-child {
+margin-bottom: 15px;
+}
 .jm-player-recommend .video-des{
-    padding-top: 8px;
+    padding: 10px;
 }
 .jm-player-recommend .recommend-list{
     max-height: 600px;
