@@ -1,8 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-require('/var/www/html/JAMONG/static/aws/aws-autoloader.php');
-
-use Aws\Ses\SesClient;
+require('/var/www/html/JAMONG/static/PHPMailer-master/PHPMailerAutoload.php');
 
 class Auth extends CORE_Controller
 {
@@ -28,10 +26,75 @@ class Auth extends CORE_Controller
         }
     }
 
+    /*
+* AUTHOR : YOUNGMINJUN
+*
+* $EMAIL : 보내는 사람 메일 주소
+* $NAME : 보내는 사람 이름
+* $SUBJECT : 메일 제목
+* $CONTENT : 메일 내용
+* $MAILTO : 받는 사람 메일 주소
+* $MAILTONAME : 받는 사람 이름
+*/
+    function sendMail($EMAIL, $NAME, $SUBJECT, $CONTENT, $MAILTO, $MAILTONAME)
+    {
+
+        error_reporting(E_ALL);
+        ini_set("display_errors", 1);
+
+        $mail = new PHPMailerOAuth();
+        $body = $CONTENT;
+
+        $mail->IsSMTP();                                    // telling the class to use SMTP
+        $mail->Host = "email-smtp.us-east-1.amazonaws.com"; // SMTP server
+        $mail->SMTPDebug = 2;                               // enables SMTP debug information (for testing)
+                                                            // 1 = errors and messages
+                                                            // 2 = messages only
+
+        $mail->Host = "smtp.gmail.com";                     // sets GMAIL as the SMTP server
+        $mail->Port = 587;                                  // set the SMTP port for the GMAIL server
+        $mail->SMTPSecure = "tls";                          // sets the prefix to the servier
+        $mail->SMTPAuth = true;                             // enable SMTP authentication
+        $mail->AuthType = 'XOAUTH2';                         //Set AuthType
+
+        //User Email to use for SMTP authentication - Use the same Email used in Google Developer Console
+        $mail->oauthUserEmail = "dongshin.master@gmail.com";
+
+        //Obtained From Google Developer Console
+        $mail->oauthClientId = "720688065032-hsq71uf82b26hc6l0fouh0qbgnnkkgrd.apps.googleusercontent.com";
+
+        //Obtained From Google Developer Console
+        $mail->oauthClientSecret = "SHdQghBuNYr1RJ1IlL0aEw39";
+
+        //Obtained By running get_oauth_token.php after setting up APP in Google Developer Console.
+        //Set Redirect URI in Developer Console as [https/http]://<yourdomain>/<folder>/get_oauth_token.php
+        // eg: http://localhost/phpmail/get_oauth_token.php
+        $mail->oauthRefreshToken = "RANDOMCHARS-----DWxgOvPT003r-yFUV49TQYag7_Aod7y0";
+
+        $mail->CharSet = "utf-8";
+        $mail->Username = "dongshin.master@gmail.com"; // GMAIL username
+        $mail->Password = "ehdtls12";             // GMAIL password
+
+        $mail->SetFrom($EMAIL, $NAME);
+
+        $mail->AddReplyTo($EMAIL, $NAME);
+
+        $mail->Subject = $SUBJECT;
+
+        $mail->MsgHTML($body);
+
+        $address = $MAILTO;
+        $mail->AddAddress($address, $MAILTONAME);
+
+        if (!$mail->Send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } else {
+            echo "Message sent!";
+        }
+    }
+
     function send_mail($email, $password)
     {
-        //        error_reporting(E_ALL);
-//        ini_set("display_errors", 1);
 
         $client = SesClient::factory([
             'version' => 'latest',
@@ -53,36 +116,41 @@ class Auth extends CORE_Controller
             'Message' => array(
                 'Subject' => array('Data' => '[동신대학교] 임시 비밀 번호 입니다.', 'charset' => 'UTF-8'),
                 'Body' => array('Html' => array('Data' => $body_str, 'charset' => 'UTF-8'))
-            )
+            ),
         ));
 
-        if(count($result) && $result != null){
+        if (count($result) && $result != null) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     function submit_find_password()
     {
+        error_reporting(E_ALL);
+        ini_set("display_errors", 1);
+
+
         $data = array(
             'email' => $_POST['email'],
         );
         $rtv = $this->user_model->get_user_by_email($data);
 
         if ($rtv[0] != null && count($rtv)) {
-
-            $random_password = random_string('alnum',10);
+            $random_password = random_string('alnum', 10);
             $this->user_model->update_password($rtv[0]->userNumber, $this->keyEncrypt($random_password));
-            $success = $this->send_mail($_POST['email'], $random_password);
 
-            if ($success) {
-                $this->session->set_flashdata('message', '성공적으로 전송되었습니다.');
-                redirect('auth/login');
-            } else {
-                $this->session->set_flashdata('message', '메일 전송에 실패하였습니다.');
-                redirect('auth/find_password');
-            }
+
+            $this->sendMail("janghan3150@gmail.com", "HUBTREE-JUN", "메일 제목입니다.", "메일 컨텐츠 입니다.", "janghan3150@gmail.com", "COOLIO-JUN");
+//            $success = $this->send_mail($_POST['email'], $random_password);
+//            if ($success) {
+//                $this->session->set_flashdata('message', '성공적으로 전송되었습니다.');
+//                redirect('auth/login');
+//            } else {
+//                $this->session->set_flashdata('message', '메일 전송에 실패하였습니다.');
+//                redirect('auth/find_password');
+//            }
         } else {
             $this->session->set_flashdata('message', '존재하지 않는 이메일 입니다.');
             redirect('auth/find_password');

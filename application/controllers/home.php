@@ -1,9 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-
 class Home extends CORE_Controller
 {
-
     function __construct()
     {
         parent::__construct();
@@ -18,11 +16,11 @@ class Home extends CORE_Controller
         //로그인 한 경우, profile_image가 등록되어 있으면,
         $user_id = $this->session->userdata('userid');
 
-        if($user_id){
+        if ($user_id) {
             $profile_url = $this->user_model->get_profile_image_by_id($user_id);
-            if(count($profile_url)){
+            if (count($profile_url)) {
                 $this->session->set_userdata('profile_url', $profile_url->picture);
-            }else{
+            } else {
                 $this->session->set_userdata('profile_url', null);
             }
         }
