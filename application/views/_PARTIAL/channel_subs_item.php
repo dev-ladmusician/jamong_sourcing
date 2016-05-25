@@ -13,9 +13,9 @@ foreach ($items as $item) {
         </div>
         <div class="item-info">
             <div><?= $item->nickName?></div>
-            <div>구독 채널 수
-                <div>100</div>
-            </div>
+<!--            <div>구독 채널 수-->
+<!--                <div>100</div>-->
+<!--            </div>-->
         </div>
     </div>
     <?php

@@ -1,6 +1,9 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Auth extends CORE_Controller {
+require('/var/www/html/JAMONG/static/PHPMailer-master/PHPMailerAutoload.php');
+
+class Auth extends CORE_Controller
+{
     function __construct()
     {
         parent::__construct();
@@ -8,10 +11,157 @@ class Auth extends CORE_Controller {
         $this->load->library('form_validation');
     }
 
+    function submit_find_id()
+    {
+
+        $nickName = $this->input->post('nickName');
+        $rtv = $this->user_model->get_user_id_by_nickName($nickName);
+
+        if ($rtv != null && count($rtv) > 0) {
+            $this->session->set_flashdata('message', "이메일을 찾았습니다. 로그인 화면으로 이동합니다.");
+            redirect('auth/login?userId=' . $rtv->userNumber);
+        } else {
+            $this->session->set_flashdata('message', '존재하지 않는 닉네임입니다.');
+            redirect('auth/find_id');
+        }
+    }
+
+    /*
+* AUTHOR : YOUNGMINJUN
+*
+* $EMAIL : 보내는 사람 메일 주소
+* $NAME : 보내는 사람 이름
+* $SUBJECT : 메일 제목
+* $CONTENT : 메일 내용
+* $MAILTO : 받는 사람 메일 주소
+* $MAILTONAME : 받는 사람 이름
+*/
+    function sendMail($EMAIL, $NAME, $SUBJECT, $CONTENT, $MAILTO, $MAILTONAME)
+    {
+
+        error_reporting(E_ALL);
+        ini_set("display_errors", 1);
+
+        $mail = new PHPMailerOAuth();
+        $body = $CONTENT;
+
+        $mail->IsSMTP();                                    // telling the class to use SMTP
+        $mail->Host = "email-smtp.us-east-1.amazonaws.com"; // SMTP server
+        $mail->SMTPDebug = 2;                               // enables SMTP debug information (for testing)
+                                                            // 1 = errors and messages
+                                                            // 2 = messages only
+
+        $mail->Host = "smtp.gmail.com";                     // sets GMAIL as the SMTP server
+        $mail->Port = 587;                                  // set the SMTP port for the GMAIL server
+        $mail->SMTPSecure = "tls";                          // sets the prefix to the servier
+        $mail->SMTPAuth = true;                             // enable SMTP authentication
+        $mail->AuthType = 'XOAUTH2';                         //Set AuthType
+
+        //User Email to use for SMTP authentication - Use the same Email used in Google Developer Console
+        $mail->oauthUserEmail = "dongshin.master@gmail.com";
+
+        //Obtained From Google Developer Console
+        $mail->oauthClientId = "720688065032-hsq71uf82b26hc6l0fouh0qbgnnkkgrd.apps.googleusercontent.com";
+
+        //Obtained From Google Developer Console
+        $mail->oauthClientSecret = "SHdQghBuNYr1RJ1IlL0aEw39";
+
+        //Obtained By running get_oauth_token.php after setting up APP in Google Developer Console.
+        //Set Redirect URI in Developer Console as [https/http]://<yourdomain>/<folder>/get_oauth_token.php
+        // eg: http://localhost/phpmail/get_oauth_token.php
+        $mail->oauthRefreshToken = "RANDOMCHARS-----DWxgOvPT003r-yFUV49TQYag7_Aod7y0";
+
+        $mail->CharSet = "utf-8";
+        $mail->Username = "dongshin.master@gmail.com"; // GMAIL username
+        $mail->Password = "ehdtls12";             // GMAIL password
+
+        $mail->SetFrom($EMAIL, $NAME);
+
+        $mail->AddReplyTo($EMAIL, $NAME);
+
+        $mail->Subject = $SUBJECT;
+
+        $mail->MsgHTML($body);
+
+        $address = $MAILTO;
+        $mail->AddAddress($address, $MAILTONAME);
+
+        if (!$mail->Send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } else {
+            echo "Message sent!";
+        }
+    }
+
+    function send_mail($email, $password)
+    {
+
+        $client = SesClient::factory([
+            'version' => 'latest',
+            'region' => 'us-east-1',
+            'credentials' => [
+                'key' => 'AKIAJO2KWDCBJ342FTMQ',
+                'secret' => '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'
+            ]
+        ]);
+
+        $body_str = '<p>아이디 : ' . $email . ' </p>';
+        $body_str .= '<p>임시비밀번호 : ' . $password . ' </p>';
+        $body_str .= '<a href="http://ec2-54-250-155-70.ap-northeast-1.compute.amazonaws.com/JAMONG/auth/login"> 로그인으로 이동하기</a>';
+        $result = $client->sendEmail(array(
+            'Source' => 'janghan3150@gmail.com',
+            'Destination' => array(
+                'ToAddresses' => array($email)
+            ),
+            'Message' => array(
+                'Subject' => array('Data' => '[동신대학교] 임시 비밀 번호 입니다.', 'charset' => 'UTF-8'),
+                'Body' => array('Html' => array('Data' => $body_str, 'charset' => 'UTF-8'))
+            ),
+        ));
+
+        if (count($result) && $result != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function submit_find_password()
+    {
+        error_reporting(E_ALL);
+        ini_set("display_errors", 1);
+
+
+        $data = array(
+            'email' => $_POST['email'],
+        );
+        $rtv = $this->user_model->get_user_by_email($data);
+
+        if ($rtv[0] != null && count($rtv)) {
+            $random_password = random_string('alnum', 10);
+            $this->user_model->update_password($rtv[0]->userNumber, $this->keyEncrypt($random_password));
+
+
+            $this->sendMail("janghan3150@gmail.com", "HUBTREE-JUN", "메일 제목입니다.", "메일 컨텐츠 입니다.", "janghan3150@gmail.com", "COOLIO-JUN");
+//            $success = $this->send_mail($_POST['email'], $random_password);
+//            if ($success) {
+//                $this->session->set_flashdata('message', '성공적으로 전송되었습니다.');
+//                redirect('auth/login');
+//            } else {
+//                $this->session->set_flashdata('message', '메일 전송에 실패하였습니다.');
+//                redirect('auth/find_password');
+//            }
+        } else {
+            $this->session->set_flashdata('message', '존재하지 않는 이메일 입니다.');
+            redirect('auth/find_password');
+        }
+    }
+
     /**
      * 페이스북 로그인
      */
-    function login_by_fb() {
+    function login_by_fb()
+    {
         $data = array(
             'email' => $_POST['email'],
             'name' => $_POST['name'],
@@ -42,7 +192,8 @@ class Auth extends CORE_Controller {
     /**
      * 페이스북 가입
      */
-    function join_by_fb() {
+    function join_by_fb()
+    {
         $data = array(
             'email' => $_POST['email'],
             'name' => $_POST['name'],
@@ -95,18 +246,20 @@ class Auth extends CORE_Controller {
         }
     }
 
-    function test() {
+    function test()
+    {
         $rtv = $this->user_model->get_user_by_email(array('email' => $this->input->get('email')));
         $user = $rtv[0];
 
         $block_date = $user->blockdate;
-        $end_block_date = date("Y-m-d", strtotime("-". $user->blockday." day", time()));
+        $end_block_date = date("Y-m-d", strtotime("-" . $user->blockday . " day", time()));
         var_dump($block_date < $end_block_date);
         var_dump($block_date > $end_block_date);
         //var_dump($user);
     }
 
-    function submit_login() {
+    function submit_login()
+    {
         $this->__is_logined();
 
         $this->form_validation->set_rules('jm-login-id', '이메일', 'required|valid_email');
@@ -146,15 +299,16 @@ class Auth extends CORE_Controller {
         }
     }
 
-    function handle_block_user($user) {
+    function handle_block_user($user)
+    {
         $block_date = $user->blockdate;
-        $end_block_date = date("Y-m-d", strtotime("-". $user->blockday." day", time()));
+        $end_block_date = date("Y-m-d", strtotime("-" . $user->blockday . " day", time()));
 
         if ($end_block_date > $block_date) {
             $rtv = $this->user_model->change_state_block_to_active($user->userNumber);
             if ($rtv > 0) {
                 $this->handle_login($user);
-            }  else {
+            } else {
                 $this->session->set_flashdata('message', '로그인하는데 오류가 발생했습니다.');
                 redirect('auth/login');
             }

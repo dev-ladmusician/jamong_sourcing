@@ -70,8 +70,9 @@ class Channel_model extends CI_Model {
 
     function get_by_id($id){
         $this->db->select('jumper__channellist.channelname, jumper__channellist.channelnum, jumper__channellist.follow, jumper__channellist.chdesc, jumper__channellist.contents, 
-                           jumper__channel_profile.ch_picture, jumper__channel_profile.bg_picture, 
-                           count(jumper__channels.inum) as contentNum');
+                           jumper__channel_profile.ch_picture, jumper__channel_profile.bg_picture'
+                           );
+//                           count(jumper__channels.inum) as contentNum');
         $this->db->where(array('isdeprecated'=> false, 'jumper__channellist.channelnum' =>$id));
         $this->db->join('jumper__channel_profile', 'jumper__channellist.channelnum = jumper__channel_profile.channelnum', 'left outer');
         $this->db->join('jumper__channels', 'jumper__channels.channelnum = jumper__channellist.channelnum', 'left');
@@ -80,15 +81,19 @@ class Channel_model extends CI_Model {
         return $this->db->get()->row();
     }
 
+    function update_contentNum($channelId, $contentNum) {
+        $this->db->where('channelnum', $channelId);
+        $this->db->update($this->table, array('contents'=> $contentNum));
+    }
+
     function get_all_count() {
         return $this->db->count_all_results($this->table);
     }
 
     function update_follow($channelId , $follow){
-
         $this->db->where('channelnum', $channelId);
         $this->db->update($this->table, array('follow'=> $follow));
-        return $this->db->get()->result();
+//        return $this->db->get()->result();
     }
 
     function get_follow_count_by_channel($channelId){

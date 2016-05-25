@@ -1,4 +1,5 @@
 <?php
+
 class CORE_Controller extends CI_Controller
 {
     function __construct()
@@ -108,6 +109,27 @@ class CORE_Controller extends CI_Controller
     {
         // 2015-08-03 00:00: -> 2015-08-03
         return substr($date, 0, 10);
+    }
+
+    function handle_title_string($data, $limit)
+    {
+        //한국어 1글자당 3
+        $korean = 3;
+
+        $rtv = array();
+        if ($data != null && count($data)) {
+            foreach ($data as $item) {
+                $title = $item->title;
+
+                if (ceil(strlen($title) / $korean) >= $limit) {
+                     array_push($rtv, str_split($title, $limit * $korean)[0] . '...');
+                } else {
+                    array_push($rtv, $title);
+                }
+            }
+            return $rtv;
+        }
+        return false;
     }
 
     /**

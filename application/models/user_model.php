@@ -11,6 +11,19 @@ class User_model extends CI_Model
         $this->table = 'jamong__tb_users';
     }
 
+    function get_user_id_by_email($email){
+        try {
+
+            $this->db->select('userNumber');
+            $this->db->where('email' ,  $email);
+            $this->db->from('jamong__tb_users');
+            $rtv = $this->db->get()->result();
+            return $rtv;
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
+
     function test($user_num) {
         $quest_str = "Select a.*".
             ", (select  nickName from jumper_user where userNumber=".$user_num.") as nickName".
@@ -368,16 +381,17 @@ class User_model extends CI_Model
         }
     }
 
-    function get_user_id_by_email($email){
-        try {
-            $this->db->select('userNumber');
-            $this->db->where('email' ,  $email);
-            $this->db->from($this->table);
-            return $this->db->get()->row();
-        } catch (Exception $e) {
-            return $e;
+    function update_password($userNumber, $password){
+        try{
+            $this->db->where('userNumber' ,  $userNumber);
+            $this->db->update($this->table, array("password"=> $password));
+            return true;
+        }catch (Exception $e){
+            return false;
         }
     }
+
+
 
     function get_user_id_by_nickName($nickName){
         try{

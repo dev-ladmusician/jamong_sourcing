@@ -1,12 +1,18 @@
-window.onload = function() {
+var appId = '1552807958354012';
+window.onload = function () {
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+
         if (response.status === 'connected') {
             var url = window.location.href;
             if (url.indexOf("login") >= 0) {
                 console.log('login');
+
             } else if (url.indexOf("register") >= 0) {
                 console.log('register');
+
             }
         } else if (response.status === 'not_authorized') {
             // The person is logged into Facebook, but not your app.
@@ -24,23 +30,18 @@ window.onload = function() {
 // Button.  See the onlogin handler attached to it in the sample
 // code below.
     function checkLoginState() {
-        FB.getLoginStatus(function(response) {
+        FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
     }
 
-    window.fbAsyncInit = function() {
-        var url = window.location.href;
-        var appId = '1571767509782432';
-        if (url.indexOf("www") >= 0) {
-            //appId = '420184654847738';
-        }
+    window.fbAsyncInit = function () {
         FB.init({
-            appId      : appId,
-            cookie     : false,  // enable cookies to allow the server to access
+            appId: appId,
+            cookie: false,  // enable cookies to allow the server to access
             // the session
-            xfbml      : true,  // parse social plugins on this page
-            version    : 'v2.6' // use version 2.2
+            xfbml: true,  // parse social plugins on this page
+            version: 'v2.6' // use version 2.2
         });
 
         // Now that we've initialized the JavaScript SDK, we call
@@ -55,72 +56,62 @@ window.onload = function() {
         //
         // These three cases are handled in the callback function.
 
-        FB.getLoginStatus(function(response) {
+        FB.getLoginStatus(function (response) {
             statusChangeCallback(response);
         });
 
     };
 
 // Load the SDK asynchronously
-    (function(d, s, id) {
+    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
+        js = d.createElement(s);
+        js.id = id;
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
-
+//
     $('.btn-fb-join').click(function () {
-        FB.login(function(response) {
+        FB.login(function (response) {
+            console.log(response);
             if (response.authResponse) {
                 fbJoin();
             }
         }, {scope: 'public_profile, email'});
     });
 
-    $('.btn-fb-login').click(function () {
-        FB.login(function(response) {
-            console.log(response);
-            if (response.authResponse) {
-                fbLogin();
-            } else {
-
-            }
-        }, {scope: 'public_profile, email'});
-    });
-
     function fbJoin() {
-        console.log('check');
         var url = '/me?fields=name,email';
-        FB.api(url, function(response) {
+        FB.api(url, function (response) {
             console.log(response);
-            // ajax_template('/JAMONG/api/auth/join_by_fb', response,
-            //     function (data) {
-            //         if (data > 0) {
-            //             window.location.replace("/JAMONG/home/index");
-            //         } else {
-            //             if (data == -1) {
-            //                 alert('이용정지된 계정입니다.');
-            //                 window.location.replace('/JAMONG/auth/login');
-            //             } else {
-            //                 alert('회원가입하는데 오류가 발생했습니다.');
-            //                 window.location.replace('/JAMONG/auth/register');
-            //             }
-            //         }
-            //     },
-            //     function (arg) {
-            //         alert('회원가입하는데 오류가 발생했습니다.');
-            //         window.location.replace('/JAMONG/auth/register');
-            //     });
+            ajax_template('/JAMONG/api/auth/join_by_fb', response,
+                function (data) {
+                    if (data > 0) {
+                        window.location.replace("/JAMONG/home/index");
+                    } else {
+                        if (data == -1) {
+                            alert('이용정지된 계정입니다.');
+                            window.location.replace('/JAMONG/auth/login');
+                        } else {
+                            alert('회원가입하는데 오류가 발생했습니다.');
+                            window.location.replace('/JAMONG/auth/register');
+                        }
+                    }
+                },
+                function (arg) {
+                    alert('회원가입하는데 오류가 발생했습니다.');
+                    window.location.replace('/JAMONG/auth/register');
+                });
         });
     }
 
     function fbLogin() {
         var url = '/me?fields=name,email';
-        FB.api(url, function(response) {
+        FB.api(url, function (response) {
             console.log(response);
             ajax_template('/JAMONG/api/auth/login_by_fb', response,
                 function (data) {
@@ -130,9 +121,9 @@ window.onload = function() {
                     } else {
                         if (data == -1) {
                             alert('이용정지된 계정입니다.');
-                            window.location.replace('/MGMT/auth/login');
+                            window.location.replace('/JAMONG/auth/login');
                         } else if (data == -2) {
-                            alert('회원가입을 먼저 해주세요.')
+                            alert('회원가입을 먼저 해주세요.');
                             window.location.replace('/JAMONG/auth/register');
                         } else {
                             window.location.replace('/JAMONG/auth/login');
@@ -165,7 +156,7 @@ window.onload = function() {
                 } else {
                     alert("error");
                 }
-            },
+            }
         });
     }
-}
+};

@@ -34,8 +34,9 @@
                     <input class="btn-login-submit" type="submit" value="로그인">
                 </div>
                 <div class="form-group btn-fb-login">
-                    <a href="">페이스북으로 로그인</a>
+                    <a id="login" href="">페이스북으로 로그인</a>
                 </div>
+
             </form>
             <div class="login-footer text-center">
                 <a href="<?= site_url('/auth/find_id') ?>" class="btn-login-wh solid-border-box">ID 찾기</a>

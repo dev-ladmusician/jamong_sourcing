@@ -9,11 +9,13 @@
                     } ?>">
 
                     <div class="col-lg-2 padding-none">
-                        <img src="<?php if ($channel->ch_picture) {
-                            echo $channel->ch_picture;
-                        } else {
-                            echo site_url('/static/img/default_thumbnail.jpg');
-                        } ?>" alt="">
+                        <div class="image-container">
+                            <img src="<?php if ($channel->ch_picture) {
+                                echo $channel->ch_picture;
+                            } else {
+                                echo site_url('/static/img/default_thumbnail.jpg');
+                            } ?>" alt="">
+                        </div>
                     </div>
                     <div class="col-lg-10 video-des">
                         <div class="des-title">
@@ -28,7 +30,7 @@
                         </div>
                         <div class="des-info">
                         <span>VR컨텐츠 <span class="value-content-count"><b><?php if (isset($channel->contents)) {
-                                        echo $channel->contentNum;
+                                        echo $channel->contents;
                                     } ?></b></span></span>
                         <span>구독자 <span class="value-subs-count"><b><?php if (isset($channel->follow)) {
                                         echo $channel->follow;
@@ -75,7 +77,10 @@
                                     if ($main_video->picture) {
                                         ?>
                                         <img
-                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $main_video->filename ?>/high_thumb.png"
+                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $main_video->filename . '/high_thumb'; ?><?php if (strpos($main_video->picture, 'high_thumb')) {
+                                                $rtv = explode('high_thumb', $main_video->picture)[1];
+                                                echo $rtv;
+                                            }else{echo '.png';}?>"
                                             alt="">
                                         <?php
                                     } else {
@@ -137,25 +142,30 @@
                                         ?>
                                         <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
                                             <div class="solid-border-box">
-                                                <a href=" <?= site_url('/player?contentId=') . $item->inum ?>">
-                                                    <?php
-                                                    if ($item->picture) {
-                                                        ?>
-                                                        <img
-                                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
-                                                            alt="">
+                                                <div class="video-thumbnail-container">
+                                                    <a href=" <?= site_url('/player?contentId=') . $item->inum ?>">
                                                         <?php
-                                                    } else {
+                                                        if ($item->picture) {
+                                                            ?>
+                                                            <img
+                                                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $item->filename . '/low_thumb'; ?><?php if (strpos($item->picture, 'high_thumb')) {
+                                                                    $rtv = explode('high_thumb', $item->picture)[1];
+                                                                    echo $rtv;
+                                                                }else{echo '.png';}?>"
+                                                                alt="">
+                                                            <?php
+                                                        } else {
+                                                            ?>
+                                                            <img
+                                                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_00001.png"
+                                                                alt="">
+                                                            <?php
+
+                                                        }
                                                         ?>
-                                                        <img
-                                                            src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_00001.png"
-                                                            alt="">
-                                                        <?php
+                                                    </a>
 
-                                                    }
-                                                    ?>
-                                                </a>
-
+                                                </div>
                                                 <div class="video-des">
                                                     <p class="video-des-title"><?= $item->title ?></p>
                                                     <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>
@@ -192,25 +202,30 @@
                                             ?>
                                             <div class="video-small col-lg-3 col-md-3 col-sm-4 col-xs-6 ">
                                                 <div class="solid-border-box">
-                                                    <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
-                                                        <?php
-                                                        if ($item->picture) {
-                                                            ?>
-                                                            <img
-                                                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_thumb.png"
-                                                                alt="">
+                                                    <div class="video-thumbnail-container">
+                                                        <a href="<?= site_url('/player?contentId=') . $item->inum ?>">
                                                             <?php
-                                                        } else {
+                                                            if ($item->picture) {
+                                                                ?>
+                                                                <img
+                                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?php echo $item->filename . '/low_thumb'; ?><?php if (strpos($item->picture, 'high_thumb')) {
+                                                                        $rtv = explode('high_thumb', $item->picture)[1];
+                                                                        echo $rtv;
+                                                                    }else{echo '.png';}?>"
+                                                                    alt="">
+                                                                <?php
+                                                            } else {
+                                                                ?>
+                                                                <img
+                                                                    src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_00001.png"
+                                                                    alt="">
+                                                                <?php
+
+                                                            }
                                                             ?>
-                                                            <img
-                                                                src="https://s3-ap-northeast-1.amazonaws.com/dongshin.images/playlist/<?= $item->filename ?>/low_00001.png"
-                                                                alt="">
-                                                            <?php
+                                                        </a>
 
-                                                        }
-                                                        ?>
-                                                    </a>
-
+                                                    </div>
                                                     <div class="video-des">
                                                         <p class="video-des-title"><?= $item->title ?></p>
                                                         <p class="video-des-publisher">게시자: <?= $item->nickName ?></p>

@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="footer-text col-lg-12">
-                    <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="col-lg-5 col-sm-12">
                         <a class="footer-logo">
                             <img src="<?= base_url('/static/img/dongsin_logo.png') ?>" alt="">
                         </a>
@@ -18,11 +18,11 @@
                             <option value="eng">English</option>
                         </select>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="col-lg-3 col-sm-12">
                         <a href="" class="btn-ft-white">최근 동영상</a>
                         <a href="" class="btn-ft-white">도움말</a>
                     </div>
-                    <div class="col-lg-5 col-md-4 col-sm-12">
+                    <div class="col-lg-4 col-sm-12">
                         <iframe
                             src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fjamong360%2F%3Ffref%3Dts&width=450&layout=standard&action=like&show_faces=false&share=true&height=35&appId"
                             height="35" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
@@ -63,7 +63,7 @@
             if ($this->session->userdata('is_login')) {
                 ?>
                 <a href="<?= site_url('/auth/logout') ?>">
-                    <li class="solid-bozrder-bottom">
+                    <li id="btn-logout" class="solid-bozrder-bottom">
                         <img src="<?= base_url('/static/img/ic_log_in.png') ?>" alt="IC_PNG">
                         <span>로그아웃</span>
                     </li>
@@ -140,7 +140,7 @@ if (strpos($filename, 'index.php')) {
     <script src="<?= site_url() ?>/static/js/home/index.js"></script>
 <?php } ?>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js">
+<script src="/static/lib/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
 
 </body>
 </html>

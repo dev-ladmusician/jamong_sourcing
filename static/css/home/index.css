@@ -1,16 +1,41 @@
-.sc-main{
+.sc-main {
     /*padding-left: 20px;*/
 }
-.sc-main .video-large a{
+
+.sc-main .video-large a {
     display: block;
 }
-.sc-main-hot{
+
+.sc-main-hot {
     padding-top: 20px;
 }
-.sc-main-new{
+
+.sc-main-new {
     padding-top: 5px;
 }
-.sc-main .video-large img {
+
+.video-large {
+    position: relative;
     width: 100%;
     height: 400px;
+    overflow: hidden;
+}
+
+.video-thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+}
+
+.video-large img,
+.video-small .video-thumbnail-container img {
+    position: absolute;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    left: -1000%;
+    right: -1000%;
+    top: -1000%;
+    bottom: -1000%;
 }

@@ -2,7 +2,6 @@
 
 class Home extends CORE_Controller
 {
-
     function __construct()
     {
         parent::__construct();
@@ -14,15 +13,14 @@ class Home extends CORE_Controller
 
     function index()
     {
-
         //로그인 한 경우, profile_image가 등록되어 있으면,
         $user_id = $this->session->userdata('userid');
 
-        if($user_id){
+        if ($user_id) {
             $profile_url = $this->user_model->get_profile_image_by_id($user_id);
-            if(count($profile_url)){
+            if (count($profile_url)) {
                 $this->session->set_userdata('profile_url', $profile_url->picture);
-            }else{
+            } else {
                 $this->session->set_userdata('profile_url', null);
             }
         }
@@ -38,7 +36,6 @@ class Home extends CORE_Controller
         $vr_list_hot = $this->contents_model->get_vr_list_hot();
         $vr_list_new = $this->contents_model->get_vr_list_new();
 
-//        var_dump($vr_list_new);
         $this->__get_views('_HOME/index', array('categories' => $categories, 'channels' => $channels,
             'main_video' => $main_video, 'vr_list_hot' => $vr_list_hot, 'vr_list_new' => $vr_list_new));
     }

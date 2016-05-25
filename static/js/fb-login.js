@@ -1,12 +1,17 @@
+var appId = '1552807958354012';
+var status = null;
 // This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    status = response.status;
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
     if (response.status === 'connected') {
-        var url = window.location.href;
-        if (url.indexOf("login") >= 0) {
-            console.log('login');
-        } else if (url.indexOf("register") >= 0) {
-            console.log('register');
-        }
+        // Logged into your app and Facebook.
+        //testAPI();
     } else if (response.status === 'not_authorized') {
         // The person is logged into Facebook, but not your app.
         document.getElementById('status').innerHTML = 'Please log ' +
@@ -29,17 +34,12 @@ function checkLoginState() {
 }
 
 window.fbAsyncInit = function() {
-    var url = window.location.href;
-    var appId = '1545041632465908';
-    if (url.indexOf("www") >= 0) {
-        //appId = '420184654847738';
-    }
     FB.init({
         appId      : appId,
-        cookie     : false,  // enable cookies to allow the server to access
+        cookie     : true,  // enable cookies to allow the server to access
                             // the session
         xfbml      : true,  // parse social plugins on this page
-        version    : 'v2.6' // use version 2.2
+        version    : 'v2.6' // use version 2.6
     });
 
     // Now that we've initialized the JavaScript SDK, we call
@@ -60,7 +60,7 @@ window.fbAsyncInit = function() {
 
 };
 
-// Load the SDK asynchronously
+//// Load the SDK asynchronously
 (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -71,56 +71,27 @@ window.fbAsyncInit = function() {
 
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
-
-$('.btn-fb-join').click(function () {
-    FB.login(function(response) {
-        if (response.authResponse) {
-            fbJoin();
-        }
-    }, {scope: 'public_profile, email'});
-});
-
-$('.btn-fb-login').click(function () {
-    FB.login(function(response) {
-        console.log(response);
-        if (response.authResponse) {
-            fbLogin();
-        } else {
-
-        }
-    }, {scope: 'public_profile, email'});
-});
-
-
-function fbJoin() {
-    console.log('check');
-    var url = '/me?fields=name,email';
-    FB.api(url, function(response) {
-        console.log(response);
-        // ajax_template('/JAMONG/api/auth/join_by_fb', response,
-        //     function (data) {
-        //         if (data > 0) {
-        //             window.location.replace("/JAMONG/home/index");
-        //         } else {
-        //             if (data == -1) {
-        //                 alert('이용정지된 계정입니다.');
-        //                 window.location.replace('/JAMONG/auth/login');
-        //             } else {
-        //                 alert('회원가입하는데 오류가 발생했습니다.');
-        //                 window.location.replace('/JAMONG/auth/register');
-        //             }
-        //         }
-        //     },
-        //     function (arg) {
-        //         alert('회원가입하는데 오류가 발생했습니다.');
-        //         window.location.replace('/JAMONG/auth/register');
-        //     });
+function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+        console.log('Successful login for: ' + response.name);
+        document.getElementById('status').innerHTML =
+            'Thanks for logging in, ' + response.name + '!';
     });
 }
 
+$('.btn-fb-login').click(function () {
+    FB.login(function (response) {
+        console.log(response);
+        if (response.authResponse) {
+            fbLogin();
+        }
+    }, {scope: 'public_profile, email'});
+});
+
 function fbLogin() {
     var url = '/me?fields=name,email';
-    FB.api(url, function(response) {
+    FB.api(url, function (response) {
         console.log(response);
         ajax_template('/JAMONG/api/auth/login_by_fb', response,
             function (data) {
@@ -130,9 +101,9 @@ function fbLogin() {
                 } else {
                     if (data == -1) {
                         alert('이용정지된 계정입니다.');
-                        window.location.replace('/MGMT/auth/login');
+                        window.location.replace('/JAMONG/auth/login');
                     } else if (data == -2) {
-                        alert('회원가입을 먼저 해주세요.')
+                        alert('회원가입을 먼저 해주세요.');
                         window.location.replace('/JAMONG/auth/register');
                     } else {
                         window.location.replace('/JAMONG/auth/login');
@@ -165,6 +136,6 @@ function ajax_template(url, data, success, error, dataType) {
             } else {
                 alert("error");
             }
-        },
+        }
     });
 }

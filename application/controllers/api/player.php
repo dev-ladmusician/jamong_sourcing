@@ -10,9 +10,11 @@ class Player extends CORE_Controller
         $this->load->model('contents_model');
         $this->load->model('comment_model');
         $this->load->model('subscriber_model');
+        $this->load->model('channel_model');
     }
 
-    function like_update() {
+    function like_update()
+    {
         $this->__require_login();
         $contentId = $this->input->get('contentId');
         $userId = $this->session->userdata('userid');
@@ -44,7 +46,8 @@ class Player extends CORE_Controller
         }
     }
 
-    function submit_comment() {
+    function submit_comment()
+    {
         $content_id = $this->input->get('contentId');
         $user_id = $this->session->userdata('userid');
         $comment = $this->input->post('user-comment');
@@ -57,10 +60,11 @@ class Player extends CORE_Controller
             $flash_str = "로그인 해주세요.";
         }
         if (strlen($flash_str) > 0) $this->session->set_flashdata('message', $flash_str);
-        redirect('/player/index?contentId='.$content_id);
+        redirect('/player/index?contentId=' . $content_id);
     }
 
-    function test() {
+    function test()
+    {
         $content_id = $this->input->get('contentId');
         $comments = $this->comment_model->gets($content_id, 1, 100);
 
@@ -71,7 +75,8 @@ class Player extends CORE_Controller
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
-    function get_comments() {
+    function get_comments()
+    {
         $content_id = $this->input->get('contentId');
         $page = $this->input->get('page');
         $per_page = $this->input->get('perPage');
@@ -97,13 +102,15 @@ class Player extends CORE_Controller
         echo json_encode($pass_data);
     }
 
-    function delete_comment() {
+    function delete_comment()
+    {
         $comment_id = $this->input->get('commentId');
         $rtv = $this->comment_model->delete($comment_id);
         echo json_encode($rtv, JSON_PRETTY_PRINT);
     }
 
-    function subscribe_update(){
+    function subscribe_update()
+    {
         $this->__require_login();
 
         $contentId = $this->input->get('contentId');
@@ -112,25 +119,29 @@ class Player extends CORE_Controller
         $is_subscribed = $this->input->get('is_subscribed');
 
         //구독할때 add
-        if(strcmp($is_subscribed, 'true') == 0){
-            $rtv = $this->subscriber_model->add($channelId,$userId);
-            if($rtv=='1'){
-                $like_count = $this->like_model->get_like_count_by_content($contentId);
-                $this->contents_model->update_like_count($contentId, $like_count);
+        if (strcmp($is_subscribed, 'true') == 0) {
+            $rtv = $this->subscriber_model->add($channelId, $userId);
+            $count = $this->subscriber_model->get_count_users_by_channel($channelId);
+
+            if ($rtv == '1') {
+                $this->channel_model->update_follow($channelId, $count);
                 $this->session->set_flashdata('message', '채널을 구독했습니다.');
-                redirect('player?contentId='.$contentId);
-            }else{
+                redirect('player?contentId=' . $contentId);
+            } else {
                 $this->session->set_flashdata('message', '채널을 구독하는 데 오류가 발생했습니다.');
-                redirect('player?contentId='.$contentId);
+                redirect('player?contentId=' . $contentId);
             }
-        }else{
-            $rtv = $this->subscriber_model->delete($channelId,$userId);
-            if($rtv=='1'){
+        } else {
+            $rtv = $this->subscriber_model->delete($channelId, $userId);
+            $count = $this->subscriber_model->get_count_users_by_channel($channelId);
+
+            if ($rtv == '1') {
+                $this->channel_model->update_follow($channelId, $count);
                 $this->session->set_flashdata('message', '채널 구독을 취소했습니다.');
-                redirect('player?contentId='.$contentId);
-            }else{
+                redirect('player?contentId=' . $contentId);
+            } else {
                 $this->session->set_flashdata('message', '채널을 구독을 취소하는데 오류가 발생했습니다.');
-                redirect('player?contentId='.$contentId);
+                redirect('player?contentId=' . $contentId);
             }
         }
     }
