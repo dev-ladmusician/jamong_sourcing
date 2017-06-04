@@ -38,7 +38,6 @@ class Auth extends CORE_Controller
 */
     function sendMail($EMAIL, $NAME, $SUBJECT, $CONTENT, $MAILTO, $MAILTONAME)
     {
-
         error_reporting(E_ALL);
         ini_set("display_errors", 1);
 
